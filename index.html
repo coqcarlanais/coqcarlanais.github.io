@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coq Carlanais - Club de Basket de Carla Bayle</title>
+    <link rel="icon" href="Coq_carlanais_logo.jpg" type="image/jpeg">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables CSS pour la palette de couleurs */
+        :root {
+            --primary-black: #1A1A1A;
+            --vibrant-yellow: #FFCC00;
+            --hover-yellow: #FFEB3B;
+            --secondary-yellow: #FFC107;
+            --white: #FFFFFF;
+            --light-grey: #F5F5F5;
+            --bronze: #CD7F32;
+            --silver: #C0C0C0;
+            --gold: #FFD700;
+        }
+
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--primary-black);
+            background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-black);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 2rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--vibrant-yellow);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        /* Section Hero */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
+                        url('https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1790&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--vibrant-yellow);
+            color: var(--primary-black);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn:hover {
+            background-color: var(--hover-yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Section Le Club */
+        .about {
+            background-color: var(--white);
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            margin-bottom: 3rem;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Section Nos Équipes */
+        .teams {
+            background-color: var(--light-grey);
+        }
+
+        .team-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 1.5rem;
+        }
+
+        .team-info h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .team-info p {
+            margin-bottom: 1rem;
+        }
+
+        .team-schedule {
+            background-color: var(--light-grey);
+            padding: 0.8rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* Section Horaires */
+        .schedule {
+            background-color: var(--white);
+        }
+
+        .schedule-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .schedule-day {
+            background-color: var(--light-grey);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule-day h3 {
+            color: var(--vibrant-yellow);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .schedule-time {
+            font-weight: 600;
+            color: var(--primary-black);
+        }
+
+        /* Section Facebook */
+        .facebook {
+            background-color: var(--light-grey);
+        }
+
+        .facebook-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .facebook-icon {
+            font-size: 3rem;
+            color: #1877F2;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Section Contact */
+        .contact {
+            background-color: var(--white);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            color: var(--vibrant-yellow);
+            font-size: 1.5rem;
+            width: 30px;
+        }
+
+        /* Section Sponsors - UPDATED */
+        .sponsors {
+            background-color: var(--light-grey);
+        }
+
+        .sponsors-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .sponsor-text {
+            margin-bottom: 2rem;
+        }
+
+        .sponsorship-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sponsorship-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tier {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border-top: 5px solid;
+        }
+
+        .tier:hover {
+            transform: translateY(-10px);
+        }
+
+        .tier-bronze {
+            border-color: var(--bronze);
+        }
+
+        .tier-silver {
+            border-color: var(--silver);
+        }
+
+        .tier-gold {
+            border-color: var(--gold);
+        }
+
+        .tier-header {
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .tier-bronze .tier-header {
+            background: var(--bronze);
+        }
+
+        .tier-silver .tier-header {
+            background: var(--silver);
+            color: var(--primary-black);
+        }
+
+        .tier-gold .tier-header {
+            background: var(--gold);
+            color: var(--primary-black);
+        }
+
+        .tier-name {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .tier-benefits {
+            padding: 1.5rem;
+        }
+
+        .benefit-list {
+            list-style: none;
+        }
+
+        .benefit-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .benefit-list li:last-child {
+            border-bottom: none;
+        }
+
+        .benefit-list i {
+            margin-right: 10px;
+            color: var(--vibrant-yellow);
+        }
+
+        .benefit-highlight {
+            font-weight: bold;
+            color: var(--vibrant-yellow);
+        }
+
+        .donation-section {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+        }
+
+        .donation-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--vibrant-yellow);
+            box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.2);
+        }
+
+        .form-control.error {
+            border-color: #dc3545;
+            box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        .tier-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tier-option {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .tier-option input[type="radio"] {
+            display: none;
+        }
+
+        .tier-option label {
+            display: block;
+            padding: 0.8rem 1rem;
+            background-color: var(--light-grey);
+            border: 2px solid transparent;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tier-option input[type="radio"]:checked + label {
+            background-color: var(--vibrant-yellow);
+            border-color: var(--secondary-yellow);
+            font-weight: bold;
+        }
+
+        .custom-amount {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .custom-amount .form-control {
+            flex: 1;
+        }
+
+        .donation-summary {
+            background-color: var(--light-grey);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .donation-summary h3 {
+            margin-bottom: 1rem;
+            color: var(--vibrant-yellow);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .total-amount {
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-top: 1px solid #ddd;
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        #form-message {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        #form-message.success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        #form-message.error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+
+        .sponsor-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .sponsor-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            max-width: 300px;
+        }
+
+        .sponsor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .sponsor-icon {
+            font-size: 2.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 1rem;
+        }
+
+        .sponsor-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-black);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .footer-logo-img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-icon {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: var(--vibrant-yellow);
+        }
+
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--primary-black);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 1.5rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-card {
+                width: 100%;
+            }
+
+            .team-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .schedule-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sponsorship-tiers {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            .tier-options {
+                flex-direction: column;
+            }
+
+            .donation-section {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="Coq_carlanais_logo.jpg" alt="Logo Coq Carlanais" class="logo-img">
+                Coq Carlanais
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#accueil" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="#club" class="nav-link">Le Club</a></li>
+                <li class="nav-item"><a href="#equipes" class="nav-link">Équipes</a></li>
+                <li class="nav-item"><a href="#horaires" class="nav-link">Horaires</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#sponsors" class="nav-link">Sponsors</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Hero -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Bienvenue au Coq Carlanais</h1>
+            <p>Le club de basket de Carla Bayle</p>
+            <div class="btn-group">
+                <a href="#contact" class="btn">Rejoignez-nous</a>
+                <a href="#equipes" class="btn">Nos Équipes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Le Club -->
+    <section id="club" class="about">
+        <div class="container">
+            <h2>Le Club</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Fondé en 1948, le Coq Carlanais est bien plus qu'un simple club de basket. C'est une véritable institution à Carla Bayle, un lieu de rassemblement où se mêlent passion du sport et esprit communautaire.</p>
+                    <p>Notre mission est de promouvoir les valeurs du basket-ball auprès de tous les âges, en favorisant le développement personnel, l'esprit d'équipe et le fair-play dans un environnement bienveillant et compétitif.</p>
+                </div>
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Jeunes & Adultes</h3>
+                        <p>Des programmes adaptés pour tous les âges et tous les niveaux, de l'initiation au basket compétitif.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-basketball-ball"></i>
+                        </div>
+                        <h3>Esprit d'Équipe</h3>
+                        <p>Nous cultivons la cohésion, l'entraide et le respect mutuel sur et en dehors du terrain.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Compétition & Loisir</h3>
+                        <p>Que vous visiez la compétition ou simplement le plaisir du jeu, il y a une place pour vous.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Nos Équipes -->
+    <section id="equipes" class="teams">
+        <div class="container">
+            <h2>Nos Équipes</h2>
+            <div class="team-cards">
+                <div class="team-card">
+                    <img src="U7_9.png" alt="Équipe de basket U7/U9 du Coq Carlanais" class="team-img">
+                    <div class="team-info">
+                        <h3>U7 / U9</h3>
+                        <p>Pour les plus jeunes (nés de 2017 à 2019), découverte du basket avec une approche ludique et éducative.</p>
+                        <div class="team-schedule">
+                            <strong>Entraînement:</strong> Vendredi 17h30-18h30
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="U11.png" alt="Équipe de basket U11 du Coq Carlanais" class="team-img">
+                    <div class="team-info">
+                        <h3>U11 Mixte</h3>
+                        <p>Initiation au basket pour les enfants nés en 2015/2016 avec développement des fondamentaux.</p>
+                        <div class="team-schedule">
+                            <strong>Entraînement:</strong> Mercredi 15h30-17h00<br>
+                            <strong>Match/Entraînement:</strong> Samedi 9h00-11h00
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="U13Filles.png" alt="Équipe de basket U13 Filles du Coq Carlanais" class="team-img">
+                    <div class="team-info">
+                        <h3>U13 Filles</h3>
+                        <p>Perfectionnement des fondamentaux et premières compétitions pour les filles nées en 2013/2014.</p>
+                        <div class="team-schedule">
+                            <strong>Entraînement:</strong> Mardi 18h00-19h30
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="U13Garcons.png" alt="Équipe de basket U13 Garçons du Coq Carlanais" class="team-img">
+                    <div class="team-info">
+                        <h3>U13 Garçons</h3>
+                        <p>Développement des compétences techniques et tactiques pour les garçons nés en 2013/2014.</p>
+                        <div class="team-schedule">
+                            <strong>Entraînement:</strong> Mercredi 17h00-18h30
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="U15Filles.png" alt="Équipe de basket U15 Filles du Coq Carlanais" class="team-img">
+                    <div class="team-info">
+                        <h3>U15 Filles</h3>
+                        <p>Approfondissement technique et préparation aux compétitions pour les filles nées en 2011/2012.</p>
+                        <div class="team-schedule">
+                            <strong>Entraînement:</strong> Jeudi 18h00-19h30
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="U15Garcons.png" alt="Équipe de basket U15 Garçons du Coq Carlanais" class="team-img">
+                    <div class="team-info">
+                        <h3>U15 Garçons</h3>
+                        <p>Développement des compétences avancées pour les garçons nés en 2011/2012 en vue des compétitions.</p>
+                        <div class="team-schedule">
+                            <strong>Entraînement:</strong> Mercredi 18h30-20h00
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="U18Garcons.png" alt="Équipe de basket U18 Garçons du Coq Carlanais" class="team-img">
+                    <div class="team-info">
+                        <h3>U18 Garçons</h3>
+                        <p>Préparation au niveau senior pour les garçons nés de 2008 à 2010 avec un programme intensif.</p>
+                        <div class="team-schedule">
+                            <strong>Entraînement:</strong> Vendredi 18h30-20h00<br>
+                            <strong>Entraînement:</strong> Mercredi 20h00-22h00 (avec séniors)
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="SeniorGarcons.png" alt="Équipe de basket Séniors du Coq Carlanais" class="team-img">
+                    <div class="team-info">
+                        <h3>Séniors Garçons & Filles (Hoops)</h3>
+                        <p>Notre équipe phare qui évolue en championnat avec passion et détermination.</p>
+                        <div class="team-schedule">
+                            <strong>Entraînement:</strong> Lundi 20h30-22h30
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="SeniorFilles.png" alt="Équipe de basket Séniors Filles du Coq Carlanais" class="team-img">
+                    <div class="team-info">
+                        <h3>Séniors Filles</h3>
+                        <p>Une équipe dynamique et compétitive qui représente fièrement notre club en championnat.</p>
+                        <div class="team-schedule">
+                            <strong>Entraînement:</strong> Vendredi 20h00-22h00
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="Basket_Loisir.png" alt="Équipe de basket Loisirs du Coq Carlanais" class="team-img">
+                    <div class="team-info">
+                        <h3>Basket Loisirs</h3>
+                        <p>Pour ceux qui souhaitent pratiquer le basket pour le plaisir, sans la pression de la compétition.</p>
+                        <div class="team-schedule">
+                            <strong>Entraînement:</strong> Mardi 19h30-21h00
+                        </div>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <img src="Basket_sante.png" alt="Équipe de basket Santé du Coq Carlanais" class="team-img">
+                    <div class="team-info">
+                        <h3>Basket Santé</h3>
+                        <p>Pratique adaptée du basket pour le bien-être et la santé, accessible à tous.</p>
+                        <div class="team-schedule">
+                            <strong>Entraînement:</strong> Jeudi 19h30-20h30
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Horaires -->
+    <section id="horaires" class="schedule">
+        <div class="container">
+            <h2>Horaires d'Entraînement 2025/2026</h2>
+            <div class="schedule-container">
+                <div class="schedule-day">
+                    <h3>Lundi</h3>
+                    <div class="schedule-item">
+                        <span class="schedule-time">20h30 - 22h30</span>
+                        <span>Séniors Garçons & Filles (Hoops)</span>
+                    </div>
+                </div>
+                <div class="schedule-day">
+                    <h3>Mardi</h3>
+                    <div class="schedule-item">
+                        <span class="schedule-time">18h00 - 19h30</span>
+                        <span>U13 Filles</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">19h30 - 21h00</span>
+                        <span>Basket Loisirs</span>
+                    </div>
+                </div>
+                <div class="schedule-day">
+                    <h3>Mercredi</h3>
+                    <div class="schedule-item">
+                        <span class="schedule-time">15h30 - 17h00</span>
+                        <span>U11 Mixte</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">17h00 - 18h30</span>
+                        <span>U13 Garçons</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">18h30 - 20h00</span>
+                        <span>U15 Garçons</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">20h00 - 22h00</span>
+                        <span>U18 / Séniors Garçons</span>
+                    </div>
+                </div>
+                <div class="schedule-day">
+                    <h3>Jeudi</h3>
+                    <div class="schedule-item">
+                        <span class="schedule-time">18h00 - 19h30</span>
+                        <span>U15 Filles</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">19h30 - 20h30</span>
+                        <span>Basket Santé</span>
+                    </div>
+                </div>
+                <div class="schedule-day">
+                    <h3>Vendredi</h3>
+                    <div class="schedule-item">
+                        <span class="schedule-time">17h30 - 18h30</span>
+                        <span>U7 / U9</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">18h30 - 20h00</span>
+                        <span>U18 Garçons</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">20h00 - 22h00</span>
+                        <span>Séniors Filles</span>
+                    </div>
+                </div>
+                <div class="schedule-day">
+                    <h3>Samedi</h3>
+                    <div class="schedule-item">
+                        <span class="schedule-time">9h00 - 11h00</span>
+                        <span>U11 Entraînement ou Match</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-time">11h00 - 22h00</span>
+                        <span>Match</span>
+                    </div>
+                </div>
+                <div class="schedule-day">
+                    <h3>Dimanche</h3>
+                    <div class="schedule-item">
+                        <span class="schedule-time">9h00 - 13h00</span>
+                        <span>U9 Plateau ou Stage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Facebook -->
+    <section class="facebook">
+        <div class="container">
+            <div class="facebook-content">
+                <div class="facebook-icon">
+                    <i class="fab fa-facebook"></i>
+                </div>
+                <h2>Calendrier & Résultats</h2>
+                <p>Retrouvez tous les matchs, résultats et actualités du club sur notre page Facebook.</p>
+                <a href="https://www.facebook.com/coqcarlanaisbasket" class="btn" target="_blank">Voir sur Facebook</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Adresse</h3>
+                            <p>Salle Marcel Guichou<br>09130 Carla Bayle, France</p>
+                            <a href="https://maps.app.goo.gl/26G7AS5bg4rqvmGN7" target="_blank" class="btn" style="margin-top: 10px;">Voir sur la carte</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Horaires d'entraînement</h3>
+                            <p>Consultez notre planning complet dans la section "Horaires" ci-dessus.</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Téléphone</h3>
+                            <p>05 61 68 51 32 (Mairie du Carla)</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Rejoignez-nous</h3>
+                    <p>Intéressé pour rejoindre notre club? Venez nous rencontrer lors d'un entraînement ou contactez-nous via notre page Facebook.</p>
+                    <p>Nous accueillons les joueurs de tous niveaux et de tous âges, du débutant au confirmé.</p>
+                    <a href="https://www.facebook.com/coqcarlanaisbasket" class="btn" target="_blank" style="margin-top: 20px;">Nous contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Sponsors - UPDATED -->
+    <section id="sponsors" class="sponsors">
+        <div class="container">
+            <h2>Nos Sponsors</h2>
+            <div class="sponsors-content">
+                <div class="sponsorship-intro">
+                    <p>Le Coq Carlanais Basketball Club compte sur le soutien de ses sponsors pour offrir les meilleures conditions d'entraînement et de compétition à ses joueurs.</p>
+                    <p>En soutenant le Coq Carlanais, vous investissez dans la jeunesse et le sport de votre territoire. Votre partenariat nous permet de développer nos équipes, d'organiser des événements et d'offrir les meilleures conditions d'entraînement à nos 200 licenciés.</p>
+                </div>
+                
+                <div class="sponsorship-tiers">
+                    <!-- Formule Bronze -->
+                    <div class="tier tier-bronze">
+                        <div class="tier-header">
+                            <h2 class="tier-name">Partenaire Bronze</h2>
+                            <p class="tier-price">50 - 500 €</p>
+                        </div>
+                        <div class="tier-benefits">
+                            <ul class="benefit-list">
+                                <li><i class="fas fa-check"></i> Logo sur notre site internet</li>
+                                <li><i class="fas fa-check"></i> Mention sur nos réseaux sociaux</li>
+                                <li><i class="fas fa-check"></i> Logo sur nos supports de communication</li>
+                                <li><i class="fas fa-check"></i> Invitation à nos événements</li>
+                                <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos équipements d'entraînement</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Formule Argent -->
+                    <div class="tier tier-silver">
+                        <div class="tier-header">
+                            <h2 class="tier-name">Partenaire Argent</h2>
+                            <p class="tier-price">500 - 1000 €</p>
+                        </div>
+                        <div class="tier-benefits">
+                            <ul class="benefit-list">
+                                <li><i class="fas fa-check"></i> Tous les avantages Bronze</li>
+                                <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos maillots d'entraînement</span></li>
+                                <li><i class="fas fa-check"></i> Mise en avant lors de notre tournoi annuel</li>
+                                <li><i class="fas fa-check"></i> Article dédié sur nos réseaux sociaux</li>
+                                <li><i class="fas fa-check"></i> <span class="benefit-highlight">Bannière publicitaire dans notre salle</span></li>
+                                <li><i class="fas fa-check"></i> Remise des récompenses lors de notre tournoi</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Formule Or -->
+                    <div class="tier tier-gold">
+                        <div class="tier-header">
+                            <h2 class="tier-name">Partenaire Or</h2>
+                            <p class="tier-price">1000 € et +</p>
+                        </div>
+                        <div class="tier-benefits">
+                            <ul class="benefit-list">
+                                <li><i class="fas fa-check"></i> Tous les avantages Argent</li>
+                                <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos maillots de match</span></li>
+                                <li><i class="fas fa-check"></i> Interview et article dédié sur nos réseaux</li>
+                                <li><i class="fas fa-check"></i> <span class="benefit-highlight">Nom associé à une équipe (ex: "U15 sponsorisée par...")</span></li>
+                                <li><i class="fas fa-check"></i> Photo officielle avec l'équipe première</li>
+                                <li><i class="fas fa-check"></i> Invitation VIP à tous nos événements</li>
+                                <li><i class="fas fa-check"></i> <span class="benefit-highlight">Trophée Partenaire Officiel</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Donation Form -->
+                <div class="donation-section">
+                    <h2>Devenir Partenaire</h2>
+                    <p>Choisissez votre niveau de partenariat ou saisissez un montant personnalisé.</p>
+                    
+                    <form id="donation-form" action="https://formspree.io/f/manpevvz" method="POST">
+                        <div class="form-group">
+                            <label for="sponsor-type">Type de partenariat</label>
+                            <div class="tier-options">
+                                <div class="tier-option">
+                                    <input type="radio" id="bronze" name="sponsor_tier" value="Bronze (50€)">
+                                    <label for="bronze">Bronze (50€)</label>
+                                </div>
+                                <div class="tier-option">
+                                    <input type="radio" id="silver" name="sponsor_tier" value="Argent (500€)">
+                                    <label for="silver">Argent (500€)</label>
+                                </div>
+                                <div class="tier-option">
+                                    <input type="radio" id="gold" name="sponsor_tier" value="Or (1000€)">
+                                    <label for="gold">Or (1000€)</label>
+                                </div>
+                                <div class="tier-option">
+                                    <input type="radio" id="custom" name="sponsor_tier" value="Personnalisé" checked>
+                                    <label for="custom">Personnalisé</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="custom_amount">Montant personnalisé (€)</label>
+                            <div class="custom-amount">
+                                <input type="number" id="custom_amount" name="custom_amount" class="form-control" min="10" step="5" value="100">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first_name">Prénom</label>
+                                <input type="text" id="first_name" name="first_name" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last_name">Nom</label>
+                                <input type="text" id="last_name" name="last_name" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Entreprise (optionnel)</label>
+                            <input type="text" id="company" name="company" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message (optionnel)</label>
+                            <textarea id="message" name="message" class="form-control" rows="4"></textarea>
+                        </div>
+                        
+                        <div class="donation-summary">
+                            <h3>Récapitulatif de votre don</h3>
+                            <div class="summary-item">
+                                <span>Type de partenariat:</span>
+                                <span id="summary-tier">Personnalisé</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Montant:</span>
+                                <span id="summary-amount">100 €</span>
+                            </div>
+                            <div class="summary-item total-amount">
+                                <span>Total:</span>
+                                <span id="summary-total">100 €</span>
+                            </div>
+                            
+                            <!-- Hidden fields for Formspree -->
+                            <input type="hidden" name="_subject" value="Nouvelle demande de partenariat - Coq Carlanais">
+                            <input type="hidden" name="_language" value="fr">
+                        </div>
+                        
+                        <div id="form-message"></div>
+                        
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 1.5rem;">Devenir Partenaire</button>
+                    </form>
+                </div>
+                
+                <div class="sponsor-cards">
+                    <div class="sponsor-card">
+                        <div class="sponsor-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Devenir Sponsor</h3>
+                        <p>Plusieurs formules de partenariat disponibles selon votre entreprise et vos objectifs.</p>
+                    </div>
+                    <div class="sponsor-card">
+                        <div class="sponsor-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Visibilité</h3>
+                        <p>Bénéficiez d'une visibilité locale et régionale auprès d'une communauté engagée.</p>
+                    </div>
+                    <div class="sponsor-card">
+                        <div class="sponsor-icon">
+                            <i class="fas fa-basketball-ball"></i>
+                        </div>
+                        <h3>Soutien Local</h3>
+                        <p>Participez au développement du sport et de la jeunesse dans notre région.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="footer-logo">
+                    <img src="Coq_carlanais_logo.jpg" alt="Logo Coq Carlanais" class="footer-logo-img">
+                    Coq Carlanais
+                </a>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/coqcarlanaisbasket" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/coq_carlanais/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://competitions.ffbb.com/ligues/occ/comites/0009/clubs/occ0009006" class="social-icon" target="_blank"><i class="fas fa-basketball-ball"></i></a>
+                </div>
+                <div class="footer-info">
+                    <p>Salle Marcel Guichou, 09130 Carla Bayle, France</p>
+                    <p>05 61 68 51 32 (Mairie) | coqcarlanais@gmail.com</p>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Coq Carlanais Basketball. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu hamburger pour mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Fermer le menu au clic sur un lien
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }));
+
+        // Effet de défilement fluide pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Donation Form Functionality
+        const donationForm = document.getElementById('donation-form');
+        const tierRadios = document.querySelectorAll('input[name="sponsor_tier"]');
+        const customAmountInput = document.getElementById('custom_amount');
+        const summaryTier = document.getElementById('summary-tier');
+        const summaryAmount = document.getElementById('summary-amount');
+        const summaryTotal = document.getElementById('summary-total');
+
+        // Update donation summary when tier selection changes
+        function updateDonationSummary() {
+            let selectedTier = document.querySelector('input[name="sponsor_tier"]:checked');
+            let amount = 0;
+            let tierName = '';
+            
+            if (selectedTier.id === 'custom') {
+                amount = parseInt(customAmountInput.value) || 0;
+                tierName = 'Personnalisé';
+            } else {
+                amount = parseInt(selectedTier.value);
+                tierName = selectedTier.parentElement.querySelector('label').textContent;
+            }
+            
+            summaryTier.textContent = tierName;
+            summaryAmount.textContent = amount + ' €';
+            summaryTotal.textContent = amount + ' €';
+        }
+
+        // Initialize donation summary
+        updateDonationSummary();
+
+        // Add event listeners for tier selection
+        tierRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.id === 'custom') {
+                    customAmountInput.disabled = false;
+                    customAmountInput.focus();
+                } else {
+                    customAmountInput.disabled = true;
+                }
+                updateDonationSummary();
+            });
+        });
+
+        // Update summary when custom amount changes
+        customAmountInput.addEventListener('input', updateDonationSummary);
+
+        // Enhanced form validation and submission
+        document.getElementById('donation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!validateForm()) {
+                return;
+            }
+            
+            const form = e.target;
+            const messageDiv = document.getElementById('form-message');
+            const submitButton = form.querySelector('button[type="submit"]');
+            
+            // Show sending state
+            const originalButtonText = submitButton.textContent;
+            submitButton.textContent = 'Envoi en cours...';
+            submitButton.disabled = true;
+            messageDiv.style.display = 'none';
+            
+            // Clear previous errors
+            clearErrors();
+            
+            // Send form data
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showSuccess(messageDiv, form);
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            })
+            .catch(error => {
+                showError(messageDiv);
+            })
+            .finally(() => {
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+        });
+
+        // Form validation function
+        function validateForm() {
+            let isValid = true;
+            clearErrors();
+            
+            // Validate required fields
+            const requiredFields = document.querySelectorAll('[required]');
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    showFieldError(field, 'Ce champ est obligatoire');
+                    isValid = false;
+                }
+            });
+            
+            // Validate email format
+            const emailField = document.getElementById('email');
+            if (emailField.value && !isValidEmail(emailField.value)) {
+                showFieldError(emailField, 'Veuillez entrer une adresse email valide');
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+
+        // Helper functions
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function showFieldError(field, message) {
+            field.classList.add('error');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            field.parentNode.appendChild(errorDiv);
+        }
+
+        function clearErrors() {
+            document.querySelectorAll('.error').forEach(field => {
+                field.classList.remove('error');
+            });
+            document.querySelectorAll('.error-message').forEach(error => {
+                error.remove();
+            });
+        }
+
+        function showSuccess(messageDiv, form) {
+            messageDiv.textContent = 'Merci ! Votre demande a été envoyée. Nous vous contacterons très prochainement.';
+            messageDiv.className = 'success';
+            messageDiv.style.display = 'block';
+            form.reset();
+            updateDonationSummary();
+        }
+
+        function showError(messageDiv) {
+            messageDiv.textContent = 'Désolé, une erreur est survenue. Veuillez réessayer ou nous contacter directement à coqcarlanais@gmail.com.';
+            messageDiv.className = 'error';
+            messageDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
