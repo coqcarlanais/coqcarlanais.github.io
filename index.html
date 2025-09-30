@@ -361,15 +361,24 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Section Contact */
+        /* Section Contact - REDESIGNED */
         .contact {
             background-color: var(--white);
         }
 
+        .contact-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
         .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1.5fr;
             gap: 3rem;
+            align-items: start;
         }
 
         .contact-info {
@@ -378,16 +387,190 @@
             gap: 1.5rem;
         }
 
-        .contact-item {
+        .contact-card {
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .contact-card-header {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 1.5rem 0;
+        }
+
+        .contact-card-header .contact-icon {
+            color: var(--vibrant-yellow);
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 204, 0, 0.1);
+            border-radius: 50%;
+        }
+
+        .contact-card-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .contact-card-body {
+            padding: 1rem 1.5rem 1.5rem;
+        }
+
+        .contact-card-body p {
+            margin-bottom: 1rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--vibrant-yellow);
+            color: var(--primary-black);
+        }
+
+        .btn-outline:hover {
+            background: var(--vibrant-yellow);
+        }
+
+        .btn-primary {
+            background: var(--vibrant-yellow);
+            color: var(--primary-black);
+            font-weight: 600;
+            padding: 1rem 2rem;
+            position: relative;
+        }
+
+        .highlight-text {
+            color: var(--vibrant-yellow);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .contact-note {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .contact-form-container {
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+        }
+
+        .form-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-header h3 {
+            color: var(--primary-black);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-section {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .form-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 1rem;
+        }
+
+        .form-section h4 {
+            color: var(--primary-black);
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-section h4:before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background: var(--vibrant-yellow);
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-black);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--vibrant-yellow);
+            box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.2);
+        }
+
+        .form-control.error {
+            border-color: #dc3545;
+            box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .form-row {
+            display: flex;
             gap: 1rem;
         }
 
-        .contact-icon {
-            color: var(--vibrant-yellow);
-            font-size: 1.5rem;
-            width: 30px;
+        .form-row .form-group {
+            flex: 1;
+        }
+
+        #contact-form-message {
+            display: none;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        #contact-form-message.success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        #contact-form-message.error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
         }
 
         /* Section Sponsors - UPDATED */
@@ -515,53 +698,6 @@
         .donation-form {
             max-width: 600px;
             margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Open Sans', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--vibrant-yellow);
-            box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.2);
-        }
-
-        .form-control.error {
-            border-color: #dc3545;
-            box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
-        }
-
-        .error-message {
-            color: #dc3545;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            display: none;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .form-row .form-group {
-            flex: 1;
         }
 
         .tier-options {
@@ -743,6 +879,19 @@
         }
 
         /* Responsive Design */
+        @media screen and (max-width: 968px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-info {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+
         @media screen and (max-width: 768px) {
             .hamburger {
                 display: block;
@@ -818,6 +967,14 @@
 
             .donation-section {
                 padding: 2rem 1rem;
+            }
+
+            .contact-form-container {
+                padding: 1.5rem;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -1166,7 +1323,6 @@
                         </div>
                         <div class="contact-card-body">
                             <p>05 61 68 51 32 (Mairie du Carla)</p>
-                            <p class="contact-note">Pour les urgences uniquement</p>
                         </div>
                     </div>
                     
@@ -1179,7 +1335,6 @@
                         </div>
                         <div class="contact-card-body">
                             <p><a href="mailto:contact@coqcarlanais.fr">contact@coqcarlanais.fr</a></p>
-                            <p class="contact-note">Réponse sous 48h</p>
                         </div>
                     </div>
                 </div>
@@ -1662,6 +1817,114 @@
             messageDiv.className = 'error';
             messageDiv.style.display = 'block';
         }
+
+        // Enhanced form handling for the contact form
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            if (!contactForm) return;
+            
+            const contactMessageDiv = document.getElementById('contact-form-message');
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const btnText = submitButton.querySelector('.btn-text');
+            const btnLoading = submitButton.querySelector('.btn-loading');
+            
+            // Contact form validation and submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (!validateContactForm()) {
+                    return;
+                }
+                
+                // Show sending state
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'inline-block';
+                submitButton.disabled = true;
+                contactMessageDiv.style.display = 'none';
+                
+                // Clear previous errors
+                clearContactErrors();
+                
+                // Send form data
+                fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        showContactSuccess();
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Network response was not ok.');
+                    }
+                })
+                .catch(error => {
+                    showContactError();
+                })
+                .finally(() => {
+                    btnText.style.display = 'inline-block';
+                    btnLoading.style.display = 'none';
+                    submitButton.disabled = false;
+                    contactMessageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                });
+            });
+
+            // Contact form validation function
+            function validateContactForm() {
+                let isValid = true;
+                clearContactErrors();
+                
+                // Validate required fields
+                const requiredFields = contactForm.querySelectorAll('[required]');
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        showContactFieldError(field, 'Ce champ est obligatoire');
+                        isValid = false;
+                    }
+                });
+                
+                // Validate email format
+                const emailField = document.getElementById('contact-email');
+                if (emailField.value && !isValidEmail(emailField.value)) {
+                    showContactFieldError(emailField, 'Veuillez entrer une adresse email valide');
+                    isValid = false;
+                }
+
+                return isValid;
+            }
+
+            // Helper functions for contact form
+            function showContactFieldError(field, message) {
+                field.classList.add('error');
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                errorDiv.textContent = message;
+                errorDiv.style.display = 'block';
+                field.parentNode.appendChild(errorDiv);
+            }
+
+            function clearContactErrors() {
+                contactForm.querySelectorAll('.error').forEach(field => {
+                    field.classList.remove('error');
+                });
+                contactForm.querySelectorAll('.error-message').forEach(error => {
+                    error.remove();
+                });
+            }
+
+            function showContactSuccess() {
+                contactMessageDiv.textContent = 'Merci ! Votre message a été envoyé. Nous vous répondrons dans les plus brefs délais.';
+                contactMessageDiv.className = 'success';
+                contactMessageDiv.style.display = 'block';
+            }
+
+            function showContactError() {
+                contactMessageDiv.textContent = 'Désolé, une erreur est survenue. Veuillez réessayer ou nous contacter directement à contact@coqcarlanais.fr.';
+                contactMessageDiv.className = 'error';
+                contactMessageDiv.style.display = 'block';
+            }
+        });
     </script>
 </body>
 </html>
