@@ -2407,7 +2407,7 @@
             }
         });
         
-        // Enhanced Halloween Counter with Detailed Breakdown
+        // Enhanced Halloween Counter with CORS handling
         class HalloweenCounter {
             constructor() {
                 this.scriptUrl = 'https://script.google.com/macros/s/AKfycbyf0UP1O1-9RRm2XlfwAnFyHeNX1b7TF1FqT_GuZdVnQHb2MkNa8OMCtL3k9ywPavsVbA/exec';
@@ -2424,13 +2424,27 @@
                 }
                 
                 try {
-                    const response = await fetch(this.scriptUrl);
+                    console.log('Fetching data from:', this.scriptUrl);
+                    
+                    // Add timestamp to avoid caching
+                    const urlWithTimestamp = `${this.scriptUrl}?t=${Date.now()}`;
+                    
+                    const response = await fetch(urlWithTimestamp, {
+                        method: 'GET',
+                        mode: 'cors', // Explicitly set CORS mode
+                        headers: {
+                            'Content-Type': 'application/json',
+                        }
+                    });
+                    
+                    console.log('Response status:', response.status, response.statusText);
                     
                     if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
+                        throw new Error(`HTTP error! status: ${response.status} - ${response.statusText}`);
                     }
                     
                     const data = await response.json();
+                    console.log('Fetched data:', data);
                     
                     // Update cache
                     this.cachedData = data;
@@ -2440,18 +2454,28 @@
                     
                 } catch (error) {
                     console.error('Error fetching attendee data:', error);
+                    
+                    // Show error in console and try to provide more details
+                    if (error.name === 'TypeError') {
+                        console.error('This is likely a CORS error. Check browser console for more details.');
+                    }
+                    
                     // Return cached value if available, otherwise default
                     return this.cachedData !== null ? this.cachedData : { 
                         total: 0, 
                         adults: 0, 
                         children: 0, 
-                        families: 0 
+                        families: 0,
+                        error: error.message
                     };
                 }
             }
             
             async updateDisplay() {
+                console.log('Updating display...');
                 const data = await this.getAttendeeData();
+                
+                console.log('Data to display:', data);
                 
                 // Update all counter elements
                 const elements = {
@@ -2465,6 +2489,7 @@
                     const element = document.getElementById(id);
                     if (element) {
                         element.textContent = value;
+                        console.log(`Updated ${id} to: ${value}`);
                         
                         // Add animation to the main total
                         if (id === 'attendee-total') {
@@ -2473,13 +2498,19 @@
                                 element.style.transform = 'scale(1)';
                             }, 300);
                         }
+                    } else {
+                        console.error(`Element with id '${id}' not found!`);
                     }
                 });
                 
-                console.log('Updated attendee breakdown:', data);
+                // If there's an error, show it in the console
+                if (data.error) {
+                    console.error('Data fetch error:', data.error);
+                }
             }
             
             startAutoUpdate(interval = 120000) {
+                console.log('Starting Halloween counter...');
                 // Initial update
                 this.updateDisplay();
                 
@@ -2490,6 +2521,7 @@
         
         // Initialize the counter when page loads
         document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing counter...');
             const counter = new HalloweenCounter();
             counter.startAutoUpdate();
         });
