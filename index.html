@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coq Carlanais - Club de Basket du Carla Bayle</title>
+    <meta name="description" content="Club de basket-ball Coq Carlanais à Carla Bayle. Équipes pour tous les âges, entraînements, compétitions et inscriptions.">
     <link rel="icon" href="Coq_carlanais_logo.jpg" type="image/jpeg">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -105,6 +106,7 @@
 
         .logo-img {
             height: 50px;
+            width: auto;
             margin-right: 10px;
         }
 
@@ -122,15 +124,27 @@
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
         }
 
-        .nav-link:hover {
+        .nav-link:hover,
+        .nav-link:focus {
             color: var(--vibrant-yellow);
+            outline: none;
+        }
+
+        .nav-link:focus {
+            outline: 2px solid var(--vibrant-yellow);
+            outline-offset: 4px;
         }
 
         .hamburger {
             display: none;
             cursor: pointer;
+            background: transparent;
+            border: none;
+            padding: 0.5rem;
         }
 
         .bar {
@@ -181,12 +195,21 @@
             border: none;
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
+            min-height: 44px;
+            text-align: center;
         }
 
-        .btn:hover {
+        .btn:hover,
+        .btn:focus {
             background-color: var(--hover-yellow);
             transform: translateY(-3px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            outline: none;
+        }
+
+        .btn:focus {
+            outline: 2px solid var(--primary-black);
+            outline-offset: 2px;
         }
 
         .btn:disabled {
@@ -438,7 +461,8 @@
             color: var(--primary-black);
         }
 
-        .btn-outline:hover {
+        .btn-outline:hover,
+        .btn-outline:focus {
             background: var(--vibrant-yellow);
         }
 
@@ -523,6 +547,7 @@
             font-family: 'Open Sans', sans-serif;
             font-size: 1rem;
             transition: all 0.3s ease;
+            min-height: 44px;
         }
 
         .form-control:focus {
@@ -725,12 +750,21 @@
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .tier-option input[type="radio"]:checked + label {
             background-color: var(--vibrant-yellow);
             border-color: var(--secondary-yellow);
             font-weight: bold;
+        }
+
+        .tier-option label:focus {
+            outline: 2px solid var(--vibrant-yellow);
+            outline-offset: 2px;
         }
 
         .custom-amount {
@@ -848,6 +882,7 @@
 
         .footer-logo-img {
             height: 40px;
+            width: auto;
             margin-right: 10px;
         }
 
@@ -860,10 +895,23 @@
             color: var(--white);
             font-size: 1.5rem;
             transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
         }
 
-        .social-icon:hover {
+        .social-icon:hover,
+        .social-icon:focus {
             color: var(--vibrant-yellow);
+            outline: none;
+        }
+
+        .social-icon:focus {
+            outline: 2px solid var(--vibrant-yellow);
+            outline-offset: 2px;
         }
 
         .footer-info {
@@ -876,6 +924,24 @@
             margin-top: 2rem;
             font-size: 0.9rem;
             color: #aaa;
+        }
+
+        /* Skip to main content link for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--vibrant-yellow);
+            color: var(--primary-black);
+            padding: 8px;
+            z-index: 1001;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        .skip-link:focus {
+            top: 6px;
         }
 
         /* Responsive Design */
@@ -934,6 +1000,8 @@
             .btn {
                 width: 100%;
                 max-width: 250px;
+                font-size: 1.1rem;
+                padding: 1rem 1.5rem;
             }
 
             .features {
@@ -980,8 +1048,11 @@
     </style>
 </head>
 <body>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Menu principal">
         <div class="container nav-container">
             <a href="#" class="logo">
                 <img src="Coq_carlanais_logo.jpg" alt="Logo Coq Carlanais" class="logo-img">
@@ -995,11 +1066,11 @@
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="#sponsors" class="nav-link">Sponsors</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </div>
     </nav>
 
@@ -1015,585 +1086,588 @@
         </div>
     </section>
 
-    <!-- Section Le Club -->
-    <section id="club" class="about">
-        <div class="container">
-            <h2>Le Club</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Fondé en 1948, le Coq Carlanais est bien plus qu'un simple club de basket. C'est une véritable institution à Carla Bayle, un lieu de rassemblement où se mêlent passion du sport et esprit communautaire.</p>
-                    <p>Notre mission est de promouvoir les valeurs du basket-ball auprès de tous les âges, en favorisant le développement personnel, l'esprit d'équipe et le fair-play dans un environnement bienveillant et compétitif.</p>
-                </div>
-                <div class="features">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Jeunes & Adultes</h3>
-                        <p>Des programmes adaptés pour tous les âges et tous les niveaux, de l'initiation au basket compétitif.</p>
+    <!-- Main content -->
+    <main id="main-content">
+        <!-- Section Le Club -->
+        <section id="club" class="about">
+            <div class="container">
+                <h2>Le Club</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Fondé en 1948, le Coq Carlanais est bien plus qu'un simple club de basket. C'est une véritable institution à Carla Bayle, un lieu de rassemblement où se mêlent passion du sport et esprit communautaire.</p>
+                        <p>Notre mission est de promouvoir les valeurs du basket-ball auprès de tous les âges, en favorisant le développement personnel, l'esprit d'équipe et le fair-play dans un environnement bienveillant et compétitif.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-basketball-ball"></i>
-                        </div>
-                        <h3>Esprit d'Équipe</h3>
-                        <p>Nous cultivons la cohésion, l'entraide et le respect mutuel sur et en dehors du terrain.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3>Compétition & Loisir</h3>
-                        <p>Que vous visiez la compétition ou simplement le plaisir du jeu, il y a une place pour vous.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Nos Équipes -->
-    <section id="equipes" class="teams">
-        <div class="container">
-            <h2>Nos Équipes</h2>
-            <div class="team-cards">
-                <div class="team-card">
-                    <img src="U7_9.png" alt="Équipe de basket U7/U9 du Coq Carlanais" class="team-img">
-                    <div class="team-info">
-                        <h3>U7 / U9</h3>
-                        <p>Pour les plus jeunes (nés de 2017 à 2019), découverte du basket avec une approche ludique et éducative.</p>
-                        <div class="team-schedule">
-                            <strong>Entraînement:</strong> Vendredi 17h30-18h30
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img src="U11.png" alt="Équipe de basket U11 du Coq Carlanais" class="team-img">
-                    <div class="team-info">
-                        <h3>U11 Mixte</h3>
-                        <p>Initiation au basket pour les enfants nés en 2015/2016 avec développement des fondamentaux.</p>
-                        <div class="team-schedule">
-                            <strong>Entraînement:</strong> Mercredi 15h30-17h00<br>
-                            <strong>Match/Entraînement:</strong> Samedi 9h00-11h00
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img src="U13Filles.png" alt="Équipe de basket U13 Filles du Coq Carlanais" class="team-img">
-                    <div class="team-info">
-                        <h3>U13 Filles</h3>
-                        <p>Perfectionnement des fondamentaux et premières compétitions pour les filles nées en 2013/2014.</p>
-                        <div class="team-schedule">
-                            <strong>Entraînement:</strong> Mardi 18h00-19h30
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img src="U13Garcons.png" alt="Équipe de basket U13 Garçons du Coq Carlanais" class="team-img">
-                    <div class="team-info">
-                        <h3>U13 Garçons</h3>
-                        <p>Développement des compétences techniques et tactiques pour les garçons nés en 2013/2014.</p>
-                        <div class="team-schedule">
-                            <strong>Entraînement:</strong> Mercredi 17h00-18h30
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img src="U15Filles.png" alt="Équipe de basket U15 Filles du Coq Carlanais" class="team-img">
-                    <div class="team-info">
-                        <h3>U15 Filles</h3>
-                        <p>Approfondissement technique et préparation aux compétitions pour les filles nées en 2011/2012.</p>
-                        <div class="team-schedule">
-                            <strong>Entraînement:</strong> Jeudi 18h00-19h30
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img src="U15Garcons.png" alt="Équipe de basket U15 Garçons du Coq Carlanais" class="team-img">
-                    <div class="team-info">
-                        <h3>U15 Garçons</h3>
-                        <p>Développement des compétences avancées pour les garçons nés en 2011/2012 en vue des compétitions.</p>
-                        <div class="team-schedule">
-                            <strong>Entraînement:</strong> Mercredi 18h30-20h00
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img src="U18Garcons.png" alt="Équipe de basket U18 Garçons du Coq Carlanais" class="team-img">
-                    <div class="team-info">
-                        <h3>U18 Garçons</h3>
-                        <p>Préparation au niveau senior pour les garçons nés de 2008 à 2010 avec un programme intensif.</p>
-                        <div class="team-schedule">
-                            <strong>Entraînement:</strong> Vendredi 18h30-20h00<br>
-                            <strong>Entraînement:</strong> Mercredi 20h00-22h00 (avec séniors)
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img src="SeniorGarcons.png" alt="Équipe de basket Séniors du Coq Carlanais" class="team-img">
-                    <div class="team-info">
-                        <h3>Séniors Garçons & Filles (Hoops)</h3>
-                        <p>Notre équipe phare qui évolue en championnat avec passion et détermination.</p>
-                        <div class="team-schedule">
-                            <strong>Entraînement:</strong> Lundi 20h30-22h30
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img src="SeniorFilles.png" alt="Équipe de basket Séniors Filles du Coq Carlanais" class="team-img">
-                    <div class="team-info">
-                        <h3>Séniors Filles</h3>
-                        <p>Une équipe dynamique et compétitive qui représente fièrement notre club en championnat.</p>
-                        <div class="team-schedule">
-                            <strong>Entraînement:</strong> Vendredi 20h00-22h00
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img src="Basket_Loisir.png" alt="Équipe de basket Loisirs du Coq Carlanais" class="team-img">
-                    <div class="team-info">
-                        <h3>Basket Loisirs</h3>
-                        <p>Pour ceux qui souhaitent pratiquer le basket pour le plaisir, sans la pression de la compétition.</p>
-                        <div class="team-schedule">
-                            <strong>Entraînement:</strong> Mardi 19h30-21h00
-                        </div>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <img src="Basket_sante.png" alt="Équipe de basket Santé du Coq Carlanais" class="team-img">
-                    <div class="team-info">
-                        <h3>Basket Santé</h3>
-                        <p>Pratique adaptée du basket pour le bien-être et la santé, accessible à tous.</p>
-                        <div class="team-schedule">
-                            <strong>Entraînement:</strong> Jeudi 19h30-20h30
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Horaires -->
-    <section id="horaires" class="schedule">
-        <div class="container">
-            <h2>Horaires d'Entraînement 2025/2026</h2>
-            <div class="schedule-container">
-                <div class="schedule-day">
-                    <h3>Lundi</h3>
-                    <div class="schedule-item">
-                        <span class="schedule-time">20h30 - 22h30</span>
-                        <span>Séniors Garçons & Filles (Hoops)</span>
-                    </div>
-                </div>
-                <div class="schedule-day">
-                    <h3>Mardi</h3>
-                    <div class="schedule-item">
-                        <span class="schedule-time">18h00 - 19h30</span>
-                        <span>U13 Filles</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span class="schedule-time">19h30 - 21h00</span>
-                        <span>Basket Loisirs</span>
-                    </div>
-                </div>
-                <div class="schedule-day">
-                    <h3>Mercredi</h3>
-                    <div class="schedule-item">
-                        <span class="schedule-time">15h30 - 17h00</span>
-                        <span>U11 Mixte</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span class="schedule-time">17h00 - 18h30</span>
-                        <span>U13 Garçons</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span class="schedule-time">18h30 - 20h00</span>
-                        <span>U15 Garçons</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span class="schedule-time">20h00 - 22h00</span>
-                        <span>U18 / Séniors Garçons</span>
-                    </div>
-                </div>
-                <div class="schedule-day">
-                    <h3>Jeudi</h3>
-                    <div class="schedule-item">
-                        <span class="schedule-time">18h00 - 19h30</span>
-                        <span>U15 Filles</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span class="schedule-time">19h30 - 20h30</span>
-                        <span>Basket Santé</span>
-                    </div>
-                </div>
-                <div class="schedule-day">
-                    <h3>Vendredi</h3>
-                    <div class="schedule-item">
-                        <span class="schedule-time">17h30 - 18h30</span>
-                        <span>U7 / U9</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span class="schedule-time">18h30 - 20h00</span>
-                        <span>U18 Garçons</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span class="schedule-time">20h00 - 22h00</span>
-                        <span>Séniors Filles</span>
-                    </div>
-                </div>
-                <div class="schedule-day">
-                    <h3>Samedi</h3>
-                    <div class="schedule-item">
-                        <span class="schedule-time">9h00 - 11h00</span>
-                        <span>U11 Entraînement ou Match</span>
-                    </div>
-                    <div class="schedule-item">
-                        <span class="schedule-time">11h00 - 22h00</span>
-                        <span>Match</span>
-                    </div>
-                </div>
-                <div class="schedule-day">
-                    <h3>Dimanche</h3>
-                    <div class="schedule-item">
-                        <span class="schedule-time">9h00 - 13h00</span>
-                        <span>U9 Plateau ou Stage</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Facebook -->
-    <section class="facebook">
-        <div class="container">
-            <div class="facebook-content">
-                <div class="facebook-icon">
-                    <i class="fab fa-facebook"></i>
-                </div>
-                <h2>Calendrier & Résultats</h2>
-                <p>Retrouvez tous les matchs, résultats et actualités du club sur notre page Facebook.</p>
-                <a href="https://www.facebook.com/coqcarlanaisbasket" class="btn" target="_blank">Voir sur Facebook</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Contact - REDESIGNED -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact & Inscriptions</h2>
-            
-            <div class="contact-intro">
-                <p>Nous accueillons les joueurs de tous niveaux et de tous âges, du débutant au confirmé. Pour toute question ou pour rejoindre notre club, n'hésitez pas à nous contacter.</p>
-            </div>
-            
-            <div class="contact-container">
-                <!-- Contact Information Column -->
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-card-header">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
+                    <div class="features">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
                             </div>
-                            <h3>Nous rencontrer</h3>
+                            <h3>Jeunes & Adultes</h3>
+                            <p>Des programmes adaptés pour tous les âges et tous les niveaux, de l'initiation au basket compétitif.</p>
                         </div>
-                        <div class="contact-card-body">
-                            <p><strong>Salle Marcel Guichou</strong><br>09130 Carla Bayle, France</p>
-                            <a href="https://maps.app.goo.gl/26G7AS5bg4rqvmGN7" target="_blank" class="btn btn-outline">Voir sur la carte</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-card-header">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-basketball-ball"></i>
                             </div>
-                            <h3>Horaires d'entraînement</h3>
+                            <h3>Esprit d'Équipe</h3>
+                            <p>Nous cultivons la cohésion, l'entraide et le respect mutuel sur et en dehors du terrain.</p>
                         </div>
-                        <div class="contact-card-body">
-                            <p>Consultez notre planning complet dans la section <a href="#horaires">Horaires</a>.</p>
-                            <p class="highlight-text">Venez nous rencontrer lors d'un entraînement!</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-card-header">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-trophy"></i>
                             </div>
-                            <h3>Téléphone</h3>
-                        </div>
-                        <div class="contact-card-body">
-                            <p>05 61 68 51 32 (Mairie du Carla)</p>
+                            <h3>Compétition & Loisir</h3>
+                            <p>Que vous visiez la compétition ou simplement le plaisir du jeu, il y a une place pour vous.</p>
                         </div>
                     </div>
-                    
-                    <div class="contact-card">
-                        <div class="contact-card-header">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Nos Équipes -->
+        <section id="equipes" class="teams">
+            <div class="container">
+                <h2>Nos Équipes</h2>
+                <div class="team-cards">
+                    <div class="team-card">
+                        <img src="U7_9.png" alt="Équipe de basket U7/U9 du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>U7 / U9</h3>
+                            <p>Pour les plus jeunes (nés de 2017 à 2019), découverte du basket avec une approche ludique et éducative.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Vendredi 17h30-18h30
                             </div>
-                            <h3>Email</h3>
-                        </div>
-                        <div class="contact-card-body">
-                            <p><a href="mailto:contact@coqcarlanais.fr">contact@coqcarlanais.fr</a></p>
                         </div>
                     </div>
+                    <div class="team-card">
+                        <img src="U11.png" alt="Équipe de basket U11 du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>U11 Mixte</h3>
+                            <p>Initiation au basket pour les enfants nés en 2015/2016 avec développement des fondamentaux.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Mercredi 15h30-17h00<br>
+                                <strong>Match/Entraînement:</strong> Samedi 9h00-11h00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="U13Filles.png" alt="Équipe de basket U13 Filles du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>U13 Filles</h3>
+                            <p>Perfectionnement des fondamentaux et premières compétitions pour les filles nées en 2013/2014.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Mardi 18h00-19h30
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="U13Garcons.png" alt="Équipe de basket U13 Garçons du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>U13 Garçons</h3>
+                            <p>Développement des compétences techniques et tactiques pour les garçons nés en 2013/2014.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Mercredi 17h00-18h30
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="U15Filles.png" alt="Équipe de basket U15 Filles du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>U15 Filles</h3>
+                            <p>Approfondissement technique et préparation aux compétitions pour les filles nées en 2011/2012.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Jeudi 18h00-19h30
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="U15Garcons.png" alt="Équipe de basket U15 Garçons du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>U15 Garçons</h3>
+                            <p>Développement des compétences avancées pour les garçons nés en 2011/2012 en vue des compétitions.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Mercredi 18h30-20h00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="U18Garcons.png" alt="Équipe de basket U18 Garçons du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>U18 Garçons</h3>
+                            <p>Préparation au niveau senior pour les garçons nés de 2008 à 2010 avec un programme intensif.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Vendredi 18h30-20h00<br>
+                                <strong>Entraînement:</strong> Mercredi 20h00-22h00 (avec séniors)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="SeniorGarcons.png" alt="Équipe de basket Séniors du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>Séniors Garçons & Filles (Hoops)</h3>
+                            <p>Notre équipe phare qui évolue en championnat avec passion et détermination.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Lundi 20h30-22h30
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="SeniorFilles.png" alt="Équipe de basket Séniors Filles du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>Séniors Filles</h3>
+                            <p>Une équipe dynamique et compétitive qui représente fièrement notre club en championnat.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Vendredi 20h00-22h00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="Basket_Loisir.png" alt="Équipe de basket Loisirs du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>Basket Loisirs</h3>
+                            <p>Pour ceux qui souhaitent pratiquer le basket pour le plaisir, sans la pression de la compétition.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Mardi 19h30-21h00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="Basket_sante.png" alt="Équipe de basket Santé du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>Basket Santé</h3>
+                            <p>Pratique adaptée du basket pour le bien-être et la santé, accessible à tous.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Jeudi 19h30-20h30
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Horaires -->
+        <section id="horaires" class="schedule">
+            <div class="container">
+                <h2>Horaires d'Entraînement 2025/2026</h2>
+                <div class="schedule-container">
+                    <div class="schedule-day">
+                        <h3>Lundi</h3>
+                        <div class="schedule-item">
+                            <span class="schedule-time">20h30 - 22h30</span>
+                            <span>Séniors Garçons & Filles (Hoops)</span>
+                        </div>
+                    </div>
+                    <div class="schedule-day">
+                        <h3>Mardi</h3>
+                        <div class="schedule-item">
+                            <span class="schedule-time">18h00 - 19h30</span>
+                            <span>U13 Filles</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-time">19h30 - 21h00</span>
+                            <span>Basket Loisirs</span>
+                        </div>
+                    </div>
+                    <div class="schedule-day">
+                        <h3>Mercredi</h3>
+                        <div class="schedule-item">
+                            <span class="schedule-time">15h30 - 17h00</span>
+                            <span>U11 Mixte</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-time">17h00 - 18h30</span>
+                            <span>U13 Garçons</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-time">18h30 - 20h00</span>
+                            <span>U15 Garçons</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-time">20h00 - 22h00</span>
+                            <span>U18 / Séniors Garçons</span>
+                        </div>
+                    </div>
+                    <div class="schedule-day">
+                        <h3>Jeudi</h3>
+                        <div class="schedule-item">
+                            <span class="schedule-time">18h00 - 19h30</span>
+                            <span>U15 Filles</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-time">19h30 - 20h30</span>
+                            <span>Basket Santé</span>
+                        </div>
+                    </div>
+                    <div class="schedule-day">
+                        <h3>Vendredi</h3>
+                        <div class="schedule-item">
+                            <span class="schedule-time">17h30 - 18h30</span>
+                            <span>U7 / U9</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-time">18h30 - 20h00</span>
+                            <span>U18 Garçons</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-time">20h00 - 22h00</span>
+                            <span>Séniors Filles</span>
+                        </div>
+                    </div>
+                    <div class="schedule-day">
+                        <h3>Samedi</h3>
+                        <div class="schedule-item">
+                            <span class="schedule-time">9h00 - 11h00</span>
+                            <span>U11 Entraînement ou Match</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="schedule-time">11h00 - 22h00</span>
+                            <span>Match</span>
+                        </div>
+                    </div>
+                    <div class="schedule-day">
+                        <h3>Dimanche</h3>
+                        <div class="schedule-item">
+                            <span class="schedule-time">9h00 - 13h00</span>
+                            <span>U9 Plateau ou Stage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Facebook -->
+        <section class="facebook">
+            <div class="container">
+                <div class="facebook-content">
+                    <div class="facebook-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h2>Calendrier & Résultats</h2>
+                    <p>Retrouvez tous les matchs, résultats et actualités du club sur notre page Facebook.</p>
+                    <a href="https://www.facebook.com/coqcarlanaisbasket" class="btn" target="_blank" rel="noopener">Voir sur Facebook</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact - REDESIGNED -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact & Inscriptions</h2>
+                
+                <div class="contact-intro">
+                    <p>Nous accueillons les joueurs de tous niveaux et de tous âges, du débutant au confirmé. Pour toute question ou pour rejoindre notre club, n'hésitez pas à nous contacter.</p>
                 </div>
                 
-                <!-- Contact Form Column -->
-                <div class="contact-form-container">
-                    <div class="form-header">
-                        <h3>Formulaire de contact</h3>
+                <div class="contact-container">
+                    <!-- Contact Information Column -->
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-card-header">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h3>Nous rencontrer</h3>
+                            </div>
+                            <div class="contact-card-body">
+                                <p><strong>Salle Marcel Guichou</strong><br>09130 Carla Bayle, France</p>
+                                <a href="https://maps.app.goo.gl/26G7AS5bg4rqvmGN7" target="_blank" class="btn btn-outline" rel="noopener">Voir sur la carte</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-card-header">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h3>Horaires d'entraînement</h3>
+                            </div>
+                            <div class="contact-card-body">
+                                <p>Consultez notre planning complet dans la section <a href="#horaires">Horaires</a>.</p>
+                                <p class="highlight-text">Venez nous rencontrer lors d'un entraînement!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-card-header">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <h3>Téléphone</h3>
+                            </div>
+                            <div class="contact-card-body">
+                                <p>05 61 68 51 32 (Mairie du Carla)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-card-header">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h3>Email</h3>
+                            </div>
+                            <div class="contact-card-body">
+                                <p><a href="mailto:contact@coqcarlanais.fr">contact@coqcarlanais.fr</a></p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <form id="contact-form" action="https://formspree.io/f/xwprowvr" method="POST">
-                        <div class="form-section">
-                            <h4>Informations personnelles</h4>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="contact-first_name">Prénom *</label>
-                                    <input type="text" id="contact-first_name" name="first_name" class="form-control" required>
+                    <!-- Contact Form Column -->
+                    <div class="contact-form-container">
+                        <div class="form-header">
+                            <h3>Formulaire de contact</h3>
+                        </div>
+                        
+                        <form id="contact-form" action="https://formspree.io/f/xwprowvr" method="POST">
+                            <div class="form-section">
+                                <h4>Informations personnelles</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-first_name">Prénom *</label>
+                                        <input type="text" id="contact-first_name" name="first_name" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-last_name">Nom *</label>
+                                        <input type="text" id="contact-last_name" name="last_name" class="form-control" required>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="contact-last_name">Nom *</label>
-                                    <input type="text" id="contact-last_name" name="last_name" class="form-control" required>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-email">Email *</label>
+                                        <input type="email" id="contact-email" name="email" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-phone">Téléphone</label>
+                                        <input type="tel" id="contact-phone" name="phone" class="form-control">
+                                    </div>
                                 </div>
                             </div>
                             
-                            <div class="form-row">
+                            <div class="form-section">
+                                <h4>Votre demande</h4>
                                 <div class="form-group">
-                                    <label for="contact-email">Email *</label>
-                                    <input type="email" id="contact-email" name="email" class="form-control" required>
+                                    <label for="contact-subject">Sujet *</label>
+                                    <select id="contact-subject" name="subject" class="form-control" required>
+                                        <option value="">Sélectionnez un sujet</option>
+                                        <option value="Inscription - Jeune">Inscription pour un jeune</option>
+                                        <option value="Inscription - Adulte">Inscription pour un adulte</option>
+                                        <option value="Informations sur les entraînements">Informations sur les entraînements</option>
+                                        <option value="Informations sur les compétitions">Informations sur les compétitions</option>
+                                        <option value="Autre">Autre question</option>
+                                    </select>
                                 </div>
+                                
                                 <div class="form-group">
-                                    <label for="contact-phone">Téléphone</label>
-                                    <input type="tel" id="contact-phone" name="phone" class="form-control">
+                                    <label for="contact-message">Message *</label>
+                                    <textarea id="contact-message" name="message" class="form-control" rows="5" placeholder="Décrivez votre demande..." required></textarea>
                                 </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-section">
-                            <h4>Votre demande</h4>
-                            <div class="form-group">
-                                <label for="contact-subject">Sujet *</label>
-                                <select id="contact-subject" name="subject" class="form-control" required>
-                                    <option value="">Sélectionnez un sujet</option>
-                                    <option value="Inscription - Jeune">Inscription pour un jeune</option>
-                                    <option value="Inscription - Adulte">Inscription pour un adulte</option>
-                                    <option value="Informations sur les entraînements">Informations sur les entraînements</option>
-                                    <option value="Informations sur les compétitions">Informations sur les compétitions</option>
-                                    <option value="Autre">Autre question</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="contact-message">Message *</label>
-                                <textarea id="contact-message" name="message" class="form-control" rows="5" placeholder="Décrivez votre demande..." required></textarea>
-                            </div>
-                        </div>
-                        
-                        <!-- Hidden fields for Formspree -->
-                        <input type="hidden" name="_subject" value="Nouveau message de contact - Coq Carlanais">
-                        <input type="hidden" name="_language" value="fr">
-                        
-                        <div id="contact-form-message"></div>
-                        
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            <span class="btn-text">Envoyer le message</span>
-                            <span class="btn-loading" style="display: none;">
-                                <i class="fas fa-spinner fa-spin"></i> Envoi en cours...
-                            </span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Sponsors - UPDATED -->
-    <section id="sponsors" class="sponsors">
-        <div class="container">
-            <h2>Nos Sponsors</h2>
-            <div class="sponsors-content">
-                <div class="sponsorship-intro">
-                    <p>Le Coq Carlanais Basketball Club compte sur le soutien de ses sponsors pour offrir les meilleures conditions d'entraînement et de compétition à ses joueurs.</p>
-                    <p>En soutenant le Coq Carlanais, vous investissez dans la jeunesse et le sport de votre territoire. Votre partenariat nous permet de développer nos équipes, d'organiser des événements et d'offrir les meilleures conditions d'entraînement à nos 200 licenciés.</p>
-                </div>
-                
-                <div class="sponsorship-tiers">
-                    <!-- Formule Bronze -->
-                    <div class="tier tier-bronze">
-                        <div class="tier-header">
-                            <h2 class="tier-name">Partenaire Bronze</h2>
-                            <p class="tier-price">50 - 500 €</p>
-                        </div>
-                        <div class="tier-benefits">
-                            <ul class="benefit-list">
-                                <li><i class="fas fa-check"></i> Logo sur notre site internet</li>
-                                <li><i class="fas fa-check"></i> Mention sur nos réseaux sociaux</li>
-                                <li><i class="fas fa-check"></i> Logo sur nos supports de communication</li>
-                                <li><i class="fas fa-check"></i> Invitation à nos événements</li>
-                                <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos équipements d'entraînement</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Formule Argent -->
-                    <div class="tier tier-silver">
-                        <div class="tier-header">
-                            <h2 class="tier-name">Partenaire Argent</h2>
-                            <p class="tier-price">500 - 1000 €</p>
-                        </div>
-                        <div class="tier-benefits">
-                            <ul class="benefit-list">
-                                <li><i class="fas fa-check"></i> Tous les avantages Bronze</li>
-                                <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos maillots d'entraînement</span></li>
-                                <li><i class="fas fa-check"></i> Mise en avant lors de notre tournoi annuel</li>
-                                <li><i class="fas fa-check"></i> Article dédié sur nos réseaux sociaux</li>
-                                <li><i class="fas fa-check"></i> <span class="benefit-highlight">Bannière publicitaire dans notre salle</span></li>
-                                <li><i class="fas fa-check"></i> Remise des récompenses lors de notre tournoi</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Formule Or -->
-                    <div class="tier tier-gold">
-                        <div class="tier-header">
-                            <h2 class="tier-name">Partenaire Or</h2>
-                            <p class="tier-price">1000 € et +</p>
-                        </div>
-                        <div class="tier-benefits">
-                            <ul class="benefit-list">
-                                <li><i class="fas fa-check"></i> Tous les avantages Argent</li>
-                                <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos maillots de match</span></li>
-                                <li><i class="fas fa-check"></i> Interview et article dédié sur nos réseaux</li>
-                                <li><i class="fas fa-check"></i> <span class="benefit-highlight">Nom associé à une équipe (ex: "U15 sponsorisée par...")</span></li>
-                                <li><i class="fas fa-check"></i> Photo officielle avec l'équipe première</li>
-                                <li><i class="fas fa-check"></i> Invitation VIP à tous nos événements</li>
-                                <li><i class="fas fa-check"></i> <span class="benefit-highlight">Trophée Partenaire Officiel</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Donation Form -->
-                <div class="donation-section">
-                    <h2>Devenir Partenaire</h2>
-                    <p>Choisissez votre niveau de partenariat ou saisissez un montant personnalisé.</p>
-                    
-                    <form id="donation-form" action="https://formspree.io/f/manpevvz" method="POST">
-                        <div class="form-group">
-                            <label for="sponsor-type">Type de partenariat</label>
-                            <div class="tier-options">
-                                <div class="tier-option">
-                                    <input type="radio" id="bronze" name="sponsor_tier" value="Bronze (50€)">
-                                    <label for="bronze">Bronze (50€)</label>
-                                </div>
-                                <div class="tier-option">
-                                    <input type="radio" id="silver" name="sponsor_tier" value="Argent (500€)">
-                                    <label for="silver">Argent (500€)</label>
-                                </div>
-                                <div class="tier-option">
-                                    <input type="radio" id="gold" name="sponsor_tier" value="Or (1000€)">
-                                    <label for="gold">Or (1000€)</label>
-                                </div>
-                                <div class="tier-option">
-                                    <input type="radio" id="custom" name="sponsor_tier" value="Personnalisé" checked>
-                                    <label for="custom">Personnalisé</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="custom_amount">Montant personnalisé (€)</label>
-                            <div class="custom-amount">
-                                <input type="number" id="custom_amount" name="custom_amount" class="form-control" min="10" step="5" value="100">
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="first_name">Prénom</label>
-                                <input type="text" id="first_name" name="first_name" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="last_name">Nom</label>
-                                <input type="text" id="last_name" name="last_name" class="form-control" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Téléphone</label>
-                                <input type="tel" id="phone" name="phone" class="form-control" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company">Entreprise (optionnel)</label>
-                            <input type="text" id="company" name="company" class="form-control">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message (optionnel)</label>
-                            <textarea id="message" name="message" class="form-control" rows="4"></textarea>
-                        </div>
-                        
-                        <div class="donation-summary">
-                            <h3>Récapitulatif de votre don</h3>
-                            <div class="summary-item">
-                                <span>Type de partenariat:</span>
-                                <span id="summary-tier">Personnalisé</span>
-                            </div>
-                            <div class="summary-item">
-                                <span>Montant:</span>
-                                <span id="summary-amount">100 €</span>
-                            </div>
-                            <div class="summary-item total-amount">
-                                <span>Total:</span>
-                                <span id="summary-total">100 €</span>
                             </div>
                             
                             <!-- Hidden fields for Formspree -->
-                            <input type="hidden" name="_subject" value="Nouvelle demande de partenariat - Coq Carlanais">
+                            <input type="hidden" name="_subject" value="Nouveau message de contact - Coq Carlanais">
                             <input type="hidden" name="_language" value="fr">
-                        </div>
-                        
-                        <div id="form-message"></div>
-                        
-                        <button type="submit" class="btn" style="width: 100%; margin-top: 1.5rem;">Devenir Partenaire</button>
-                    </form>
-                </div>
-                
-                <div class="sponsor-cards">
-                    <div class="sponsor-card">
-                        <div class="sponsor-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h3>Devenir Sponsor</h3>
-                        <p>Plusieurs formules de partenariat disponibles selon votre entreprise et vos objectifs.</p>
-                    </div>
-                    <div class="sponsor-card">
-                        <div class="sponsor-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Visibilité</h3>
-                        <p>Bénéficiez d'une visibilité locale et régionale auprès d'une communauté engagée.</p>
-                    </div>
-                    <div class="sponsor-card">
-                        <div class="sponsor-icon">
-                            <i class="fas fa-basketball-ball"></i>
-                        </div>
-                        <h3>Soutien Local</h3>
-                        <p>Participez au développement du sport et de la jeunesse dans notre région.</p>
+                            
+                            <div id="contact-form-message"></div>
+                            
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                <span class="btn-text">Envoyer le message</span>
+                                <span class="btn-loading" style="display: none;">
+                                    <i class="fas fa-spinner fa-spin"></i> Envoi en cours...
+                                </span>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Section Sponsors - UPDATED -->
+        <section id="sponsors" class="sponsors">
+            <div class="container">
+                <h2>Nos Sponsors</h2>
+                <div class="sponsors-content">
+                    <div class="sponsorship-intro">
+                        <p>Le Coq Carlanais Basketball Club compte sur le soutien de ses sponsors pour offrir les meilleures conditions d'entraînement et de compétition à ses joueurs.</p>
+                        <p>En soutenant le Coq Carlanais, vous investissez dans la jeunesse et le sport de votre territoire. Votre partenariat nous permet de développer nos équipes, d'organiser des événements et d'offrir les meilleures conditions d'entraînement à nos 200 licenciés.</p>
+                    </div>
+                    
+                    <div class="sponsorship-tiers">
+                        <!-- Formule Bronze -->
+                        <div class="tier tier-bronze">
+                            <div class="tier-header">
+                                <h2 class="tier-name">Partenaire Bronze</h2>
+                                <p class="tier-price">50 - 500 €</p>
+                            </div>
+                            <div class="tier-benefits">
+                                <ul class="benefit-list">
+                                    <li><i class="fas fa-check"></i> Logo sur notre site internet</li>
+                                    <li><i class="fas fa-check"></i> Mention sur nos réseaux sociaux</li>
+                                    <li><i class="fas fa-check"></i> Logo sur nos supports de communication</li>
+                                    <li><i class="fas fa-check"></i> Invitation à nos événements</li>
+                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos équipements d'entraînement</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Formule Argent -->
+                        <div class="tier tier-silver">
+                            <div class="tier-header">
+                                <h2 class="tier-name">Partenaire Argent</h2>
+                                <p class="tier-price">500 - 1000 €</p>
+                            </div>
+                            <div class="tier-benefits">
+                                <ul class="benefit-list">
+                                    <li><i class="fas fa-check"></i> Tous les avantages Bronze</li>
+                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos maillots d'entraînement</span></li>
+                                    <li><i class="fas fa-check"></i> Mise en avant lors de notre tournoi annuel</li>
+                                    <li><i class="fas fa-check"></i> Article dédié sur nos réseaux sociaux</li>
+                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Bannière publicitaire dans notre salle</span></li>
+                                    <li><i class="fas fa-check"></i> Remise des récompenses lors de notre tournoi</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Formule Or -->
+                        <div class="tier tier-gold">
+                            <div class="tier-header">
+                                <h2 class="tier-name">Partenaire Or</h2>
+                                <p class="tier-price">1000 € et +</p>
+                            </div>
+                            <div class="tier-benefits">
+                                <ul class="benefit-list">
+                                    <li><i class="fas fa-check"></i> Tous les avantages Argent</li>
+                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos maillots de match</span></li>
+                                    <li><i class="fas fa-check"></i> Interview et article dédié sur nos réseaux</li>
+                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Nom associé à une équipe (ex: "U15 sponsorisée par...")</span></li>
+                                    <li><i class="fas fa-check"></i> Photo officielle avec l'équipe première</li>
+                                    <li><i class="fas fa-check"></i> Invitation VIP à tous nos événements</li>
+                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Trophée Partenaire Officiel</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Donation Form -->
+                    <div class="donation-section">
+                        <h2>Devenir Partenaire</h2>
+                        <p>Choisissez votre niveau de partenariat ou saisissez un montant personnalisé.</p>
+                        
+                        <form id="donation-form" action="https://formspree.io/f/manpevvz" method="POST">
+                            <div class="form-group">
+                                <label for="sponsor-type">Type de partenariat</label>
+                                <div class="tier-options">
+                                    <div class="tier-option">
+                                        <input type="radio" id="bronze" name="sponsor_tier" value="Bronze (50€)">
+                                        <label for="bronze">Bronze (50€)</label>
+                                    </div>
+                                    <div class="tier-option">
+                                        <input type="radio" id="silver" name="sponsor_tier" value="Argent (500€)">
+                                        <label for="silver">Argent (500€)</label>
+                                    </div>
+                                    <div class="tier-option">
+                                        <input type="radio" id="gold" name="sponsor_tier" value="Or (1000€)">
+                                        <label for="gold">Or (1000€)</label>
+                                    </div>
+                                    <div class="tier-option">
+                                        <input type="radio" id="custom" name="sponsor_tier" value="Personnalisé" checked>
+                                        <label for="custom">Personnalisé</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="custom_amount">Montant personnalisé (€)</label>
+                                <div class="custom-amount">
+                                    <input type="number" id="custom_amount" name="custom_amount" class="form-control" min="10" step="5" value="100">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first_name">Prénom</label>
+                                    <input type="text" id="first_name" name="first_name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name">Nom</label>
+                                    <input type="text" id="last_name" name="last_name" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Téléphone</label>
+                                    <input type="tel" id="phone" name="phone" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Entreprise (optionnel)</label>
+                                <input type="text" id="company" name="company" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message (optionnel)</label>
+                                <textarea id="message" name="message" class="form-control" rows="4"></textarea>
+                            </div>
+                            
+                            <div class="donation-summary">
+                                <h3>Récapitulatif de votre don</h3>
+                                <div class="summary-item">
+                                    <span>Type de partenariat:</span>
+                                    <span id="summary-tier">Personnalisé</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Montant:</span>
+                                    <span id="summary-amount">100 €</span>
+                                </div>
+                                <div class="summary-item total-amount">
+                                    <span>Total:</span>
+                                    <span id="summary-total">100 €</span>
+                                </div>
+                                
+                                <!-- Hidden fields for Formspree -->
+                                <input type="hidden" name="_subject" value="Nouvelle demande de partenariat - Coq Carlanais">
+                                <input type="hidden" name="_language" value="fr">
+                            </div>
+                            
+                            <div id="form-message"></div>
+                            
+                            <button type="submit" class="btn" style="width: 100%; margin-top: 1.5rem;">Devenir Partenaire</button>
+                        </form>
+                    </div>
+                    
+                    <div class="sponsor-cards">
+                        <div class="sponsor-card">
+                            <div class="sponsor-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>Devenir Sponsor</h3>
+                            <p>Plusieurs formules de partenariat disponibles selon votre entreprise et vos objectifs.</p>
+                        </div>
+                        <div class="sponsor-card">
+                            <div class="sponsor-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Visibilité</h3>
+                            <p>Bénéficiez d'une visibilité locale et régionale auprès d'une communauté engagée.</p>
+                        </div>
+                        <div class="sponsor-card">
+                            <div class="sponsor-icon">
+                                <i class="fas fa-basketball-ball"></i>
+                            </div>
+                            <h3>Soutien Local</h3>
+                            <p>Participez au développement du sport et de la jeunesse dans notre région.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -1604,9 +1678,9 @@
                     Coq Carlanais
                 </a>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/coqcarlanaisbasket" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/coq_carlanais/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://competitions.ffbb.com/ligues/occ/comites/0009/clubs/occ0009006" class="social-icon" target="_blank"><i class="fas fa-basketball-ball"></i></a>
+                    <a href="https://www.facebook.com/coqcarlanaisbasket" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/coq_carlanais/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://competitions.ffbb.com/ligues/occ/comites/0009/clubs/occ0009006" class="social-icon" target="_blank" rel="noopener" aria-label="FFBB"><i class="fas fa-basketball-ball"></i></a>
                 </div>
                 <div class="footer-info">
                     <p>Salle Marcel Guichou, 09130 Carla Bayle, France</p>
@@ -1625,14 +1699,17 @@
         const navMenu = document.querySelector('.nav-menu');
 
         hamburger.addEventListener('click', () => {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', !isExpanded);
         });
 
         // Fermer le menu au clic sur un lien
         document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
         }));
 
         // Effet de défilement fluide pour les ancres
