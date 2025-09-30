@@ -1047,21 +1047,25 @@
                 grid-template-columns: 1fr;
             }
         }
-        /* Halloween Counter Styles */
-        .halloween-counter {
+        /* Enhanced Halloween Counter Styles */
+        .halloween-counter-enhanced {
             text-align: center;
             margin-bottom: 3rem;
-            padding: 1.5rem;
+            padding: 2rem;
             background: rgba(255, 204, 0, 0.1);
             border-radius: 15px;
             border: 2px solid var(--vibrant-yellow);
-            max-width: 300px;
+            max-width: 500px;
             margin-left: auto;
             margin-right: auto;
         }
         
-        .counter-number {
-            font-size: 3rem;
+        .counter-main {
+            margin-bottom: 2rem;
+        }
+        
+        .counter-total {
+            font-size: 3.5rem;
             font-weight: bold;
             color: var(--vibrant-yellow);
             text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
@@ -1069,10 +1073,55 @@
             margin-bottom: 0.5rem;
         }
         
-        .counter-text {
-            font-size: 1.1rem;
+        .counter-label {
+            font-size: 1.3rem;
             color: var(--white);
-            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .counter-breakdown {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .breakdown-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .breakdown-icon {
+            font-size: 1.5rem;
+            color: var(--vibrant-yellow);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 204, 0, 0.2);
+            border-radius: 50%;
+        }
+        
+        .breakdown-info {
+            text-align: left;
+        }
+        
+        .breakdown-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+            line-height: 1;
+        }
+        
+        .breakdown-label {
+            font-size: 0.9rem;
+            color: #ddd;
+            margin-top: 0.2rem;
         }
         
         .counter-update {
@@ -1081,7 +1130,7 @@
             font-style: italic;
         }
         
-        /* Existing Halloween Styles (with slight adjustments) */
+        /* Keep existing Halloween styles, just remove the old counter styles */
         .halloween {
             background: linear-gradient(135deg, #1A1A1A 0%, #2D1B00 100%);
             color: var(--white);
@@ -1261,6 +1310,15 @@
             .halloween-details {
                 order: 1;
             }
+            
+            .counter-breakdown {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .halloween-counter-enhanced {
+                max-width: 400px;
+            }
         }
         
         @media screen and (max-width: 768px) {
@@ -1278,8 +1336,12 @@
                 font-size: 1.8rem;
             }
             
-            .counter-number {
-                font-size: 2.5rem;
+            .counter-total {
+                font-size: 3rem;
+            }
+            
+            .breakdown-item {
+                justify-content: center;
             }
         }
     </style>
@@ -1368,10 +1430,45 @@
                 <h2 class="halloween-title">SOIRÉE HALLOWEEN</h2>
                 <p class="halloween-subtitle">Organisée par le Club de Basket du Carla Bayle</p>
                 
-                <!-- Counter Display -->
-                <div class="halloween-counter">
-                    <div class="counter-number" id="attendee-count">...</div>
-                    <div class="counter-text">personnes attendues</div>
+                <!-- Enhanced Counter Display -->
+                <div class="halloween-counter-enhanced">
+                    <div class="counter-main">
+                        <div class="counter-total" id="attendee-total">...</div>
+                        <div class="counter-label">personnes attendues</div>
+                    </div>
+                    
+                    <div class="counter-breakdown">
+                        <div class="breakdown-item">
+                            <div class="breakdown-icon">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <div class="breakdown-info">
+                                <div class="breakdown-number" id="attendee-adults">...</div>
+                                <div class="breakdown-label">adultes</div>
+                            </div>
+                        </div>
+                        
+                        <div class="breakdown-item">
+                            <div class="breakdown-icon">
+                                <i class="fas fa-child"></i>
+                            </div>
+                            <div class="breakdown-info">
+                                <div class="breakdown-number" id="attendee-children">...</div>
+                                <div class="breakdown-label">enfants</div>
+                            </div>
+                        </div>
+                        
+                        <div class="breakdown-item">
+                            <div class="breakdown-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="breakdown-info">
+                                <div class="breakdown-number" id="attendee-families">...</div>
+                                <div class="breakdown-label">familles</div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="counter-update">Mise à jour automatique</div>
                 </div>
                 
@@ -2309,20 +2406,21 @@
                 contactMessageDiv.style.display = 'block';
             }
         });
-        // Enhanced Halloween Counter
+        
+        // Enhanced Halloween Counter with Detailed Breakdown
         class HalloweenCounter {
             constructor() {
                 this.scriptUrl = 'https://script.google.com/macros/s/AKfycbwSztbqAQadH9s_eGW0CuEDpi3qdrWbS6q1crDDryQHamOXXFnrJMokGnvsaF9F3S6L0g/exec';
                 this.cacheDuration = 120000; // 2 minutes
                 this.lastUpdate = 0;
-                this.cachedCount = null;
+                this.cachedData = null;
             }
             
-            async getAttendeeCount() {
+            async getAttendeeData() {
                 // Return cached result if it's fresh
                 const now = Date.now();
-                if (this.cachedCount !== null && (now - this.lastUpdate) < this.cacheDuration) {
-                    return this.cachedCount;
+                if (this.cachedData !== null && (now - this.lastUpdate) < this.cacheDuration) {
+                    return this.cachedData;
                 }
                 
                 try {
@@ -2333,34 +2431,52 @@
                     }
                     
                     const data = await response.json();
-                    const count = data.count || 0;
                     
                     // Update cache
-                    this.cachedCount = count;
+                    this.cachedData = data;
                     this.lastUpdate = now;
                     
-                    return count;
+                    return data;
                     
                 } catch (error) {
-                    console.error('Error fetching attendee count:', error);
-                    // Return cached value if available, otherwise 0
-                    return this.cachedCount !== null ? this.cachedCount : 0;
+                    console.error('Error fetching attendee data:', error);
+                    // Return cached value if available, otherwise default
+                    return this.cachedData !== null ? this.cachedData : { 
+                        total: 0, 
+                        adults: 0, 
+                        children: 0, 
+                        families: 0 
+                    };
                 }
             }
             
             async updateDisplay() {
-                const count = await this.getAttendeeCount();
-                const counterElement = document.getElementById('attendee-count');
+                const data = await this.getAttendeeData();
                 
-                if (counterElement) {
-                    counterElement.textContent = count;
-                    
-                    // Animation
-                    counterElement.style.transform = 'scale(1.1)';
-                    setTimeout(() => {
-                        counterElement.style.transform = 'scale(1)';
-                    }, 300);
-                }
+                // Update all counter elements
+                const elements = {
+                    'attendee-total': data.total,
+                    'attendee-adults': data.adults,
+                    'attendee-children': data.children,
+                    'attendee-families': data.families
+                };
+                
+                Object.entries(elements).forEach(([id, value]) => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.textContent = value;
+                        
+                        // Add animation to the main total
+                        if (id === 'attendee-total') {
+                            element.style.transform = 'scale(1.1)';
+                            setTimeout(() => {
+                                element.style.transform = 'scale(1)';
+                            }, 300);
+                        }
+                    }
+                });
+                
+                console.log('Updated attendee breakdown:', data);
             }
             
             startAutoUpdate(interval = 120000) {
@@ -2372,11 +2488,11 @@
             }
         }
         
-        // Initialize the counter
+        // Initialize the counter when page loads
         document.addEventListener('DOMContentLoaded', function() {
             const counter = new HalloweenCounter();
             counter.startAutoUpdate();
         });
-    </script>
+        </script>
 </body>
 </html>
