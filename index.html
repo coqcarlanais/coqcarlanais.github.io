@@ -1119,113 +1119,122 @@
         </div>
     </section>
 
-    <!-- Section Contact - UPDATED -->
+    <!-- Section Contact - REDESIGNED -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Contact</h2>
+            <h2>Contact & Inscriptions</h2>
+            
+            <div class="contact-intro">
+                <p>Nous accueillons les joueurs de tous niveaux et de tous âges, du débutant au confirmé. Pour toute question ou pour rejoindre notre club, n'hésitez pas à nous contacter.</p>
+            </div>
+            
             <div class="contact-container">
+                <!-- Contact Information Column -->
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Nous rencontrer</h3>
                         </div>
-                        <div>
-                            <h3>Adresse</h3>
-                            <p>Salle Marcel Guichou<br>09130 Carla Bayle, France</p>
-                            <a href="https://maps.app.goo.gl/26G7AS5bg4rqvmGN7" target="_blank" class="btn" style="margin-top: 10px;">Voir sur la carte</a>
+                        <div class="contact-card-body">
+                            <p><strong>Salle Marcel Guichou</strong><br>09130 Carla Bayle, France</p>
+                            <a href="https://maps.app.goo.gl/26G7AS5bg4rqvmGN7" target="_blank" class="btn btn-outline">Voir sur la carte</a>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
                             <h3>Horaires d'entraînement</h3>
-                            <p>Consultez notre planning complet dans la section "Horaires" ci-dessus.</p>
+                        </div>
+                        <div class="contact-card-body">
+                            <p>Consultez notre planning complet dans la section <a href="#horaires">Horaires</a>.</p>
+                            <p class="highlight-text">Venez nous rencontrer lors d'un entraînement!</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
                             <h3>Téléphone</h3>
+                        </div>
+                        <div class="contact-card-body">
                             <p>05 61 68 51 32 (Mairie du Carla)</p>
+                            <p class="contact-note">Pour les urgences uniquement</p>
                         </div>
                     </div>
                     
-                    <!-- Rejoignez-nous Section -->
-                    <div>
-                        <h3>Rejoignez-nous</h3>
-                        <p>Intéressé pour rejoindre notre club? Venez nous rencontrer lors d'un entraînement ou contactez-nous via notre formulaire de contact ou par email.</p>
-                        <p>Nous accueillons les joueurs de tous niveaux et de tous âges, du débutant au confirmé.</p>
-                        <a href="#contact" class="btn" style="margin-top: 20px;">Nous contacter</a>
-                    </div>
-                    
-                    <div class="contact-options">
-                        <h3>Moyens de contact</h3>
-                        <div class="contact-option">
-                            <div class="contact-option-icon">
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <div class="contact-icon">
                                 <i class="fas fa-envelope"></i>
                             </div>
-                            <div>
-                                <h4>Email</h4>
-                                <p>Envoyez-nous un email à contact@coqcarlanais.fr</p>
-                            </div>
+                            <h3>Email</h3>
                         </div>
-                        <div class="contact-option">
-                            <div class="contact-option-icon">
-                                <i class="fas fa-edit"></i>
-                            </div>
-                            <div>
-                                <h4>Formulaire de contact</h4>
-                                <p>Utilisez notre formulaire ci-contre</p>
-                            </div>
+                        <div class="contact-card-body">
+                            <p><a href="mailto:contact@coqcarlanais.fr">contact@coqcarlanais.fr</a></p>
+                            <p class="contact-note">Réponse sous 48h</p>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Contact Form Column -->
                 <div class="contact-form-container">
-                    <h3>Formulaire de contact</h3>
-                    <p>Vous pouvez nous contacter via ce formulaire ou directement par email à <strong>contact@coqcarlanais.fr</strong></p>
+                    <div class="form-header">
+                        <h3>Formulaire de contact</h3>
+                        <p>Préférez-vous le formulaire? Remplissez-le et nous vous répondrons rapidement.</p>
+                    </div>
                     
                     <form id="contact-form" action="https://formspree.io/f/xwprowvr" method="POST">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="contact-first_name">Prénom</label>
-                                <input type="text" id="contact-first_name" name="first_name" class="form-control" required>
+                        <div class="form-section">
+                            <h4>Informations personnelles</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-first_name">Prénom *</label>
+                                    <input type="text" id="contact-first_name" name="first_name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-last_name">Nom *</label>
+                                    <input type="text" id="contact-last_name" name="last_name" class="form-control" required>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="contact-last_name">Nom</label>
-                                <input type="text" id="contact-last_name" name="last_name" class="form-control" required>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-email">Email *</label>
+                                    <input type="email" id="contact-email" name="email" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-phone">Téléphone</label>
+                                    <input type="tel" id="contact-phone" name="phone" class="form-control">
+                                </div>
                             </div>
                         </div>
                         
-                        <div class="form-row">
+                        <div class="form-section">
+                            <h4>Votre demande</h4>
                             <div class="form-group">
-                                <label for="contact-email">Email</label>
-                                <input type="email" id="contact-email" name="email" class="form-control" required>
+                                <label for="contact-subject">Sujet *</label>
+                                <select id="contact-subject" name="subject" class="form-control" required>
+                                    <option value="">Sélectionnez un sujet</option>
+                                    <option value="Inscription - Jeune">Inscription pour un jeune</option>
+                                    <option value="Inscription - Adulte">Inscription pour un adulte</option>
+                                    <option value="Informations sur les entraînements">Informations sur les entraînements</option>
+                                    <option value="Informations sur les compétitions">Informations sur les compétitions</option>
+                                    <option value="Autre">Autre question</option>
+                                </select>
                             </div>
+                            
                             <div class="form-group">
-                                <label for="contact-phone">Téléphone</label>
-                                <input type="tel" id="contact-phone" name="phone" class="form-control">
+                                <label for="contact-message">Message *</label>
+                                <textarea id="contact-message" name="message" class="form-control" rows="5" placeholder="Décrivez votre demande..." required></textarea>
                             </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="contact-subject">Sujet</label>
-                            <select id="contact-subject" name="subject" class="form-control" required>
-                                <option value="">Sélectionnez un sujet</option>
-                                <option value="Informations sur les inscriptions">Informations sur les inscriptions</option>
-                                <option value="Demande de renseignements">Demande de renseignements</option>
-                                <option value="Problème technique">Problème technique</option>
-                                <option value="Autre">Autre</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="contact-message">Message</label>
-                            <textarea id="contact-message" name="message" class="form-control" rows="5" required></textarea>
                         </div>
                         
                         <!-- Hidden fields for Formspree -->
@@ -1234,7 +1243,12 @@
                         
                         <div id="contact-form-message"></div>
                         
-                        <button type="submit" class="btn" style="width: 100%;">Envoyer le message</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <span class="btn-text">Envoyer le message</span>
+                            <span class="btn-loading" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Envoi en cours...
+                            </span>
+                        </button>
                     </form>
                 </div>
             </div>
