@@ -1344,6 +1344,97 @@
                 justify-content: center;
             }
         }
+        /* Age Breakdown Styles */
+        .age-breakdown-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .age-breakdown-title {
+            text-align: center;
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .age-breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .age-group {
+            text-align: center;
+            padding: 1rem 0.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .age-group:hover {
+            background: rgba(255, 204, 0, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        .age-range {
+            font-size: 0.8rem;
+            color: var(--vibrant-yellow);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .age-number {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--white);
+            line-height: 1;
+        }
+        
+        .age-label {
+            font-size: 0.7rem;
+            color: #ddd;
+            margin-top: 0.3rem;
+            text-transform: lowercase;
+        }
+        
+        /* Age group specific colors for visual distinction */
+        .age-group:nth-child(1) .age-range { color: #FF6B6B; } /* 0-2 - Soft red */
+        .age-group:nth-child(2) .age-range { color: #4ECDC4; } /* 3-5 - Teal */
+        .age-group:nth-child(3) .age-range { color: #FFD166; } /* 6-8 - Yellow */
+        .age-group:nth-child(4) .age-range { color: #06D6A0; } /* 9-12 - Green */
+        .age-group:nth-child(5) .age-range { color: #118AB2; } /* 12+ - Blue */
+        
+        /* Responsive Design for Age Breakdown */
+        @media screen and (max-width: 968px) {
+            .age-breakdown-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.8rem;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .age-breakdown-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .age-group {
+                padding: 0.8rem 0.3rem;
+            }
+            
+            .age-number {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .age-breakdown-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1454,7 +1545,7 @@
                             </div>
                             <div class="breakdown-info">
                                 <div class="breakdown-number" id="attendee-children">...</div>
-                                <div class="breakdown-label">enfants</div>
+                                <div class="breakdown-label">enfants total</div>
                             </div>
                         </div>
                         
@@ -1465,6 +1556,38 @@
                             <div class="breakdown-info">
                                 <div class="breakdown-number" id="attendee-families">...</div>
                                 <div class="breakdown-label">familles</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Age Group Breakdown -->
+                    <div class="age-breakdown-section">
+                        <h4 class="age-breakdown-title">Répartition par âge des enfants</h4>
+                        <div class="age-breakdown-grid">
+                            <div class="age-group">
+                                <div class="age-range">0-2 ans</div>
+                                <div class="age-number" id="attendee-children0_2">...</div>
+                                <div class="age-label">bébés</div>
+                            </div>
+                            <div class="age-group">
+                                <div class="age-range">3-5 ans</div>
+                                <div class="age-number" id="attendee-children3_5">...</div>
+                                <div class="age-label">maternelle</div>
+                            </div>
+                            <div class="age-group">
+                                <div class="age-range">6-8 ans</div>
+                                <div class="age-number" id="attendee-children6_8">...</div>
+                                <div class="age-label">primaire</div>
+                            </div>
+                            <div class="age-group">
+                                <div class="age-range">9-12 ans</div>
+                                <div class="age-number" id="attendee-children9_12">...</div>
+                                <div class="age-label">pré-ado</div>
+                            </div>
+                            <div class="age-group">
+                                <div class="age-range">12+ ans</div>
+                                <div class="age-number" id="attendee-children12plus">...</div>
+                                <div class="age-label">ados</div>
                             </div>
                         </div>
                     </div>
@@ -2462,18 +2585,30 @@
                 try {
                     const data = await this.getAttendeeData();
                     
+                    // Update main counters
                     document.getElementById('attendee-total').textContent = data.total;
                     document.getElementById('attendee-adults').textContent = data.adults;
                     document.getElementById('attendee-children').textContent = data.children;
                     document.getElementById('attendee-families').textContent = data.families;
                     
+                    // Update age groups with exact matches from your form
+                    document.getElementById('attendee-children0_2').textContent = data.children0_2 || 0;
+                    document.getElementById('attendee-children3_5').textContent = data.children3_5 || 0;
+                    document.getElementById('attendee-children6_8').textContent = data.children6_8 || 0;
+                    document.getElementById('attendee-children9_12').textContent = data.children9_12 || 0;
+                    document.getElementById('attendee-children12plus').textContent = data.children12plus || 0;
+                    
                 } catch (error) {
                     console.error('Counter error:', error);
-                    // Show placeholder values
-                    document.getElementById('attendee-total').textContent = '...';
-                    document.getElementById('attendee-adults').textContent = '...';
-                    document.getElementById('attendee-children').textContent = '...';
-                    document.getElementById('attendee-families').textContent = '...';
+                    // Show placeholder values for all counters
+                    const elements = [
+                        'attendee-total', 'attendee-adults', 'attendee-children', 'attendee-families',
+                        'attendee-children0_2', 'attendee-children3_5', 'attendee-children6_8',
+                        'attendee-children9_12', 'attendee-children12plus'
+                    ];
+                    elements.forEach(id => {
+                        document.getElementById(id).textContent = '...';
+                    });
                 }
             }
             
