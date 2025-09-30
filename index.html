@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coq Carlanais - Club de Basket de Carla Bayle</title>
+    <title>Coq Carlanais - Club de Basket du Carla Bayle</title>
     <link rel="icon" href="Coq_carlanais_logo.jpg" type="image/jpeg">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1415,7 +1415,7 @@
         const summaryTier = document.getElementById('summary-tier');
         const summaryAmount = document.getElementById('summary-amount');
         const summaryTotal = document.getElementById('summary-total');
-
+        
         // Update donation summary when tier selection changes
         function updateDonationSummary() {
             let selectedTier = document.querySelector('input[name="sponsor_tier"]:checked');
@@ -1426,7 +1426,11 @@
                 amount = parseInt(customAmountInput.value) || 0;
                 tierName = 'Personnalisé';
             } else {
-                amount = parseInt(selectedTier.value);
+                // Extract only the numeric value from the tier string (e.g., "Bronze (50€)" -> 50)
+                const tierValue = selectedTier.value;
+                // Extract the number from the string using regex
+                const amountMatch = tierValue.match(/(\d+)/);
+                amount = amountMatch ? parseInt(amountMatch[0]) : 0;
                 tierName = selectedTier.parentElement.querySelector('label').textContent;
             }
             
@@ -1434,10 +1438,10 @@
             summaryAmount.textContent = amount + ' €';
             summaryTotal.textContent = amount + ' €';
         }
-
+        
         // Initialize donation summary
         updateDonationSummary();
-
+        
         // Add event listeners for tier selection
         tierRadios.forEach(radio => {
             radio.addEventListener('change', function() {
@@ -1449,6 +1453,18 @@
                 }
                 updateDonationSummary();
             });
+        });
+        
+        // Update summary when custom amount changes
+        customAmountInput.addEventListener('input', function() {
+            const minAmount = 10; // Minimum custom amount
+            let value = parseInt(this.value) || 0;
+            
+            if (value < minAmount) {
+                this.value = minAmount;
+            }
+            
+            updateDonationSummary();
         });
 
         // Update summary when custom amount changes
@@ -1518,7 +1534,7 @@
                 showFieldError(emailField, 'Veuillez entrer une adresse email valide');
                 isValid = false;
             }
-            
+
             return isValid;
         }
 
