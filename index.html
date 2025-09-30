@@ -2309,6 +2309,74 @@
                 contactMessageDiv.style.display = 'block';
             }
         });
+        // Enhanced Halloween Counter
+        class HalloweenCounter {
+            constructor() {
+                this.scriptUrl = 'YOUR_GOOGLE_SCRIPT_WEB_APP_URL_HERE';
+                this.cacheDuration = 120000; // 2 minutes
+                this.lastUpdate = 0;
+                this.cachedCount = null;
+            }
+            
+            async getAttendeeCount() {
+                // Return cached result if it's fresh
+                const now = Date.now();
+                if (this.cachedCount !== null && (now - this.lastUpdate) < this.cacheDuration) {
+                    return this.cachedCount;
+                }
+                
+                try {
+                    const response = await fetch(this.scriptUrl);
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    const count = data.count || 0;
+                    
+                    // Update cache
+                    this.cachedCount = count;
+                    this.lastUpdate = now;
+                    
+                    return count;
+                    
+                } catch (error) {
+                    console.error('Error fetching attendee count:', error);
+                    // Return cached value if available, otherwise 0
+                    return this.cachedCount !== null ? this.cachedCount : 0;
+                }
+            }
+            
+            async updateDisplay() {
+                const count = await this.getAttendeeCount();
+                const counterElement = document.getElementById('attendee-count');
+                
+                if (counterElement) {
+                    counterElement.textContent = count;
+                    
+                    // Animation
+                    counterElement.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        counterElement.style.transform = 'scale(1)';
+                    }, 300);
+                }
+            }
+            
+            startAutoUpdate(interval = 120000) {
+                // Initial update
+                this.updateDisplay();
+                
+                // Set up periodic updates
+                setInterval(() => this.updateDisplay(), interval);
+            }
+        }
+        
+        // Initialize the counter
+        document.addEventListener('DOMContentLoaded', function() {
+            const counter = new HalloweenCounter();
+            counter.startAutoUpdate();
+        });
     </script>
 </body>
 </html>
