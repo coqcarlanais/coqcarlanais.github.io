@@ -1047,7 +1047,41 @@
                 grid-template-columns: 1fr;
             }
         }
-        /* Halloween Section Styles */
+        /* Halloween Counter Styles */
+        .halloween-counter {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background: rgba(255, 204, 0, 0.1);
+            border-radius: 15px;
+            border: 2px solid var(--vibrant-yellow);
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .counter-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--vibrant-yellow);
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .counter-text {
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+        
+        .counter-update {
+            font-size: 0.8rem;
+            color: #aaa;
+            font-style: italic;
+        }
+        
+        /* Existing Halloween Styles (with slight adjustments) */
         .halloween {
             background: linear-gradient(135deg, #1A1A1A 0%, #2D1B00 100%);
             color: var(--white);
@@ -1093,7 +1127,7 @@
         .halloween-subtitle {
             text-align: center;
             font-size: 1.2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             color: #ddd;
         }
         
@@ -1205,6 +1239,12 @@
             font-size: 0.9rem;
             color: #aaa;
             font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .halloween-rsvp-note {
+            font-size: 0.9rem;
+            color: #ddd;
         }
         
         /* Responsive Design */
@@ -1236,6 +1276,10 @@
             
             .date-icon {
                 font-size: 1.8rem;
+            }
+            
+            .counter-number {
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -1324,6 +1368,13 @@
                 <h2 class="halloween-title">SOIRÉE HALLOWEEN</h2>
                 <p class="halloween-subtitle">Organisée par le Club de Basket du Carla Bayle</p>
                 
+                <!-- Counter Display -->
+                <div class="halloween-counter">
+                    <div class="counter-number" id="attendee-count">...</div>
+                    <div class="counter-text">personnes attendues</div>
+                    <div class="counter-update">Mise à jour automatique</div>
+                </div>
+                
                 <div class="halloween-content">
                     <div class="halloween-image">
                         <img src="halloween-carla.png" alt="Affiche Soirée Halloween Coq Carlanais" loading="lazy">
@@ -1367,8 +1418,14 @@
                         </div>
                         
                         <div class="halloween-cta">
-                            <a href="#contact" class="btn halloween-btn">Je participe !</a>
+                            <a href="https://forms.gle/RDVZMkXeBPzqy5CS6" 
+                               class="btn halloween-btn" 
+                               target="_blank" 
+                               rel="noopener">
+                                Je participe !
+                            </a>
                             <p class="halloween-note">Ouvert à tous - Déguisements fortement recommandés !</p>
+                            <p class="halloween-rsvp-note">Merci de nous indiquer votre présence pour nous aider à organiser au mieux la soirée</p>
                         </div>
                     </div>
                 </div>
