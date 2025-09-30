@@ -2407,99 +2407,69 @@
             }
         });
         
-        // Halloween Counter using JSONP (bypasses CORS completely)
+        // Halloween Counter using JSONP
         class HalloweenCounter {
             constructor() {
-                this.scriptUrl = 'https://script.google.com/macros/s/AKfycbz5eRDYnSkCpIOZjinMSft70DESvo9vadIZSba0eHolHZRoxDln2ztOTnyA3IDrQmf6zg/exec';
-                this.cacheDuration = 120000; // 2 minutes
+                this.scriptUrl = 'https://script.google.com/macros/s/AKfycbz5LnOB3XfrpZTUAmveiRqAltcme3gfdq2hnLyFhHV79Z161XFYoO1GTzXHWXWdccV8kg/exec';
+                this.cacheDuration = 120000;
                 this.lastUpdate = 0;
                 this.cachedData = null;
             }
             
             getAttendeeData() {
                 return new Promise((resolve, reject) => {
-                    // Return cached result if it's fresh
+                    // Return cached result if fresh
                     const now = Date.now();
                     if (this.cachedData !== null && (now - this.lastUpdate) < this.cacheDuration) {
                         resolve(this.cachedData);
                         return;
                     }
                     
-                    console.log('Fetching data via JSONP...');
+                    const callbackName = 'callback_' + Date.now();
+                    const url = `${this.scriptUrl}?callback=${callbackName}`;
                     
-                    // Create a unique callback function name
-                    const callbackName = 'halloweenCallback_' + Date.now();
-                    
-                    // Create the script element
                     const script = document.createElement('script');
-                    script.src = `${this.scriptUrl}?callback=${callbackName}&t=${Date.now()}`;
+                    script.src = url;
                     
-                    // Set timeout for JSONP request
                     const timeoutId = setTimeout(() => {
-                        document.head.removeChild(script);
-                        delete window[callbackName];
-                        reject(new Error('JSONP request timed out'));
-                    }, 10000); // 10 second timeout
+                        cleanup();
+                        reject(new Error('Timeout'));
+                    }, 10000);
                     
-                    script.onerror = () => {
+                    const cleanup = () => {
                         clearTimeout(timeoutId);
-                        document.head.removeChild(script);
+                        if (script.parentNode) document.head.removeChild(script);
                         delete window[callbackName];
-                        reject(new Error('Failed to load script'));
                     };
                     
-                    // Define the callback function
+                    script.onerror = () => {
+                        cleanup();
+                        reject(new Error('Script load failed'));
+                    };
+                    
                     window[callbackName] = (data) => {
-                        clearTimeout(timeoutId);
-                        document.head.removeChild(script);
-                        delete window[callbackName];
-                        
-                        console.log('JSONP data received:', data);
-                        
-                        // Update cache
+                        cleanup();
                         this.cachedData = data;
                         this.lastUpdate = now;
-                        
                         resolve(data);
                     };
                     
-                    // Add the script to the page
                     document.head.appendChild(script);
                 });
             }
             
             async updateDisplay() {
                 try {
-                    console.log('Updating display...');
                     const data = await this.getAttendeeData();
                     
-                    // Update all counter elements
-                    const elements = {
-                        'attendee-total': data.total,
-                        'attendee-adults': data.adults,
-                        'attendee-children': data.children,
-                        'attendee-families': data.families
-                    };
-                    
-                    Object.entries(elements).forEach(([id, value]) => {
-                        const element = document.getElementById(id);
-                        if (element) {
-                            element.textContent = value;
-                            console.log(`Updated ${id} to: ${value}`);
-                            
-                            // Add animation to the main total
-                            if (id === 'attendee-total') {
-                                element.style.transform = 'scale(1.1)';
-                                setTimeout(() => {
-                                    element.style.transform = 'scale(1)';
-                                }, 300);
-                            }
-                        }
-                    });
+                    document.getElementById('attendee-total').textContent = data.total;
+                    document.getElementById('attendee-adults').textContent = data.adults;
+                    document.getElementById('attendee-children').textContent = data.children;
+                    document.getElementById('attendee-families').textContent = data.families;
                     
                 } catch (error) {
-                    console.error('Error updating display:', error);
-                    // Show error state but don't break the page
+                    console.error('Counter error:', error);
+                    // Show placeholder values
                     document.getElementById('attendee-total').textContent = '...';
                     document.getElementById('attendee-adults').textContent = '...';
                     document.getElementById('attendee-children').textContent = '...';
@@ -2508,34 +2478,16 @@
             }
             
             startAutoUpdate(interval = 120000) {
-                console.log('Starting Halloween counter with JSONP...');
-                // Initial update
                 this.updateDisplay();
-                
-                // Set up periodic updates
                 setInterval(() => this.updateDisplay(), interval);
             }
         }
         
-        // Initialize the counter when page loads
+        // Initialize counter
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM loaded, initializing JSONP counter...');
             const counter = new HalloweenCounter();
             counter.startAutoUpdate();
         });
-        
-        // Manual test function
-        window.testHalloweenCounter = function() {
-            console.log('=== MANUAL TEST ===');
-            const counter = new HalloweenCounter();
-            counter.getAttendeeData().then(data => {
-                console.log('Manual test successful:', data);
-                alert('Counter works! Total: ' + data.total + ' attendees');
-            }).catch(error => {
-                console.error('Manual test failed:', error);
-                alert('Counter failed: ' + error.message);
-            });
-        };
         </script>
 </body>
 </html>
