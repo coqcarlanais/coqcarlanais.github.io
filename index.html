@@ -1048,87 +1048,56 @@
             }
         }
         /* Enhanced Halloween Counter Styles */
-        .halloween-counter-enhanced {
+        .halloween-counter-simplified {
             text-align: center;
             margin-bottom: 3rem;
-            padding: 2rem;
-            background: rgba(255, 204, 0, 0.1);
-            border-radius: 15px;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.15) 0%, rgba(255, 204, 0, 0.05) 100%);
+            border-radius: 20px;
             border: 2px solid var(--vibrant-yellow);
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
+            backdrop-filter: blur(10px);
         }
         
-        .counter-main {
-            margin-bottom: 2rem;
+        .counter-breakdown-simple {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
         }
         
-        .counter-total {
-            font-size: 3.5rem;
+        .breakdown-simple-item {
+            text-align: center;
+        }
+        
+        .breakdown-simple-number {
+            font-size: 2.2rem;
             font-weight: bold;
             color: var(--vibrant-yellow);
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
             line-height: 1;
             margin-bottom: 0.5rem;
         }
         
-        .counter-label {
-            font-size: 1.3rem;
+        .breakdown-simple-label {
+            font-size: 1rem;
+            color: var(--white);
+            font-weight: 500;
+        }
+        
+        .counter-cta {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 204, 0, 0.3);
+        }
+        
+        .counter-cta p {
+            margin-bottom: 1rem;
             color: var(--white);
             font-weight: 600;
         }
-        
-        .counter-breakdown {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .breakdown-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-        }
-        
-        .breakdown-icon {
-            font-size: 1.5rem;
-            color: var(--vibrant-yellow);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 204, 0, 0.2);
-            border-radius: 50%;
-        }
-        
-        .breakdown-info {
-            text-align: left;
-        }
-        
-        .breakdown-number {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--white);
-            line-height: 1;
-        }
-        
-        .breakdown-label {
-            font-size: 0.9rem;
-            color: #ddd;
-            margin-top: 0.2rem;
-        }
-        
-        .counter-update {
-            font-size: 0.8rem;
-            color: #aaa;
-            font-style: italic;
-        }
+
         
         /* Keep existing Halloween styles, just remove the old counter styles */
         .halloween {
@@ -1521,75 +1490,30 @@
                 <h2 class="halloween-title">SOIRÉE HALLOWEEN</h2>
                 <p class="halloween-subtitle">Organisée par le Club de Basket du Carla Bayle</p>
                 
-                <!-- Enhanced Counter Display -->
-                <div class="halloween-counter-enhanced">
+                <!-- Simplified Halloween Counter for Public Page -->
+                <div class="halloween-counter-simplified">
                     <div class="counter-main">
                         <div class="counter-total" id="attendee-total">...</div>
-                        <div class="counter-label">personnes attendues</div>
+                        <div class="counter-label">personnes attendues à notre soirée</div>
                     </div>
                     
-                    <div class="counter-breakdown">
-                        <div class="breakdown-item">
-                            <div class="breakdown-icon">
-                                <i class="fas fa-user-friends"></i>
-                            </div>
-                            <div class="breakdown-info">
-                                <div class="breakdown-number" id="attendee-adults">...</div>
-                                <div class="breakdown-label">adultes</div>
-                            </div>
+                    <div class="counter-breakdown-simple">
+                        <div class="breakdown-simple-item">
+                            <div class="breakdown-simple-number" id="attendee-adults">...</div>
+                            <div class="breakdown-simple-label">adultes</div>
                         </div>
-                        
-                        <div class="breakdown-item">
-                            <div class="breakdown-icon">
-                                <i class="fas fa-child"></i>
-                            </div>
-                            <div class="breakdown-info">
-                                <div class="breakdown-number" id="attendee-children">...</div>
-                                <div class="breakdown-label">enfants total</div>
-                            </div>
-                        </div>
-                        
-                        <div class="breakdown-item">
-                            <div class="breakdown-icon">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <div class="breakdown-info">
-                                <div class="breakdown-number" id="attendee-families">...</div>
-                                <div class="breakdown-label">familles</div>
-                            </div>
+                        <div class="breakdown-simple-item">
+                            <div class="breakdown-simple-number" id="attendee-children">...</div>
+                            <div class="breakdown-simple-label">enfants</div>
                         </div>
                     </div>
                     
-                    <!-- Age Group Breakdown -->
-                    <div class="age-breakdown-section">
-                        <h4 class="age-breakdown-title">Répartition par âge des enfants</h4>
-                        <div class="age-breakdown-grid">
-                            <div class="age-group">
-                                <div class="age-range">0-2 ans</div>
-                                <div class="age-number" id="attendee-children0_2">...</div>
-                            </div>
-                            <div class="age-group">
-                                <div class="age-range">3-5 ans</div>
-                                <div class="age-number" id="attendee-children3_5">...</div>
-                            </div>
-                            <div class="age-group">
-                                <div class="age-range">6-8 ans</div>
-                                <div class="age-number" id="attendee-children6_8">...</div>
-                            </div>
-                            <div class="age-group">
-                                <div class="age-range">9-12 ans</div>
-                                <div class="age-number" id="attendee-children9_12">...</div>
-                            </div>
-                            <div class="age-group">
-                                <div class="age-range">12+ ans</div>
-                                <div class="age-number" id="attendee-children12plus">...</div>
-                            </div>
-                        </div>
+                    <div class="counter-cta">
+                        <p>Rejoignez la fête ! 🎃</p>
+                        <a href="#halloween-rsvp" class="btn halloween-btn">Je participe !</a>
                     </div>
-                    
-                    <div class="counter-update">Mise à jour automatique</div>
                 </div>
-                
+
                 <div class="halloween-content">
                     <div class="halloween-image">
                         <img src="photos/halloween-carla.png" alt="Affiche Soirée Halloween Coq Carlanais" loading="lazy">
