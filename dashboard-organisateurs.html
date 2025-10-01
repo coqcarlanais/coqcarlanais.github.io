@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Organisateurs - Soirée Halloween Coq Carlanais</title>
-    <link rel="icon" type="image/jpg" href="/main/photos/Coq_carlanais_logo.jpg">
+    <link rel="icon" type="image/x-icon" href="/photos/Coq_carlanais_logo.jpg">
     <style>
         :root {
             --primary-black: #1A1A1A;
@@ -221,6 +221,14 @@
             border: 2px solid var(--vibrant-yellow);
         }
 
+        /* Fixed button styles */
+        .actions-section > div {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
         .btn {
             display: inline-block;
             padding: 0.8rem 1.8rem;
@@ -232,12 +240,11 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            margin: 0 0.5rem;
-            width: 280px; /* Sets a fixed width for all buttons */
-            box-sizing: border-box; /* Includes padding and border in the element's total width */
-            text-align: center; /* Ensures text is centered */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Ensures font consistency */
-            font-weight: 600; /* Matches your existing button style */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            font-size: 1rem;
         }
 
         .btn:hover {
@@ -260,6 +267,16 @@
             
             .dashboard-title {
                 font-size: 2rem;
+            }
+
+            .actions-section > div {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                min-width: 280px;
+                width: 100%;
             }
         }
     </style>
