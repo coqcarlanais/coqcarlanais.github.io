@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Organisateurs - Soirée Halloween Coq Carlanais</title>
+    <link rel="icon" type="image/jpg" href="/main/photos/Coq_carlanais_logo.jpg">
+    <style>
+        :root {
+            --primary-black: #1A1A1A;
+            --vibrant-yellow: #FFCC00;
+            --hover-yellow: #FFEB3B;
+            --white: #FFFFFF;
+            --light-grey: #F5F5F5;
+            --success-green: #28a745;
+            --warning-orange: #ffc107;
+            --info-blue: #17a2b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1A1A1A 0%, #2D1B00 100%);
+            color: var(--white);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 204, 0, 0.1);
+            border-radius: 15px;
+            border: 2px solid var(--vibrant-yellow);
+        }
+
+        .dashboard-title {
+            font-size: 2.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+        }
+
+        .dashboard-subtitle {
+            color: #ddd;
+            font-size: 1.1rem;
+        }
+
+        .last-updated {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .chart-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .chart-title {
+            color: var(--vibrant-yellow);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .chart {
+            width: 100%;
+            height: 250px;
+            position: relative;
+        }
+
+        .bar-chart {
+            display: flex;
+            align-items: end;
+            justify-content: space-around;
+            height: 200px;
+            padding: 1rem 0;
+        }
+
+        .bar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+
+        .bar {
+            width: 40px;
+            background: var(--vibrant-yellow);
+            border-radius: 5px 5px 0 0;
+            transition: height 0.3s ease;
+            position: relative;
+        }
+
+        .bar-label {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: #ddd;
+            text-align: center;
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--white);
+        }
+
+        .progress-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .progress-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .progress-title {
+            color: var(--vibrant-yellow);
+            font-size: 1.1rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--vibrant-yellow);
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+
+        .actions-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(255, 204, 0, 0.1);
+            border-radius: 15px;
+            border: 2px solid var(--vibrant-yellow);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--vibrant-yellow);
+            color: var(--primary-black);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 0 0.5rem;
+            width: 280px; /* Sets a fixed width for all buttons */
+            box-sizing: border-box; /* Includes padding and border in the element's total width */
+            text-align: center; /* Ensures text is centered */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Ensures font consistency */
+            font-weight: 600; /* Matches your existing button style */
+        }
+
+        .btn:hover {
+            background-color: var(--hover-yellow);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-card {
+                padding: 1rem;
+            }
+            
+            .dashboard-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <h1 class="dashboard-title">Dashboard Organisateurs</h1>
+            <p class="dashboard-subtitle">Soirée Halloween - Coq Carlanais</p>
+            <div class="last-updated">Dernière mise à jour: <span id="last-updated-time">...</span></div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="stat-total">...</div>
+                <div class="stat-label">Total Participants</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-adults">...</div>
+                <div class="stat-label">Adultes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-children">...</div>
+                <div class="stat-label">Enfants Total</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-families">...</div>
+                <div class="stat-label">Familles</div>
+            </div>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-card">
+                <h3 class="chart-title">Répartition par Âge des Enfants</h3>
+                <div class="chart">
+                    <div class="bar-chart" id="age-chart">
+                        <!-- Bars will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <h3 class="chart-title">Ratio Adultes/Enfants</h3>
+                <div class="chart">
+                    <div class="pie-chart" id="ratio-chart">
+                        <!-- Pie chart will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-grid">
+            <div class="progress-card">
+                <div class="progress-header">
+                    <h4 class="progress-title">Taux d'Inscription</h4>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="registration-progress" style="width: 0%"></div>
+                </div>
+                <div class="progress-stats">
+                    <span id="registration-current">0</span>
+                    <span id="registration-goal">Objectif: 150 participants</span>
+                </div>
+            </div>
+            
+            <div class="progress-card">
+                <div class="progress-header">
+                    <h4 class="progress-title">Répartition Adultes/Enfants</h4>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="adult-progress" style="width: 0%"></div>
+                </div>
+                <div class="progress-stats">
+                    <span id="adult-percentage">0% Adultes</span>
+                    <span id="children-percentage">0% Enfants</span>
+                </div>
+            </div>
+        </div>
+
+        <section class="actions-section">
+            <h3>Actions Organisateurs</h3>
+            <div style="margin-top: 1.5rem;">
+                <a href="https://docs.google.com/forms/d/1eQiJMikBwMiTzPTc1M9tbaLJitmcKAjRzYhl6a66k-k/edit#responses" 
+                   class="btn" target="_blank">Voir les Réponses Détaillées</a>
+                <a href="index.html" class="btn">Retour au Site Public</a>
+                <button class="btn" onclick="refreshData()">Actualiser les Données</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        class OrganizerDashboard {
+            constructor() {
+                this.scriptUrl = 'https://script.google.com/macros/s/AKfycbz_q6qN5YHSECtGP5lUpZyo0ApbSmtsFWXw-FxdokvnuOmGo-RtInl844j7n4WWqQ7g/exec';
+                this.cacheDuration = 120000;
+                this.lastUpdate = 0;
+                this.cachedData = null;
+            }
+
+            async getAttendeeData() {
+                return new Promise((resolve, reject) => {
+                    const now = Date.now();
+                    if (this.cachedData !== null && (now - this.lastUpdate) < this.cacheDuration) {
+                        resolve(this.cachedData);
+                        return;
+                    }
+                    
+                    const callbackName = 'dashboard_callback_' + Date.now();
+                    const url = `${this.scriptUrl}?callback=${callbackName}`;
+                    
+                    const script = document.createElement('script');
+                    script.src = url;
+                    
+                    const timeoutId = setTimeout(() => {
+                        cleanup();
+                        reject(new Error('Timeout'));
+                    }, 10000);
+                    
+                    const cleanup = () => {
+                        clearTimeout(timeoutId);
+                        if (script.parentNode) document.head.removeChild(script);
+                        delete window[callbackName];
+                    };
+                    
+                    script.onerror = () => {
+                        cleanup();
+                        reject(new Error('Script load failed'));
+                    };
+                    
+                    window[callbackName] = (data) => {
+                        cleanup();
+                        this.cachedData = data;
+                        this.lastUpdate = now;
+                        resolve(data);
+                    };
+                    
+                    document.head.appendChild(script);
+                });
+            }
+
+            updateStats(data) {
+                // Update main stats
+                document.getElementById('stat-total').textContent = data.total;
+                document.getElementById('stat-adults').textContent = data.adults;
+                document.getElementById('stat-children').textContent = data.children;
+                document.getElementById('stat-families').textContent = data.families;
+                
+                // Update last updated time
+                document.getElementById('last-updated-time').textContent = 
+                    new Date().toLocaleString('fr-FR');
+            }
+
+            createAgeChart(data) {
+                const ageGroups = [
+                    { label: '0-2 ans', value: data.children0_2 || 0, color: '#FF6B6B' },
+                    { label: '3-5 ans', value: data.children3_5 || 0, color: '#4ECDC4' },
+                    { label: '6-8 ans', value: data.children6_8 || 0, color: '#FFD166' },
+                    { label: '9-12 ans', value: data.children9_12 || 0, color: '#06D6A0' },
+                    { label: '12+ ans', value: data.children12plus || 0, color: '#118AB2' }
+                ];
+
+                const maxValue = Math.max(...ageGroups.map(group => group.value));
+                const chart = document.getElementById('age-chart');
+                chart.innerHTML = '';
+
+                ageGroups.forEach(group => {
+                    const height = maxValue > 0 ? (group.value / maxValue) * 150 : 10;
+                    
+                    const barContainer = document.createElement('div');
+                    barContainer.className = 'bar-container';
+                    
+                    const bar = document.createElement('div');
+                    bar.className = 'bar';
+                    bar.style.height = `${height}px`;
+                    bar.style.background = group.color;
+                    
+                    const barValue = document.createElement('div');
+                    barValue.className = 'bar-value';
+                    barValue.textContent = group.value;
+                    
+                    const barLabel = document.createElement('div');
+                    barLabel.className = 'bar-label';
+                    barLabel.textContent = group.label;
+                    
+                    bar.appendChild(barValue);
+                    barContainer.appendChild(bar);
+                    barContainer.appendChild(barLabel);
+                    chart.appendChild(barContainer);
+                });
+            }
+
+            createRatioChart(data) {
+                const total = data.total || 1;
+                const adultPercentage = Math.round((data.adults / total) * 100);
+                const childPercentage = 100 - adultPercentage;
+                
+                const chart = document.getElementById('ratio-chart');
+                chart.innerHTML = `
+                    <div style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 3rem; color: var(--vibrant-yellow); margin-bottom: 1rem;">
+                            ${adultPercentage}% / ${childPercentage}%
+                        </div>
+                        <div style="display: flex; justify-content: center; gap: 2rem;">
+                            <div style="text-align: center;">
+                                <div style="color: #4ECDC4; font-weight: bold;">${data.adults || 0}</div>
+                                <div style="color: #ddd; font-size: 0.9rem;">Adultes</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="color: #FF6B6B; font-weight: bold;">${data.children || 0}</div>
+                                <div style="color: #ddd; font-size: 0.9rem;">Enfants</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            updateProgressBars(data) {
+                const total = data.total || 0;
+                const goal = 150; // Your target number
+                const registrationPercent = Math.min((total / goal) * 100, 100);
+                
+                document.getElementById('registration-progress').style.width = `${registrationPercent}%`;
+                document.getElementById('registration-current').textContent = `${total} participants`;
+                
+                const adultPercent = data.total > 0 ? Math.round((data.adults / data.total) * 100) : 0;
+                document.getElementById('adult-progress').style.width = `${adultPercent}%`;
+                document.getElementById('adult-percentage').textContent = `${adultPercent}% Adultes`;
+                document.getElementById('children-percentage').textContent = `${100 - adultPercent}% Enfants`;
+            }
+
+            async updateDashboard() {
+                try {
+                    const data = await this.getAttendeeData();
+                    this.updateStats(data);
+                    this.createAgeChart(data);
+                    this.createRatioChart(data);
+                    this.updateProgressBars(data);
+                } catch (error) {
+                    console.error('Dashboard error:', error);
+                    // Set placeholder values
+                    const elements = ['stat-total', 'stat-adults', 'stat-children', 'stat-families'];
+                    elements.forEach(id => {
+                        document.getElementById(id).textContent = '...';
+                    });
+                }
+            }
+
+            startAutoUpdate(interval = 120000) {
+                this.updateDashboard();
+                setInterval(() => this.updateDashboard(), interval);
+            }
+        }
+
+        // Global function for refresh button
+        function refreshData() {
+            dashboard.updateDashboard();
+        }
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            window.dashboard = new OrganizerDashboard();
+            dashboard.startAutoUpdate();
+        });
+    </script>
+</body>
+</html>
