@@ -2450,7 +2450,7 @@
         });
         
         // Halloween Counter using JSONP
-        class HalloweenCounter {
+        HalloweenCounter {
             constructor() {
                 this.scriptUrl = 'https://script.google.com/macros/s/AKfycbz_q6qN5YHSECtGP5lUpZyo0ApbSmtsFWXw-FxdokvnuOmGo-RtInl844j7n4WWqQ7g/exec';
                 this.cacheDuration = 120000;
@@ -2500,34 +2500,41 @@
                 });
             }
             
+            // SAFE ELEMENT UPDATE FUNCTION
+            updateElementIfExists(elementId, value) {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    element.textContent = value;
+                }
+                // Silently skip if element doesn't exist (no error)
+            }
+            
             async updateDisplay() {
                 try {
                     const data = await this.getAttendeeData();
                     
-                    // Update main counters
-                    document.getElementById('attendee-total').textContent = data.total;
-                    document.getElementById('attendee-adults').textContent = data.adults;
-                    document.getElementById('attendee-children').textContent = data.children;
-                    document.getElementById('attendee-families').textContent = data.families;
+                    // Safely update only existing elements
+                    this.updateElementIfExists('attendee-total', data.total);
+                    this.updateElementIfExists('attendee-adults', data.adults);
+                    this.updateElementIfExists('attendee-children', data.children);
                     
-                    // Update age groups with exact matches from your form
-                    document.getElementById('attendee-children0_2').textContent = data.children0_2 || 0;
-                    document.getElementById('attendee-children3_5').textContent = data.children3_5 || 0;
-                    document.getElementById('attendee-children6_8').textContent = data.children6_8 || 0;
-                    document.getElementById('attendee-children9_12').textContent = data.children9_12 || 0;
-                    document.getElementById('attendee-children12plus').textContent = data.children12plus || 0;
+                    // These elements only exist in detailed dashboard - safely skip if missing
+                    this.updateElementIfExists('attendee-families', data.families);
+                    this.updateElementIfExists('attendee-children0_2', data.children0_2 || 0);
+                    this.updateElementIfExists('attendee-children3_5', data.children3_5 || 0);
+                    this.updateElementIfExists('attendee-children6_8', data.children6_8 || 0);
+                    this.updateElementIfExists('attendee-children9_12', data.children9_12 || 0);
+                    this.updateElementIfExists('attendee-children12plus', data.children12plus || 0);
                     
                 } catch (error) {
                     console.error('Counter error:', error);
-                    // Show placeholder values for all counters
+                    // Safely set placeholder values only for existing elements
                     const elements = [
-                        'attendee-total', 'attendee-adults', 'attendee-children', 'attendee-families',
-                        'attendee-children0_2', 'attendee-children3_5', 'attendee-children6_8',
-                        'attendee-children9_12', 'attendee-children12plus'
+                        'attendee-total', 'attendee-adults', 'attendee-children', 
+                        'attendee-families', 'attendee-children0_2', 'attendee-children3_5', 
+                        'attendee-children6_8', 'attendee-children9_12', 'attendee-children12plus'
                     ];
-                    elements.forEach(id => {
-                        document.getElementById(id).textContent = '...';
-                    });
+                    elements.forEach(id => this.updateElementIfExists(id, '...'));
                 }
             }
             
@@ -2542,6 +2549,6 @@
             const counter = new HalloweenCounter();
             counter.startAutoUpdate();
         });
-        </script>
+    </script>
 </body>
 </html>
