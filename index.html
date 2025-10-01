@@ -1048,7 +1048,7 @@
             }
         }
         /* Enhanced Halloween Counter Styles */
-        .halloween-counter-simplified {
+        halloween-counter-simplified {
             text-align: center;
             margin-bottom: 3rem;
             padding: 2.5rem;
@@ -1059,6 +1059,25 @@
             margin-left: auto;
             margin-right: auto;
             backdrop-filter: blur(10px);
+        }
+        
+        .counter-main {
+            margin-bottom: 2rem;
+        }
+        
+        .counter-total {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--vibrant-yellow);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+        }
+        
+        .counter-label {
+            font-size: 1.2rem;
+            color: var(--white);
+            font-weight: 500;
         }
         
         .counter-breakdown-simple {
@@ -1078,12 +1097,15 @@
             color: var(--vibrant-yellow);
             line-height: 1;
             margin-bottom: 0.5rem;
+            text-shadow: 0 0 8px rgba(255, 204, 0, 0.2);
         }
         
         .breakdown-simple-label {
             font-size: 1rem;
             color: var(--white);
             font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         .counter-cta {
@@ -1096,9 +1118,9 @@
             margin-bottom: 1rem;
             color: var(--white);
             font-weight: 600;
+            font-size: 1.1rem;
         }
 
-        
         /* Keep existing Halloween styles, just remove the old counter styles */
         .halloween {
             background: linear-gradient(135deg, #1A1A1A 0%, #2D1B00 100%);
