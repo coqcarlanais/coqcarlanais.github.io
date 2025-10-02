@@ -1562,11 +1562,157 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Construction Banner Styles */
+        .construction-banner {
+            background: linear-gradient(135deg, var(--primary-black) 0%, #333 100%);
+            color: var(--white);
+            padding: 1.5rem 0;
+            border-bottom: 3px solid var(--vibrant-yellow);
+            position: relative;
+            margin-top: 70px; /* Account for fixed navbar */
+        }
+        
+        .banner-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .banner-text h2 {
+            margin-bottom: 0.5rem;
+            color: var(--vibrant-yellow);
+            font-size: 1.5rem;
+        }
+        
+        .banner-text p {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .sponsor-cta {
+            color: var(--vibrant-yellow);
+            font-weight: 600;
+        }
+        
+        .countdown-container {
+            text-align: center;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            justify-content: center;
+        }
+        
+        .time-unit {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem;
+            border-radius: 8px;
+            min-width: 70px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .time-unit span {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--vibrant-yellow);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .time-unit small {
+            font-size: 0.8rem;
+            color: var(--white);
+            text-transform: uppercase;
+        }
+        
+        .sponsor-btn {
+            background: var(--vibrant-yellow);
+            color: var(--primary-black);
+            font-weight: 700;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .sponsor-btn:hover {
+            background: var(--hover-yellow);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .banner-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .countdown-timer {
+                gap: 0.5rem;
+            }
+            
+            .time-unit {
+                min-width: 60px;
+                padding: 0.4rem;
+            }
+            
+            .time-unit span {
+                font-size: 1.5rem;
+            }
+            
+            .banner-text h2 {
+                font-size: 1.3rem;
+            }
+            
+            .banner-text p {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Skip to main content link -->
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <section class="construction-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h2>🚀 Site en construction</h2>
+                    <p>Lancement du nouveau et premier site internet du club le <strong>15 octobre 2025</strong></p>
+                    <p class="sponsor-cta">💫 <strong>Opportunité exclusive</strong> : Ajoutez votre logo avant le lancement et bénéficiez d'une visibilité dès le premier jour !</p>
+                </div>
+                <div class="countdown-container">
+                    <div id="countdown-timer" class="countdown-timer">
+                        <div class="time-unit">
+                            <span id="days">00</span>
+                            <small>Jours</small>
+                        </div>
+                        <div class="time-unit">
+                            <span id="hours">00</span>
+                            <small>Heures</small>
+                        </div>
+                        <div class="time-unit">
+                            <span id="minutes">00</span>
+                            <small>Minutes</small>
+                        </div>
+                        <div class="time-unit">
+                            <span id="seconds">00</span>
+                            <small>Secondes</small>
+                        </div>
+                    </div>
+                    <a href="#sponsors" class="btn sponsor-btn">Devenir Sponsor Maintenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Menu principal">
@@ -2884,6 +3030,37 @@
             const counter = new HalloweenCounter();
             counter.startAutoUpdate();
         });
+
+
+        // Countdown Site launch Timer Functionality
+        function updateCountdown() {
+            const launchDate = new Date('October 15, 2025 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+        
+            if (distance < 0) {
+                // Countdown finished
+                document.getElementById('countdown-timer').innerHTML = 
+                    '<div class="countdown-finished">🚀 Site Lancé !</div>';
+                return;
+            }
+        
+            // Time calculations
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+            // Update display
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // Initialize countdown and update every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
