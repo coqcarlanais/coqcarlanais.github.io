@@ -1069,76 +1069,93 @@
             font-size: 1.1rem;
             line-height: 1.6;
         }
-
-        .pricing-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+        /* NEW PRICING TABLE STYLES */
+        .pricing-table-container {
+            margin: 2rem 0;
+            overflow-x: auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
-
-        .pricing-card {
-            background: var(--white);
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--white);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            border-top: 5px solid var(--vibrant-yellow);
         }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .pricing-card-header {
-            padding: 1.5rem;
-            text-align: center;
-            background: var(--vibrant-yellow);
+        
+        .pricing-table th {
+            background-color: var(--vibrant-yellow);
             color: var(--primary-black);
+            padding: 1.2rem 1rem;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1.1rem;
         }
-
-        .pricing-category {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
+        
+        .pricing-table th:last-child {
+            text-align: right;
         }
-
-        .pricing-age {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .pricing-price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
-
-        .pricing-features {
-            padding: 1.5rem;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-list li {
-            padding: 0.8rem 0;
+        
+        .pricing-table td {
+            padding: 1.2rem 1rem;
             border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
         }
-
-        .feature-list li:last-child {
+        
+        .pricing-table tbody tr {
+            transition: background-color 0.3s ease;
+        }
+        
+        .pricing-table tbody tr:hover {
+            background-color: rgba(255, 204, 0, 0.05);
+        }
+        
+        .pricing-table tbody tr:last-child td {
             border-bottom: none;
         }
-
-        .feature-list i {
-            margin-right: 10px;
-            color: var(--vibrant-yellow);
+        
+        .pricing-table td:first-child {
+            font-weight: 600;
+            color: var(--primary-black);
         }
-
+        
+        .pricing-table td:last-child {
+            font-weight: 700;
+            color: var(--vibrant-yellow);
+            font-size: 1.2rem;
+            text-align: right;
+        }
+        
+        /* Responsive adjustments for pricing table */
+        @media screen and (max-width: 768px) {
+            .pricing-table th,
+            .pricing-table td {
+                padding: 0.8rem 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .pricing-table td:last-child {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .pricing-table {
+                font-size: 0.85rem;
+            }
+            
+            .pricing-table th {
+                padding: 0.7rem 0.4rem;
+            }
+            
+            .pricing-table td {
+                padding: 0.7rem 0.4rem;
+            }
+        }
         .pricing-notes {
             background: var(--white);
             border-radius: 10px;
@@ -2173,7 +2190,7 @@
             </div>
         </section>
         
-        <!-- New Tarifs Section -->
+        <!-- Section Tarifs - SIMPLIFIED -->
         <section id="tarifs" class="pricing">
             <div class="container">
                 <h2>Tarifs des Licences 2025/2026</h2>
@@ -2182,120 +2199,47 @@
                     <p>Rejoignez le Coq Carlanais avec une licence adaptée à votre catégorie. Toutes nos licences incluent l'encadrement par des coachs diplômés, l'accès aux entraînements et l'assurance FFBB.</p>
                 </div>
                 
-                <div class="pricing-container">
-                    <!-- LOISIR Card -->
-                    <div class="pricing-card">
-                        <div class="pricing-card-header">
-                            <h3 class="pricing-category">LOISIR</h3>
-                            <div class="pricing-price">100€</div>
-                        </div>
-                        <div class="pricing-features">
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> Basket détente et bien-être</li>
-                                <li><i class="fas fa-check"></i> Entraînements adaptés</li>
-                                <li><i class="fas fa-check"></i> Pas de compétition</li>
-                                <li><i class="fas fa-check"></i> Accessible à tous les niveaux</li>
-                            </ul>
-                        </div>
-                    </div>
-    
-                    <!-- SANTÉ Card -->
-                    <div class="pricing-card">
-                        <div class="pricing-card-header">
-                            <h3 class="pricing-category">SANTÉ</h3>
-                            <div class="pricing-price">70€</div>
-                        </div>
-                        <div class="pricing-features">
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> Pratique adaptée</li>
-                                <li><i class="fas fa-check"></i> Bien-être et santé</li>
-                                <li><i class="fas fa-check"></i> Encadrement spécialisé</li>
-                                <li><i class="fas fa-check"></i> Accessible à tous</li>
-                            </ul>
-                        </div>
-                    </div>
-    
-                    <!-- U7/U9/U11 Card -->
-                    <div class="pricing-card">
-                        <div class="pricing-card-header">
-                            <h3 class="pricing-category">U7 / U9 / U11</h3>
-                            <div class="pricing-price">110€</div>
-                        </div>
-                        <div class="pricing-features">
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> Éveil et découverte</li>
-                                <li><i class="fas fa-check"></i> Développement psychomoteur</li>
-                                <li><i class="fas fa-check"></i> Matériel adapté</li>
-                                <li><i class="fas fa-check"></i> Approche ludique</li>
-                            </ul>
-                        </div>
-                    </div>
-    
-                    <!-- U13/U15 Card -->
-                    <div class="pricing-card">
-                        <div class="pricing-card-header">
-                            <h3 class="pricing-category">U13 / U15</h3>
-                            <div class="pricing-price">120€</div>
-                        </div>
-                        <div class="pricing-features">
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> Apprentissage technique</li>
-                                <li><i class="fas fa-check"></i> Début de compétition</li>
-                                <li><i class="fas fa-check"></i> Développement tactique</li>
-                                <li><i class="fas fa-check"></i> Encadrement qualifié</li>
-                            </ul>
-                        </div>
-                    </div>
-    
-                    <!-- SG2 / SF Card -->
-                    <div class="pricing-card">
-                        <div class="pricing-card-header">
-                            <h3 class="pricing-category">SG2 / SF</h3>
-                            <div class="pricing-price">140€</div>
-                        </div>
-                        <div class="pricing-features">
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> Compétition départementale</li>
-                                <li><i class="fas fa-check"></i> Entraînements intensifs</li>
-                                <li><i class="fas fa-check"></i> Préparation physique</li>
-                                <li><i class="fas fa-check"></i> Suivi personnalisé</li>
-                            </ul>
-                        </div>
-                    </div>
-    
-                    <!-- SG1 Card -->
-                    <div class="pricing-card">
-                        <div class="pricing-card-header">
-                            <h3 class="pricing-category">SG1</h3>
-                            <div class="pricing-price">180€</div>
-                        </div>
-                        <div class="pricing-features">
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> Compétition régionale</li>
-                                <li><i class="fas fa-check"></i> Programme d'entraînement avancé</li>
-                                <li><i class="fas fa-check"></i> Préparation compétitive</li>
-                                <li><i class="fas fa-check"></i> Encadrement expert</li>
-                            </ul>
-                        </div>
-                    </div>
-    
-                    <!-- U18/U21 Card -->
-                    <div class="pricing-card">
-                        <div class="pricing-card-header">
-                            <h3 class="pricing-category">U18 / U21</h3>
-                            <div class="pricing-price">130€</div>
-                        </div>
-                        <div class="pricing-features">
-                            <ul class="feature-list">
-                                <li><i class="fas fa-check"></i> Transition vers le haut niveau</li>
-                                <li><i class="fas fa-check"></i> Compétition exigeante</li>
-                                <li><i class="fas fa-check"></i> Développement complet</li>
-                                <li><i class="fas fa-check"></i> Préparation au niveau senior</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="pricing-table-container">
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Catégorie</th>
+                                <th>Tarif</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LOISIR</td>
+                                <td>100€</td>
+                            </tr>
+                            <tr>
+                                <td>SANTÉ</td>
+                                <td>70€</td>
+                            </tr>
+                            <tr>
+                                <td>U7 / U9 / U11</td>
+                                <td>110€</td>
+                            </tr>
+                            <tr>
+                                <td>U13 / U15</td>
+                                <td>120€</td>
+                            </tr>
+                            <tr>
+                                <td>SG2 / SF</td>
+                                <td>140€</td>
+                            </tr>
+                            <tr>
+                                <td>SG1</td>
+                                <td>180€</td>
+                            </tr>
+                            <tr>
+                                <td>U18 / U21</td>
+                                <td>130€</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-    
+                
                 <div class="pricing-notes">
                     <h3>Informations importantes</h3>
                     <ul class="notes-list">
@@ -2306,7 +2250,7 @@
                             </div>
                         </li>
                         <li>
-                            <i class="fas fa-euro-sign"></i> <!-- Changed icon for relevance -->
+                            <i class="fas fa-euro-sign"></i>
                             <div>
                                 <strong>Aide financière 2025-2026</strong> - Le Pass'Sport est une aide de l'État de <strong>70 €</strong> pour l'inscription.
                                 <br><small>Les anciennes aides de 50 € et 15 € ne sont plus disponibles. Le Pass'Sport 2025 est destiné aux jeunes de 14 à 17 ans bénéficiaires de l'ARS, aux 6-19 ans avec AEEH, aux 16-30 ans avec AAH et aux étudiants boursiers de moins de 28 ans. Vérifiez votre éligibilité sur <a href="https://www.pass.sports.gouv.fr/" target="_blank" rel="noopener">pass.sports.gouv.fr</a>.</small>
@@ -2325,6 +2269,7 @@
                             </div>
                         </li>
                     </ul>
+        
                     <div class="payment-options">
                         <a href="#contact" class="btn">Demander plus d'informations</a>
                         <a href="https://forms.gle/JgzSqZLfKiSfKDm96" class="btn" target="_blank" rel="noopener">Procéder à l'inscription</a>
