@@ -1173,6 +1173,69 @@
                 max-width: 400px;
             }
         }
+
+        /* ===== Tax Benefit Section Styles ===== */
+        .tax-benefit-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fffbef 100%);
+            border-left: 4px solid var(--vibrant-yellow);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+        }
+        
+        .tax-benefit-box h4 {
+            color: var(--primary-black);
+            margin-bottom: 0.75rem;
+        }
+        
+        .tax-example {
+            background-color: rgba(255, 204, 0, 0.1);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        
+        /* ===== Highlights Section Styles ===== */
+        .highlights-section {
+            background-color: var(--white);
+            padding: 4rem 0;
+        }
+        
+        .highlights-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .highlight-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .highlight-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .highlight-content {
+            padding: 1.5rem;
+        }
+        
+        .highlight-content h3 {
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -1789,8 +1852,17 @@
                 <h2>Nos Sponsors</h2>
                 <div class="sponsors-content">
                     <div class="sponsorship-intro">
-                        <p>Le Coq Carlanais Basketball Club compte sur le soutien de ses sponsors pour offrir les meilleures conditions d'entraînement et de compétition à ses joueurs.</p>
-                        <p>En soutenant le Coq Carlanais, vous investissez dans la jeunesse et le sport de votre territoire. Votre partenariat nous permet de développer nos équipes, d'organiser des événements et d'offrir les meilleures conditions d'entraînement à nos 120 licenciés.</p>
+                        <h3>Investissez dans le Sport Local avec un Impact Fiscal Avantageux</h3>
+                        
+                        <p>Votre partenariat avec le Coq Carlanais représente un <strong>investissement stratégique</strong> dans la jeunesse de notre territoire. En soutenant nos 120 licenciés, vous bénéficiez d'une <strong>visibilité locale ciblée</strong> tout en renforçant votre image d'entreprise citoyenne.</p>
+                    
+                        <div class="tax-benefit-box">
+                            <h4>💫 Avantage Fiscal Exceptionnel</h4>
+                            <p>Votre don ouvre droit à une <strong>réduction d'impôt de 60%</strong> de son montant.</p>
+                            <div class="tax-example">
+                                <p><strong>Exemple :</strong> Un don de <strong>500 €</strong> = un coût réel de <strong>200 €</strong> seulement</p>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="sponsorship-tiers">
@@ -1848,7 +1920,36 @@
                             </div>
                         </div>
                     </div>
-
+                    
+                    <section class="highlights-section">
+                        <div class="container">
+                            <h2>Nos Succès & Temps Forts 2024-2025</h2>
+                            <div class="highlights-gallery">
+                                <div class="highlight-card">
+                                    <img src="photos/millau_tournament.jpg" alt="L'équipe du Coq Carlanais lors du tournoi de Millau" class="highlight-img" loading="lazy">
+                                    <div class="highlight-content">
+                                        <h3>Tournoi de Millau</h3>
+                                        <p>Participation et belle performance de nos équipes jeunes lors du tournoi exigeant de Millau, une expérience riche en apprentissages.</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-card">
+                                    <img src="photos/natsuki_competition.jpg" alt="Natsuki, champion départemental et vice-champion régional" class="highlight-img" loading="lazy">
+                                    <div class="highlight-content">
+                                        <h3>Excellence Compétitive</h3>
+                                        <p><strong>Félicitations à Natsuki !</strong> <strong>Champion départemental</strong> du Challenge Benjamin, qualifié pour les régionaux où il a décroché une magnifique <strong>2ème place</strong> après un duel serré pour la première position.</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-card">
+                                    <img src="photos/christmas_party.jpg" alt="La fête de Noël du club en décembre 2024" class="highlight-img" loading="lazy">
+                                    <div class="highlight-content">
+                                        <h3>Fête de Noël 2024</h3>
+                                        <p>Un moment de partage et de convivialité qui a rassemblé plus de 60 enfants et leurs familles, au cœur de la vie de notre club.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
                     <!-- Donation Form -->
                     <div class="donation-section">
                         <h2>Devenir Partenaire</h2>
