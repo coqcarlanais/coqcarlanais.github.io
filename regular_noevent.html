@@ -1527,6 +1527,27 @@
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
                 gap: 1.5rem;
             }
+            .highlights-gallery {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+            
+            .highlight-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .highlight-img {
+                object-fit: contain;
+                width: auto;
+                max-height: 200px;
+            }
         }
     
         @media screen and (max-width: 480px) {
