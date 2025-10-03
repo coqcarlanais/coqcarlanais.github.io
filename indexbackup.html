@@ -345,40 +345,13 @@
         .schedule {
             background-color: var(--white);
         }
-
-        .schedule-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .schedule-day {
-            background-color: var(--light-grey);
+        .schedule-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
             border-radius: 8px;
-            padding: 1.5rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .schedule-day h3 {
-            color: var(--vibrant-yellow);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .schedule-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .schedule-item:last-child {
-            border-bottom: none;
-        }
-
-        .schedule-time {
-            font-weight: 600;
-            color: var(--primary-black);
         }
 
         /* ===== FACEBOOK SECTION ===== */
@@ -1863,10 +1836,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .schedule-container {
-                grid-template-columns: 1fr;
-            }
-
             .sponsorship-tiers {
                 grid-template-columns: 1fr;
             }
@@ -2396,91 +2365,10 @@
         <section id="horaires" class="schedule">
             <div class="container">
                 <h2>Horaires d'Entraînement 2025/2026</h2>
-                <div class="schedule-container">
-                    <div class="schedule-day">
-                        <h3>Lundi</h3>
-                        <div class="schedule-item">
-                            <span class="schedule-time">20h30 - 22h30</span>
-                            <span>Séniors Garçons & Filles (Hoops)</span>
-                        </div>
-                    </div>
-                    <div class="schedule-day">
-                        <h3>Mardi</h3>
-                        <div class="schedule-item">
-                            <span class="schedule-time">18h00 - 19h30</span>
-                            <span>U13 Filles</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">19h30 - 21h00</span>
-                            <span>Basket Loisirs</span>
-                        </div>
-                    </div>
-                    <div class="schedule-day">
-                        <h3>Mercredi</h3>
-                        <div class="schedule-item">
-                            <span class="schedule-time">15h30 - 17h00</span>
-                            <span>U11 Mixte</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">17h00 - 18h30</span>
-                            <span>U13 Garçons</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">18h30 - 20h00</span>
-                            <span>U15 Garçons</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">20h00 - 22h00</span>
-                            <span>U18 / Séniors Garçons</span>
-                        </div>
-                    </div>
-                    <div class="schedule-day">
-                        <h3>Jeudi</h3>
-                        <div class="schedule-item">
-                            <span class="schedule-time">18h00 - 19h30</span>
-                            <span>U15 Filles</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">19h30 - 20h30</span>
-                            <span>Basket Santé</span>
-                        </div>
-                    </div>
-                    <div class="schedule-day">
-                        <h3>Vendredi</h3>
-                        <div class="schedule-item">
-                            <span class="schedule-time">17h30 - 18h30</span>
-                            <span>U7 / U9</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">18h30 - 20h00</span>
-                            <span>U18 Garçons</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">20h00 - 22h00</span>
-                            <span>Séniors Filles</span>
-                        </div>
-                    </div>
-                    <div class="schedule-day">
-                        <h3>Samedi</h3>
-                        <div class="schedule-item">
-                            <span class="schedule-time">9h00 - 11h00</span>
-                            <span>U11 Entraînement ou Match</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">11h00 - 22h00</span>
-                            <span>Match</span>
-                        </div>
-                    </div>
-                    <div class="schedule-day">
-                        <h3>Dimanche</h3>
-                        <div class="schedule-item">
-                            <span class="schedule-time">9h00 - 13h00</span>
-                            <span>U9 Plateau ou Stage</span>
-                        </div>
-                    </div>
-                </div>
+                <img src="photos/planning_carla.jpg" alt="Planning Hebdomadaire des Entraînements 2025/2026" class="schedule-image" loading="lazy">
             </div>
         </section>
+
         
         <!-- Section Tarifs - SIMPLIFIED -->
         <section id="tarifs" class="pricing">
