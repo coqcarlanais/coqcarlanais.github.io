@@ -1342,6 +1342,292 @@
                 font-size: 2rem;
             }
         }
+
+        /* Hero Sponsors Section */
+        .hero-sponsors {
+            background: rgba(255, 204, 0, 0.05);
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 204, 0, 0.2);
+        }
+        
+        .sponsor-preview {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .sponsor-preview h3 {
+            color: var(--primary-black);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+        
+        .sponsor-logos-preview {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .sponsor-logo-placeholder {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            min-width: 150px;
+            transition: transform 0.3s ease;
+        }
+        
+        .sponsor-logo-placeholder:hover {
+            transform: translateY(-5px);
+        }
+        
+        .sponsor-logo-placeholder[data-tier="gold"] {
+            border-top: 4px solid var(--gold);
+        }
+        
+        .sponsor-logo-placeholder[data-tier="silver"] {
+            border-top: 4px solid var(--silver);
+        }
+        
+        .sponsor-logo-placeholder[data-tier="bronze"] {
+            border-top: 4px solid var(--bronze);
+        }
+        
+        .sponsor-logo-placeholder i {
+            font-size: 2.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .sponsor-logo-placeholder span {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .sponsor-logo-placeholder small {
+            color: #666;
+            font-size: 0.8rem;
+        }
+        
+        /* Halloween Event Sponsors */
+        .event-sponsors {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 600px;
+            text-align: center;
+            border: 2px solid rgba(255, 204, 0, 0.3);
+        }
+        
+        .event-sponsors h4 {
+            color: var(--vibrant-yellow);
+            margin-bottom: 1rem;
+        }
+        
+        .event-sponsor-logos {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .event-sponsor-placeholder {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 120px;
+            border: 1px solid rgba(255, 204, 0, 0.3);
+        }
+        
+        .event-sponsor-placeholder i {
+            font-size: 2rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .event-sponsor-placeholder span {
+            font-size: 0.9rem;
+            color: var(--white);
+        }
+        
+        .sponsor-note {
+            color: var(--vibrant-yellow);
+            font-style: italic;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Current Sponsors Showcase */
+        .current-sponsors-showcase {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .current-sponsors-showcase h3 {
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+        }
+        
+        .current-sponsors-showcase > p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .sponsor-logo {
+            text-align: center;
+        }
+        
+        .logo-placeholder {
+            background: var(--white);
+            padding: 2rem 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .sponsor-logo:hover .logo-placeholder {
+            transform: translateY(-5px);
+        }
+        
+        .sponsor-logo[data-category="gold"] .logo-placeholder {
+            border-color: var(--gold);
+        }
+        
+        .sponsor-logo[data-category="silver"] .logo-placeholder {
+            border-color: var(--silver);
+        }
+        
+        .sponsor-logo[data-category="bronze"] .logo-placeholder {
+            border-color: var(--bronze);
+        }
+        
+        .available-spot {
+            border: 2px dashed var(--vibrant-yellow) !important;
+            background: rgba(255, 204, 0, 0.05);
+        }
+        
+        .logo-placeholder i {
+            font-size: 2.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .logo-placeholder.available-spot i {
+            color: var(--vibrant-yellow);
+        }
+        
+        .logo-placeholder span {
+            font-weight: 600;
+            color: var(--primary-black);
+        }
+        
+        .sponsor-logo p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        .available p {
+            color: var(--vibrant-yellow);
+            font-weight: 600;
+        }
+        
+        /* Footer Sponsors */
+        .footer-sponsors {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .footer-sponsors h4 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-sponsor-logos {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-sponsor-placeholder {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 120px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-sponsor-placeholder:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .footer-sponsor-placeholder.available {
+            border: 2px dashed var(--vibrant-yellow);
+            background: rgba(255, 204, 0, 0.1);
+        }
+        
+        .footer-sponsor-placeholder i {
+            font-size: 1.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .footer-sponsor-placeholder span {
+            font-size: 0.8rem;
+            color: var(--white);
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .sponsor-logos-preview {
+                gap: 1rem;
+            }
+            
+            .sponsor-logo-placeholder {
+                min-width: 120px;
+                padding: 1rem;
+            }
+            
+            .sponsors-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .event-sponsor-logos {
+                gap: 1rem;
+            }
+            
+            .footer-sponsor-logos {
+                gap: 1rem;
+            }
+        }
         
         /* Enhanced Halloween Counter Styles */
         .halloween-counter-simplified {
@@ -1791,17 +2077,17 @@
         }
         
         .sponsor-btn {
-            white-space: normal; /* Allows text to wrap */
-            overflow-wrap: break-word; /* Breaks long words if needed */
-            word-wrap: break-word; /* Older syntax for compatibility */
-            min-height: 44px; /* Minimum touch target size :cite[5] */
-            display: inline-flex; /* Using flex for better alignment */
+            white-space: normal;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            min-height: 44px;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 0.8rem 1rem; /* Adequate padding */
+            padding: 0.8rem 1rem;
+            line-height: 1.2;
         }
-
         .sponsor-btn:hover {
             background: var(--hover-yellow);
             transform: translateY(-2px);
@@ -1836,10 +2122,12 @@
             .banner-text p {
                 font-size: 0.9rem;
             }
+            
             .sponsor-btn {
-                width: 100%; /* Makes button full width on mobile */
-                max-width: 280px; /* Prevents it from getting too wide */
-                font-size: 0.95rem; /* Slightly smaller font on mobile */
+                width: 100%;
+                max-width: 280px;
+                font-size: 0.95rem;
+                padding: 0.8rem 0.5rem;
             }
         }
     </style>
@@ -1917,7 +2205,34 @@
             </div>
         </div>
     </section>
-
+   
+    <!-- Hero Sponsor Section -->
+    <section class="hero-sponsors">
+        <div class="container">
+            <div class="sponsor-preview">
+                <h3>Votre logo ici - Visibilité immédiate</h3>
+                <div class="sponsor-logos-preview">
+                    <div class="sponsor-logo-placeholder" data-tier="gold">
+                        <i class="fas fa-building"></i>
+                        <span>Logo Partenaire Or</span>
+                        <small>Position premium</small>
+                    </div>
+                    <div class="sponsor-logo-placeholder" data-tier="silver">
+                        <i class="fas fa-store"></i>
+                        <span>Logo Partenaire Argent</span>
+                        <small>Visibilité constante</small>
+                    </div>
+                    <div class="sponsor-logo-placeholder" data-tier="bronze">
+                        <i class="fas fa-utensils"></i>
+                        <span>Logo Partenaire Bronze</span>
+                        <small>Reconnaissance locale</small>
+                    </div>
+                </div>
+                <a href="#sponsors" class="btn">Devenir Partenaire</a>
+            </div>
+        </div>
+    </section>
+    
     <!-- Main content -->
     <main id="main-content">
         <!-- Section Le Club -->
@@ -1966,6 +2281,26 @@
                                 Je participe !
                         </a>
                     </div>
+                </div>
+
+                <!-- Halloween Event Sponsors -->
+                <div class="event-sponsors">
+                    <h4>Nos partenaires pour la soirée Halloween</h4>
+                    <div class="event-sponsor-logos">
+                        <div class="event-sponsor-placeholder">
+                            <i class="fas fa-candy-cane"></i>
+                            <span>Partenaire Bonbons</span>
+                        </div>
+                        <div class="event-sponsor-placeholder">
+                            <i class="fas fa-ghost"></i>
+                            <span>Partenaire Animation</span>
+                        </div>
+                        <div class="event-sponsor-placeholder">
+                            <i class="fas fa-utensils"></i>
+                            <span>Partenaire Restauration</span>
+                        </div>
+                    </div>
+                    <p class="sponsor-note">Votre entreprise peut sponsoriser cet événement qui attend 100+ participants!</p>
                 </div>
 
                 <div class="halloween-content">
@@ -2543,6 +2878,42 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Current Sponsors Showcase -->
+                    <div class="current-sponsors-showcase">
+                        <h3>Nos Partenaires Actuels</h3>
+                        <p>Rejoignez ces entreprises qui soutiennent déjà notre club</p>
+                        <div class="sponsors-grid">
+                            <div class="sponsor-logo active" data-category="gold">
+                                <div class="logo-placeholder">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Partenaire Or</span>
+                                </div>
+                                <p>Position disponible</p>
+                            </div>
+                            <div class="sponsor-logo active" data-category="silver">
+                                <div class="logo-placeholder">
+                                    <i class="fas fa-medal"></i>
+                                    <span>Partenaire Argent</span>
+                                </div>
+                                <p>Position disponible</p>
+                            </div>
+                            <div class="sponsor-logo active" data-category="bronze">
+                                <div class="logo-placeholder">
+                                    <i class="fas fa-award"></i>
+                                    <span>Partenaire Bronze</span>
+                                </div>
+                                <p>Position disponible</p>
+                            </div>
+                            <div class="sponsor-logo available">
+                                <div class="logo-placeholder available-spot">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>Votre entreprise ici</span>
+                                </div>
+                                <p>Poste disponible</p>
+                            </div>
+                        </div>
+                    </div>
                     
                     <!-- Impact Statement -->
                     <div class="impact-statement">
@@ -2792,6 +3163,24 @@
                     <img src="photos/Coq_carlanais_logo.jpg" alt="Logo Coq Carlanais" class="footer-logo-img">
                     Coq Carlanais
                 </a>
+                <!-- Footer Sponsors -->
+                <div class="footer-sponsors">
+                    <h4>Ils nous soutiennent</h4>
+                    <div class="footer-sponsor-logos">
+                        <div class="footer-sponsor-placeholder">
+                            <i class="fas fa-building"></i>
+                            <span>Partenaire Local</span>
+                        </div>
+                        <div class="footer-sponsor-placeholder">
+                            <i class="fas fa-store-alt"></i>
+                            <span>Commerce Partenaire</span>
+                        </div>
+                        <div class="footer-sponsor-placeholder available">
+                            <i class="fas fa-plus"></i>
+                            <span>Votre Logo</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/coqcarlanaisbasket" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/coq_carlanais/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
