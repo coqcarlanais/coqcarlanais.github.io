@@ -2760,6 +2760,40 @@
                 contactMessageDiv.style.display = 'block';
             }
         });
+        
+        // Mobile image zoom functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scheduleImage = document.querySelector('.schedule-image');
+            if (!scheduleImage) return;
+            
+            let isZoomed = false;
+            
+            scheduleImage.addEventListener('click', function() {
+                if (window.innerWidth <= 768) { // Only on mobile
+                    if (!isZoomed) {
+                        // Zoom in
+                        this.style.transform = 'scale(1.8)';
+                        this.style.transition = 'transform 0.3s ease';
+                        this.style.cursor = 'zoom-out';
+                        isZoomed = true;
+                    } else {
+                        // Zoom out
+                        this.style.transform = 'scale(1)';
+                        this.style.cursor = 'zoom-in';
+                        isZoomed = false;
+                    }
+                }
+            });
+            
+            // Reset zoom on window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768 && isZoomed) {
+                    scheduleImage.style.transform = 'scale(1)';
+                    scheduleImage.style.cursor = 'pointer';
+                    isZoomed = false;
+                }
+            });
+        });
     </script>
 </body>
 </html>
