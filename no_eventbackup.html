@@ -360,35 +360,38 @@
             color: var(--vibrant-yellow);
         }
         
-        /* Mobile-specific styles for better readability */
+        /* Mobile-specific styles for full-width image */
         @media screen and (max-width: 768px) {
+            .schedule {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            
+            .schedule .container {
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+            
             .schedule-image-container {
                 margin: 0;
                 max-width: 100%;
                 width: 100%;
-                position: relative;
-                left: auto;
-                right: auto;
-                margin-left: 0;
-                margin-right: 0;
-                overflow-x: auto; /* Allows horizontal scrolling if needed */
             }
             
             .schedule-image {
                 width: 100%;
-                min-width: 100%; /* Ensures it takes full width */
-                border-radius: 8px;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                border-radius: 0;
+                box-shadow: none;
             }
             
             .image-zoom-hint {
                 display: block;
+                margin: 1rem 15px 0;
             }
             
-            /* Make the image clearly interactive on mobile */
-            .schedule-image {
-                border: 2px solid var(--vibrant-yellow);
-                cursor: zoom-in;
+            h2 {
+                padding: 0 15px;
             }
         }
         
