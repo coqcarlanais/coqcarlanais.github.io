@@ -2002,6 +2002,109 @@
                 padding: 0.7rem 0.4rem;
             }
         }
+        /* ===== FIXES FOR MOBILE LAYOUT ISSUES ===== */
+
+        /* 1. Fix partner box sizing consistency */
+        .sponsor-logo-placeholder,
+        .event-sponsor-placeholder,
+        .logo-placeholder {
+            min-height: 180px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+        
+        /* Ensure all partner boxes have consistent dimensions */
+        .sponsor-logo-placeholder[data-tier="gold"],
+        .sponsor-logo-placeholder[data-tier="silver"], 
+        .sponsor-logo-placeholder[data-tier="bronze"] {
+            min-height: 180px !important;
+            height: auto !important;
+        }
+        
+        /* 2. Fix text overflow in impact stats */
+        .impact-stats {
+            padding: 1.5rem !important;
+        }
+        
+        .stat-item {
+            padding: 0.5rem !important;
+            min-width: 0 !important; /* Allow text wrapping */
+        }
+        
+        .stat-number {
+            font-size: 2rem !important;
+            line-height: 1.2 !important;
+            margin-bottom: 0.25rem !important;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem !important;
+            line-height: 1.3 !important;
+            overflow-wrap: break-word !important;
+            word-wrap: break-word !important;
+            hyphens: auto !important;
+        }
+        
+        /* 3. Fix centering in highlights section */
+        .highlights-gallery {
+            justify-items: center !important;
+        }
+        
+        .highlight-card {
+            width: 100% !important;
+            max-width: 350px !important;
+            margin: 0 auto !important;
+        }
+        
+        .highlight-content {
+            text-align: center !important;
+            padding: 1rem !important;
+        }
+        
+        .highlight-content h3,
+        .highlight-content p {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+        
+        /* Additional responsive fixes for very small screens */
+        @media screen and (max-width: 480px) {
+            .sponsor-logos-preview,
+            .event-sponsor-logos,
+            .footer-sponsor-logos {
+                gap: 1rem !important;
+            }
+            
+            .sponsor-logo-placeholder,
+            .event-sponsor-placeholder {
+                min-width: 140px !important;
+                padding: 1rem !important;
+            }
+            
+            .impact-stats {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+                padding: 1rem !important;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem !important;
+            }
+            
+            .stat-label {
+                font-size: 0.75rem !important;
+            }
+        }
+        
+        /* Ensure box model consistency */
+        .sponsor-logo-placeholder *,
+        .event-sponsor-placeholder *,
+        .logo-placeholder * {
+            box-sizing: border-box !important;
+        }
     </style>
 </head>
 <body>
