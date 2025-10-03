@@ -22,7 +22,7 @@
     <!-- Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Variables CSS pour la palette de couleurs */
+        /* ===== CSS VARIABLES ===== */
         :root {
             --primary-black: #1A1A1A;
             --vibrant-yellow: #FFCC00;
@@ -35,7 +35,7 @@
             --gold: #FFD700;
         }
 
-        /* Reset et styles de base */
+        /* ===== RESET & BASE STYLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -54,6 +54,18 @@
             background-color: var(--white);
         }
 
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
@@ -74,18 +86,25 @@
             margin-bottom: 1rem;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+        /* ===== ACCESSIBILITY ===== */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--vibrant-yellow);
+            color: var(--primary-black);
+            padding: 8px;
+            z-index: 1001;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
         }
 
-        section {
-            padding: 5rem 0;
+        .skip-link:focus {
+            top: 6px;
         }
 
-        /* Navigation */
+        /* ===== NAVIGATION ===== */
         .navbar {
             position: fixed;
             top: 0;
@@ -165,33 +184,7 @@
             transition: all 0.3s ease;
         }
 
-        /* Section Hero */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
-                        url('https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1790&q=80') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .hero-content {
-            max-width: 800px;
-            padding: 0 20px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
+        /* ===== BUTTONS ===== */
         .btn {
             display: inline-block;
             padding: 0.8rem 1.8rem;
@@ -235,7 +228,53 @@
             flex-wrap: wrap;
         }
 
-        /* Section Le Club */
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--vibrant-yellow);
+            color: var(--primary-black);
+        }
+
+        .btn-outline:hover,
+        .btn-outline:focus {
+            background: var(--vibrant-yellow);
+        }
+
+        .btn-primary {
+            background: var(--vibrant-yellow);
+            color: var(--primary-black);
+            font-weight: 600;
+            padding: 1rem 2rem;
+            position: relative;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
+                        url('https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1790&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* ===== ABOUT SECTION ===== */
         .about {
             background-color: var(--white);
         }
@@ -253,7 +292,7 @@
             margin-bottom: 3rem;
         }
 
-        /* Section Nos Équipes */
+        /* ===== TEAMS SECTION ===== */
         .teams {
             background-color: var(--light-grey);
         }
@@ -302,7 +341,7 @@
             font-size: 0.9rem;
         }
 
-        /* Section Horaires */
+        /* ===== SCHEDULE SECTION ===== */
         .schedule {
             background-color: var(--white);
         }
@@ -342,7 +381,7 @@
             color: var(--primary-black);
         }
 
-        /* Section Facebook */
+        /* ===== FACEBOOK SECTION ===== */
         .facebook {
             background-color: var(--light-grey);
         }
@@ -359,7 +398,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Section Contact - REDESIGNED */
+        /* ===== CONTACT SECTION ===== */
         .contact {
             background-color: var(--white);
         }
@@ -428,25 +467,6 @@
 
         .contact-card-body p {
             margin-bottom: 1rem;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--vibrant-yellow);
-            color: var(--primary-black);
-        }
-
-        .btn-outline:hover,
-        .btn-outline:focus {
-            background: var(--vibrant-yellow);
-        }
-
-        .btn-primary {
-            background: var(--vibrant-yellow);
-            color: var(--primary-black);
-            font-weight: 600;
-            padding: 1rem 2rem;
-            position: relative;
         }
 
         .highlight-text {
@@ -573,7 +593,7 @@
             color: #721c24;
         }
 
-        /* Section Sponsors - UPDATED */
+        /* ===== SPONSORS SECTION ===== */
         .sponsors {
             background-color: var(--light-grey);
         }
@@ -687,6 +707,39 @@
             color: var(--vibrant-yellow);
         }
 
+        .sponsor-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .sponsor-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            max-width: 300px;
+        }
+
+        .sponsor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .sponsor-icon {
+            font-size: 2.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 1rem;
+        }
+
+        .sponsor-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* ===== DONATION SECTION ===== */
         .donation-section {
             background-color: var(--white);
             border-radius: 10px;
@@ -798,223 +851,7 @@
             color: #721c24;
         }
 
-        .sponsor-cards {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .sponsor-card {
-            background-color: var(--white);
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-            max-width: 300px;
-        }
-
-        .sponsor-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .sponsor-icon {
-            font-size: 2.5rem;
-            color: var(--vibrant-yellow);
-            margin-bottom: 1rem;
-        }
-
-        .sponsor-card h3 {
-            margin-bottom: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--primary-black);
-            color: var(--white);
-            padding: 3rem 0 1.5rem;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            color: var(--white);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .footer-logo-img {
-            height: 40px;
-            width: auto;
-            margin-right: 10px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .social-icon {
-            color: var(--white);
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            text-decoration: none;
-        }
-
-        .social-icon:hover,
-        .social-icon:focus {
-            color: var(--vibrant-yellow);
-            outline: none;
-            text-decoration: none;
-        }
-
-        .social-icon:focus {
-            outline: 2px solid var(--vibrant-yellow);
-            outline-offset: 2px;
-        }
-
-        .footer-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .copyright {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-
-        /* Skip to main content link for accessibility */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 6px;
-            background: var(--vibrant-yellow);
-            color: var(--primary-black);
-            padding: 8px;
-            z-index: 1001;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 4px;
-        }
-
-        .skip-link:focus {
-            top: 6px;
-        }
-
-        /* Responsive Design */
-        @media screen and (max-width: 968px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .contact-info {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 1.5rem;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                flex-direction: column;
-                background-color: var(--primary-black);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-                padding: 2rem 0;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-item {
-                margin: 1.5rem 0;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-            }
-
-            .btn-group {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 250px;
-                font-size: 1.1rem;
-                padding: 1rem 1.5rem;
-            }
-            
-            .team-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .schedule-container {
-                grid-template-columns: 1fr;
-            }
-
-            .sponsorship-tiers {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                flex-direction: column;
-            }
-
-            .tier-options {
-                flex-direction: column;
-            }
-
-            .donation-section {
-                padding: 2rem 1rem;
-            }
-
-            .contact-form-container {
-                padding: 1.5rem;
-            }
-            
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* New Pricing Section Styles */
+        /* ===== PRICING SECTION ===== */
         .pricing {
             background-color: var(--light-grey);
         }
@@ -1026,7 +863,7 @@
             font-size: 1.1rem;
             line-height: 1.6;
         }
-        /* NEW PRICING TABLE STYLES */
+
         .pricing-table-container {
             margin: 2rem 0;
             overflow-x: auto;
@@ -1086,33 +923,7 @@
             font-size: 1.2rem;
             text-align: right;
         }
-        
-        /* Responsive adjustments for pricing table */
-        @media screen and (max-width: 768px) {
-            .pricing-table th,
-            .pricing-table td {
-                padding: 0.8rem 0.5rem;
-                font-size: 0.9rem;
-            }
-            
-            .pricing-table td:last-child {
-                font-size: 1.1rem;
-            }
-        }
-        
-        @media screen and (max-width: 480px) {
-            .pricing-table {
-                font-size: 0.85rem;
-            }
-            
-            .pricing-table th {
-                padding: 0.7rem 0.4rem;
-            }
-            
-            .pricing-table td {
-                padding: 0.7rem 0.4rem;
-            }
-        }
+
         .pricing-notes {
             background: var(--white);
             border-radius: 10px;
@@ -1145,19 +956,7 @@
             margin-top: 2rem;
         }
 
-        /* Responsive adjustments for pricing */
-        @media screen and (max-width: 768px) {
-            .pricing-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-card {
-                margin: 0 auto;
-                max-width: 400px;
-            }
-        }
-
-         /* ===== Tax Benefit Section Styles ===== */
+        /* ===== TAX BENEFIT SECTION ===== */
         .tax-benefit-box {
             background: linear-gradient(135deg, #fff9e6 0%, #fffbef 100%);
             border-left: 4px solid var(--vibrant-yellow);
@@ -1178,8 +977,8 @@
             margin-top: 1rem;
             text-align: center;
         }
-        
-        /* ===== Highlights Section Styles ===== */
+
+        /* ===== HIGHLIGHTS SECTION ===== */
         .highlights-section {
             background-color: var(--white);
             padding: 4rem 0;
@@ -1219,7 +1018,8 @@
             color: var(--vibrant-yellow);
             margin-bottom: 0.5rem;
         }
-        /* Impact Statement Styles */
+
+        /* ===== IMPACT STATEMENT ===== */
         .impact-statement {
             background: var(--white);
             border-radius: 15px;
@@ -1321,390 +1121,8 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
-        /* Responsive adjustments */
-        @media screen and (max-width: 768px) {
-            .impact-statement {
-                padding: 2rem 1rem;
-            }
-            
-            .impact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .impact-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-                padding: 1.5rem;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-        }
 
-        /* Hero Sponsors Section */
-        .hero-sponsors {
-            background: rgba(255, 204, 0, 0.05);
-            padding: 3rem 0;
-            border-top: 1px solid rgba(255, 204, 0, 0.2);
-        }
-        
-        .sponsor-preview {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .sponsor-preview h3 {
-            color: var(--primary-black);
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-        }
-        
-        .sponsor-logos-preview {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .sponsor-logo-placeholder {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            min-width: 150px;
-            transition: transform 0.3s ease;
-        }
-        
-        .sponsor-logo-placeholder:hover {
-            transform: translateY(-5px);
-        }
-        
-        .sponsor-logo-placeholder[data-tier="gold"] {
-            border-top: 4px solid var(--gold);
-        }
-        
-        .sponsor-logo-placeholder[data-tier="silver"] {
-            border-top: 4px solid var(--silver);
-        }
-        
-        .sponsor-logo-placeholder[data-tier="bronze"] {
-            border-top: 4px solid var(--bronze);
-        }
-        
-        .sponsor-logo-placeholder i {
-            font-size: 2.5rem;
-            color: var(--vibrant-yellow);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        
-        .sponsor-logo-placeholder span {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-        
-        .sponsor-logo-placeholder small {
-            color: #666;
-            font-size: 0.8rem;
-        }
-        
-        /* Halloween Event Sponsors */
-        .event-sponsors {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem auto;
-            max-width: 600px;
-            text-align: center;
-            border: 2px solid rgba(255, 204, 0, 0.3);
-        }
-        
-        .event-sponsors h4 {
-            color: var(--vibrant-yellow);
-            margin-bottom: 1rem;
-        }
-        
-        .event-sponsor-logos {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .event-sponsor-placeholder {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            min-width: 120px;
-            border: 1px solid rgba(255, 204, 0, 0.3);
-        }
-        
-        .event-sponsor-placeholder i {
-            font-size: 2rem;
-            color: var(--vibrant-yellow);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        
-        .event-sponsor-placeholder span {
-            font-size: 0.9rem;
-            color: var(--white);
-        }
-        
-        .sponsor-note {
-            color: var(--vibrant-yellow);
-            font-style: italic;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-        
-        /* Current Sponsors Showcase */
-        .current-sponsors-showcase {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 3rem 2rem;
-            border-radius: 15px;
-            margin: 3rem 0;
-            text-align: center;
-        }
-        
-        .current-sponsors-showcase h3 {
-            color: var(--primary-black);
-            margin-bottom: 1rem;
-        }
-        
-        .current-sponsors-showcase > p {
-            color: #666;
-            margin-bottom: 2rem;
-        }
-        
-        .sponsors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .sponsor-logo {
-            text-align: center;
-        }
-        
-        .logo-placeholder {
-            background: var(--white);
-            padding: 2rem 1rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1rem;
-            transition: transform 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .sponsor-logo:hover .logo-placeholder {
-            transform: translateY(-5px);
-        }
-        
-        .sponsor-logo[data-category="gold"] .logo-placeholder {
-            border-color: var(--gold);
-        }
-        
-        .sponsor-logo[data-category="silver"] .logo-placeholder {
-            border-color: var(--silver);
-        }
-        
-        .sponsor-logo[data-category="bronze"] .logo-placeholder {
-            border-color: var(--bronze);
-        }
-        
-        .available-spot {
-            border: 2px dashed var(--vibrant-yellow) !important;
-            background: rgba(255, 204, 0, 0.05);
-        }
-        
-        .logo-placeholder i {
-            font-size: 2.5rem;
-            color: var(--vibrant-yellow);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        
-        .logo-placeholder.available-spot i {
-            color: var(--vibrant-yellow);
-        }
-        
-        .logo-placeholder span {
-            font-weight: 600;
-            color: var(--primary-black);
-        }
-        
-        .sponsor-logo p {
-            font-size: 0.9rem;
-            color: #666;
-            margin: 0;
-        }
-        
-        .available p {
-            color: var(--vibrant-yellow);
-            font-weight: 600;
-        }
-        
-        /* Footer Sponsors */
-        .footer-sponsors {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        
-        .footer-sponsors h4 {
-            color: var(--white);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        .footer-sponsor-logos {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-        
-        .footer-sponsor-placeholder {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            min-width: 120px;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-sponsor-placeholder:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        .footer-sponsor-placeholder.available {
-            border: 2px dashed var(--vibrant-yellow);
-            background: rgba(255, 204, 0, 0.1);
-        }
-        
-        .footer-sponsor-placeholder i {
-            font-size: 1.5rem;
-            color: var(--vibrant-yellow);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        
-        .footer-sponsor-placeholder span {
-            font-size: 0.8rem;
-            color: var(--white);
-        }
-        
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .sponsor-logos-preview {
-                gap: 1rem;
-            }
-            
-            .sponsor-logo-placeholder {
-                min-width: 120px;
-                padding: 1rem;
-            }
-            
-            .sponsors-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 1.5rem;
-            }
-            
-            .event-sponsor-logos {
-                gap: 1rem;
-            }
-            
-            .footer-sponsor-logos {
-                gap: 1rem;
-            }
-        }
-        
-        /* Enhanced Halloween Counter Styles */
-        .halloween-counter-simplified {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding: 2.5rem;
-            background: linear-gradient(135deg, rgba(255, 204, 0, 0.15) 0%, rgba(255, 204, 0, 0.05) 100%);
-            border-radius: 20px;
-            border: 2px solid var(--vibrant-yellow);
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            backdrop-filter: blur(10px);
-        }
-        
-        .counter-main {
-            margin-bottom: 2rem;
-        }
-        
-        .counter-total {
-            font-size: 3.5rem;
-            font-weight: bold;
-            color: var(--vibrant-yellow);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
-        }
-        
-        .counter-label {
-            font-size: 1.2rem;
-            color: var(--white);
-            font-weight: 500;
-        }
-        
-        .counter-breakdown-simple {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 2rem 0;
-        }
-        
-        .breakdown-simple-item {
-            text-align: center;
-            flex: 0 0 auto; /* This prevents items from stretching */
-        }
-        
-        .breakdown-simple-number {
-            font-size: 2.2rem;
-            font-weight: bold;
-            color: var(--vibrant-yellow);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 8px rgba(255, 204, 0, 0.2);
-        }
-        
-        .breakdown-simple-label {
-            font-size: 1rem;
-            color: var(--white);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .counter-cta {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 204, 0, 0.3);
-        }
-        
-        .counter-cta p {
-            margin-bottom: 1rem;
-            color: var(--white);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        /* Keep existing Halloween styles, just remove the old counter styles */
+        /* ===== HALLOWEEN SECTION ===== */
         .halloween {
             background: linear-gradient(135deg, #1A1A1A 0%, #2D1B00 100%);
             color: var(--white);
@@ -1869,57 +1287,295 @@
             font-size: 0.9rem;
             color: #ddd;
         }
-        
-        /* Responsive Design */
-        @media screen and (max-width: 968px) {
-            .halloween-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .halloween-image {
-                order: 2;
-            }
-            
-            .halloween-details {
-                order: 1;
-            }
-            
-            .counter-breakdown {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .halloween-counter-enhanced {
-                max-width: 400px;
-            }
+
+        /* ===== HALLOWEEN COUNTER ===== */
+        .halloween-counter-simplified {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.15) 0%, rgba(255, 204, 0, 0.05) 100%);
+            border-radius: 20px;
+            border: 2px solid var(--vibrant-yellow);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            backdrop-filter: blur(10px);
         }
         
-        @media screen and (max-width: 768px) {
-            .halloween-title {
-                font-size: 2.5rem;
-            }
-            
-            .halloween-date {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-            
-            .date-icon {
-                font-size: 1.8rem;
-            }
-            
-            .counter-total {
-                font-size: 3rem;
-            }
-            
-            .breakdown-item {
-                justify-content: center;
-            }
+        .counter-main {
+            margin-bottom: 2rem;
+        }
+        
+        .counter-total {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: var(--vibrant-yellow);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+        }
+        
+        .counter-label {
+            font-size: 1.2rem;
+            color: var(--white);
+            font-weight: 500;
+        }
+        
+        .counter-breakdown-simple {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .breakdown-simple-item {
+            text-align: center;
+            flex: 0 0 auto;
+        }
+        
+        .breakdown-simple-number {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--vibrant-yellow);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 8px rgba(255, 204, 0, 0.2);
+        }
+        
+        .breakdown-simple-label {
+            font-size: 1rem;
+            color: var(--white);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .counter-cta {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 204, 0, 0.3);
+        }
+        
+        .counter-cta p {
+            margin-bottom: 1rem;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.1rem;
         }
 
-        /* Construction Banner Styles */
+        /* ===== HERO SPONSORS SECTION ===== */
+        .hero-sponsors {
+            background: rgba(255, 204, 0, 0.05);
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 204, 0, 0.2);
+        }
+        
+        .sponsor-preview {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .sponsor-preview h3 {
+            color: var(--primary-black);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+        
+        .sponsor-logos-preview {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .sponsor-logo-placeholder {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            min-width: 150px;
+            transition: transform 0.3s ease;
+        }
+        
+        .sponsor-logo-placeholder:hover {
+            transform: translateY(-5px);
+        }
+        
+        .sponsor-logo-placeholder[data-tier="gold"] {
+            border-top: 4px solid var(--gold);
+        }
+        
+        .sponsor-logo-placeholder[data-tier="silver"] {
+            border-top: 4px solid var(--silver);
+        }
+        
+        .sponsor-logo-placeholder[data-tier="bronze"] {
+            border-top: 4px solid var(--bronze);
+        }
+        
+        .sponsor-logo-placeholder i {
+            font-size: 2.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .sponsor-logo-placeholder span {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .sponsor-logo-placeholder small {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* ===== EVENT SPONSORS ===== */
+        .event-sponsors {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 600px;
+            text-align: center;
+            border: 2px solid rgba(255, 204, 0, 0.3);
+        }
+        
+        .event-sponsors h4 {
+            color: var(--vibrant-yellow);
+            margin-bottom: 1rem;
+        }
+        
+        .event-sponsor-logos {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .event-sponsor-placeholder {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 120px;
+            border: 1px solid rgba(255, 204, 0, 0.3);
+        }
+        
+        .event-sponsor-placeholder i {
+            font-size: 2rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .event-sponsor-placeholder span {
+            font-size: 0.9rem;
+            color: var(--white);
+        }
+        
+        .sponsor-note {
+            color: var(--vibrant-yellow);
+            font-style: italic;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        /* ===== CURRENT SPONSORS SHOWCASE ===== */
+        .current-sponsors-showcase {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .current-sponsors-showcase h3 {
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+        }
+        
+        .current-sponsors-showcase > p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .sponsor-logo {
+            text-align: center;
+        }
+        
+        .logo-placeholder {
+            background: var(--white);
+            padding: 2rem 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .sponsor-logo:hover .logo-placeholder {
+            transform: translateY(-5px);
+        }
+        
+        .sponsor-logo[data-category="gold"] .logo-placeholder {
+            border-color: var(--gold);
+        }
+        
+        .sponsor-logo[data-category="silver"] .logo-placeholder {
+            border-color: var(--silver);
+        }
+        
+        .sponsor-logo[data-category="bronze"] .logo-placeholder {
+            border-color: var(--bronze);
+        }
+        
+        .available-spot {
+            border: 2px dashed var(--vibrant-yellow) !important;
+            background: rgba(255, 204, 0, 0.05);
+        }
+        
+        .logo-placeholder i {
+            font-size: 2.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .logo-placeholder.available-spot i {
+            color: var(--vibrant-yellow);
+        }
+        
+        .logo-placeholder span {
+            font-weight: 600;
+            color: var(--primary-black);
+        }
+        
+        .sponsor-logo p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        .available p {
+            color: var(--vibrant-yellow);
+            font-weight: 600;
+        }
+
+        /* ===== CONSTRUCTION BANNER ===== */
         .construction-banner {
             background: linear-gradient(135deg, var(--primary-black) 0%, #333 100%);
             color: var(--white);
@@ -2002,9 +1658,280 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
         }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--primary-black);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .footer-logo-img {
+            height: 40px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-icon {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            text-decoration: none;
+        }
+
+        .social-icon:hover,
+        .social-icon:focus {
+            color: var(--vibrant-yellow);
+            outline: none;
+            text-decoration: none;
+        }
+
+        .social-icon:focus {
+            outline: 2px solid var(--vibrant-yellow);
+            outline-offset: 2px;
+        }
+
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* ===== FOOTER SPONSORS ===== */
+        .footer-sponsors {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
         
-        /* Responsive Design */
+        .footer-sponsors h4 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-sponsor-logos {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-sponsor-placeholder {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 120px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-sponsor-placeholder:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .footer-sponsor-placeholder.available {
+            border: 2px dashed var(--vibrant-yellow);
+            background: rgba(255, 204, 0, 0.1);
+        }
+        
+        .footer-sponsor-placeholder i {
+            font-size: 1.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .footer-sponsor-placeholder span {
+            font-size: 0.8rem;
+            color: var(--white);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media screen and (max-width: 968px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .contact-info {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .halloween-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .halloween-image {
+                order: 2;
+            }
+            
+            .halloween-details {
+                order: 1;
+            }
+        }
+
         @media screen and (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--primary-black);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 1.5rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                font-size: 1.1rem;
+                padding: 1rem 1.5rem;
+            }
+            
+            .team-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .schedule-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sponsorship-tiers {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+
+            .tier-options {
+                flex-direction: column;
+            }
+
+            .donation-section {
+                padding: 2rem 1rem;
+            }
+
+            .contact-form-container {
+                padding: 1.5rem;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-table th,
+            .pricing-table td {
+                padding: 0.8rem 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .pricing-table td:last-child {
+                font-size: 1.1rem;
+            }
+            
+            .impact-statement {
+                padding: 2rem 1rem;
+            }
+            
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .halloween-title {
+                font-size: 2.5rem;
+            }
+            
+            .halloween-date {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .date-icon {
+                font-size: 1.8rem;
+            }
+            
+            .counter-total {
+                font-size: 3rem;
+            }
+            
             .banner-content {
                 flex-direction: column;
                 text-align: center;
@@ -2037,6 +1964,42 @@
                 max-width: 280px;
                 font-size: 0.95rem;
                 padding: 0.8rem 0.5rem;
+            }
+            
+            .sponsor-logos-preview {
+                gap: 1rem;
+            }
+            
+            .sponsor-logo-placeholder {
+                min-width: 120px;
+                padding: 1rem;
+            }
+            
+            .sponsors-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .event-sponsor-logos {
+                gap: 1rem;
+            }
+            
+            .footer-sponsor-logos {
+                gap: 1rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .pricing-table {
+                font-size: 0.85rem;
+            }
+            
+            .pricing-table th {
+                padding: 0.7rem 0.4rem;
+            }
+            
+            .pricing-table td {
+                padding: 0.7rem 0.4rem;
             }
         }
     </style>
