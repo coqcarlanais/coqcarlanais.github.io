@@ -345,41 +345,94 @@
         .schedule {
             background-color: var(--white);
         }
-
-        .schedule-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .schedule-day {
-            background-color: var(--light-grey);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .schedule-day h3 {
-            color: var(--vibrant-yellow);
-            margin-bottom: 1.5rem;
+        
+        .schedule-image-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
             text-align: center;
         }
-
-        .schedule-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #ddd;
+        
+        .schedule-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .schedule-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .schedule-image:active {
+            transform: scale(0.98);
+        }
+        
+        .image-zoom-hint {
+            display: none;
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background-color: var(--light-grey);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .image-zoom-hint i {
+            margin-right: 0.5rem;
+            color: var(--vibrant-yellow);
+        }
+        
+        /* Mobile-specific styles for full-width image */
+        @media screen and (max-width: 768px) {
+            .schedule {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            
+            .schedule .container {
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+            
+            .schedule-image-container {
+                margin: 0;
+                max-width: 100%;
+                width: 100%;
+            }
+            
+            .schedule-image {
+                width: 100%;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
+            .image-zoom-hint {
+                display: block;
+                margin: 1rem 15px 0;
+            }
+            
+            h2 {
+                padding: 0 15px;
+            }
+        }
+        
+        /* For very small screens, ensure maximum readability */
+        @media screen and (max-width: 480px) {
+            .schedule-image-container {
+                margin: 0 -10px;
+            }
+            
+            .image-zoom-hint {
+                font-size: 0.8rem;
+                padding: 0.6rem;
+            }
         }
 
-        .schedule-item:last-child {
-            border-bottom: none;
-        }
-
-        .schedule-time {
-            font-weight: 600;
-            color: var(--primary-black);
-        }
 
         /* ===== FACEBOOK SECTION ===== */
         .facebook {
@@ -1863,10 +1916,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .schedule-container {
-                grid-template-columns: 1fr;
-            }
-
             .sponsorship-tiers {
                 grid-template-columns: 1fr;
             }
@@ -2396,91 +2445,16 @@
         <section id="horaires" class="schedule">
             <div class="container">
                 <h2>Horaires d'Entraînement 2025/2026</h2>
-                <div class="schedule-container">
-                    <div class="schedule-day">
-                        <h3>Lundi</h3>
-                        <div class="schedule-item">
-                            <span class="schedule-time">20h30 - 22h30</span>
-                            <span>Séniors Garçons & Filles (Hoops)</span>
-                        </div>
-                    </div>
-                    <div class="schedule-day">
-                        <h3>Mardi</h3>
-                        <div class="schedule-item">
-                            <span class="schedule-time">18h00 - 19h30</span>
-                            <span>U13 Filles</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">19h30 - 21h00</span>
-                            <span>Basket Loisirs</span>
-                        </div>
-                    </div>
-                    <div class="schedule-day">
-                        <h3>Mercredi</h3>
-                        <div class="schedule-item">
-                            <span class="schedule-time">15h30 - 17h00</span>
-                            <span>U11 Mixte</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">17h00 - 18h30</span>
-                            <span>U13 Garçons</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">18h30 - 20h00</span>
-                            <span>U15 Garçons</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">20h00 - 22h00</span>
-                            <span>U18 / Séniors Garçons</span>
-                        </div>
-                    </div>
-                    <div class="schedule-day">
-                        <h3>Jeudi</h3>
-                        <div class="schedule-item">
-                            <span class="schedule-time">18h00 - 19h30</span>
-                            <span>U15 Filles</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">19h30 - 20h30</span>
-                            <span>Basket Santé</span>
-                        </div>
-                    </div>
-                    <div class="schedule-day">
-                        <h3>Vendredi</h3>
-                        <div class="schedule-item">
-                            <span class="schedule-time">17h30 - 18h30</span>
-                            <span>U7 / U9</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">18h30 - 20h00</span>
-                            <span>U18 Garçons</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">20h00 - 22h00</span>
-                            <span>Séniors Filles</span>
-                        </div>
-                    </div>
-                    <div class="schedule-day">
-                        <h3>Samedi</h3>
-                        <div class="schedule-item">
-                            <span class="schedule-time">9h00 - 11h00</span>
-                            <span>U11 Entraînement ou Match</span>
-                        </div>
-                        <div class="schedule-item">
-                            <span class="schedule-time">11h00 - 22h00</span>
-                            <span>Match</span>
-                        </div>
-                    </div>
-                    <div class="schedule-day">
-                        <h3>Dimanche</h3>
-                        <div class="schedule-item">
-                            <span class="schedule-time">9h00 - 13h00</span>
-                            <span>U9 Plateau ou Stage</span>
-                        </div>
+                <div class="schedule-image-container">
+                    <img src="photos/planning_carla.jpg" alt="Planning Hebdomadaire des Entraînements 2025/2026" class="schedule-image" loading="lazy">
+                    <div class="image-zoom-hint">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Appuyez sur l'image pour zoomer sur mobile</span>
                     </div>
                 </div>
             </div>
         </section>
+
         
         <!-- Section Tarifs - SIMPLIFIED -->
         <section id="tarifs" class="pricing">
@@ -3537,6 +3511,32 @@
         // Initialize countdown and update every second
         updateCountdown();
         setInterval(updateCountdown, 1000);
+        
+        // Mobile image zoom functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scheduleImage = document.querySelector('.schedule-image');
+            if (!scheduleImage) return;
+            
+            let isZoomed = false;
+            
+            scheduleImage.addEventListener('click', function() {
+                if (window.innerWidth <= 768) { // Only on mobile
+                    if (!isZoomed) {
+                        // Zoom in
+                        this.style.transform = 'scale(1.5)';
+                        this.style.transformOrigin = 'center center';
+                        this.style.transition = 'transform 0.3s ease';
+                        this.style.cursor = 'zoom-out';
+                        isZoomed = true;
+                    } else {
+                        // Zoom out
+                        this.style.transform = 'scale(1)';
+                        this.style.cursor = 'zoom-in';
+                        isZoomed = false;
+                    }
+                }
+            });
+        });
     </script>
 </body>
 </html>
