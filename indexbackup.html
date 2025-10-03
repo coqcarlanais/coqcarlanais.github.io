@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SHHWT6C3R9"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-SHHWT6C3R9');
+        </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coq Carlanais - Club de Basket du Carla Bayle</title>
     <meta name="description" content="Club de basket-ball Coq Carlanais à Carla Bayle. Équipes pour tous les âges, entraînements, compétitions et inscriptions.">
-    <link rel="icon" href="Coq_carlanais_logo.jpg" type="image/jpeg">
+    <link rel="icon" href="photos/Coq_carlanais_logo.jpg" type="image/jpeg">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -242,40 +251,6 @@
 
         .about-text {
             margin-bottom: 3rem;
-        }
-
-        .features {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .feature-card {
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
-            background-color: var(--white);
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--vibrant-yellow);
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            margin-bottom: 1rem;
         }
 
         /* Section Nos Équipes */
@@ -1005,16 +980,7 @@
                 font-size: 1.1rem;
                 padding: 1rem 1.5rem;
             }
-
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .feature-card {
-                width: 100%;
-            }
-
+            
             .team-cards {
                 grid-template-columns: 1fr;
             }
@@ -1047,17 +1013,634 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* New Pricing Section Styles */
+        .pricing {
+            background-color: var(--light-grey);
+        }
+
+        .pricing-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        /* NEW PRICING TABLE STYLES */
+        .pricing-table-container {
+            margin: 2rem 0;
+            overflow-x: auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .pricing-table th {
+            background-color: var(--vibrant-yellow);
+            color: var(--primary-black);
+            padding: 1.2rem 1rem;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .pricing-table th:last-child {
+            text-align: right;
+        }
+        
+        .pricing-table td {
+            padding: 1.2rem 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-table tbody tr {
+            transition: background-color 0.3s ease;
+        }
+        
+        .pricing-table tbody tr:hover {
+            background-color: rgba(255, 204, 0, 0.05);
+        }
+        
+        .pricing-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .pricing-table td:first-child {
+            font-weight: 600;
+            color: var(--primary-black);
+        }
+        
+        .pricing-table td:last-child {
+            font-weight: 700;
+            color: var(--primary-black);
+            font-size: 1.2rem;
+            text-align: right;
+        }
+        
+        /* Responsive adjustments for pricing table */
+        @media screen and (max-width: 768px) {
+            .pricing-table th,
+            .pricing-table td {
+                padding: 0.8rem 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .pricing-table td:last-child {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .pricing-table {
+                font-size: 0.85rem;
+            }
+            
+            .pricing-table th {
+                padding: 0.7rem 0.4rem;
+            }
+            
+            .pricing-table td {
+                padding: 0.7rem 0.4rem;
+            }
+        }
+        .pricing-notes {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .notes-list {
+            list-style: none;
+        }
+
+        .notes-list li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .notes-list i {
+            margin-right: 10px;
+            color: var(--vibrant-yellow);
+            margin-top: 0.3rem;
+        }
+
+        .payment-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive adjustments for pricing */
+        @media screen and (max-width: 768px) {
+            .pricing-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card {
+                margin: 0 auto;
+                max-width: 400px;
+            }
+        }
+
+         /* ===== Tax Benefit Section Styles ===== */
+        .tax-benefit-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #fffbef 100%);
+            border-left: 4px solid var(--vibrant-yellow);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+        }
+        
+        .tax-benefit-box h4 {
+            color: var(--primary-black);
+            margin-bottom: 0.75rem;
+        }
+        
+        .tax-example {
+            background-color: rgba(255, 204, 0, 0.1);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        
+        /* ===== Highlights Section Styles ===== */
+        .highlights-section {
+            background-color: var(--white);
+            padding: 4rem 0;
+        }
+        
+        .highlights-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .highlight-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .highlight-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .highlight-content {
+            padding: 1.5rem;
+        }
+        
+        .highlight-content h3 {
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+        }
+        /* Impact Statement Styles */
+        .impact-statement {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--vibrant-yellow);
+        }
+        
+        .impact-statement h3 {
+            text-align: center;
+            color: var(--primary-black);
+            margin-bottom: 2.5rem;
+            font-size: 2rem;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .impact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--light-grey);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .impact-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .impact-icon {
+            font-size: 2.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 1rem;
+            height: 80px;
+            width: 80px;
+            background: rgba(255, 204, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        
+        .impact-item h4 {
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .impact-item p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--vibrant-yellow) 0%, var(--secondary-yellow) 100%);
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-item {
+            color: var(--primary-black);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .impact-cta {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 2px solid var(--light-grey);
+        }
+        
+        .impact-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .impact-statement {
+                padding: 2rem 1rem;
+            }
+            
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* Hero Sponsors Section */
+        .hero-sponsors {
+            background: rgba(255, 204, 0, 0.05);
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 204, 0, 0.2);
+        }
+        
+        .sponsor-preview {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .sponsor-preview h3 {
+            color: var(--primary-black);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+        
+        .sponsor-logos-preview {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .sponsor-logo-placeholder {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            min-width: 150px;
+            transition: transform 0.3s ease;
+        }
+        
+        .sponsor-logo-placeholder:hover {
+            transform: translateY(-5px);
+        }
+        
+        .sponsor-logo-placeholder[data-tier="gold"] {
+            border-top: 4px solid var(--gold);
+        }
+        
+        .sponsor-logo-placeholder[data-tier="silver"] {
+            border-top: 4px solid var(--silver);
+        }
+        
+        .sponsor-logo-placeholder[data-tier="bronze"] {
+            border-top: 4px solid var(--bronze);
+        }
+        
+        .sponsor-logo-placeholder i {
+            font-size: 2.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .sponsor-logo-placeholder span {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .sponsor-logo-placeholder small {
+            color: #666;
+            font-size: 0.8rem;
+        }
+        
+        /* Halloween Event Sponsors */
+        .event-sponsors {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 600px;
+            text-align: center;
+            border: 2px solid rgba(255, 204, 0, 0.3);
+        }
+        
+        .event-sponsors h4 {
+            color: var(--vibrant-yellow);
+            margin-bottom: 1rem;
+        }
+        
+        .event-sponsor-logos {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .event-sponsor-placeholder {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 120px;
+            border: 1px solid rgba(255, 204, 0, 0.3);
+        }
+        
+        .event-sponsor-placeholder i {
+            font-size: 2rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .event-sponsor-placeholder span {
+            font-size: 0.9rem;
+            color: var(--white);
+        }
+        
+        .sponsor-note {
+            color: var(--vibrant-yellow);
+            font-style: italic;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Current Sponsors Showcase */
+        .current-sponsors-showcase {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .current-sponsors-showcase h3 {
+            color: var(--primary-black);
+            margin-bottom: 1rem;
+        }
+        
+        .current-sponsors-showcase > p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .sponsors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .sponsor-logo {
+            text-align: center;
+        }
+        
+        .logo-placeholder {
+            background: var(--white);
+            padding: 2rem 1rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .sponsor-logo:hover .logo-placeholder {
+            transform: translateY(-5px);
+        }
+        
+        .sponsor-logo[data-category="gold"] .logo-placeholder {
+            border-color: var(--gold);
+        }
+        
+        .sponsor-logo[data-category="silver"] .logo-placeholder {
+            border-color: var(--silver);
+        }
+        
+        .sponsor-logo[data-category="bronze"] .logo-placeholder {
+            border-color: var(--bronze);
+        }
+        
+        .available-spot {
+            border: 2px dashed var(--vibrant-yellow) !important;
+            background: rgba(255, 204, 0, 0.05);
+        }
+        
+        .logo-placeholder i {
+            font-size: 2.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .logo-placeholder.available-spot i {
+            color: var(--vibrant-yellow);
+        }
+        
+        .logo-placeholder span {
+            font-weight: 600;
+            color: var(--primary-black);
+        }
+        
+        .sponsor-logo p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        .available p {
+            color: var(--vibrant-yellow);
+            font-weight: 600;
+        }
+        
+        /* Footer Sponsors */
+        .footer-sponsors {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .footer-sponsors h4 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-sponsor-logos {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-sponsor-placeholder {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 120px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-sponsor-placeholder:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .footer-sponsor-placeholder.available {
+            border: 2px dashed var(--vibrant-yellow);
+            background: rgba(255, 204, 0, 0.1);
+        }
+        
+        .footer-sponsor-placeholder i {
+            font-size: 1.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .footer-sponsor-placeholder span {
+            font-size: 0.8rem;
+            color: var(--white);
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .sponsor-logos-preview {
+                gap: 1rem;
+            }
+            
+            .sponsor-logo-placeholder {
+                min-width: 120px;
+                padding: 1rem;
+            }
+            
+            .sponsors-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .event-sponsor-logos {
+                gap: 1rem;
+            }
+            
+            .footer-sponsor-logos {
+                gap: 1rem;
+            }
+        }
+        
         /* Enhanced Halloween Counter Styles */
-        .halloween-counter-enhanced {
+        .halloween-counter-simplified {
             text-align: center;
             margin-bottom: 3rem;
-            padding: 2rem;
-            background: rgba(255, 204, 0, 0.1);
-            border-radius: 15px;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.15) 0%, rgba(255, 204, 0, 0.05) 100%);
+            border-radius: 20px;
             border: 2px solid var(--vibrant-yellow);
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
+            backdrop-filter: blur(10px);
         }
         
         .counter-main {
@@ -1068,68 +1651,59 @@
             font-size: 3.5rem;
             font-weight: bold;
             color: var(--vibrant-yellow);
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
             line-height: 1;
             margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
         }
         
         .counter-label {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
+            color: var(--white);
+            font-weight: 500;
+        }
+        
+        .counter-breakdown-simple {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .breakdown-simple-item {
+            text-align: center;
+            flex: 0 0 auto; /* This prevents items from stretching */
+        }
+        
+        .breakdown-simple-number {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--vibrant-yellow);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 8px rgba(255, 204, 0, 0.2);
+        }
+        
+        .breakdown-simple-label {
+            font-size: 1rem;
+            color: var(--white);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .counter-cta {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 204, 0, 0.3);
+        }
+        
+        .counter-cta p {
+            margin-bottom: 1rem;
             color: var(--white);
             font-weight: 600;
+            font-size: 1.1rem;
         }
-        
-        .counter-breakdown {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .breakdown-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-        }
-        
-        .breakdown-icon {
-            font-size: 1.5rem;
-            color: var(--vibrant-yellow);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 204, 0, 0.2);
-            border-radius: 50%;
-        }
-        
-        .breakdown-info {
-            text-align: left;
-        }
-        
-        .breakdown-number {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--white);
-            line-height: 1;
-        }
-        
-        .breakdown-label {
-            font-size: 0.9rem;
-            color: #ddd;
-            margin-top: 0.2rem;
-        }
-        
-        .counter-update {
-            font-size: 0.8rem;
-            color: #aaa;
-            font-style: italic;
-        }
-        
+
         /* Keep existing Halloween styles, just remove the old counter styles */
         .halloween {
             background: linear-gradient(135deg, #1A1A1A 0%, #2D1B00 100%);
@@ -1344,25 +1918,180 @@
                 justify-content: center;
             }
         }
+
+        /* Construction Banner Styles */
+        .construction-banner {
+            background: linear-gradient(135deg, var(--primary-black) 0%, #333 100%);
+            color: var(--white);
+            padding: 1.5rem 0;
+            border-bottom: 3px solid var(--vibrant-yellow);
+            position: relative;
+            margin-top: 70px; /* Account for fixed navbar */
+        }
+        
+        .banner-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .banner-text h2 {
+            margin-bottom: 0.5rem;
+            color: var(--vibrant-yellow);
+            font-size: 1.5rem;
+        }
+        
+        .banner-text p {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .sponsor-cta {
+            color: var(--vibrant-yellow);
+            font-weight: 600;
+        }
+        
+        .countdown-container {
+            text-align: center;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            justify-content: center;
+        }
+        
+        .time-unit {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem;
+            border-radius: 8px;
+            min-width: 70px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .time-unit span {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--vibrant-yellow);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .time-unit small {
+            font-size: 0.8rem;
+            color: var(--white);
+            text-transform: uppercase;
+        }
+        
+        .sponsor-btn {
+            white-space: normal;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0.8rem 1rem;
+            line-height: 1.2;
+        }
+        .sponsor-btn:hover {
+            background: var(--hover-yellow);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
+        }
+        
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .banner-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .countdown-timer {
+                gap: 0.5rem;
+            }
+            
+            .time-unit {
+                min-width: 60px;
+                padding: 0.4rem;
+            }
+            
+            .time-unit span {
+                font-size: 1.5rem;
+            }
+            
+            .banner-text h2 {
+                font-size: 1.3rem;
+            }
+            
+            .banner-text p {
+                font-size: 0.9rem;
+            }
+            
+            .sponsor-btn {
+                width: 100%;
+                max-width: 280px;
+                font-size: 0.95rem;
+                padding: 0.8rem 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Skip to main content link -->
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
 
+    <section class="construction-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h2>🚀 Site en construction</h2>
+                    <p>Lancement du nouveau et premier site internet du club le <strong>15 octobre 2025</strong></p>
+                    <p class="sponsor-cta">💫 <strong>Opportunité exclusive</strong> : Ajoutez votre logo avant le lancement et bénéficiez d'une visibilité dès le premier jour !</p>
+                </div>
+                <div class="countdown-container">
+                    <div id="countdown-timer" class="countdown-timer">
+                        <div class="time-unit">
+                            <span id="days">00</span>
+                            <small>Jours</small>
+                        </div>
+                        <div class="time-unit">
+                            <span id="hours">00</span>
+                            <small>Heures</small>
+                        </div>
+                        <div class="time-unit">
+                            <span id="minutes">00</span>
+                            <small>Minutes</small>
+                        </div>
+                        <div class="time-unit">
+                            <span id="seconds">00</span>
+                            <small>Secondes</small>
+                        </div>
+                    </div>
+                    <a href="#sponsors" class="btn sponsor-btn">Devenir Sponsor Maintenant</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Menu principal">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <img src="Coq_carlanais_logo.jpg" alt="Logo Coq Carlanais" class="logo-img">
+                <img src="photos/Coq_carlanais_logo.jpg" alt="Logo Coq Carlanais" class="logo-img">
                 Coq Carlanais
             </a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#accueil" class="nav-link">Accueil</a></li>
-                <li class="nav-item"><a href="#halloween" class="nav-link">Halloween</a></li>
                 <li class="nav-item"><a href="#club" class="nav-link">Le Club</a></li>
+                <li class="nav-item"><a href="#halloween" class="nav-link">Halloween</a></li>
                 <li class="nav-item"><a href="#equipes" class="nav-link">Équipes</a></li>
                 <li class="nav-item"><a href="#horaires" class="nav-link">Horaires</a></li>
+                <li class="nav-item"><a href="#tarifs" class="nav-link">Tarifs</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 <li class="nav-item"><a href="#sponsors" class="nav-link">Sponsors</a></li>
             </ul>
@@ -1378,14 +2107,41 @@
     <section id="accueil" class="hero">
         <div class="hero-content">
             <h1>Bienvenue au Coq Carlanais</h1>
-            <p>Le club de basket de Carla Bayle</p>
+            <p>Le club de basket du Carla Bayle</p>
             <div class="btn-group">
                 <a href="#contact" class="btn">Rejoignez-nous</a>
                 <a href="#equipes" class="btn">Nos Équipes</a>
             </div>
         </div>
     </section>
-
+   
+    <!-- Hero Sponsor Section -->
+    <section class="hero-sponsors">
+        <div class="container">
+            <div class="sponsor-preview">
+                <h3>Votre logo ici - Visibilité immédiate</h3>
+                <div class="sponsor-logos-preview">
+                    <div class="sponsor-logo-placeholder" data-tier="gold">
+                        <i class="fas fa-building"></i>
+                        <span>Logo Partenaire Or</span>
+                        <small>Position premium</small>
+                    </div>
+                    <div class="sponsor-logo-placeholder" data-tier="silver">
+                        <i class="fas fa-store"></i>
+                        <span>Logo Partenaire Argent</span>
+                        <small>Visibilité constante</small>
+                    </div>
+                    <div class="sponsor-logo-placeholder" data-tier="bronze">
+                        <i class="fas fa-utensils"></i>
+                        <span>Logo Partenaire Bronze</span>
+                        <small>Reconnaissance locale</small>
+                    </div>
+                </div>
+                <a href="#sponsors" class="btn">Devenir Partenaire</a>
+            </div>
+        </div>
+    </section>
+    
     <!-- Main content -->
     <main id="main-content">
         <!-- Section Le Club -->
@@ -1394,31 +2150,8 @@
                 <h2>Le Club</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Fondé en 1948, le Coq Carlanais est bien plus qu'un simple club de basket. C'est une véritable institution à Carla Bayle, un lieu de rassemblement où se mêlent passion du sport et esprit communautaire.</p>
+                        <p>Fondé en 1948, le Coq Carlanais est une véritable institution du Carla Bayle, un lieu de rassemblement où se mêlent passion du sport et esprit communautaire.</p>
                         <p>Notre mission est de promouvoir les valeurs du basket-ball auprès de tous les âges, en favorisant le développement personnel, l'esprit d'équipe et le fair-play dans un environnement bienveillant et compétitif.</p>
-                    </div>
-                    <div class="features">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <h3>Jeunes & Adultes</h3>
-                            <p>Des programmes adaptés pour tous les âges et tous les niveaux, de l'initiation au basket compétitif.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-basketball-ball"></i>
-                            </div>
-                            <h3>Esprit d'Équipe</h3>
-                            <p>Nous cultivons la cohésion, l'entraide et le respect mutuel sur et en dehors du terrain.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <h3>Compétition & Loisir</h3>
-                            <p>Que vous visiez la compétition ou simplement le plaisir du jeu, il y a une place pour vous.</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1430,51 +2163,58 @@
                 <h2 class="halloween-title">SOIRÉE HALLOWEEN</h2>
                 <p class="halloween-subtitle">Organisée par le Club de Basket du Carla Bayle</p>
                 
-                <!-- Enhanced Counter Display -->
-                <div class="halloween-counter-enhanced">
+                <!-- Simplified Halloween Counter for Public Page -->
+                <div class="halloween-counter-simplified">
                     <div class="counter-main">
                         <div class="counter-total" id="attendee-total">...</div>
-                        <div class="counter-label">personnes attendues</div>
+                        <div class="counter-label">personnes attendues à notre soirée</div>
                     </div>
                     
-                    <div class="counter-breakdown">
-                        <div class="breakdown-item">
-                            <div class="breakdown-icon">
-                                <i class="fas fa-user-friends"></i>
-                            </div>
-                            <div class="breakdown-info">
-                                <div class="breakdown-number" id="attendee-adults">...</div>
-                                <div class="breakdown-label">adultes</div>
-                            </div>
+                    <div class="counter-breakdown-simple">
+                        <div class="breakdown-simple-item">
+                            <div class="breakdown-simple-number" id="attendee-adults">...</div>
+                            <div class="breakdown-simple-label">adultes</div>
                         </div>
-                        
-                        <div class="breakdown-item">
-                            <div class="breakdown-icon">
-                                <i class="fas fa-child"></i>
-                            </div>
-                            <div class="breakdown-info">
-                                <div class="breakdown-number" id="attendee-children">...</div>
-                                <div class="breakdown-label">enfants</div>
-                            </div>
-                        </div>
-                        
-                        <div class="breakdown-item">
-                            <div class="breakdown-icon">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <div class="breakdown-info">
-                                <div class="breakdown-number" id="attendee-families">...</div>
-                                <div class="breakdown-label">familles</div>
-                            </div>
+                        <div class="breakdown-simple-item">
+                            <div class="breakdown-simple-number" id="attendee-children">...</div>
+                            <div class="breakdown-simple-label">enfants</div>
                         </div>
                     </div>
                     
-                    <div class="counter-update">Mise à jour automatique</div>
+                    <div class="counter-cta">
+                        <p>Rejoignez la fête ! 🎃</p>
+                        <a href="https://forms.gle/RDVZMkXeBPzqy5CS6" 
+                               class="btn halloween-btn" 
+                               target="_blank" 
+                               rel="noopener">
+                                Je participe !
+                        </a>
+                    </div>
                 </div>
-                
+
+                <!-- Halloween Event Sponsors -->
+                <div class="event-sponsors">
+                    <h4>Nos partenaires pour la soirée Halloween</h4>
+                    <div class="event-sponsor-logos">
+                        <div class="event-sponsor-placeholder">
+                            <i class="fas fa-candy-cane"></i>
+                            <span>Partenaire Bonbons</span>
+                        </div>
+                        <div class="event-sponsor-placeholder">
+                            <i class="fas fa-ghost"></i>
+                            <span>Partenaire Animation</span>
+                        </div>
+                        <div class="event-sponsor-placeholder">
+                            <i class="fas fa-utensils"></i>
+                            <span>Partenaire Restauration</span>
+                        </div>
+                    </div>
+                    <p class="sponsor-note">Votre entreprise peut sponsoriser cet événement qui attend 100+ participants!</p>
+                </div>
+
                 <div class="halloween-content">
                     <div class="halloween-image">
-                        <img src="halloween-carla.png" alt="Affiche Soirée Halloween Coq Carlanais" loading="lazy">
+                        <img src="photos/halloween-carla.png" alt="Affiche Soirée Halloween Coq Carlanais" loading="lazy">
                     </div>
                     
                     <div class="halloween-details">
@@ -1535,7 +2275,7 @@
                 <h2>Nos Équipes</h2>
                 <div class="team-cards">
                     <div class="team-card">
-                        <img src="U7_9.png" alt="Équipe de basket U7/U9 du Coq Carlanais" class="team-img" loading="lazy">
+                        <img src="photos/U7_9.jpg" alt="Équipe de basket U7/U9 du Coq Carlanais" class="team-img" loading="lazy">
                         <div class="team-info">
                             <h3>U7 / U9</h3>
                             <p>Pour les plus jeunes (nés de 2017 à 2019), découverte du basket avec une approche ludique et éducative.</p>
@@ -1545,7 +2285,7 @@
                         </div>
                     </div>
                     <div class="team-card">
-                        <img src="U11.png" alt="Équipe de basket U11 du Coq Carlanais" class="team-img" loading="lazy">
+                        <img src="photos/U11.jpg" alt="Équipe de basket U11 du Coq Carlanais" class="team-img" loading="lazy">
                         <div class="team-info">
                             <h3>U11 Mixte</h3>
                             <p>Initiation au basket pour les enfants nés en 2015/2016 avec développement des fondamentaux.</p>
@@ -1556,7 +2296,7 @@
                         </div>
                     </div>
                     <div class="team-card">
-                        <img src="U13Filles.png" alt="Équipe de basket U13 Filles du Coq Carlanais" class="team-img" loading="lazy">
+                        <img src="photos/U13Filles.jpg" alt="Équipe de basket U13 Filles du Coq Carlanais" class="team-img" loading="lazy">
                         <div class="team-info">
                             <h3>U13 Filles</h3>
                             <p>Perfectionnement des fondamentaux et premières compétitions pour les filles nées en 2013/2014.</p>
@@ -1566,7 +2306,7 @@
                         </div>
                     </div>
                     <div class="team-card">
-                        <img src="U13Garcons.png" alt="Équipe de basket U13 Garçons du Coq Carlanais" class="team-img" loading="lazy">
+                        <img src="photos/U13Garcons.png" alt="Équipe de basket U13 Garçons du Coq Carlanais" class="team-img" loading="lazy">
                         <div class="team-info">
                             <h3>U13 Garçons</h3>
                             <p>Développement des compétences techniques et tactiques pour les garçons nés en 2013/2014.</p>
@@ -1576,7 +2316,7 @@
                         </div>
                     </div>
                     <div class="team-card">
-                        <img src="U15Filles.png" alt="Équipe de basket U15 Filles du Coq Carlanais" class="team-img" loading="lazy">
+                        <img src="photos/U15Filles.jpg" alt="Équipe de basket U15 Filles du Coq Carlanais" class="team-img" loading="lazy">
                         <div class="team-info">
                             <h3>U15 Filles</h3>
                             <p>Approfondissement technique et préparation aux compétitions pour les filles nées en 2011/2012.</p>
@@ -1586,7 +2326,7 @@
                         </div>
                     </div>
                     <div class="team-card">
-                        <img src="U15Garcons.png" alt="Équipe de basket U15 Garçons du Coq Carlanais" class="team-img" loading="lazy">
+                        <img src="photos/U15Garcons.jpg" alt="Équipe de basket U15 Garçons du Coq Carlanais" class="team-img" loading="lazy">
                         <div class="team-info">
                             <h3>U15 Garçons</h3>
                             <p>Développement des compétences avancées pour les garçons nés en 2011/2012 en vue des compétitions.</p>
@@ -1596,7 +2336,7 @@
                         </div>
                     </div>
                     <div class="team-card">
-                        <img src="U18Garcons.png" alt="Équipe de basket U18 Garçons du Coq Carlanais" class="team-img" loading="lazy">
+                        <img src="photos/U18Garcons.jpg" alt="Équipe de basket U18 Garçons du Coq Carlanais" class="team-img" loading="lazy">
                         <div class="team-info">
                             <h3>U18 Garçons</h3>
                             <p>Préparation au niveau senior pour les garçons nés de 2008 à 2010 avec un programme intensif.</p>
@@ -1607,7 +2347,7 @@
                         </div>
                     </div>
                     <div class="team-card">
-                        <img src="SeniorGarcons.png" alt="Équipe de basket Séniors du Coq Carlanais" class="team-img" loading="lazy">
+                        <img src="photos/SeniorGarcons.jpg" alt="Équipe de basket Séniors du Coq Carlanais" class="team-img" loading="lazy">
                         <div class="team-info">
                             <h3>Séniors Garçons & Filles (Hoops)</h3>
                             <p>Notre équipe phare qui évolue en championnat avec passion et détermination.</p>
@@ -1617,7 +2357,7 @@
                         </div>
                     </div>
                     <div class="team-card">
-                        <img src="SeniorFilles.png" alt="Équipe de basket Séniors Filles du Coq Carlanais" class="team-img" loading="lazy">
+                        <img src="photos/SeniorFilles.jpg" alt="Équipe de basket Séniors Filles du Coq Carlanais" class="team-img" loading="lazy">
                         <div class="team-info">
                             <h3>Séniors Filles</h3>
                             <p>Une équipe dynamique et compétitive qui représente fièrement notre club en championnat.</p>
@@ -1627,7 +2367,7 @@
                         </div>
                     </div>
                     <div class="team-card">
-                        <img src="Basket_Loisir.png" alt="Équipe de basket Loisirs du Coq Carlanais" class="team-img" loading="lazy">
+                        <img src="photos/Basket_Loisir.jpg" alt="Équipe de basket Loisirs du Coq Carlanais" class="team-img" loading="lazy">
                         <div class="team-info">
                             <h3>Basket Loisirs</h3>
                             <p>Pour ceux qui souhaitent pratiquer le basket pour le plaisir, sans la pression de la compétition.</p>
@@ -1637,12 +2377,23 @@
                         </div>
                     </div>
                     <div class="team-card">
-                        <img src="Basket_sante.png" alt="Équipe de basket Santé du Coq Carlanais" class="team-img" loading="lazy">
+                        <img src="photos/Basket_sante.jpg" alt="Équipe de basket Santé du Coq Carlanais" class="team-img" loading="lazy">
                         <div class="team-info">
                             <h3>Basket Santé</h3>
                             <p>Pratique adaptée du basket pour le bien-être et la santé, accessible à tous.</p>
                             <div class="team-schedule">
                                 <strong>Entraînement:</strong> Jeudi 19h30-20h30
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Comité Animation Team Card -->
+                    <div class="team-card">
+                        <img src="photos/Comite_animation.jpg" alt="Équipe du Comité Animation du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>Comité Animation</h3>
+                            <p>L'équipe qui donne vie au club ! Le comité animation organise les événements, les sorties et les festivités pour renforcer la cohésion et l'esprit de famille au Coq Carlanais.</p>
+                            <div class="team-schedule">
+                                <strong>Réunions:</strong> Selon planning des événements
                             </div>
                         </div>
                     </div>
@@ -1739,6 +2490,94 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Section Tarifs - SIMPLIFIED -->
+        <section id="tarifs" class="pricing">
+            <div class="container">
+                <h2>Tarifs des Licences 2025/2026</h2>
+                
+                <div class="pricing-intro">
+                    <p>Rejoignez le Coq Carlanais avec une licence adaptée à votre catégorie. Toutes nos licences incluent l'encadrement par des coachs diplômés, l'accès aux entraînements et l'assurance FFBB.</p>
+                </div>
+                
+                <div class="pricing-table-container">
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Catégorie</th>
+                                <th>Tarif</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LOISIR</td>
+                                <td>100€</td>
+                            </tr>
+                            <tr>
+                                <td>SANTÉ</td>
+                                <td>70€</td>
+                            </tr>
+                            <tr>
+                                <td>U7 / U9 / U11</td>
+                                <td>110€</td>
+                            </tr>
+                            <tr>
+                                <td>U13 / U15</td>
+                                <td>120€</td>
+                            </tr>
+                            <tr>
+                                <td>SG2 / SF</td>
+                                <td>140€</td>
+                            </tr>
+                            <tr>
+                                <td>SG1</td>
+                                <td>180€</td>
+                            </tr>
+                            <tr>
+                                <td>U18 / U21</td>
+                                <td>130€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="pricing-notes">
+                    <h3>Informations importantes</h3>
+                    <ul class="notes-list">
+                        <li>
+                            <i class="fas fa-info-circle"></i>
+                            <div>
+                                <strong>Paiement en plusieurs fois possible</strong> - Nous proposons des facilités de paiement sur demande. Contactez-nous pour plus d'informations.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-euro-sign"></i>
+                            <div>
+                                <strong>Aide financière 2025-2026</strong> - Le Pass'Sport est une aide de l'État de <strong>70 €</strong> pour l'inscription.
+                                <br><small>Les anciennes aides de 50 € et 15 € ne sont plus disponibles. Le Pass'Sport 2025 est destiné aux jeunes de 14 à 17 ans bénéficiaires de l'ARS, aux 6-19 ans avec AEEH, aux 16-30 ans avec AAH et aux étudiants boursiers de moins de 28 ans. Vérifiez votre éligibilité sur <a href="https://www.pass.sports.gouv.fr/" target="_blank" rel="noopener">pass.sports.gouv.fr</a>.</small>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-file-alt"></i>
+                            <div>
+                                <strong>Documents requis</strong> - Certificat médical, photo d'identité, et formulaire d'inscription complété.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <strong>Licence valable</strong> du 1er septembre 2025 au 31 août 2026. Couvre tous les entraînements et compétitions officielles.
+                            </div>
+                        </li>
+                    </ul>
+        
+                    <div class="payment-options">
+                        <a href="#contact" class="btn">Demander plus d'informations</a>
+                        <a href="https://forms.gle/JgzSqZLfKiSfKDm96" class="btn" target="_blank" rel="noopener">Procéder à l'inscription</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Section Facebook -->
         <section class="facebook">
@@ -1776,19 +2615,6 @@
                             <div class="contact-card-body">
                                 <p><strong>Salle Marcel Guichou</strong><br>09130 Carla Bayle, France</p>
                                 <a href="https://maps.app.goo.gl/26G7AS5bg4rqvmGN7" target="_blank" class="btn btn-outline" rel="noopener">Voir sur la carte</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-card">
-                            <div class="contact-card-header">
-                                <div class="contact-icon">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <h3>Horaires d'entraînement</h3>
-                            </div>
-                            <div class="contact-card-body">
-                                <p>Consultez notre planning complet dans la section <a href="#horaires">Horaires</a>.</p>
-                                <p class="highlight-text">Venez nous rencontrer lors d'un entraînement!</p>
                             </div>
                         </div>
                         
@@ -1893,8 +2719,17 @@
                 <h2>Nos Sponsors</h2>
                 <div class="sponsors-content">
                     <div class="sponsorship-intro">
-                        <p>Le Coq Carlanais Basketball Club compte sur le soutien de ses sponsors pour offrir les meilleures conditions d'entraînement et de compétition à ses joueurs.</p>
-                        <p>En soutenant le Coq Carlanais, vous investissez dans la jeunesse et le sport de votre territoire. Votre partenariat nous permet de développer nos équipes, d'organiser des événements et d'offrir les meilleures conditions d'entraînement à nos 200 licenciés.</p>
+                        <h3>Investissez dans le Sport Local avec un Impact Fiscal Avantageux</h3>
+                        
+                        <p>Votre partenariat avec le Coq Carlanais représente un <strong>investissement stratégique</strong> dans la jeunesse de notre territoire. En soutenant nos 120 licenciés, vous bénéficiez d'une <strong>visibilité locale ciblée</strong> tout en renforçant votre image d'entreprise citoyenne.</p>
+                    
+                        <div class="tax-benefit-box">
+                            <h4>💫 Avantage Fiscal Exceptionnel</h4>
+                            <p>Votre don ouvre droit à une <strong>réduction d'impôt de 60%</strong> de son montant.</p>
+                            <div class="tax-example">
+                                <p><strong>Exemple :</strong> Un don de <strong>1000 €</strong> = un coût réel de <strong>400 €</strong> seulement</p>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="sponsorship-tiers">
@@ -1953,6 +2788,161 @@
                         </div>
                     </div>
 
+                    <!-- Current Sponsors Showcase -->
+                    <div class="current-sponsors-showcase">
+                        <h3>Nos Partenaires Actuels</h3>
+                        <p>Rejoignez ces entreprises qui soutiennent déjà notre club</p>
+                        <div class="sponsors-grid">
+                            <div class="sponsor-logo active" data-category="gold">
+                                <div class="logo-placeholder">
+                                    <i class="fas fa-crown"></i>
+                                    <span>Partenaire Or</span>
+                                </div>
+                                <p>Position disponible</p>
+                            </div>
+                            <div class="sponsor-logo active" data-category="silver">
+                                <div class="logo-placeholder">
+                                    <i class="fas fa-medal"></i>
+                                    <span>Partenaire Argent</span>
+                                </div>
+                                <p>Position disponible</p>
+                            </div>
+                            <div class="sponsor-logo active" data-category="bronze">
+                                <div class="logo-placeholder">
+                                    <i class="fas fa-award"></i>
+                                    <span>Partenaire Bronze</span>
+                                </div>
+                                <p>Position disponible</p>
+                            </div>
+                            <div class="sponsor-logo available">
+                                <div class="logo-placeholder available-spot">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>Votre entreprise ici</span>
+                                </div>
+                                <p>Poste disponible</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Impact Statement -->
+                    <div class="impact-statement">
+                        <h3>Votre Impact sur Notre Communauté Basket</h3>
+                        <div class="impact-grid">
+                            <div class="impact-item">
+                                <div class="impact-icon">
+                                    <i class="fas fa-basketball-ball"></i>
+                                </div>
+                                <h4>Équipement & Infrastructure</h4>
+                                <p>Renouvellement du matériel d'entraînement, achat de ballons adaptés à chaque catégorie d'âge, et amélioration de nos installations pour la sécurité et le confort de tous nos joueurs.</p>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-icon">
+                                    <i class="fas fa-bus"></i>
+                                </div>
+                                <h4>Transport & Compétitions</h4>
+                                <p>Subvention des déplacements pour les tournois régionaux et nationaux, permettant à nos jeunes talents de se confronter à d'autres niveaux de jeu sans barrière financière.</p>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h4>Formation des Éducateurs</h4>
+                                <p>Financement des formations FFBB pour nos coaches bénévoles, garantissant un encadrement de qualité et des méthodes pédagogiques modernes pour le développement de chaque joueur.</p>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h4>Accessibilité pour Tous</h4>
+                                <p>Maintien de tarifs de licence abordables et création de fonds de solidarité pour les familles en difficulté, parce que le basket doit rester accessible à tous les enfants de notre territoire.</p>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <h4>Développement des Jeunes Talents</h4>
+                                <p>Organisation de stages perfectionnement, détection de talents, et accompagnement des joueurs les plus prometteurs vers les centres de formation et pôles espoirs régionaux.</p>
+                            </div>
+                            <div class="impact-item">
+                                <div class="impact-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h4>Basket Santé & Inclusion</h4>
+                                <p>Développement de programmes basket-santé pour les séniors et personnes en situation de handicap, parce que le sport est un vecteur de bien-être et de lien social à tout âge.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="impact-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">120+</div>
+                                <div class="stat-label">Jeunes Formés</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">8</div>
+                                <div class="stat-label">Éducateurs Bénévoles</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">2000+</div>
+                                <div class="stat-label">Heures d'Entraînement</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Réinvesti Localement</div>
+                            </div>
+                        </div>
+                        
+                        <div class="impact-cta">
+                            <p><strong>Chaque euro investi dans le Coq Carlanais est un investissement direct dans l'avenir sportif et social de notre jeunesse.</strong> Votre soutien nous permet de pérenniser nos actions et d'offrir à chaque enfant la chance de s'épanouir through le basket-ball.</p>
+                            <a href="#donation-form" class="btn">Devenir Partenaire Impact</a>
+                        </div>
+                    </div>
+                    
+                    <section class="highlights-section">
+                        <div class="container">
+                            <h2>Nos Succès & Temps Forts 2024-2025</h2>
+                            <div class="highlights-gallery">
+                                <div class="highlight-card">
+                                    <img src="photos/millau_tournament.jpg" alt="L'équipe du Coq Carlanais lors du tournoi de Millau" class="highlight-img" loading="lazy">
+                                    <div class="highlight-content">
+                                        <h3>Tournoi de Millau</h3>
+                                        <p>Participation et belle performance de nos équipes jeunes lors du tournoi exigeant de Millau, une expérience riche en apprentissages.</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-card">
+                                    <img src="photos/regional_finalist.jpg" alt="Natsuki, champion départemental et vice-champion régional" class="highlight-img" loading="lazy">
+                                    <div class="highlight-content">
+                                        <h3>Excellence Compétitive</h3>
+                                        <p><strong>Félicitations à Natsuki !</strong> <strong>Champion départemental</strong> du Challenge Benjamin, qualifié pour les régionaux où il a décroché une <strong>2ème place</strong>.</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-card">
+                                    <img src="photos/christmas_party.jpg" alt="La fête de Noël du club en décembre 2024" class="highlight-img" loading="lazy">
+                                    <div class="highlight-content">
+                                        <h3>Fête de Noël 2024</h3>
+                                        <p>Un moment de partage et de convivialité qui a rassemblé plus de 60 enfants et leurs familles, au cœur de la vie de notre club.</p>
+                                    </div>
+                                </div>
+                                <!-- Carte 1 : Participation aux Jeudis du Carla 2025 -->
+                                <div class="highlight-card">
+                                    <img src="photos/jeudis_carla_2025.jpg" alt="Le Coq Carlanais aux Jeudis du Carla 2025" class="highlight-img" loading="lazy">
+                                    <div class="highlight-content">
+                                        <h3>Acteur des Jeudis du Carla</h3>
+                                        <p>Le Coq Carlanais est un partenaire historique des <strong>Jeudis du Carla</strong>, l'événement estival incontournable qui attire plusieurs milliers de visiteurs chaque semaine.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Carte 2 : Tournoi 3x3 et rayonnement -->
+                                <div class="highlight-card">
+                                    <img src="photos/tournoi_3x3_2022.jpg" alt="Le tournoi 3x3 du Coq Carlanais en 2022" class="highlight-img" loading="lazy">
+                                    <div class="highlight-content">
+                                        <h3>Notre Tournoi 3x3 au Rayonnement Régional</h3>
+                                        <p>Notre <strong>tournoi 3x3</strong> a attiré des équipes de toute la région.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
                     <!-- Donation Form -->
                     <div class="donation-section">
                         <h2>Devenir Partenaire</h2>
@@ -2079,9 +3069,27 @@
         <div class="container">
             <div class="footer-content">
                 <a href="#" class="footer-logo">
-                    <img src="Coq_carlanais_logo.jpg" alt="Logo Coq Carlanais" class="footer-logo-img">
+                    <img src="photos/Coq_carlanais_logo.jpg" alt="Logo Coq Carlanais" class="footer-logo-img">
                     Coq Carlanais
                 </a>
+                <!-- Footer Sponsors -->
+                <div class="footer-sponsors">
+                    <h4>Ils nous soutiennent</h4>
+                    <div class="footer-sponsor-logos">
+                        <div class="footer-sponsor-placeholder">
+                            <i class="fas fa-building"></i>
+                            <span>Partenaire Local</span>
+                        </div>
+                        <div class="footer-sponsor-placeholder">
+                            <i class="fas fa-store-alt"></i>
+                            <span>Commerce Partenaire</span>
+                        </div>
+                        <div class="footer-sponsor-placeholder available">
+                            <i class="fas fa-plus"></i>
+                            <span>Votre Logo</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/coqcarlanaisbasket" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/coq_carlanais/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -2407,10 +3415,10 @@
             }
         });
         
-        // Halloween Counter using JSONP
+        // Halloween Counter using JSONP - UPDATED FOR SIMPLIFIED DISPLAY
         class HalloweenCounter {
             constructor() {
-                this.scriptUrl = 'https://script.google.com/macros/s/AKfycbz5LnOB3XfrpZTUAmveiRqAltcme3gfdq2hnLyFhHV79Z161XFYoO1GTzXHWXWdccV8kg/exec';
+                this.scriptUrl = 'https://script.google.com/macros/s/AKfycbz_q6qN5YHSECtGP5lUpZyo0ApbSmtsFWXw-FxdokvnuOmGo-RtInl844j7n4WWqQ7g/exec';
                 this.cacheDuration = 120000;
                 this.lastUpdate = 0;
                 this.cachedData = null;
@@ -2458,22 +3466,41 @@
                 });
             }
             
+            // SAFE ELEMENT UPDATE FUNCTION
+            updateElementIfExists(elementId, value) {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    element.textContent = value;
+                }
+                // Silently skip if element doesn't exist (no error)
+            }
+            
             async updateDisplay() {
                 try {
                     const data = await this.getAttendeeData();
                     
-                    document.getElementById('attendee-total').textContent = data.total;
-                    document.getElementById('attendee-adults').textContent = data.adults;
-                    document.getElementById('attendee-children').textContent = data.children;
-                    document.getElementById('attendee-families').textContent = data.families;
+                    // Safely update only existing elements
+                    this.updateElementIfExists('attendee-total', data.total);
+                    this.updateElementIfExists('attendee-adults', data.adults);
+                    this.updateElementIfExists('attendee-children', data.children);
+                    
+                    // These elements only exist in detailed dashboard - safely skip if missing
+                    this.updateElementIfExists('attendee-families', data.families);
+                    this.updateElementIfExists('attendee-children0_2', data.children0_2 || 0);
+                    this.updateElementIfExists('attendee-children3_5', data.children3_5 || 0);
+                    this.updateElementIfExists('attendee-children6_8', data.children6_8 || 0);
+                    this.updateElementIfExists('attendee-children9_12', data.children9_12 || 0);
+                    this.updateElementIfExists('attendee-children12plus', data.children12plus || 0);
                     
                 } catch (error) {
                     console.error('Counter error:', error);
-                    // Show placeholder values
-                    document.getElementById('attendee-total').textContent = '...';
-                    document.getElementById('attendee-adults').textContent = '...';
-                    document.getElementById('attendee-children').textContent = '...';
-                    document.getElementById('attendee-families').textContent = '...';
+                    // Safely set placeholder values only for existing elements
+                    const elements = [
+                        'attendee-total', 'attendee-adults', 'attendee-children', 
+                        'attendee-families', 'attendee-children0_2', 'attendee-children3_5', 
+                        'attendee-children6_8', 'attendee-children9_12', 'attendee-children12plus'
+                    ];
+                    elements.forEach(id => this.updateElementIfExists(id, '...'));
                 }
             }
             
@@ -2488,6 +3515,37 @@
             const counter = new HalloweenCounter();
             counter.startAutoUpdate();
         });
-        </script>
+
+
+        // Countdown Site launch Timer Functionality
+        function updateCountdown() {
+            const launchDate = new Date('October 15, 2025 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+        
+            if (distance < 0) {
+                // Countdown finished
+                document.getElementById('countdown-timer').innerHTML = 
+                    '<div class="countdown-finished">🚀 Site Lancé !</div>';
+                return;
+            }
+        
+            // Time calculations
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+            // Update display
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // Initialize countdown and update every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
