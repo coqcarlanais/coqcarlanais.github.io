@@ -389,29 +389,32 @@
         /* Mobile-specific styles for better readability */
         @media screen and (max-width: 768px) {
             .schedule-image-container {
-                margin: 0 -15px; /* Break out of container padding */
-                max-width: none;
-                width: 100vw;
+                margin: 0;
+                max-width: 100%;
+                width: 100%;
                 position: relative;
-                left: 50%;
-                right: 50%;
-                margin-left: -50vw;
-                margin-right: -50vw;
+                left: auto;
+                right: auto;
+                margin-left: 0;
+                margin-right: 0;
+                overflow-x: auto; /* Allows horizontal scrolling if needed */
             }
             
             .schedule-image {
                 width: 100%;
-                border-radius: 0;
-                box-shadow: none;
+                min-width: 100%; /* Ensures it takes full width */
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             }
             
             .image-zoom-hint {
                 display: block;
             }
             
-            /* Optional: Add a border to make it clear the image is interactive */
+            /* Make the image clearly interactive on mobile */
             .schedule-image {
                 border: 2px solid var(--vibrant-yellow);
+                cursor: zoom-in;
             }
         }
         
@@ -3517,7 +3520,8 @@
                 if (window.innerWidth <= 768) { // Only on mobile
                     if (!isZoomed) {
                         // Zoom in
-                        this.style.transform = 'scale(1.8)';
+                        this.style.transform = 'scale(1.5)';
+                        this.style.transformOrigin = 'center center';
                         this.style.transition = 'transform 0.3s ease';
                         this.style.cursor = 'zoom-out';
                         isZoomed = true;
@@ -3527,15 +3531,6 @@
                         this.style.cursor = 'zoom-in';
                         isZoomed = false;
                     }
-                }
-            });
-            
-            // Reset zoom on window resize
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768 && isZoomed) {
-                    scheduleImage.style.transform = 'scale(1)';
-                    scheduleImage.style.cursor = 'pointer';
-                    isZoomed = false;
                 }
             });
         });
