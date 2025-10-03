@@ -1144,14 +1144,16 @@
             text-align: center;
         }
         
-        .stat-item {
+       .stat-item {
             color: var(--primary-black);
+            min-width: 0; /* This prevents text overflow */
         }
         
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
+            word-break: keep-all;
         }
         
         .stat-label {
@@ -1159,6 +1161,8 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            word-wrap: break-word; 
+            hyphens: auto; 
         }
         
         .impact-cta {
@@ -1958,16 +1962,38 @@
                 grid-template-columns: 1fr;
             }
             
-            .impact-stats {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-                padding: 1.5rem;
-                justify-items: center;
-                text-align: center;
+                .impact-stats {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1.5rem;
+                    padding: 1.5rem;
+                    justify-items: center;
+                    text-align: center;
+                }
+                
+                .stat-number {
+                    font-size: 2rem;
+                }
+                
+                .stat-label {
+                    font-size: 0.8rem;
+                    line-height: 1.2; /* Better line spacing for mobile */
+                }
             }
             
-            .stat-number {
-                font-size: 2rem;
+            /* Add this for very small screens */
+            @media screen and (max-width: 480px) {
+                .impact-stats {
+                    grid-template-columns: 1fr; /* Single column on very small screens */
+                    gap: 1rem;
+                }
+                
+                .stat-item {
+                    padding: 0.5rem;
+                }
+                
+                .stat-label {
+                    font-size: 0.75rem;
+                }
             }
             
             .halloween-title {
