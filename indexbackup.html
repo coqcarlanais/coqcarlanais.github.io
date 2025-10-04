@@ -1120,49 +1120,109 @@
             margin-bottom: 2.5rem;
             font-size: 2rem;
         }
-        
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+        /* ===== IMPACT CONDENSÉ POUR SUBVENTIONS ===== */
+        .impact-condensed {
+            background: linear-gradient(135deg, #fff9e6 0%, #fffbef 100%);
+            border: 2px solid var(--vibrant-yellow);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
         
-        .impact-item {
-            text-align: center;
-            padding: 1.5rem;
-            background: var(--light-grey);
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-        
-        .impact-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .impact-icon {
-            font-size: 2.5rem;
-            color: var(--vibrant-yellow);
-            margin-bottom: 1rem;
-            height: 80px;
-            width: 80px;
-            background: rgba(255, 204, 0, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-        }
-        
-        .impact-item h4 {
+        .impact-condensed h3 {
             color: var(--primary-black);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
         }
         
-        .impact-item p {
-            font-size: 0.95rem;
-            line-height: 1.5;
+        .impact-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .impact-highlight {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 0.8rem;
+        }
+        
+        .impact-highlight i {
+            color: var(--vibrant-yellow);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+        
+        .impact-highlight strong {
+            color: var(--primary-black);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        
+        .impact-highlight span {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .impact-stats-condensed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(255, 204, 0, 0.3);
+        }
+        
+        .impact-stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.3rem;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-black);
+            text-transform: uppercase;
+        }
+        
+        .impact-cta-condensed {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 204, 0, 0.3);
+        }
+        
+        .impact-cta-condensed p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-black);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .impact-condensed {
+                padding: 2rem 1.5rem;
+            }
+            
+            .impact-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-stats-condensed {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         .impact-stats {
@@ -2697,76 +2757,77 @@
                         </div>
                     </div>
                     </div>
-                    <!-- Impact Statement -->
-                    <div class="impact-statement">
-                        <h3>Votre Impact sur Notre Communauté Basket</h3>
-                        <div class="impact-grid">
-                            <div class="impact-item">
-                                <div class="impact-icon">
-                                    <i class="fas fa-basketball-ball"></i>
+                    <!-- Impact Condensé - Boîte Unique -->
+                    <div class="impact-condensed">
+                        <h3>Votre Impact en Chiffres et en Actions</h3>
+                        
+                        <div class="impact-highlights">
+                            <div class="impact-highlight">
+                                <i class="fas fa-basketball-ball"></i>
+                                <div>
+                                    <strong>Équipement & Infrastructure</strong>
+                                    <span>Matériel adapté et installations sécurisées pour tous nos joueurs</span>
                                 </div>
-                                <h4>Équipement & Infrastructure</h4>
-                                <p>Renouvellement du matériel d'entraînement, achat de ballons adaptés à chaque catégorie d'âge, et amélioration de nos installations pour la sécurité et le confort de tous nos joueurs.</p>
                             </div>
-                            <div class="impact-item">
-                                <div class="impact-icon">
-                                    <i class="fas fa-bus"></i>
+                            <div class="impact-highlight">
+                                <i class="fas fa-bus"></i>
+                                <div>
+                                    <strong>Transport & Compétitions</strong>
+                                    <span>Déplacements subventionnés pour l'égalité des chances</span>
                                 </div>
-                                <h4>Transport & Compétitions</h4>
-                                <p>Subvention des déplacements pour les tournois régionaux et nationaux, permettant à nos jeunes talents de se confronter à d'autres niveaux de jeu sans barrière financière.</p>
                             </div>
-                            <div class="impact-item">
-                                <div class="impact-icon">
-                                    <i class="fas fa-graduation-cap"></i>
+                            <div class="impact-highlight">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <strong>Formation des Éducateurs</strong>
+                                    <span>Encadrement de qualité avec coaches certifiés FFBB</span>
                                 </div>
-                                <h4>Formation des Éducateurs</h4>
-                                <p>Financement des formations FFBB pour nos coaches bénévoles, garantissant un encadrement de qualité et des méthodes pédagogiques modernes pour le développement de chaque joueur.</p>
                             </div>
-                            <div class="impact-item">
-                                <div class="impact-icon">
-                                    <i class="fas fa-users"></i>
+                            <div class="impact-highlight">
+                                <i class="fas fa-euro-sign"></i>
+                                <div>
+                                    <strong>Accessibilité pour Tous</strong>
+                                    <span>Tarifs solidaires et fonds d'aide aux familles</span>
                                 </div>
-                                <h4>Accessibilité pour Tous</h4>
-                                <p>Maintien de tarifs de licence abordables et création de fonds de solidarité pour les familles en difficulté, parce que le basket doit rester accessible à tous les enfants de notre territoire.</p>
                             </div>
-                            <div class="impact-item">
-                                <div class="impact-icon">
-                                    <i class="fas fa-trophy"></i>
+                            <div class="impact-highlight">
+                                <i class="fas fa-trophy"></i>
+                                <div>
+                                    <strong>Développement des Talents</strong>
+                                    <span>Stages et détection vers les centres de formation</span>
                                 </div>
-                                <h4>Développement des Jeunes Talents</h4>
-                                <p>Organisation de stages perfectionnement, détection de talents, et accompagnement des joueurs les plus prometteurs vers les centres de formation et pôles espoirs régionaux.</p>
                             </div>
-                            <div class="impact-item">
-                                <div class="impact-icon">
-                                    <i class="fas fa-heart"></i>
+                            <div class="impact-highlight">
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <strong>Basket Santé & Inclusion</strong>
+                                    <span>Programmes adaptés pour séniors et handicap</span>
                                 </div>
-                                <h4>Basket Santé & Inclusion</h4>
-                                <p>Développement de programmes basket-santé pour les séniors et personnes en situation de handicap, parce que le sport est un vecteur de bien-être et de lien social à tout âge.</p>
                             </div>
                         </div>
                         
-                        <div class="impact-stats">
-                            <div class="stat-item">
+                        <div class="impact-stats-condensed">
+                            <div class="impact-stat">
                                 <div class="stat-number">120+</div>
                                 <div class="stat-label">Jeunes Formés</div>
                             </div>
-                            <div class="stat-item">
+                            <div class="impact-stat">
                                 <div class="stat-number">8</div>
-                                <div class="stat-label">Éducateurs Bénévoles</div>
+                                <div class="stat-label">Éducateurs</div>
                             </div>
-                            <div class="stat-item">
-                                <div class="stat-number">2000+</div>
+                            <div class="impact-stat">
+                                <div class="stat-number">2 000+</div>
                                 <div class="stat-label">Heures d'Entraînement</div>
                             </div>
-                            <div class="stat-item">
+                            <div class="impact-stat">
                                 <div class="stat-number">100%</div>
                                 <div class="stat-label">Réinvesti Localement</div>
                             </div>
                         </div>
                         
-                        <div class="impact-cta">
-                            <p><strong>Chaque euro investi dans le Coq Carlanais est un investissement direct dans l'avenir sportif et social de notre jeunesse.</strong> Votre soutien nous permet de pérenniser nos actions et d'offrir à chaque enfant la chance de s'épanouir through le basket-ball.</p>
-                            <a href="#donation-form" class="btn">Devenir Partenaire Impact</a>
+                        <div class="impact-cta-condensed">
+                            <p><strong>Chaque don transforme directement la vie de nos jeunes et renforce notre communauté</strong></p>
+                            <a href="#donation-form" class="btn">Investir dans Notre Impact</a>
                         </div>
                     </div>
                     
