@@ -645,7 +645,130 @@
             border: 1px solid #f5c6cb;
             color: #721c24;
         }
-
+        /* ===== TABLEAU DE COMPARAISON SPONSORSHIP ===== */
+        .sponsorship-comparison {
+            margin: 3rem 0;
+            overflow-x: auto;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .comparison-table thead th {
+            background: var(--primary-black);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 1.5rem 1rem;
+        }
+        
+        .comparison-table thead th:first-child {
+            background: transparent;
+            color: var(--primary-black);
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .comparison-table .tier-header {
+            padding: 0;
+        }
+        
+        .tier-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        
+        .tier-price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+        
+        .tier-bronze .tier-name { color: var(--bronze); }
+        .tier-silver .tier-name { color: var(--silver); }
+        .tier-gold .tier-name { color: var(--gold); }
+        
+        /* Checkmark styling */
+        .checkmark {
+            color: #28a745;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .checkmark::before {
+            content: "✓";
+        }
+        
+        .empty-cell {
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+        
+        .empty-cell::before {
+            content: "—";
+        }
+        
+        /* Feature rows styling */
+        .comparison-table tbody th {
+            text-align: left;
+            font-weight: 500;
+            color: var(--primary-black);
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        /* Hover effects */
+        .comparison-table tbody tr:hover {
+            background: rgba(255, 204, 0, 0.05);
+        }
+        
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            .comparison-table {
+                font-size: 0.9rem;
+                min-width: 600px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 1rem 0.5rem;
+            }
+            
+            .comparison-table tbody th {
+                padding-left: 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .tier-name {
+                font-size: 1rem;
+            }
+            
+            .tier-price {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .sponsorship-comparison {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+        }
         /* ===== SPONSORS SECTION ===== */
         .sponsors {
             background-color: var(--light-grey);
@@ -667,97 +790,6 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-        }
-
-        .sponsorship-tiers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .tier {
-            background: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            border-top: 5px solid;
-        }
-
-        .tier:hover {
-            transform: translateY(-10px);
-        }
-
-        .tier-bronze {
-            border-color: var(--bronze);
-        }
-
-        .tier-silver {
-            border-color: var(--silver);
-        }
-
-        .tier-gold {
-            border-color: var(--gold);
-        }
-
-        .tier-header {
-            padding: 1.5rem;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .tier-bronze .tier-header {
-            background: var(--bronze);
-        }
-
-        .tier-silver .tier-header {
-            background: var(--silver);
-            color: var(--primary-black);
-        }
-
-        .tier-gold .tier-header {
-            background: var(--gold);
-            color: var(--primary-black);
-        }
-
-        .tier-name {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .tier-price {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .tier-benefits {
-            padding: 1.5rem;
-        }
-
-        .benefit-list {
-            list-style: none;
-        }
-
-        .benefit-list li {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-        }
-
-        .benefit-list li:last-child {
-            border-bottom: none;
-        }
-
-        .benefit-list i {
-            margin-right: 10px;
-            color: var(--vibrant-yellow);
-        }
-
-        .benefit-highlight {
-            font-weight: bold;
-            color: var(--vibrant-yellow);
         }
 
         .sponsor-cards {
@@ -1088,49 +1120,109 @@
             margin-bottom: 2.5rem;
             font-size: 2rem;
         }
-        
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+        /* ===== IMPACT CONDENSÉ POUR SUBVENTIONS ===== */
+        .impact-condensed {
+            background: linear-gradient(135deg, #fff9e6 0%, #fffbef 100%);
+            border: 2px solid var(--vibrant-yellow);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
         
-        .impact-item {
-            text-align: center;
-            padding: 1.5rem;
-            background: var(--light-grey);
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-        
-        .impact-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .impact-icon {
-            font-size: 2.5rem;
-            color: var(--vibrant-yellow);
-            margin-bottom: 1rem;
-            height: 80px;
-            width: 80px;
-            background: rgba(255, 204, 0, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-        }
-        
-        .impact-item h4 {
+        .impact-condensed h3 {
             color: var(--primary-black);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
         }
         
-        .impact-item p {
-            font-size: 0.95rem;
-            line-height: 1.5;
+        .impact-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .impact-highlight {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            padding: 0.8rem;
+        }
+        
+        .impact-highlight i {
+            color: var(--vibrant-yellow);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+        
+        .impact-highlight strong {
+            color: var(--primary-black);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        
+        .impact-highlight span {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .impact-stats-condensed {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(255, 204, 0, 0.3);
+        }
+        
+        .impact-stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.3rem;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-black);
+            text-transform: uppercase;
+        }
+        
+        .impact-cta-condensed {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 204, 0, 0.3);
+        }
+        
+        .impact-cta-condensed p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-black);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .impact-condensed {
+                padding: 2rem 1.5rem;
+            }
+            
+            .impact-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-stats-condensed {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         
         .impact-stats {
@@ -1418,134 +1510,6 @@
             color: var(--white);
             font-weight: 600;
             font-size: 1.1rem;
-        }
-
-        /* ===== HERO SPONSORS SECTION ===== */
-        .hero-sponsors {
-            background: rgba(255, 204, 0, 0.05);
-            padding: 3rem 0;
-            border-top: 1px solid rgba(255, 204, 0, 0.2);
-        }
-        
-        .sponsor-preview {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .sponsor-preview h3 {
-            color: var(--primary-black);
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-        }
-        
-        .sponsor-logos-preview {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .sponsor-logo-placeholder {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            min-width: 150px;
-            transition: transform 0.3s ease;
-            min-height: 180px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .sponsor-logo-placeholder:hover {
-            transform: translateY(-5px);
-        }
-        
-        .sponsor-logo-placeholder[data-tier="gold"] {
-            border-top: 4px solid var(--gold);
-        }
-        
-        .sponsor-logo-placeholder[data-tier="silver"] {
-            border-top: 4px solid var(--silver);
-        }
-        
-        .sponsor-logo-placeholder[data-tier="bronze"] {
-            border-top: 4px solid var(--bronze);
-        }
-        
-        .sponsor-logo-placeholder i {
-            font-size: 2.5rem;
-            color: var(--vibrant-yellow);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        
-        .sponsor-logo-placeholder span {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-        
-        .sponsor-logo-placeholder small {
-            color: #666;
-            font-size: 0.8rem;
-        }
-
-        /* ===== EVENT SPONSORS ===== */
-        .event-sponsors {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem auto;
-            max-width: 600px;
-            text-align: center;
-            border: 2px solid rgba(255, 204, 0, 0.3);
-        }
-        
-        .event-sponsors h4 {
-            color: var(--vibrant-yellow);
-            margin-bottom: 1rem;
-        }
-        
-        .event-sponsor-logos {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .event-sponsor-placeholder {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            min-width: 120px;
-            border: 1px solid rgba(255, 204, 0, 0.3);
-        }
-        
-        .event-sponsor-placeholder i {
-            font-size: 2rem;
-            color: var(--vibrant-yellow);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        
-        .event-sponsor-placeholder span {
-            font-size: 0.9rem;
-            color: var(--white);
-        }
-        
-        .sponsor-note {
-            color: var(--vibrant-yellow);
-            font-style: italic;
-            margin-top: 1rem;
-            font-size: 0.9rem;
         }
 
         /* ===== CURRENT SPONSORS SHOWCASE ===== */
@@ -2048,22 +2012,9 @@
                 padding: 0.8rem 0.5rem;
             }
             
-            .sponsor-logos-preview {
-                gap: 1rem;
-            }
-            
-            .sponsor-logo-placeholder {
-                min-width: 120px;
-                padding: 1rem;
-            }
-            
             .sponsors-grid {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
                 gap: 1.5rem;
-            }
-            
-            .event-sponsor-logos {
-                gap: 1rem;
             }
             
             .footer-sponsor-logos {
@@ -2180,33 +2131,6 @@
             </div>
         </div>
     </section>
-   
-    <!-- Hero Sponsor Section -->
-    <section class="hero-sponsors">
-        <div class="container">
-            <div class="sponsor-preview">
-                <h3>Votre logo ici - Visibilité immédiate</h3>
-                <div class="sponsor-logos-preview">
-                    <div class="sponsor-logo-placeholder" data-tier="gold">
-                        <i class="fas fa-building"></i>
-                        <span>Logo Partenaire Or</span>
-                        <small>Position premium</small>
-                    </div>
-                    <div class="sponsor-logo-placeholder" data-tier="silver">
-                        <i class="fas fa-store"></i>
-                        <span>Logo Partenaire Argent</span>
-                        <small>Visibilité constante</small>
-                    </div>
-                    <div class="sponsor-logo-placeholder" data-tier="bronze">
-                        <i class="fas fa-utensils"></i>
-                        <span>Logo Partenaire Bronze</span>
-                        <small>Reconnaissance locale</small>
-                    </div>
-                </div>
-                <a href="#sponsors" class="btn">Devenir Partenaire</a>
-            </div>
-        </div>
-    </section>
     
     <!-- Main content -->
     <main id="main-content">
@@ -2256,26 +2180,6 @@
                                 Je participe !
                         </a>
                     </div>
-                </div>
-
-                <!-- Halloween Event Sponsors -->
-                <div class="event-sponsors">
-                    <h4>Nos partenaires pour la soirée Halloween</h4>
-                    <div class="event-sponsor-logos">
-                        <div class="event-sponsor-placeholder">
-                            <i class="fas fa-candy-cane"></i>
-                            <span>Partenaire Bonbons</span>
-                        </div>
-                        <div class="event-sponsor-placeholder">
-                            <i class="fas fa-ghost"></i>
-                            <span>Partenaire Animation</span>
-                        </div>
-                        <div class="event-sponsor-placeholder">
-                            <i class="fas fa-utensils"></i>
-                            <span>Partenaire Restauration</span>
-                        </div>
-                    </div>
-                    <p class="sponsor-note">Votre entreprise peut sponsoriser cet événement qui attend 100+ participants!</p>
                 </div>
 
                 <div class="halloween-content">
@@ -2708,75 +2612,113 @@
         <section id="sponsors" class="sponsors">
             <div class="container">
                 <h2>Nos Sponsors</h2>
-                <div class="sponsors-content">
-                    <div class="sponsorship-intro">
+                <div class="sponsorship-intro">
                         <h3>Investissez dans le Sport Local avec un Impact Fiscal Avantageux</h3>
-                        
                         <p>Votre partenariat avec le Coq Carlanais représente un <strong>investissement stratégique</strong> dans la jeunesse de notre territoire. En soutenant nos 120 licenciés, vous bénéficiez d'une <strong>visibilité locale ciblée</strong> tout en renforçant votre image d'entreprise citoyenne.</p>
-                    
-                        <div class="tax-benefit-box">
-                            <h4>💫 Avantage Fiscal Exceptionnel</h4>
-                            <p>Votre don ouvre droit à une <strong>réduction d'impôt de 60%</strong> de son montant.</p>
-                            <div class="tax-example">
-                                <p><strong>Exemple :</strong> Un don de <strong>1000 €</strong> = un coût réel de <strong>400 €</strong> seulement</p>
-                            </div>
-                        </div>
+                <!-- Tableau de Comparaison des Sponsorships -->
+                <div class="sponsorship-comparison">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Avantages inclus</th>
+                                <th class="tier-bronze">
+                                    <div class="tier-header">
+                                        <div class="tier-name">Bronze</div>
+                                        <div class="tier-price">100 €</div>
+                                    </div>
+                                </th>
+                                <th class="tier-silver">
+                                    <div class="tier-header">
+                                        <div class="tier-name">Argent</div>
+                                        <div class="tier-price">500 €</div>
+                                    </div>
+                                </th>
+                                <th class="tier-gold">
+                                    <div class="tier-header">
+                                        <div class="tier-name">Or</div>
+                                        <div class="tier-price">1 000 €</div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Logo sur équipements d'entraînement</th>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Présence site web & réseaux sociaux</th>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Invitations aux événements</th>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Bannière publicitaire dans la salle</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Mise en avant tournoi annuel</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Article dédié sur nos réseaux</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Logo sur maillots de match</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Nom associé à une équipe</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Interview et article exclusif</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Accès VIP aux événements</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Call-to-action sous le tableau -->
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p><strong>Avantage fiscal :</strong> 60% de réduction d'impôt sur votre investissement</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="#donation-form" class="btn" style="margin: 0.5rem;">Devenir Partenaire</a>
+                        <a href="#contact" class="btn btn-outline" style="margin: 0.5rem;">Nous Contacter</a>
                     </div>
+                </div>
                     
-                    <div class="sponsorship-tiers">
-                        <!-- Formule Bronze -->
-                        <div class="tier tier-bronze">
-                            <div class="tier-header">
-                                <h2 class="tier-name">Partenaire Bronze</h2>
-                                <p class="tier-price">50 - 500 €</p>
-                            </div>
-                            <div class="tier-benefits">
-                                <ul class="benefit-list">
-                                    <li><i class="fas fa-check"></i> Logo sur notre site internet</li>
-                                    <li><i class="fas fa-check"></i> Mention sur nos réseaux sociaux</li>
-                                    <li><i class="fas fa-check"></i> Logo sur nos supports de communication</li>
-                                    <li><i class="fas fa-check"></i> Invitation à nos événements</li>
-                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos équipements d'entraînement</span></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Formule Argent -->
-                        <div class="tier tier-silver">
-                            <div class="tier-header">
-                                <h2 class="tier-name">Partenaire Argent</h2>
-                                <p class="tier-price">500 - 1000 €</p>
-                            </div>
-                            <div class="tier-benefits">
-                                <ul class="benefit-list">
-                                    <li><i class="fas fa-check"></i> Tous les avantages Bronze</li>
-                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos maillots d'entraînement</span></li>
-                                    <li><i class="fas fa-check"></i> Mise en avant lors de notre tournoi annuel</li>
-                                    <li><i class="fas fa-check"></i> Article dédié sur nos réseaux sociaux</li>
-                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Bannière publicitaire dans notre salle</span></li>
-                                    <li><i class="fas fa-check"></i> Remise des récompenses lors de notre tournoi</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Formule Or -->
-                        <div class="tier tier-gold">
-                            <div class="tier-header">
-                                <h2 class="tier-name">Partenaire Or</h2>
-                                <p class="tier-price">1000 € et +</p>
-                            </div>
-                            <div class="tier-benefits">
-                                <ul class="benefit-list">
-                                    <li><i class="fas fa-check"></i> Tous les avantages Argent</li>
-                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos maillots de match</span></li>
-                                    <li><i class="fas fa-check"></i> Interview et article dédié sur nos réseaux</li>
-                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Nom associé à une équipe (ex: "U15 sponsorisée par...")</span></li>
-                                    <li><i class="fas fa-check"></i> Photo officielle avec l'équipe première</li>
-                                    <li><i class="fas fa-check"></i> Invitation VIP à tous nos événements</li>
-                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Trophée Partenaire Officiel</span></li>
-                                </ul>
-                            </div>
-                        </div>
+                    <!-- Rappel Avantage Fiscal -->
+                    <div class="tax-benefit-box" style="margin-top: 2rem;">
+                        <h4>💫 Avantage Fiscal Inclus</h4>
+                        <p>Tous les niveaux de partenariat ouvrent droit à une <strong>réduction d'impôt de 60%</strong>. Un investissement de 1 000 € ne vous coûte que 400 € après déduction fiscale.</p>
                     </div>
 
                     <!-- Current Sponsors Showcase -->
@@ -2814,77 +2756,71 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Impact Statement -->
-                    <div class="impact-statement">
-                        <h3>Votre Impact sur Notre Communauté Basket</h3>
-                        <div class="impact-grid">
-                            <div class="impact-item">
-                                <div class="impact-icon">
-                                    <i class="fas fa-basketball-ball"></i>
+                    </div>
+                    <!-- Impact Condensé - Boîte Unique -->
+                    <div class="impact-condensed">
+                        <h3>Votre Impact en Chiffres et en Actions</h3>
+                        
+                        <div class="impact-highlights">
+                            <div class="impact-highlight">
+                                <i class="fas fa-basketball-ball"></i>
+                                <div>
+                                    <span>Matériel adapté et installations sécurisées pour tous nos joueurs</span>
                                 </div>
-                                <h4>Équipement & Infrastructure</h4>
-                                <p>Renouvellement du matériel d'entraînement, achat de ballons adaptés à chaque catégorie d'âge, et amélioration de nos installations pour la sécurité et le confort de tous nos joueurs.</p>
                             </div>
-                            <div class="impact-item">
-                                <div class="impact-icon">
-                                    <i class="fas fa-bus"></i>
+                            <div class="impact-highlight">
+                                <i class="fas fa-bus"></i>
+                                <div>
+                                    <span>Déplacements subventionnés pour l'égalité des chances</span>
                                 </div>
-                                <h4>Transport & Compétitions</h4>
-                                <p>Subvention des déplacements pour les tournois régionaux et nationaux, permettant à nos jeunes talents de se confronter à d'autres niveaux de jeu sans barrière financière.</p>
                             </div>
-                            <div class="impact-item">
-                                <div class="impact-icon">
-                                    <i class="fas fa-graduation-cap"></i>
+                            <div class="impact-highlight">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <span>Formation des Éducateurs : encadrement de qualité avec coaches certifiés FFBB</span>
                                 </div>
-                                <h4>Formation des Éducateurs</h4>
-                                <p>Financement des formations FFBB pour nos coaches bénévoles, garantissant un encadrement de qualité et des méthodes pédagogiques modernes pour le développement de chaque joueur.</p>
                             </div>
-                            <div class="impact-item">
-                                <div class="impact-icon">
-                                    <i class="fas fa-users"></i>
+                            <div class="impact-highlight">
+                                <i class="fas fa-euro-sign"></i>
+                                <div>
+                                    <span>Tarifs solidaires et fonds d'aide aux familles</span>
                                 </div>
-                                <h4>Accessibilité pour Tous</h4>
-                                <p>Maintien de tarifs de licence abordables et création de fonds de solidarité pour les familles en difficulté, parce que le basket doit rester accessible à tous les enfants de notre territoire.</p>
                             </div>
-                            <div class="impact-item">
-                                <div class="impact-icon">
-                                    <i class="fas fa-trophy"></i>
+                            <div class="impact-highlight">
+                                <i class="fas fa-trophy"></i>
+                                <div>
+                                    <span>Stages et détection vers les centres de formation</span>
                                 </div>
-                                <h4>Développement des Jeunes Talents</h4>
-                                <p>Organisation de stages perfectionnement, détection de talents, et accompagnement des joueurs les plus prometteurs vers les centres de formation et pôles espoirs régionaux.</p>
                             </div>
-                            <div class="impact-item">
-                                <div class="impact-icon">
-                                    <i class="fas fa-heart"></i>
+                            <div class="impact-highlight">
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <span>Programmes adaptés pour séniors et handicap</span>
                                 </div>
-                                <h4>Basket Santé & Inclusion</h4>
-                                <p>Développement de programmes basket-santé pour les séniors et personnes en situation de handicap, parce que le sport est un vecteur de bien-être et de lien social à tout âge.</p>
                             </div>
                         </div>
                         
-                        <div class="impact-stats">
-                            <div class="stat-item">
+                        <div class="impact-stats-condensed">
+                            <div class="impact-stat">
                                 <div class="stat-number">120+</div>
                                 <div class="stat-label">Jeunes Formés</div>
                             </div>
-                            <div class="stat-item">
+                            <div class="impact-stat">
                                 <div class="stat-number">8</div>
-                                <div class="stat-label">Éducateurs Bénévoles</div>
+                                <div class="stat-label">Éducateurs</div>
                             </div>
-                            <div class="stat-item">
-                                <div class="stat-number">2000+</div>
+                            <div class="impact-stat">
+                                <div class="stat-number">2 000+</div>
                                 <div class="stat-label">Heures d'Entraînement</div>
                             </div>
-                            <div class="stat-item">
+                            <div class="impact-stat">
                                 <div class="stat-number">100%</div>
                                 <div class="stat-label">Réinvesti Localement</div>
                             </div>
                         </div>
                         
-                        <div class="impact-cta">
-                            <p><strong>Chaque euro investi dans le Coq Carlanais est un investissement direct dans l'avenir sportif et social de notre jeunesse.</strong> Votre soutien nous permet de pérenniser nos actions et d'offrir à chaque enfant la chance de s'épanouir through le basket-ball.</p>
-                            <a href="#donation-form" class="btn">Devenir Partenaire Impact</a>
+                        <div class="impact-cta-condensed">
+                            <a href="#donation-form" class="btn">Investir dans Notre Impact</a>
                         </div>
                     </div>
                     
