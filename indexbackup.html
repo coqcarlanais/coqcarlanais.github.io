@@ -1574,162 +1574,6 @@
             font-size: 0.9rem;
             color: #aaa;
         }
-        /* ===== SIMPLIFIED SPONSORSHIP TIERS ===== */
-        .sponsorship-simple {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .sponsor-tier-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .sponsor-tier-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-        
-        .sponsor-tier-card.popular {
-            border-color: var(--gold);
-            transform: scale(1.05);
-        }
-        
-        .sponsor-tier-card.popular:hover {
-            transform: scale(1.05) translateY(-5px);
-        }
-        
-        .tier-badge {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: var(--gold);
-            color: var(--primary-black);
-            padding: 0.5rem 1.5rem;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-radius: 0 12px 0 12px;
-        }
-        
-        .tier-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .tier-icon.bronze { color: var(--bronze); }
-        .tier-icon.silver { color: var(--silver); }
-        .tier-icon.gold { color: var(--gold); }
-        
-        .tier-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--primary-black);
-        }
-        
-        .tier-investment {
-            font-size: 1.75rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            color: var(--vibrant-yellow);
-        }
-        
-        .tier-impact {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 2rem;
-            line-height: 1.5;
-        }
-        
-        .tier-benefits-simple {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 2.5rem;
-        }
-        
-        .tier-benefits-simple li {
-            padding: 0.7rem 0;
-            border-bottom: 1px solid #f0f0f0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .tier-benefits-simple li:last-child {
-            border-bottom: none;
-        }
-        
-        .tier-benefits-simple i {
-            margin-right: 1rem;
-            color: #28a745;
-            font-size: 1.1rem;
-        }
-        
-        .tier-cta {
-            width: 100%;
-            font-size: 1.1rem;
-            font-weight: 700;
-            padding: 1rem 2rem;
-        }
-        
-        /* Impact-focused messaging */
-        .sponsorship-impact {
-            text-align: center;
-            max-width: 800px;
-            margin: 2rem auto 3rem;
-        }
-        
-        .sponsorship-impact h3 {
-            color: var(--primary-black);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-        
-        .sponsorship-impact p {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        /* Responsive design */
-        @media screen and (max-width: 968px) {
-            .sponsorship-simple {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .sponsor-tier-card.popular {
-                transform: none;
-            }
-            
-            .sponsor-tier-card.popular:hover {
-                transform: translateY(-5px);
-            }
-        }
-        
-        @media screen and (max-width: 480px) {
-            .sponsor-tier-card {
-                padding: 2rem 1.5rem;
-            }
-            
-            .tier-investment {
-                font-size: 1.5rem;
-            }
-            
-            .tier-title {
-                font-size: 1.3rem;
-            }
-        }
 
         /* ===== FOOTER SPONSORS ===== */
         .footer-sponsors {
@@ -2586,87 +2430,109 @@
             <div class="container">
                 <h2>Nos Sponsors</h2>
                 <div class="sponsors-content">
-                    <div class="sponsorship-intro">
-                        <h3>Investissez dans le Sport Local avec un Impact Fiscal Avantageux</h3>
-                        
-                        <p>Votre partenariat avec le Coq Carlanais représente un <strong>investissement stratégique</strong> dans la jeunesse de notre territoire. En soutenant nos 120 licenciés, vous bénéficiez d'une <strong>visibilité locale ciblée</strong> tout en renforçant votre image d'entreprise citoyenne.</p>
-                    
-                        <div class="tax-benefit-box">
-                            <h4>💫 Avantage Fiscal Exceptionnel</h4>
-                            <p>Votre don ouvre droit à une <strong>réduction d'impôt de 60%</strong> de son montant.</p>
-                            <div class="tax-example">
-                                <p><strong>Exemple :</strong> Un don de <strong>1000 €</strong> = un coût réel de <strong>400 €</strong> seulement</p>
-                            </div>
-                        </div>
+                    <!-- Tableau de Comparaison des Sponsorships -->
+                    <div class="sponsorship-comparison">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Avantages inclus</th>
+                                    <th class="tier-bronze">
+                                        <div class="tier-header">
+                                            <div class="tier-name">Bronze</div>
+                                            <div class="tier-price">500 €</div>
+                                        </div>
+                                    </th>
+                                    <th class="tier-silver tier-popular">
+                                        <div class="tier-header">
+                                            <div class="tier-name">Argent</div>
+                                            <div class="tier-price">1 000 €</div>
+                                        </div>
+                                    </th>
+                                    <th class="tier-gold">
+                                        <div class="tier-header">
+                                            <div class="tier-name">Or</div>
+                                            <div class="tier-price">2 500 €</div>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Logo sur équipements d'entraînement</th>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Présence site web & réseaux sociaux</th>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Invitations aux événements</th>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Logo sur maillots d'entraînement</th>
+                                    <td><span class="empty-cell"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Bannière publicitaire dans la salle</th>
+                                    <td><span class="empty-cell"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Mise en avant tournoi annuel</th>
+                                    <td><span class="empty-cell"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Article dédié sur nos réseaux</th>
+                                    <td><span class="empty-cell"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Logo sur maillots de match</th>
+                                    <td><span class="empty-cell"></span></td>
+                                    <td><span class="empty-cell"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Nom associé à une équipe</th>
+                                    <td><span class="empty-cell"></span></td>
+                                    <td><span class="empty-cell"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Interview et article exclusif</th>
+                                    <td><span class="empty-cell"></span></td>
+                                    <td><span class="empty-cell"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Accès VIP aux événements</th>
+                                    <td><span class="empty-cell"></span></td>
+                                    <td><span class="empty-cell"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     
-                    <!-- Message centré sur l'impact -->
-                    <div class="sponsorship-impact">
-                        <h3>Investissez dans la Jeunesse, Bâtissez la Communauté</h3>
-                        <p>Votre partenariat soutient directement 120+ jeunes sportifs et renforce notre communauté par le sport. Choisissez le niveau d'engagement qui correspond à vos objectifs d'impact.</p>
-                    </div>
-                    
-                    <!-- Formules de Partenariat Simplifiées -->
-                    <div class="sponsorship-simple">
-                        <!-- Partenaire Communautaire -->
-                        <div class="sponsor-tier-card">
-                            <div class="tier-icon bronze">
-                                <i class="fas fa-hands-helping"></i>
-                            </div>
-                            <h3 class="tier-title">Partenaire Communautaire</h3>
-                            <div class="tier-investment">500 €</div>
-                            <p class="tier-impact">Soutenez nos programmes jeunesse et gagnez en visibilité locale</p>
-                            
-                            <ul class="tier-benefits-simple">
-                                <li><i class="fas fa-check"></i> Logo sur nos équipements d'entraînement</li>
-                                <li><i class="fas fa-check"></i> Reconnaissance site web & réseaux sociaux</li>
-                                <li><i class="fas fa-check"></i> Invitations à nos événements</li>
-                                <li><i class="fas fa-check"></i> Impact communautaire local</li>
-                            </ul>
-                            
-                            <a href="#donation-form" class="btn tier-cta">Devenir Partenaire Communautaire</a>
-                        </div>
-                    
-                        <!-- Partenaire Développement -->
-                        <div class="sponsor-tier-card popular">
-                            <div class="tier-badge">Le Plus Populaire</div>
-                            <div class="tier-icon silver">
-                                <i class="fas fa-rocket"></i>
-                            </div>
-                            <h3 class="tier-title">Partenaire Développement</h3>
-                            <div class="tier-investment">1 000 €</div>
-                            <p class="tier-impact">Développez votre marque tout en formant les jeunes talents</p>
-                            
-                            <ul class="tier-benefits-simple">
-                                <li><i class="fas fa-check"></i> Tous les avantages Partenaire Communautaire</li>
-                                <li><i class="fas fa-check"></i> Logo sur les maillots d'entraînement</li>
-                                <li><i class="fas fa-check"></i> Mise en avant lors de notre tournoi annuel</li>
-                                <li><i class="fas fa-check"></i> Article dédié sur nos réseaux sociaux</li>
-                                <li><i class="fas fa-check"></i> Bannière publicitaire dans notre salle</li>
-                            </ul>
-                            
-                            <a href="#donation-form" class="btn tier-cta">Devenir Partenaire Développement</a>
-                        </div>
-                    
-                        <!-- Partenaire Excellence -->
-                        <div class="sponsor-tier-card">
-                            <div class="tier-icon gold">
-                                <i class="fas fa-trophy"></i>
-                            </div>
-                            <h3 class="tier-title">Partenaire Excellence</h3>
-                            <div class="tier-investment">2 500 € et +</div>
-                            <p class="tier-impact">Visibilité maximale tout en transformant des vies de jeunes</p>
-                            
-                            <ul class="tier-benefits-simple">
-                                <li><i class="fas fa-check"></i> Tous les avantages Partenaire Développement</li>
-                                <li><i class="fas fa-check"></i> Logo principal sur les maillots de match</li>
-                                <li><i class="fas fa-check"></i> Nom associé à une équipe</li>
-                                <li><i class="fas fa-check"></i> Interview et article exclusif</li>
-                                <li><i class="fas fa-check"></i> Accès VIP à tous nos événements</li>
-                                <li><i class="fas fa-check"></i> Trophée Partenaire Officiel</li>
-                            </ul>
-                            
-                            <a href="#donation-form" class="btn tier-cta">Devenir Partenaire Excellence</a>
+                    <!-- Call-to-action sous le tableau -->
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <p><strong>Avantage fiscal :</strong> 60% de réduction d'impôt sur votre investissement</p>
+                        <div style="margin-top: 1.5rem;">
+                            <a href="#donation-form" class="btn" style="margin: 0.5rem;">Devenir Partenaire</a>
+                            <a href="#contact" class="btn btn-outline" style="margin: 0.5rem;">Nous Contacter</a>
                         </div>
                     </div>
                     
