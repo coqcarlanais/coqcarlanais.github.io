@@ -1420,82 +1420,6 @@
             font-size: 1.1rem;
         }
 
-        /* ===== HERO SPONSORS SECTION ===== */
-        .hero-sponsors {
-            background: rgba(255, 204, 0, 0.05);
-            padding: 3rem 0;
-            border-top: 1px solid rgba(255, 204, 0, 0.2);
-        }
-        
-        .sponsor-preview {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .sponsor-preview h3 {
-            color: var(--primary-black);
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
-        }
-        
-        .sponsor-logos-preview {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .sponsor-logo-placeholder {
-            background: var(--white);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            min-width: 150px;
-            transition: transform 0.3s ease;
-            min-height: 180px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .sponsor-logo-placeholder:hover {
-            transform: translateY(-5px);
-        }
-        
-        .sponsor-logo-placeholder[data-tier="gold"] {
-            border-top: 4px solid var(--gold);
-        }
-        
-        .sponsor-logo-placeholder[data-tier="silver"] {
-            border-top: 4px solid var(--silver);
-        }
-        
-        .sponsor-logo-placeholder[data-tier="bronze"] {
-            border-top: 4px solid var(--bronze);
-        }
-        
-        .sponsor-logo-placeholder i {
-            font-size: 2.5rem;
-            color: var(--vibrant-yellow);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        
-        .sponsor-logo-placeholder span {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-        
-        .sponsor-logo-placeholder small {
-            color: #666;
-            font-size: 0.8rem;
-        }
-
         /* ===== EVENT SPONSORS ===== */
         .event-sponsors {
             background: rgba(255, 255, 255, 0.1);
@@ -2048,15 +1972,6 @@
                 padding: 0.8rem 0.5rem;
             }
             
-            .sponsor-logos-preview {
-                gap: 1rem;
-            }
-            
-            .sponsor-logo-placeholder {
-                min-width: 120px;
-                padding: 1rem;
-            }
-            
             .sponsors-grid {
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
                 gap: 1.5rem;
@@ -2177,33 +2092,6 @@
             <div class="btn-group">
                 <a href="#contact" class="btn">Rejoignez-nous</a>
                 <a href="#equipes" class="btn">Nos Équipes</a>
-            </div>
-        </div>
-    </section>
-   
-    <!-- Hero Sponsor Section -->
-    <section class="hero-sponsors">
-        <div class="container">
-            <div class="sponsor-preview">
-                <h3>Votre logo ici - Visibilité immédiate</h3>
-                <div class="sponsor-logos-preview">
-                    <div class="sponsor-logo-placeholder" data-tier="gold">
-                        <i class="fas fa-building"></i>
-                        <span>Logo Partenaire Or</span>
-                        <small>Position premium</small>
-                    </div>
-                    <div class="sponsor-logo-placeholder" data-tier="silver">
-                        <i class="fas fa-store"></i>
-                        <span>Logo Partenaire Argent</span>
-                        <small>Visibilité constante</small>
-                    </div>
-                    <div class="sponsor-logo-placeholder" data-tier="bronze">
-                        <i class="fas fa-utensils"></i>
-                        <span>Logo Partenaire Bronze</span>
-                        <small>Reconnaissance locale</small>
-                    </div>
-                </div>
-                <a href="#sponsors" class="btn">Devenir Partenaire</a>
             </div>
         </div>
     </section>
