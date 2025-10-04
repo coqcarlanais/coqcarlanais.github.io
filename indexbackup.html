@@ -723,28 +723,6 @@
             content: "—";
         }
         
-        /* Highlight popular tier */
-        .tier-popular {
-            position: relative;
-            background: linear-gradient(135deg, var(--primary-black) 0%, #333 100%);
-        }
-        
-        .tier-popular::before {
-            content: "Populaire";
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gold);
-            color: var(--primary-black);
-            padding: 0.3rem 1rem;
-            font-size: 0.7rem;
-            font-weight: 700;
-            border-radius: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
         /* Feature rows styling */
         .comparison-table tbody th {
             text-align: left;
@@ -2574,112 +2552,111 @@
         <section id="sponsors" class="sponsors">
             <div class="container">
                 <h2>Nos Sponsors</h2>
-                <div class="sponsors-content">
-                    <!-- Tableau de Comparaison des Sponsorships -->
-                    <div class="sponsorship-comparison">
-                        <table class="comparison-table">
-                            <thead>
-                                <tr>
-                                    <th>Avantages inclus</th>
-                                    <th class="tier-bronze">
-                                        <div class="tier-header">
-                                            <div class="tier-name">Bronze</div>
-                                            <div class="tier-price">500 €</div>
-                                        </div>
-                                    </th>
-                                    <th class="tier-silver tier-popular">
-                                        <div class="tier-header">
-                                            <div class="tier-name">Argent</div>
-                                            <div class="tier-price">1 000 €</div>
-                                        </div>
-                                    </th>
-                                    <th class="tier-gold">
-                                        <div class="tier-header">
-                                            <div class="tier-name">Or</div>
-                                            <div class="tier-price">2 500 €</div>
-                                        </div>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>Logo sur équipements d'entraînement</th>
-                                    <td><span class="checkmark"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>Présence site web & réseaux sociaux</th>
-                                    <td><span class="checkmark"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>Invitations aux événements</th>
-                                    <td><span class="checkmark"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>Logo sur maillots d'entraînement</th>
-                                    <td><span class="empty-cell"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>Bannière publicitaire dans la salle</th>
-                                    <td><span class="empty-cell"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>Mise en avant tournoi annuel</th>
-                                    <td><span class="empty-cell"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>Article dédié sur nos réseaux</th>
-                                    <td><span class="empty-cell"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>Logo sur maillots de match</th>
-                                    <td><span class="empty-cell"></span></td>
-                                    <td><span class="empty-cell"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>Nom associé à une équipe</th>
-                                    <td><span class="empty-cell"></span></td>
-                                    <td><span class="empty-cell"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>Interview et article exclusif</th>
-                                    <td><span class="empty-cell"></span></td>
-                                    <td><span class="empty-cell"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                </tr>
-                                <tr>
-                                    <th>Accès VIP aux événements</th>
-                                    <td><span class="empty-cell"></span></td>
-                                    <td><span class="empty-cell"></span></td>
-                                    <td><span class="checkmark"></span></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <!-- Tableau de Comparaison des Sponsorships -->
+                <div class="sponsorship-comparison">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Avantages inclus</th>
+                                <th class="tier-bronze">
+                                    <div class="tier-header">
+                                        <div class="tier-name">Bronze</div>
+                                        <div class="tier-price">500 €</div>
+                                    </div>
+                                </th>
+                                <th class="tier-silver">
+                                    <div class="tier-header">
+                                        <div class="tier-name">Argent</div>
+                                        <div class="tier-price">1 000 €</div>
+                                    </div>
+                                </th>
+                                <th class="tier-gold">
+                                    <div class="tier-header">
+                                        <div class="tier-name">Or</div>
+                                        <div class="tier-price">2 500 €</div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Logo sur équipements d'entraînement</th>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Présence site web & réseaux sociaux</th>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Invitations aux événements</th>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Logo sur maillots d'entraînement</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Bannière publicitaire dans la salle</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Mise en avant tournoi annuel</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Article dédié sur nos réseaux</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Logo sur maillots de match</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Nom associé à une équipe</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Interview et article exclusif</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Accès VIP aux événements</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Call-to-action sous le tableau -->
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p><strong>Avantage fiscal :</strong> 60% de réduction d'impôt sur votre investissement</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="#donation-form" class="btn" style="margin: 0.5rem;">Devenir Partenaire</a>
+                        <a href="#contact" class="btn btn-outline" style="margin: 0.5rem;">Nous Contacter</a>
                     </div>
-                    
-                    <!-- Call-to-action sous le tableau -->
-                    <div style="text-align: center; margin-top: 2rem;">
-                        <p><strong>Avantage fiscal :</strong> 60% de réduction d'impôt sur votre investissement</p>
-                        <div style="margin-top: 1.5rem;">
-                            <a href="#donation-form" class="btn" style="margin: 0.5rem;">Devenir Partenaire</a>
-                            <a href="#contact" class="btn btn-outline" style="margin: 0.5rem;">Nous Contacter</a>
-                        </div>
-                    </div>
+                </div>
                     
                     <!-- Rappel Avantage Fiscal -->
                     <div class="tax-benefit-box" style="margin-top: 2rem;">
