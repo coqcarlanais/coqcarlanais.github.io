@@ -645,7 +645,152 @@
             border: 1px solid #f5c6cb;
             color: #721c24;
         }
-
+        /* ===== TABLEAU DE COMPARAISON SPONSORSHIP ===== */
+        .sponsorship-comparison {
+            margin: 3rem 0;
+            overflow-x: auto;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .comparison-table thead th {
+            background: var(--primary-black);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 1.5rem 1rem;
+        }
+        
+        .comparison-table thead th:first-child {
+            background: transparent;
+            color: var(--primary-black);
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .comparison-table .tier-header {
+            padding: 0;
+        }
+        
+        .tier-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        
+        .tier-price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+        
+        .tier-bronze .tier-name { color: var(--bronze); }
+        .tier-silver .tier-name { color: var(--silver); }
+        .tier-gold .tier-name { color: var(--gold); }
+        
+        /* Checkmark styling */
+        .checkmark {
+            color: #28a745;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .checkmark::before {
+            content: "✓";
+        }
+        
+        .empty-cell {
+            color: #ccc;
+            font-size: 1.2rem;
+        }
+        
+        .empty-cell::before {
+            content: "—";
+        }
+        
+        /* Highlight popular tier */
+        .tier-popular {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-black) 0%, #333 100%);
+        }
+        
+        .tier-popular::before {
+            content: "Populaire";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--primary-black);
+            padding: 0.3rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Feature rows styling */
+        .comparison-table tbody th {
+            text-align: left;
+            font-weight: 500;
+            color: var(--primary-black);
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        /* Hover effects */
+        .comparison-table tbody tr:hover {
+            background: rgba(255, 204, 0, 0.05);
+        }
+        
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            .comparison-table {
+                font-size: 0.9rem;
+                min-width: 600px;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 1rem 0.5rem;
+            }
+            
+            .comparison-table tbody th {
+                padding-left: 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .tier-name {
+                font-size: 1rem;
+            }
+            
+            .tier-price {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .sponsorship-comparison {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+        }
         /* ===== SPONSORS SECTION ===== */
         .sponsors {
             background-color: var(--light-grey);
