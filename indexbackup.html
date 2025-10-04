@@ -1807,6 +1807,30 @@
             color: var(--white);
         }
 
+        /* ===== INFORMATIONS LÉGALES SIMPLIFIÉES ===== */
+        .footer-legal {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        
+        .legal-info {
+            font-size: 0.8rem;
+            color: #aaa;
+            line-height: 1.3;
+        }
+        
+        .legal-info p {
+            margin-bottom: 0;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .legal-info {
+                font-size: 0.75rem;
+            }
+        }
+
         /* ===== RESPONSIVE DESIGN ===== */
         @media screen and (max-width: 968px) {
             .contact-container {
@@ -3025,6 +3049,11 @@
                 <div class="footer-info">
                     <p>Salle Marcel Guichou, 09130 Carla Bayle, France</p>
                     <p>05 61 68 51 32 (Mairie) | contact@coqcarlanais.fr</p>
+                </div>
+                <div class="footer-legal">
+                    <div class="legal-info">
+                        <p>Association loi 1901 - SIREN 433 713 021</p>
+                    </div>
                 </div>
                 <div class="copyright">
                     <p>&copy; 2025 Coq Carlanais Basketball. Tous droits réservés.</p>
