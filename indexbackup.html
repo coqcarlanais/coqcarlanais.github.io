@@ -1666,6 +1666,137 @@
             color: #aaa;
         }
 
+        /* ===== SPONSORSHIP COMPARISON TABLE ===== */
+        .sponsorship-comparison {
+            margin: 3rem 0;
+            overflow-x: auto;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.5rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .comparison-table thead th {
+            background: var(--primary-black);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 2rem 1rem;
+        }
+        
+        .comparison-table thead th:first-child {
+            background: transparent;
+            color: var(--primary-black);
+            text-align: left;
+            font-size: 1rem;
+        }
+        
+        .comparison-table tbody th {
+            text-align: left;
+            font-weight: 600;
+            color: var(--primary-black);
+            padding-left: 1.5rem;
+            background: var(--light-grey);
+        }
+        
+        .comparison-table .tier-header {
+            padding: 0;
+        }
+        
+        .tier-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tier-price {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+        
+        .tier-bronze .tier-name { color: var(--bronze); }
+        .tier-silver .tier-name { color: var(--silver); }
+        .tier-gold .tier-name { color: var(--gold); }
+        
+        /* Checkmark styling */
+        .checkmark {
+            color: #28a745;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        .checkmark::before {
+            content: "✓";
+        }
+        
+        /* Tier highlight on hover */
+        .comparison-table tbody tr:hover {
+            background: rgba(255, 204, 0, 0.05);
+        }
+        
+        /* Feature category styling */
+        .feature-category {
+            background: var(--primary-black) !important;
+            color: var(--white) !important;
+            font-weight: 700 !important;
+            font-size: 1rem !important;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .feature-category th {
+            padding: 1rem 1.5rem;
+            border: none;
+        }
+        
+        /* Responsive design */
+        @media screen and (max-width: 768px) {
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 1rem 0.5rem;
+            }
+            
+            .comparison-table tbody th {
+                padding-left: 1rem;
+            }
+            
+            .tier-name {
+                font-size: 1.1rem;
+            }
+            
+            .tier-price {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .comparison-table {
+                min-width: 600px; /* Enable horizontal scroll on mobile */
+            }
+            
+            .sponsorship-comparison {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+        }
+
         /* ===== FOOTER SPONSORS ===== */
         .footer-sponsors {
             margin-bottom: 2rem;
@@ -2535,60 +2666,145 @@
                         </div>
                     </div>
                     
-                    <div class="sponsorship-tiers">
-                        <!-- Formule Bronze -->
-                        <div class="tier tier-bronze">
-                            <div class="tier-header">
-                                <h2 class="tier-name">Partenaire Bronze</h2>
-                                <p class="tier-price">50 - 500 €</p>
-                            </div>
-                            <div class="tier-benefits">
-                                <ul class="benefit-list">
-                                    <li><i class="fas fa-check"></i> Logo sur notre site internet</li>
-                                    <li><i class="fas fa-check"></i> Mention sur nos réseaux sociaux</li>
-                                    <li><i class="fas fa-check"></i> Logo sur nos supports de communication</li>
-                                    <li><i class="fas fa-check"></i> Invitation à nos événements</li>
-                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos équipements d'entraînement</span></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Formule Argent -->
-                        <div class="tier tier-silver">
-                            <div class="tier-header">
-                                <h2 class="tier-name">Partenaire Argent</h2>
-                                <p class="tier-price">500 - 1000 €</p>
-                            </div>
-                            <div class="tier-benefits">
-                                <ul class="benefit-list">
-                                    <li><i class="fas fa-check"></i> Tous les avantages Bronze</li>
-                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos maillots d'entraînement</span></li>
-                                    <li><i class="fas fa-check"></i> Mise en avant lors de notre tournoi annuel</li>
-                                    <li><i class="fas fa-check"></i> Article dédié sur nos réseaux sociaux</li>
-                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Bannière publicitaire dans notre salle</span></li>
-                                    <li><i class="fas fa-check"></i> Remise des récompenses lors de notre tournoi</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Formule Or -->
-                        <div class="tier tier-gold">
-                            <div class="tier-header">
-                                <h2 class="tier-name">Partenaire Or</h2>
-                                <p class="tier-price">1000 € et +</p>
-                            </div>
-                            <div class="tier-benefits">
-                                <ul class="benefit-list">
-                                    <li><i class="fas fa-check"></i> Tous les avantages Argent</li>
-                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Logo sur nos maillots de match</span></li>
-                                    <li><i class="fas fa-check"></i> Interview et article dédié sur nos réseaux</li>
-                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Nom associé à une équipe (ex: "U15 sponsorisée par...")</span></li>
-                                    <li><i class="fas fa-check"></i> Photo officielle avec l'équipe première</li>
-                                    <li><i class="fas fa-check"></i> Invitation VIP à tous nos événements</li>
-                                    <li><i class="fas fa-check"></i> <span class="benefit-highlight">Trophée Partenaire Officiel</span></li>
-                                </ul>
-                            </div>
-                        </div>
+                    <!-- Sponsorship Comparison Table -->
+                    <div class="sponsorship-comparison">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Avantages</th>
+                                    <th class="tier-bronze">
+                                        <div class="tier-header">
+                                            <div class="tier-name">Bronze</div>
+                                            <div class="tier-price">50 - 500 €</div>
+                                        </div>
+                                    </th>
+                                    <th class="tier-silver">
+                                        <div class="tier-header">
+                                            <div class="tier-name">Argent</div>
+                                            <div class="tier-price">500 - 1000 €</div>
+                                        </div>
+                                    </th>
+                                    <th class="tier-gold">
+                                        <div class="tier-header">
+                                            <div class="tier-name">Or</div>
+                                            <div class="tier-price">1000 € et +</div>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Digital Presence -->
+                                <tr class="feature-category">
+                                    <th colspan="4">Présence Digitale</th>
+                                </tr>
+                                <tr>
+                                    <th>Logo sur notre site internet</th>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Mention sur nos réseaux sociaux</th>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Logo sur nos supports de communication</th>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Article dédié sur nos réseaux</th>
+                                    <td></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Interview et article dédié</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                
+                                <!-- Branding & Visibility -->
+                                <tr class="feature-category">
+                                    <th colspan="4">Visibilité & Branding</th>
+                                </tr>
+                                <tr>
+                                    <th>Logo sur équipements d'entraînement</th>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Logo sur maillots d'entraînement</th>
+                                    <td></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Logo sur maillots de match</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Bannière publicitaire dans notre salle</th>
+                                    <td></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Nom associé à une équipe</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                
+                                <!-- Events & Experiences -->
+                                <tr class="feature-category">
+                                    <th colspan="4">Événements & Expériences</th>
+                                </tr>
+                                <tr>
+                                    <th>Invitation à nos événements</th>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Mise en avant lors du tournoi annuel</th>
+                                    <td></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Remise des récompenses au tournoi</th>
+                                    <td></td>
+                                    <td><span class="checkmark"></span></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Invitation VIP à tous nos événements</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Photo officielle avec l'équipe première</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                                <tr>
+                                    <th>Trophée Partenaire Officiel</th>
+                                    <td></td>
+                                    <td></td>
+                                    <td><span class="checkmark"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
                     <!-- Current Sponsors Showcase -->
