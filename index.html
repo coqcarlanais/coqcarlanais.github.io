@@ -2643,7 +2643,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th>Logo sur équipements d'entraînement</th>
+                                <th>Logo affiché sur le tableau de bulletin dans le club</th>
                                 <td><span class="checkmark"></span></td>
                                 <td><span class="checkmark"></span></td>
                                 <td><span class="checkmark"></span></td>
@@ -2880,8 +2880,8 @@
                                 <label for="sponsor-type">Type de partenariat</label>
                                 <div class="tier-options">
                                     <div class="tier-option">
-                                        <input type="radio" id="bronze" name="sponsor_tier" value="Bronze (50€)">
-                                        <label for="bronze">Bronze (50€)</label>
+                                        <input type="radio" id="bronze" name="sponsor_tier" value="Bronze (100€)">
+                                        <label for="bronze">Bronze (100€)</label>
                                     </div>
                                     <div class="tier-option">
                                         <input type="radio" id="silver" name="sponsor_tier" value="Argent (500€)">
@@ -3088,7 +3088,7 @@
                 amount = parseInt(customAmountInput.value) || 0;
                 tierName = 'Personnalisé';
             } else {
-                // Extract only the numeric value from the tier string (e.g., "Bronze (50€)" -> 50)
+                // Extract only the numeric value from the tier string (e.g., "Bronze (100€)" -> 100)
                 const tierValue = selectedTier.value;
                 // Extract the number from the string using regex
                 const amountMatch = tierValue.match(/(\d+)/);
