@@ -1807,30 +1807,6 @@
             color: var(--white);
         }
 
-        /* ===== INFORMATIONS LÉGALES SIMPLIFIÉES ===== */
-        .footer-legal {
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-        }
-        
-        .legal-info {
-            font-size: 0.8rem;
-            color: #aaa;
-            line-height: 1.3;
-        }
-        
-        .legal-info p {
-            margin-bottom: 0;
-        }
-        
-        @media screen and (max-width: 768px) {
-            .legal-info {
-                font-size: 0.75rem;
-            }
-        }
-
         /* ===== RESPONSIVE DESIGN ===== */
         @media screen and (max-width: 968px) {
             .contact-container {
@@ -2667,7 +2643,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th>Logo sur équipements d'entraînement</th>
+                                <th>Logo affiché sur le tableau de bulletin dans le club</th>
                                 <td><span class="checkmark"></span></td>
                                 <td><span class="checkmark"></span></td>
                                 <td><span class="checkmark"></span></td>
@@ -2904,8 +2880,8 @@
                                 <label for="sponsor-type">Type de partenariat</label>
                                 <div class="tier-options">
                                     <div class="tier-option">
-                                        <input type="radio" id="bronze" name="sponsor_tier" value="Bronze (50€)">
-                                        <label for="bronze">Bronze (50€)</label>
+                                        <input type="radio" id="bronze" name="sponsor_tier" value="Bronze (100€)">
+                                        <label for="bronze">Bronze (100€)</label>
                                     </div>
                                     <div class="tier-option">
                                         <input type="radio" id="silver" name="sponsor_tier" value="Argent (500€)">
@@ -3050,11 +3026,6 @@
                     <p>Salle Marcel Guichou, 09130 Carla Bayle, France</p>
                     <p>05 61 68 51 32 (Mairie) | contact@coqcarlanais.fr</p>
                 </div>
-                <div class="footer-legal">
-                    <div class="legal-info">
-                        <p>Association loi 1901 - SIREN 433 713 021</p>
-                    </div>
-                </div>
                 <div class="copyright">
                     <p>&copy; 2025 Coq Carlanais Basketball. Tous droits réservés.</p>
                 </div>
@@ -3117,7 +3088,7 @@
                 amount = parseInt(customAmountInput.value) || 0;
                 tierName = 'Personnalisé';
             } else {
-                // Extract only the numeric value from the tier string (e.g., "Bronze (50€)" -> 50)
+                // Extract only the numeric value from the tier string (e.g., "Bronze (100€)" -> 100)
                 const tierValue = selectedTier.value;
                 // Extract the number from the string using regex
                 const amountMatch = tierValue.match(/(\d+)/);
