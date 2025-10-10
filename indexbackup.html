@@ -1573,6 +1573,20 @@
             border: 2px dashed var(--vibrant-yellow) !important;
             background: rgba(255, 204, 0, 0.05);
         }
+
+        .sponsor-logo-img {
+            max-width: 150px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .sponsor-logo:hover .sponsor-logo-img {
+            transform: scale(1.05);
+        }
         
         .logo-placeholder i {
             font-size: 2.5rem;
@@ -2643,7 +2657,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th>Logo affiché sur le tableau de bulletin dans le club</th>
+                                <th>Logo affiché sur notre tableau d'affichage</th>
                                 <td><span class="checkmark"></span></td>
                                 <td><span class="checkmark"></span></td>
                                 <td><span class="checkmark"></span></td>
@@ -2734,11 +2748,16 @@
                                 <p>Position disponible</p>
                             </div>
                             <div class="sponsor-logo active" data-category="silver">
-                                <div class="logo-placeholder">
-                                    <i class="fas fa-medal"></i>
-                                    <span>Partenaire Argent</span>
-                                </div>
-                                <p>Position disponible</p>
+                                <a href="https://share.google/VyOP0Ke1v3XlKkEdg" target="_blank" rel="noopener">
+                                    <img src="/photos/sponsor/Batileze.png" alt="Batileze" class="sponsor-logo-img">
+                                </a>
+                                <p>Batileze</p>
+                            </div>
+                            <div class="sponsor-logo active" data-category="silver">
+                                <a href="https://share.google/sMcOUGMPuBTfEnApd" target="_blank" rel="noopener">
+                                    <img src="/photos/sponsor/PonsSabarat.png" alt="Pons Sabarat" class="sponsor-logo-img">
+                                </a>
+                                <p>Pons Sabarat</p>
                             </div>
                             <div class="sponsor-logo active" data-category="bronze">
                                 <div class="logo-placeholder">
