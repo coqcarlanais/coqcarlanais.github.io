@@ -1615,6 +1615,92 @@
             font-weight: 600;
         }
 
+        /* Sponsor Tier Sections */
+        .sponsor-tier-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 204, 0, 0.2);
+        }
+        
+        .sponsor-tier-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .tier-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            left: 50%;
+            position: relative;
+            transform: translateX(-50%);
+        }
+        
+        .gold-tier {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 100%);
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+        
+        .silver-tier {
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.15) 0%, rgba(192, 192, 192, 0.05) 100%);
+            border: 2px solid var(--silver);
+            color: var(--silver);
+        }
+        
+        .bronze-tier {
+            background: linear-gradient(135deg, rgba(205, 127, 50, 0.15) 0%, rgba(205, 127, 50, 0.05) 100%);
+            border: 2px solid var(--bronze);
+            color: var(--bronze);
+        }
+        
+        .sponsor-name {
+            font-weight: 600;
+            color: var(--primary-black);
+            margin-bottom: 0.3rem !important;
+            font-size: 1rem;
+        }
+        
+        .tier-label {
+            font-size: 0.8rem;
+            color: #666;
+            margin: 0 !important;
+            font-weight: 500;
+        }
+        
+        /* Update existing sponsor logo styles */
+        .sponsor-logo {
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .sponsor-logo-img {
+            max-width: 150px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            display: block;
+            margin: 0 auto 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .sponsor-logo:hover .sponsor-logo-img {
+            transform: scale(1.05);
+        }
+        
+        /* Remove the old placeholder icon styles */
+        .logo-placeholder i {
+            font-size: 2.5rem;
+            color: var(--vibrant-yellow);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
         /* ===== CONSTRUCTION BANNER ===== */
         .construction-banner {
             background: linear-gradient(135deg, var(--primary-black) 0%, #333 100%);
@@ -2736,45 +2822,68 @@
                     </div>
 
                     <!-- Current Sponsors Showcase -->
+                    <!-- Current Sponsors Showcase -->
                     <div class="current-sponsors-showcase">
                         <h3>Nos Partenaires Actuels</h3>
                         <p>Rejoignez ces entreprises qui soutiennent déjà notre club</p>
-                        <div class="sponsors-grid">
-                            <div class="sponsor-logo active" data-category="gold">
-                                <div class="logo-placeholder">
-                                    <i class="fas fa-crown"></i>
-                                    <span>Partenaire Or</span>
+                        
+                        <!-- Gold Sponsors -->
+                        <div class="sponsor-tier-section">
+                            <h4 class="tier-title gold-tier">
+                                <i class="fas fa-crown"></i>
+                                Partenaires Or
+                            </h4>
+                            <div class="sponsors-grid">
+                                <div class="sponsor-logo available">
+                                    <div class="logo-placeholder available-spot">
+                                        <i class="fas fa-plus-circle"></i>
+                                        <span>Votre entreprise ici</span>
+                                    </div>
+                                    <p class="tier-label">Poste disponible</p>
                                 </div>
-                                <p>Position disponible</p>
-                            </div>
-                            <div class="sponsor-logo active" data-category="silver">
-                                <a href="https://share.google/VyOP0Ke1v3XlKkEdg" target="_blank" rel="noopener">
-                                    <img src="/photos/sponsor/Batileze.png" alt="Batileze" class="sponsor-logo-img">
-                                </a>
-                                <p>Batileze</p>
-                            </div>
-                            <div class="sponsor-logo active" data-category="silver">
-                                <a href="https://share.google/sMcOUGMPuBTfEnApd" target="_blank" rel="noopener">
-                                    <img src="/photos/sponsor/PonsSabarat.png" alt="Pons Sabarat" class="sponsor-logo-img">
-                                </a>
-                                <p>Pons Sabarat</p>
-                            </div>
-                            <div class="sponsor-logo active" data-category="bronze">
-                                <div class="logo-placeholder">
-                                    <i class="fas fa-award"></i>
-                                    <span>Partenaire Bronze</span>
-                                </div>
-                                <p>Position disponible</p>
-                            </div>
-                            <div class="sponsor-logo available">
-                                <div class="logo-placeholder available-spot">
-                                    <i class="fas fa-plus-circle"></i>
-                                    <span>Votre entreprise ici</span>
-                                </div>
-                                <p>Poste disponible</p>
                             </div>
                         </div>
-                    </div>
+                        
+                        <!-- Silver Sponsors -->
+                        <div class="sponsor-tier-section">
+                            <h4 class="tier-title silver-tier">
+                                <i class="fas fa-medal"></i>
+                                Partenaires Argent
+                            </h4>
+                            <div class="sponsors-grid">
+                                <div class="sponsor-logo active" data-category="silver">
+                                    <a href="https://share.google/VyOP0Ke1v3XlKkEdg" target="_blank" rel="noopener">
+                                        <img src="/photos/sponsor/Batileze.png" alt="Batileze" class="sponsor-logo-img">
+                                    </a>
+                                    <p class="sponsor-name">Batileze</p>
+                                    <p class="tier-label">Partenaire Argent</p>
+                                </div>
+                                <div class="sponsor-logo active" data-category="silver">
+                                    <a href="https://share.google/sMcOUGMPuBTfEnApd" target="_blank" rel="noopener">
+                                        <img src="/photos/sponsor/PonsSabarat.png" alt="Pons Sabarat" class="sponsor-logo-img">
+                                    </a>
+                                    <p class="sponsor-name">Pons Sabarat</p>
+                                    <p class="tier-label">Partenaire Argent</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bronze Sponsors -->
+                        <div class="sponsor-tier-section">
+                            <h4 class="tier-title bronze-tier">
+                                <i class="fas fa-award"></i>
+                                Partenaires Bronze
+                            </h4>
+                            <div class="sponsors-grid">
+                                <div class="sponsor-logo available">
+                                    <div class="logo-placeholder available-spot">
+                                        <i class="fas fa-plus-circle"></i>
+                                        <span>Votre entreprise ici</span>
+                                    </div>
+                                    <p class="tier-label">Poste disponible</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- Impact Condensé - Boîte Unique -->
                     <div class="impact-condensed">
