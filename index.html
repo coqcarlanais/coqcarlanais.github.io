@@ -1656,6 +1656,25 @@
             .sponsor-logo:hover .sponsor-logo-img {
                 transform: scale(1.05);
             }
+            /* ===== SPONSOR TIER COLOR CODING ===== */
+            .sponsor-logo[data-category="bronze"] .sponsor-name,
+            .sponsor-logo[data-category="bronze"] .tier-label {
+                color: var(--bronze);
+                font-weight: 600;
+            }
+            
+            .sponsor-logo[data-category="silver"] .sponsor-name,
+            .sponsor-logo[data-category="silver"] .tier-label {
+                color: #666666; /* Darker silver for better contrast */
+                font-weight: 600;
+            }
+            
+            .sponsor-logo[data-category="gold"] .sponsor-name,
+            .sponsor-logo[data-category="gold"] .tier-label {
+                color: var(--gold);
+                font-weight: 600;
+            }
+        
             @media screen and (max-width: 768px) {
                 .sponsors-grid {
                     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
