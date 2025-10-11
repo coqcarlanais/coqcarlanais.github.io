@@ -1888,6 +1888,48 @@
                 font-size: 0.8rem;
                 color: var(--white);
             }
+
+            /* Footer Sponsor Logos */
+            .footer-tool-sponsors {
+                margin: 2rem 0;
+                text-align: center;
+            }
+            
+            .footer-tool-sponsors h4 {
+                color: var(--white);
+                margin-bottom: 1.5rem;
+                font-size: 1.1rem;
+            }
+            
+            .footer-tool-logos {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            
+            .footer-tool-logo {
+                display: block;
+                transition: transform 0.3s ease;
+            }
+            
+            .footer-tool-logo:hover {
+                transform: translateY(-3px);
+            }
+            
+            .footer-tool-logo img {
+                height: 40px;
+                width: auto;
+                filter: brightness(0) invert(1);
+                opacity: 0.8;
+                transition: all 0.3s ease;
+            }
+            
+            .footer-tool-logo:hover img {
+                opacity: 1;
+                filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 204, 0, 0.5));
+            }
     
             /* ===== RESPONSIVE DESIGN ===== */
             @media screen and (max-width: 968px) {
@@ -3106,7 +3148,24 @@
                     <img src="photos/Coq_carlanais_logo.jpg" alt="Logo Coq Carlanais" class="footer-logo-img">
                     Coq Carlanais
                 </a>
-                <!-- Footer Sponsors -->
+                
+                <!-- Tool Sponsors -->
+                <div class="footer-tool-sponsors">
+                    <h4>Nos outils partenaires</h4>
+                    <div class="footer-tool-logos">
+                        <a href="https://www.sporteasy.net/fr/" class="footer-tool-logo" target="_blank" rel="noopener">
+                            <img src="photos/sporteasy-logo.png" alt="SportEasy - Gestion d'équipes sportives" width="150" height="40">
+                        </a>
+                        <a href="https://info.helloasso.com/" class="footer-tool-logo" target="_blank" rel="noopener">
+                            <img src="photos/helloasso-logo.png" alt="HelloAsso - Plateforme de paiement et collecte" width="150" height="40">
+                        </a>
+                        <a href="https://www.canva.com/fr_fr/" class="footer-tool-logo" target="_blank" rel="noopener">
+                            <img src="photos/canva-logo.png" alt="Canva - Outil de création graphique" width="150" height="40">
+                        </a>
+                    </div>
+                </div>
+    
+                <!-- Business Sponsors -->
                 <div class="footer-sponsors">
                     <h4>Ils nous soutiennent</h4>
                     <div class="footer-sponsor-logos">
@@ -3124,6 +3183,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="social-icons">
                     <a href="https://www.facebook.com/coqcarlanaisbasket" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/coq_carlanais/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
