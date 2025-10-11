@@ -1910,11 +1910,14 @@
             }
             
             .footer-tool-logo {
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 transition: transform 0.3s ease;
                 padding: 0.5rem;
                 background: rgba(255, 255, 255, 0.9);
                 border-radius: 8px;
+                height: 60px; /* Fixed container height */
             }
             
             .footer-tool-logo:hover {
@@ -1924,9 +1927,10 @@
             }
             
             .footer-tool-logo img {
-                height: 35px;
-                width: auto;
-                max-width: 120px;
+                max-height: 40px; /* Control logo height */
+                width: auto; /* Let width adjust automatically */
+                max-width: 150px; /* Prevent overflow */
+                object-fit: contain; /* Fit within bounds without distortion */
                 opacity: 1;
                 transition: all 0.3s ease;
             }
@@ -1936,19 +1940,20 @@
                 filter: brightness(1.1);
             }
             
-            /* Responsive adjustments for tool logos */
+            /* Responsive adjustments */
             @media screen and (max-width: 768px) {
                 .footer-tool-logos {
                     gap: 1rem;
                 }
                 
-                .footer-tool-logo img {
-                    height: 30px;
-                    max-width: 100px;
+                .footer-tool-logo {
+                    height: 50px;
+                    padding: 0.4rem;
                 }
                 
-                .footer-tool-logo {
-                    padding: 0.4rem;
+                .footer-tool-logo img {
+                    max-height: 35px;
+                    max-width: 120px;
                 }
             }
             
@@ -1957,13 +1962,14 @@
                     gap: 0.8rem;
                 }
                 
-                .footer-tool-logo img {
-                    height: 25px;
-                    max-width: 80px;
+                .footer-tool-logo {
+                    height: 45px;
+                    padding: 0.3rem;
                 }
                 
-                .footer-tool-logo {
-                    padding: 0.3rem;
+                .footer-tool-logo img {
+                    max-height: 30px;
+                    max-width: 100px;
                 }
             }
     
