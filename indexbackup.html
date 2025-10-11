@@ -1914,10 +1914,11 @@
                 align-items: center;
                 justify-content: center;
                 transition: transform 0.3s ease;
-                padding: 0.5rem;
+                padding: 0.8rem; /* Increased padding for better spacing */
                 background: rgba(255, 255, 255, 0.9);
                 border-radius: 8px;
-                height: 60px; /* Fixed container height */
+                /* REMOVED fixed height constraint */
+                min-height: 60px; /* Changed to min-height */
             }
             
             .footer-tool-logo:hover {
@@ -1927,10 +1928,9 @@
             }
             
             .footer-tool-logo img {
-                max-height: 40px; /* Control logo height */
-                width: auto; /* Let width adjust automatically */
-                max-width: 150px; /* Prevent overflow */
-                object-fit: contain; /* Fit within bounds without distortion */
+                height: 40px; /* Fixed height */
+                width: auto; /* Automatic width to preserve aspect ratio */
+                object-fit: contain; /* Ensures entire image is visible */
                 opacity: 1;
                 transition: all 0.3s ease;
             }
@@ -1947,13 +1947,12 @@
                 }
                 
                 .footer-tool-logo {
-                    height: 50px;
-                    padding: 0.4rem;
+                    min-height: 50px;
+                    padding: 0.6rem;
                 }
                 
                 .footer-tool-logo img {
-                    max-height: 35px;
-                    max-width: 120px;
+                    height: 35px;
                 }
             }
             
@@ -1963,13 +1962,12 @@
                 }
                 
                 .footer-tool-logo {
-                    height: 45px;
-                    padding: 0.3rem;
+                    min-height: 45px;
+                    padding: 0.4rem;
                 }
                 
                 .footer-tool-logo img {
-                    max-height: 30px;
-                    max-width: 100px;
+                    height: 30px;
                 }
             }
     
