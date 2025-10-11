@@ -1889,7 +1889,7 @@
                 color: var(--white);
             }
 
-            /* Footer Sponsor Logos */
+            /* Footer Tool Sponsors */
             .footer-tool-sponsors {
                 margin: 2rem 0;
                 text-align: center;
@@ -1912,6 +1912,7 @@
             .footer-tool-logo {
                 display: block;
                 transition: transform 0.3s ease;
+                padding: 0.5rem;
             }
             
             .footer-tool-logo:hover {
@@ -1919,8 +1920,9 @@
             }
             
             .footer-tool-logo img {
-                height: 40px;
+                height: 35px;
                 width: auto;
+                max-width: 120px;
                 filter: brightness(0) invert(1);
                 opacity: 0.8;
                 transition: all 0.3s ease;
@@ -1929,6 +1931,29 @@
             .footer-tool-logo:hover img {
                 opacity: 1;
                 filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 204, 0, 0.5));
+            }
+            
+            /* Responsive adjustments for tool logos */
+            @media screen and (max-width: 768px) {
+                .footer-tool-logos {
+                    gap: 1rem;
+                }
+                
+                .footer-tool-logo img {
+                    height: 30px;
+                    max-width: 100px;
+                }
+            }
+            
+            @media screen and (max-width: 480px) {
+                .footer-tool-logos {
+                    gap: 0.8rem;
+                }
+                
+                .footer-tool-logo img {
+                    height: 25px;
+                    max-width: 80px;
+                }
             }
     
             /* ===== RESPONSIVE DESIGN ===== */
