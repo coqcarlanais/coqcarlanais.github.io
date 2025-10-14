@@ -1,9 +1,7 @@
 backend:
-  name: github
-  repo: coqcarlanais/coqcarlanais.github.io
-  branch: main
-  site_url: https://coqcarlanais.fr
-  display_url: https://coqcarlanais.fr
+  # Use git-gateway instead of github or proxy
+  name: git-gateway
+  branch: main  # Your default branch
 
 # Media storage configuration
 media_folder: "photos" # Where uploaded images will be stored
