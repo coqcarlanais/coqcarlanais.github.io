@@ -1,1 +1,89 @@
+backend:
+  name: github
+  repo: coqcarlanais/coqcarlanais.github.io
+  branch: main
+  site_url: https://coqcarlanais.fr
+  display_url: https://coqcarlanais.fr
 
+# Media storage configuration
+media_folder: "photos" # Where uploaded images will be stored
+public_folder: "/photos" # Public URL path for images
+
+# Collections define your editable content types
+collections:
+  # SPONSORS COLLECTION
+  - name: "sponsors"
+    label: "Sponsors"
+    folder: "content/sponsors"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Sponsor Name", name: "name", widget: "string"}
+      - {label: "Website URL", name: "url", widget: "string"}
+      - {label: "Logo", name: "logo", widget: "image", media_folder: "photos/sponsor", public_folder: "/photos/sponsor"}
+      - {label: "Tier", name: "tier", widget: "select", options: ["gold", "silver", "bronze"]}
+      - {label: "Description", name: "description", widget: "text", required: false}
+
+  # TEAMS COLLECTION  
+  - name: "teams"
+    label: "Teams"
+    folder: "content/teams"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Team Name", name: "title", widget: "string"}
+      - {label: "Age Group", name: "age_group", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Team Photo", name: "image", widget: "image"}
+      - {label: "Training Schedule", name: "schedule", widget: "text"}
+      - {label: "Coach Information", name: "coach", widget: "string", required: false}
+
+  # CLUB INFO COLLECTION
+  - name: "club"
+    label: "Club Information"
+    files:
+      - label: "About Club"
+        name: "about"
+        file: "content/club/about.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string", default: "Le Club"}
+          - {label: "Description", name: "body", widget: "markdown"}
+      
+      - label: "Contact Information"
+        name: "contact"
+        file: "content/club/contact.md"
+        fields:
+          - {label: "Phone", name: "phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Address", name: "address", widget: "text"}
+          - {label: "Facebook URL", name: "facebook", widget: "string", required: false}
+
+  # EVENTS COLLECTION
+  - name: "events"
+    label: "Events"
+    folder: "content/events"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Event Name", name: "title", widget: "string"}
+      - {label: "Event Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - {label: "Event Image", name: "image", widget: "image"}
+      - {label: "Registration Link", name: "registration_url", widget: "string", required: false}
+
+  # PRICING COLLECTION
+  - name: "pricing"
+    label: "Pricing"
+    files:
+      - label: "Membership Prices"
+        name: "prices"
+        file: "content/pricing/membership.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string", default: "Tarifs des Licences"}
+          - {label: "Introduction", name: "intro", widget: "text"}
+          - label: "Price Tiers"
+            name: "tiers"
+            widget: "list"
+            fields:
+              - {label: "Category", name: "category", widget: "string"}
+              - {label: "Price", name: "price", widget: "string"}
