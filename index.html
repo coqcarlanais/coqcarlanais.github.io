@@ -1682,91 +1682,6 @@
                     gap: 1.5rem;
                 }
             }
-
-    
-            /* ===== CONSTRUCTION BANNER ===== */
-            .construction-banner {
-                background: linear-gradient(135deg, var(--primary-black) 0%, #333 100%);
-                color: var(--white);
-                padding: 1.5rem 0;
-                border-bottom: 3px solid var(--vibrant-yellow);
-                position: relative;
-                margin-top: 70px; /* Account for fixed navbar */
-            }
-            
-            .banner-content {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 2rem;
-            }
-            
-            .banner-text h2 {
-                margin-bottom: 0.5rem;
-                color: var(--vibrant-yellow);
-                font-size: 1.5rem;
-            }
-            
-            .banner-text p {
-                margin-bottom: 0.5rem;
-                font-size: 1rem;
-            }
-            
-            .sponsor-cta {
-                color: var(--vibrant-yellow);
-                font-weight: 600;
-            }
-            
-            .countdown-container {
-                text-align: center;
-            }
-            
-            .countdown-timer {
-                display: flex;
-                gap: 1rem;
-                margin-bottom: 1rem;
-                justify-content: center;
-            }
-            
-            .time-unit {
-                background: rgba(255, 255, 255, 0.1);
-                padding: 0.5rem;
-                border-radius: 8px;
-                min-width: 70px;
-                backdrop-filter: blur(10px);
-            }
-            
-            .time-unit span {
-                display: block;
-                font-size: 1.8rem;
-                font-weight: bold;
-                color: var(--vibrant-yellow);
-                font-family: 'Montserrat', sans-serif;
-            }
-            
-            .time-unit small {
-                font-size: 0.8rem;
-                color: var(--white);
-                text-transform: uppercase;
-            }
-            
-            .sponsor-btn {
-                white-space: normal;
-                overflow-wrap: break-word;
-                word-wrap: break-word;
-                min-height: 44px;
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                padding: 0.8rem 1rem;
-                line-height: 1.2;
-            }
-            .sponsor-btn:hover {
-                background: var(--hover-yellow);
-                transform: translateY(-2px);
-                box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
-            }
     
             /* ===== FOOTER ===== */
             footer {
@@ -2223,39 +2138,6 @@
 <body>
     <!-- Skip to main content link -->
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-
-    <section class="construction-banner">
-        <div class="container">
-            <div class="banner-content">
-                <div class="banner-text">
-                    <h2>🚀 Site en construction</h2>
-                    <p>Lancement du nouveau et premier site internet du club le <strong>15 octobre 2025</strong></p>
-                    <p class="sponsor-cta">💫 <strong>Opportunité exclusive</strong> : Ajoutez votre logo avant le lancement et bénéficiez d'une visibilité dès le premier jour !</p>
-                </div>
-                <div class="countdown-container">
-                    <div id="countdown-timer" class="countdown-timer">
-                        <div class="time-unit">
-                            <span id="days">00</span>
-                            <small>Jours</small>
-                        </div>
-                        <div class="time-unit">
-                            <span id="hours">00</span>
-                            <small>Heures</small>
-                        </div>
-                        <div class="time-unit">
-                            <span id="minutes">00</span>
-                            <small>Minutes</small>
-                        </div>
-                        <div class="time-unit">
-                            <span id="seconds">00</span>
-                            <small>Secondes</small>
-                        </div>
-                    </div>
-                    <a href="#sponsors" class="btn sponsor-btn">Devenir Sponsor Maintenant</a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Menu principal">
