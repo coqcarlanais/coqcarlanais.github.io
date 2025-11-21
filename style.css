@@ -2130,16 +2130,21 @@ footer {
         margin: 2rem auto;
         text-align: center;
         max-width: 26rem;
+        width: calc(100% - 2rem); /* Added this line */
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .helloasso-container iframe {
         min-height: 500px;
         border-radius: 8px;
+        width: 100% !important; /* Force full width */
     }
     
     /* Ensure proper iframe responsiveness */
     #haWidgetLight {
         transition: height 0.3s ease;
+        width: 100% !important; /* Force full width */
     }
     
     /* Mobile adjustments for HelloAsso */
@@ -2147,16 +2152,28 @@ footer {
         .helloasso-container {
             padding: 1rem;
             margin: 1rem auto;
+            width: calc(100% - 1rem); /* Adjusted for mobile */
+            max-width: none; /* Remove max-width constraint on mobile */
         }
         
         .helloasso-container iframe {
             min-height: 400px;
+            width: 100% !important;
+        }
+        
+        /* Target the HelloAsso iframe specifically */
+        #haWidgetLight {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 auto !important;
         }
     }
     
     @media screen and (max-width: 480px) {
         .helloasso-container {
             padding: 0.5rem;
+            width: calc(100% - 1rem);
+            margin: 0.5rem auto;
         }
         
         .helloasso-container iframe {
