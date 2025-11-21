@@ -865,10 +865,10 @@
                                 id="haWidgetLight" 
                                 allowtransparency="true" 
                                 allow="payment" 
-                                scrolling="auto" 
+                                scrolling="no" 
                                 src="https://www.helloasso.com/associations/association-coq-carlanais-basket-ball-ccbb/formulaires/1/widget?view=form" 
-                                style="width: clamp(300px, 100%, 26rem); margin: 0 auto; border: none; display: block;"
-                                onload="window.addEventListener('message', e => {const dataHeight = e.data.height; const haWidgetElement = document.getElementById('haWidgetLight'); haWidgetElement.height = dataHeight + 'px';})">
+                                style="width: 100%; max-width: 26rem; margin: 0 auto; border: none; display: block; min-height: 600px;"
+                                onload="initHelloAssoIframe()">
                             </iframe>
                         </div>
                         
