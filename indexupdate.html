@@ -1535,9 +1535,9 @@
             
             .sponsors-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 2rem;
-                max-width: 1200px;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2.5rem;
+                max-width: 1400px;
                 margin: 0 auto;
                 justify-items: center;
                 align-items: start;
@@ -1545,7 +1545,7 @@
             
             .sponsor-logo {
                 text-align: center;
-                padding: 1rem;
+                padding: 1.5rem;
                 transition: transform 0.3s ease;
             }
             
@@ -1555,16 +1555,17 @@
             
             .logo-container {
                 background: var(--white);
-                padding: 2rem 1rem;
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                margin-bottom: 1rem;
+                padding: 2.5rem 1.5rem;
+                border-radius: 12px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+                margin-bottom: 1.5rem;
                 transition: all 0.3s ease;
                 border: 2px solid transparent;
-                height: 160px;
+                height: 200px; /* Increased height for larger logos */
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                position: relative;
             }
             
             .available-spot {
@@ -1573,7 +1574,7 @@
             }
             
             .logo-container i {
-                font-size: 2.5rem;
+                font-size: 3rem;
                 color: var(--vibrant-yellow);
                 margin-bottom: 0.5rem;
                 display: block;
@@ -1582,17 +1583,18 @@
             .logo-container span {
                 font-weight: 600;
                 color: var(--primary-black);
+                font-size: 1.1rem;
             }
             
             .sponsor-name {
-                font-weight: 600;
+                font-weight: 700;
                 color: var(--primary-black);
-                margin-bottom: 0.3rem !important;
-                font-size: 1rem;
+                margin-bottom: 0.5rem !important;
+                font-size: 1.1rem;
             }
             
             .sponsor-logo p {
-                font-size: 0.9rem;
+                font-size: 0.95rem;
                 color: #666;
                 margin: 0;
             }
@@ -1601,48 +1603,75 @@
                 color: var(--vibrant-yellow);
                 font-weight: 600;
             }
-    
+            
+            /* LARGER LOGO SIZES */
             .sponsor-logo-img {
-                max-width: 200px;
-                max-height: 120px;
+                max-width: 280px;  /* Increased from 200px */
+                max-height: 160px; /* Increased from 120px */
                 width: auto;
                 height: auto;
                 display: block;
                 margin: 0 auto;
                 transition: transform 0.3s ease;
+                object-fit: contain; /* Ensures entire logo is visible */
             }
             
             .sponsor-logo:hover .sponsor-logo-img {
-                transform: scale(1.05);
+                transform: scale(1.08);
             }
-    
+            
             /* Remove tier-specific color coding */
             .sponsor-logo[data-category] .sponsor-name,
             .sponsor-logo[data-category] p {
                 color: var(--primary-black) !important;
                 font-weight: 600;
             }
-    
+            
             /* Remove tier section styles */
             .sponsor-tier-section,
             .tier-title {
                 display: none;
             }
-    
+            
             @media screen and (max-width: 768px) {
                 .sponsors-grid {
-                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 2rem;
+                }
+                
+                .logo-container {
+                    height: 180px; /* Slightly smaller on mobile but still good */
+                    padding: 2rem 1rem;
+                }
+                
+                .sponsor-logo-img {
+                    max-width: 220px;
+                    max-height: 130px;
+                }
+                
+                .sponsor-logo {
+                    padding: 1rem;
+                }
+            }
+            
+            @media screen and (max-width: 480px) {
+                .sponsors-grid {
+                    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
                     gap: 1.5rem;
                 }
                 
                 .logo-container {
-                    height: 140px;
+                    height: 160px;
                     padding: 1.5rem 1rem;
                 }
                 
                 .sponsor-logo-img {
-                    max-width: 150px;
-                    max-height: 100px;
+                    max-width: 180px;
+                    max-height: 110px;
+                }
+                
+                .current-sponsors-showcase {
+                    padding: 2rem 1rem;
                 }
             }
     
