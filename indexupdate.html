@@ -1,0 +1,3657 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-SHHWT6C3R9"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-SHHWT6C3R9');
+        </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coq Carlanais - Club de Basket du Carla Bayle</title>
+    <meta name="description" content="Club de basket-ball Coq Carlanais à Carla Bayle. Équipes pour tous les âges, entraînements, compétitions et inscriptions.">
+    <link rel="icon" type="image/jpeg" href="photos/Coq_carlanais_logo.jpg">
+    <link rel="apple-touch-icon" href="photos/Coq_carlanais_logo.jpg">
+    <link rel="icon" type="image/x-icon" href="photos/Coq_carlanais_logo.ico">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+            /* ===== CSS VARIABLES ===== */
+            :root {
+                --primary-black: #1A1A1A;
+                --vibrant-yellow: #FFCC00;
+                --hover-yellow: #FFEB3B;
+                --secondary-yellow: #FFC107;
+                --white: #FFFFFF;
+                --light-grey: #F5F5F5;
+                --bronze: #CD7F32;
+                --silver: #C0C0C0;
+                --gold: #FFD700;
+            }
+    
+            /* ===== RESET & BASE STYLES ===== */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            html {
+                scroll-behavior: smooth;
+            }
+    
+            body {
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 400;
+                line-height: 1.6;
+                color: var(--primary-black);
+                background-color: var(--white);
+            }
+    
+            .container {
+                width: 90%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 15px;
+            }
+    
+            section {
+                padding: 5rem 0;
+            }
+    
+            /* ===== TYPOGRAPHY ===== */
+            h1, h2, h3, h4, h5, h6 {
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 700;
+                margin-bottom: 1rem;
+            }
+    
+            h1 {
+                font-size: 2.5rem;
+            }
+    
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+    
+            p {
+                margin-bottom: 1rem;
+            }
+    
+            /* ===== ACCESSIBILITY ===== */
+            .skip-link {
+                position: absolute;
+                top: -40px;
+                left: 6px;
+                background: var(--vibrant-yellow);
+                color: var(--primary-black);
+                padding: 8px;
+                z-index: 1001;
+                text-decoration: none;
+                font-weight: 600;
+                border-radius: 4px;
+            }
+    
+            .skip-link:focus {
+                top: 6px;
+            }
+    
+            /* ===== NAVIGATION ===== */
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-black);
+                z-index: 1000;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            .nav-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 0;
+            }
+    
+            .logo {
+                color: var(--white);
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1.5rem;
+                font-weight: 700;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+            }
+    
+            .logo-img {
+                height: 50px;
+                width: auto;
+                margin-right: 10px;
+            }
+    
+            .nav-menu {
+                display: flex;
+                list-style: none;
+            }
+    
+            .nav-item {
+                margin-left: 2rem;
+            }
+    
+            .nav-link {
+                color: var(--white);
+                text-decoration: none;
+                font-weight: 600;
+                transition: color 0.3s ease;
+                padding: 0.5rem 0;
+                position: relative;
+            }
+    
+            .nav-link:hover,
+            .nav-link:focus {
+                color: var(--vibrant-yellow);
+                outline: none;
+            }
+    
+            .nav-link:focus {
+                outline: 2px solid var(--vibrant-yellow);
+                outline-offset: 4px;
+            }
+    
+            .hamburger {
+                display: none;
+                cursor: pointer;
+                background: transparent;
+                border: none;
+                padding: 0.5rem;
+            }
+    
+            .bar {
+                display: block;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                background-color: var(--white);
+                transition: all 0.3s ease;
+            }
+    
+            /* ===== BUTTONS ===== */
+            .btn {
+                display: inline-block;
+                padding: 0.8rem 1.8rem;
+                background-color: var(--vibrant-yellow);
+                color: var(--primary-black);
+                text-decoration: none;
+                border-radius: 4px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                border: none;
+                cursor: pointer;
+                font-family: 'Montserrat', sans-serif;
+                min-height: 44px;
+                text-align: center;
+            }
+    
+            .btn:hover,
+            .btn:focus {
+                background-color: var(--hover-yellow);
+                transform: translateY(-3px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                outline: none;
+            }
+    
+            .btn:focus {
+                outline: 2px solid var(--primary-black);
+                outline-offset: 2px;
+            }
+    
+            .btn:disabled {
+                background-color: #cccccc;
+                cursor: not-allowed;
+                transform: none;
+                box-shadow: none;
+            }
+    
+            .btn-group {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+    
+            .btn-outline {
+                background: transparent;
+                border: 2px solid var(--vibrant-yellow);
+                color: var(--primary-black);
+            }
+    
+            .btn-outline:hover,
+            .btn-outline:focus {
+                background: var(--vibrant-yellow);
+            }
+    
+            .btn-primary {
+                background: var(--vibrant-yellow);
+                color: var(--primary-black);
+                font-weight: 600;
+                padding: 1rem 2rem;
+                position: relative;
+            }
+    
+            /* ===== HERO SECTION ===== */
+            .hero {
+                height: 100vh;
+                background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
+                            url('https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1790&q=80') no-repeat center center/cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: var(--white);
+            }
+    
+            .hero-content {
+                max-width: 800px;
+                padding: 0 20px;
+            }
+    
+            .hero h1 {
+                font-size: 3.5rem;
+                margin-bottom: 1rem;
+            }
+    
+            .hero p {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+    
+            /* ===== ABOUT SECTION ===== */
+            .about {
+                background-color: var(--white);
+            }
+    
+            .about-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+    
+            .about-text {
+                margin-bottom: 3rem;
+            }
+    
+            /* ===== TEAMS SECTION ===== */
+            .teams {
+                background-color: var(--light-grey);
+            }
+    
+            .team-cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 2rem;
+            }
+    
+            .team-card {
+                background-color: var(--white);
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+    
+            .team-card:hover {
+                transform: translateY(-5px);
+            }
+    
+            .team-img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+    
+            .team-info {
+                padding: 1.5rem;
+            }
+    
+            .team-info h3 {
+                margin-bottom: 0.5rem;
+            }
+    
+            .team-info p {
+                margin-bottom: 1rem;
+            }
+    
+            .team-schedule {
+                background-color: var(--light-grey);
+                padding: 0.8rem;
+                border-radius: 4px;
+                margin-top: 1rem;
+                font-size: 0.9rem;
+            }
+    
+            /* ===== SCHEDULE SECTION ===== */
+            .schedule {
+                background-color: var(--white);
+            }
+            
+            .schedule-image-container {
+                position: relative;
+                max-width: 100%;
+                margin: 0 auto;
+                text-align: center;
+            }
+            
+            .schedule-image {
+                width: 100%;
+                height: auto;
+                border-radius: 12px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+            }
+            
+            .schedule-image:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+            }
+            
+            .schedule-image:active {
+                transform: scale(0.98);
+            }
+            
+            .image-zoom-hint {
+                display: none;
+                margin-top: 1rem;
+                padding: 0.8rem;
+                background-color: var(--light-grey);
+                border-radius: 6px;
+                font-size: 0.9rem;
+                color: #666;
+            }
+            
+            .image-zoom-hint i {
+                margin-right: 0.5rem;
+                color: var(--vibrant-yellow);
+            }
+            
+            /* Mobile-specific styles for full-width image */
+            @media screen and (max-width: 768px) {
+                .schedule {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+                
+                .schedule .container {
+                    width: 100%;
+                    max-width: 100%;
+                    padding: 0;
+                }
+                
+                .schedule-image-container {
+                    margin: 0;
+                    max-width: 100%;
+                    width: 100%;
+                }
+                
+                .schedule-image {
+                    width: 100%;
+                    border-radius: 0;
+                    box-shadow: none;
+                }
+                
+                .image-zoom-hint {
+                    display: block;
+                    margin: 1rem 15px 0;
+                }
+                
+                h2 {
+                    padding: 0 15px;
+                }
+            }
+            
+            /* For very small screens, ensure maximum readability */
+            @media screen and (max-width: 480px) {
+                .schedule-image-container {
+                    margin: 0 -10px;
+                }
+                
+                .image-zoom-hint {
+                    font-size: 0.8rem;
+                    padding: 0.6rem;
+                }
+            }
+    
+    
+            /* ===== FACEBOOK SECTION ===== */
+            .facebook {
+                background-color: var(--light-grey);
+            }
+    
+            .facebook-content {
+                text-align: center;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+    
+            .facebook-icon {
+                font-size: 3rem;
+                color: #1877F2;
+                margin-bottom: 1.5rem;
+            }
+    
+            /* ===== CONTACT SECTION ===== */
+            .contact {
+                background-color: var(--white);
+            }
+    
+            .contact-intro {
+                text-align: center;
+                max-width: 700px;
+                margin: 0 auto 3rem;
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+    
+            .contact-container {
+                display: grid;
+                grid-template-columns: 1fr 1.5fr;
+                gap: 3rem;
+                align-items: start;
+            }
+    
+            .contact-info {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+    
+            .contact-card {
+                background: var(--white);
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                overflow: hidden;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+    
+            .contact-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            }
+    
+            .contact-card-header {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 1.5rem 1.5rem 0;
+            }
+    
+            .contact-card-header .contact-icon {
+                color: var(--vibrant-yellow);
+                font-size: 1.5rem;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(255, 204, 0, 0.1);
+                border-radius: 50%;
+            }
+    
+            .contact-card-header h3 {
+                margin: 0;
+                font-size: 1.2rem;
+            }
+    
+            .contact-card-body {
+                padding: 1rem 1.5rem 1.5rem;
+            }
+    
+            .contact-card-body p {
+                margin-bottom: 1rem;
+            }
+    
+            .highlight-text {
+                color: var(--vibrant-yellow);
+                font-weight: 600;
+                margin-top: 0.5rem;
+            }
+    
+            .contact-note {
+                font-size: 0.9rem;
+                color: #666;
+                margin-top: 0.5rem;
+            }
+    
+            .contact-form-container {
+                background: var(--white);
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                padding: 2rem;
+            }
+    
+            .form-header {
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+    
+            .form-header h3 {
+                color: var(--primary-black);
+                margin-bottom: 0.5rem;
+            }
+    
+            .form-section {
+                margin-bottom: 2rem;
+                padding-bottom: 1.5rem;
+                border-bottom: 1px solid #eee;
+            }
+    
+            .form-section:last-of-type {
+                border-bottom: none;
+                margin-bottom: 1rem;
+            }
+    
+            .form-section h4 {
+                color: var(--primary-black);
+                margin-bottom: 1.2rem;
+                font-size: 1.1rem;
+                display: flex;
+                align-items: center;
+            }
+    
+            .form-section h4:before {
+                content: "";
+                display: inline-block;
+                width: 4px;
+                height: 18px;
+                background: var(--vibrant-yellow);
+                margin-right: 10px;
+                border-radius: 2px;
+            }
+    
+            .form-group label {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: 600;
+                color: var(--primary-black);
+            }
+    
+            .form-control {
+                width: 100%;
+                padding: 0.8rem 1rem;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+                min-height: 44px;
+            }
+    
+            .form-control:focus {
+                outline: none;
+                border-color: var(--vibrant-yellow);
+                box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.2);
+            }
+    
+            .form-control.error {
+                border-color: #dc3545;
+                box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+            }
+    
+            .error-message {
+                color: #dc3545;
+                font-size: 0.875rem;
+                margin-top: 0.25rem;
+                display: none;
+            }
+    
+            .form-row {
+                display: flex;
+                gap: 1rem;
+            }
+    
+            .form-row .form-group {
+                flex: 1;
+            }
+    
+            #contact-form-message {
+                display: none;
+                margin-top: 1.5rem;
+                padding: 1rem;
+                border-radius: 4px;
+                text-align: center;
+                font-weight: 600;
+            }
+    
+            #contact-form-message.success {
+                background-color: #d4edda;
+                border: 1px solid #c3e6cb;
+                color: #155724;
+            }
+    
+            #contact-form-message.error {
+                background-color: #f8d7da;
+                border: 1px solid #f5c6cb;
+                color: #721c24;
+            }
+            /* ===== TABLEAU DE COMPARAISON SPONSORSHIP ===== */
+            .sponsorship-comparison {
+                margin: 3rem 0;
+                overflow-x: auto;
+            }
+            
+            .comparison-table {
+                width: 100%;
+                border-collapse: collapse;
+                background: var(--white);
+                border-radius: 12px;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 1.2rem 1rem;
+                text-align: center;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            .comparison-table thead th {
+                background: var(--primary-black);
+                color: var(--white);
+                font-weight: 700;
+                font-size: 1.1rem;
+                padding: 1.5rem 1rem;
+            }
+            
+            .comparison-table thead th:first-child {
+                background: transparent;
+                color: var(--primary-black);
+                text-align: left;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+            
+            .comparison-table .tier-header {
+                padding: 0;
+            }
+            
+            .tier-name {
+                font-size: 1.2rem;
+                font-weight: 700;
+                margin-bottom: 0.3rem;
+            }
+            
+            .tier-price {
+                font-size: 1.1rem;
+                font-weight: 600;
+                opacity: 0.9;
+            }
+            
+            .tier-bronze .tier-name { color: var(--bronze); }
+            .tier-silver .tier-name { color: var(--silver); }
+            .tier-gold .tier-name { color: var(--gold); }
+            
+            /* Checkmark styling */
+            .checkmark {
+                color: #28a745;
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+            
+            .checkmark::before {
+                content: "✓";
+            }
+            
+            .empty-cell {
+                color: #ccc;
+                font-size: 1.2rem;
+            }
+            
+            .empty-cell::before {
+                content: "—";
+            }
+            
+            /* Feature rows styling */
+            .comparison-table tbody th {
+                text-align: left;
+                font-weight: 500;
+                color: var(--primary-black);
+                padding-left: 1.5rem;
+                font-size: 0.95rem;
+            }
+            
+            /* Hover effects */
+            .comparison-table tbody tr:hover {
+                background: rgba(255, 204, 0, 0.05);
+            }
+            
+            /* Responsive design */
+            @media screen and (max-width: 768px) {
+                .comparison-table {
+                    font-size: 0.9rem;
+                    min-width: 600px;
+                }
+                
+                .comparison-table th,
+                .comparison-table td {
+                    padding: 1rem 0.5rem;
+                }
+                
+                .comparison-table tbody th {
+                    padding-left: 1rem;
+                    font-size: 0.85rem;
+                }
+                
+                .tier-name {
+                    font-size: 1rem;
+                }
+                
+                .tier-price {
+                    font-size: 0.9rem;
+                }
+            }
+            
+            @media screen and (max-width: 480px) {
+                .sponsorship-comparison {
+                    margin-left: -15px;
+                    margin-right: -15px;
+                }
+            }
+            /* ===== SPONSORS SECTION ===== */
+            .sponsors {
+                background-color: var(--light-grey);
+            }
+    
+            .sponsors-content {
+                text-align: center;
+                max-width: 800px;
+                margin: 0 auto;
+            }
+    
+            .sponsor-text {
+                margin-bottom: 2rem;
+            }
+    
+            .sponsorship-intro {
+                text-align: center;
+                margin-bottom: 3rem;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+    
+            .sponsor-cards {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+    
+            .sponsor-card {
+                background-color: var(--white);
+                border-radius: 8px;
+                padding: 2rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                transition: transform 0.3s ease;
+                max-width: 300px;
+            }
+    
+            .sponsor-card:hover {
+                transform: translateY(-5px);
+            }
+    
+            .sponsor-icon {
+                font-size: 2.5rem;
+                color: var(--vibrant-yellow);
+                margin-bottom: 1rem;
+            }
+    
+            .sponsor-card h3 {
+                margin-bottom: 1rem;
+            }
+    
+            /* ===== DONATION SECTION ===== */
+            .donation-section {
+                background-color: var(--white);
+                border-radius: 10px;
+                padding: 3rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                margin-top: 3rem;
+            }
+    
+            .donation-form {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+    
+            .tier-options {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                margin-bottom: 1.5rem;
+            }
+    
+            .tier-option {
+                flex: 1;
+                min-width: 120px;
+            }
+    
+            .tier-option input[type="radio"] {
+                display: none;
+            }
+    
+            .tier-option label {
+                display: block;
+                padding: 0.8rem 1rem;
+                background-color: var(--light-grey);
+                border: 2px solid transparent;
+                border-radius: 4px;
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            .tier-option input[type="radio"]:checked + label {
+                background-color: var(--vibrant-yellow);
+                border-color: var(--secondary-yellow);
+                font-weight: bold;
+            }
+    
+            .tier-option label:focus {
+                outline: 2px solid var(--vibrant-yellow);
+                outline-offset: 2px;
+            }
+    
+            .custom-amount {
+                display: flex;
+                gap: 0.5rem;
+            }
+    
+            .custom-amount .form-control {
+                flex: 1;
+            }
+    
+            .donation-summary {
+                background-color: var(--light-grey);
+                padding: 1.5rem;
+                border-radius: 8px;
+                margin-top: 1.5rem;
+            }
+    
+            .donation-summary h3 {
+                margin-bottom: 1rem;
+                color: var(--vibrant-yellow);
+            }
+    
+            .summary-item {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 0.5rem;
+            }
+    
+            .total-amount {
+                font-weight: bold;
+                font-size: 1.2rem;
+                border-top: 1px solid #ddd;
+                padding-top: 0.5rem;
+                margin-top: 0.5rem;
+            }
+    
+            #form-message {
+                display: none;
+                margin-top: 1.5rem;
+                padding: 1rem;
+                border-radius: 4px;
+                text-align: center;
+                font-weight: 600;
+            }
+    
+            #form-message.success {
+                background-color: #d4edda;
+                border: 1px solid #c3e6cb;
+                color: #155724;
+            }
+    
+            #form-message.error {
+                background-color: #f8d7da;
+                border: 1px solid #f5c6cb;
+                color: #721c24;
+            }
+    
+            /* ===== PRICING SECTION ===== */
+            .pricing {
+                background-color: var(--light-grey);
+            }
+    
+            .pricing-intro {
+                text-align: center;
+                max-width: 800px;
+                margin: 0 auto 3rem;
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+    
+            .pricing-table-container {
+                margin: 2rem 0;
+                overflow-x: auto;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                border-radius: 10px;
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .pricing-table {
+                width: 100%;
+                border-collapse: collapse;
+                background-color: var(--white);
+                border-radius: 10px;
+                overflow: hidden;
+            }
+            
+            .pricing-table th {
+                background-color: var(--vibrant-yellow);
+                color: var(--primary-black);
+                padding: 1.2rem 1rem;
+                text-align: left;
+                font-weight: 700;
+                font-size: 1.1rem;
+            }
+            
+            .pricing-table th:last-child {
+                text-align: right;
+            }
+            
+            .pricing-table td {
+                padding: 1.2rem 1rem;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .pricing-table tbody tr {
+                transition: background-color 0.3s ease;
+            }
+            
+            .pricing-table tbody tr:hover {
+                background-color: rgba(255, 204, 0, 0.05);
+            }
+            
+            .pricing-table tbody tr:last-child td {
+                border-bottom: none;
+            }
+            
+            .pricing-table td:first-child {
+                font-weight: 600;
+                color: var(--primary-black);
+            }
+            
+            .pricing-table td:last-child {
+                font-weight: 700;
+                color: var(--primary-black);
+                font-size: 1.2rem;
+                text-align: right;
+            }
+    
+            .pricing-notes {
+                background: var(--white);
+                border-radius: 10px;
+                padding: 2rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                margin-top: 2rem;
+            }
+    
+            .notes-list {
+                list-style: none;
+            }
+    
+            .notes-list li {
+                padding: 0.5rem 0;
+                display: flex;
+                align-items: flex-start;
+            }
+    
+            .notes-list i {
+                margin-right: 10px;
+                color: var(--vibrant-yellow);
+                margin-top: 0.3rem;
+            }
+    
+            .payment-options {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+    
+            /* ===== TAX BENEFIT SECTION ===== */
+            .tax-benefit-box {
+                background: linear-gradient(135deg, #fff9e6 0%, #fffbef 100%);
+                border-left: 4px solid var(--vibrant-yellow);
+                padding: 1.5rem;
+                border-radius: 0 8px 8px 0;
+                margin: 2rem 0;
+            }
+            
+            .tax-benefit-box h4 {
+                color: var(--primary-black);
+                margin-bottom: 0.75rem;
+            }
+            
+            .tax-example {
+                background-color: rgba(255, 204, 0, 0.1);
+                padding: 1rem;
+                border-radius: 6px;
+                margin-top: 1rem;
+                text-align: center;
+            }
+    
+            /* ===== HIGHLIGHTS SECTION ===== */
+            .highlights-section {
+                background-color: var(--white);
+                padding: 4rem 0;
+            }
+            
+            .highlights-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin-top: 2rem;
+            }
+            
+            .highlight-card {
+                background: var(--white);
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+                transition: transform 0.3s ease;
+            }
+            
+            .highlight-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .highlight-img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                display: block;
+            }
+            
+            .highlight-content {
+                padding: 1.5rem;
+            }
+            
+            .highlight-content h3 {
+                color: var(--vibrant-yellow);
+                margin-bottom: 0.5rem;
+            }
+    
+            /* ===== IMPACT STATEMENT ===== */
+            .impact-statement {
+                background: var(--white);
+                border-radius: 15px;
+                padding: 3rem;
+                margin: 3rem 0;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                border: 2px solid var(--vibrant-yellow);
+            }
+            
+            .impact-statement h3 {
+                text-align: center;
+                color: var(--primary-black);
+                margin-bottom: 2.5rem;
+                font-size: 2rem;
+            }
+            /* ===== IMPACT CONDENSÉ POUR SUBVENTIONS ===== */
+            .impact-condensed {
+                background: linear-gradient(135deg, #fff9e6 0%, #fffbef 100%);
+                border: 2px solid var(--vibrant-yellow);
+                border-radius: 15px;
+                padding: 2.5rem;
+                margin: 2rem 0;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            }
+            
+            .impact-condensed h3 {
+                color: var(--primary-black);
+                text-align: center;
+                margin-bottom: 1.5rem;
+                font-size: 1.5rem;
+            }
+            
+            .impact-highlights {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .impact-highlight {
+                display: flex;
+                align-items: flex-start;
+                gap: 0.8rem;
+                padding: 0.8rem;
+            }
+            
+            .impact-highlight i {
+                color: var(--vibrant-yellow);
+                font-size: 1.2rem;
+                margin-top: 0.2rem;
+                flex-shrink: 0;
+            }
+            
+            .impact-highlight strong {
+                color: var(--primary-black);
+                display: block;
+                margin-bottom: 0.3rem;
+            }
+            
+            .impact-highlight span {
+                font-size: 0.9rem;
+                color: #666;
+                line-height: 1.4;
+            }
+            
+            .impact-stats-condensed {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 1rem;
+                background: var(--white);
+                padding: 1.5rem;
+                border-radius: 10px;
+                margin: 1.5rem 0;
+                border: 1px solid rgba(255, 204, 0, 0.3);
+            }
+            
+            .impact-stat {
+                text-align: center;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+                font-weight: 800;
+                color: var(--vibrant-yellow);
+                margin-bottom: 0.3rem;
+            }
+            
+            .stat-label {
+                font-size: 0.8rem;
+                font-weight: 600;
+                color: var(--primary-black);
+                text-transform: uppercase;
+            }
+            
+            .impact-cta-condensed {
+                text-align: center;
+                padding-top: 1.5rem;
+                border-top: 1px solid rgba(255, 204, 0, 0.3);
+            }
+            
+            .impact-cta-condensed p {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+                color: var(--primary-black);
+            }
+            
+            @media screen and (max-width: 768px) {
+                .impact-condensed {
+                    padding: 2rem 1.5rem;
+                }
+                
+                .impact-highlights {
+                    grid-template-columns: 1fr;
+                }
+                
+                .impact-stats-condensed {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            
+            .impact-stats {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 2rem;
+                margin: 3rem 0;
+                padding: 2rem;
+                background: linear-gradient(135deg, var(--vibrant-yellow) 0%, var(--secondary-yellow) 100%);
+                border-radius: 10px;
+                text-align: center;
+            }
+            
+           .stat-item {
+                color: var(--primary-black);
+                min-width: 0; /* This prevents text overflow */
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+                font-weight: 800;
+                margin-bottom: 0.5rem;
+                word-break: keep-all;
+            }
+            
+            .stat-label {
+                font-size: 0.9rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                word-wrap: break-word; 
+                hyphens: auto; 
+            }
+            
+            .impact-cta {
+                text-align: center;
+                padding-top: 2rem;
+                border-top: 2px solid var(--light-grey);
+            }
+            
+            .impact-cta p {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+    
+            /* ===== HALLOWEEN SECTION ===== */
+            .halloween {
+                background: linear-gradient(135deg, #1A1A1A 0%, #2D1B00 100%);
+                color: var(--white);
+                padding: 5rem 0;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .halloween:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: 
+                    radial-gradient(circle at 20% 30%, rgba(255, 204, 0, 0.1) 0%, transparent 20%),
+                    radial-gradient(circle at 80% 70%, rgba(255, 204, 0, 0.1) 0%, transparent 20%);
+                pointer-events: none;
+            }
+            
+            .halloween-title {
+                font-size: 3rem;
+                text-align: center;
+                margin-bottom: 0.5rem;
+                color: var(--vibrant-yellow);
+                text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+                position: relative;
+                display: inline-block;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .halloween-title:after {
+                content: "";
+                display: block;
+                width: 100px;
+                height: 3px;
+                background: var(--vibrant-yellow);
+                margin: 1rem auto;
+            }
+            
+            .halloween-subtitle {
+                text-align: center;
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+                color: #ddd;
+            }
+            
+            .halloween-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+                align-items: center;
+            }
+            
+            .halloween-image {
+                text-align: center;
+            }
+            
+            .halloween-image img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                transition: transform 0.3s ease;
+            }
+            
+            .halloween-image img:hover {
+                transform: translateY(-5px);
+            }
+            
+            .halloween-details {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .halloween-date {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+                padding: 1.5rem;
+                background: rgba(255, 204, 0, 0.1);
+                border-radius: 10px;
+                border-left: 4px solid var(--vibrant-yellow);
+            }
+            
+            .date-icon {
+                font-size: 2rem;
+                color: var(--vibrant-yellow);
+            }
+            
+            .date-info h3 {
+                margin-bottom: 0.5rem;
+                color: var(--vibrant-yellow);
+            }
+            
+            .date-info p {
+                margin: 0;
+                color: #ddd;
+            }
+            
+            .halloween-activities h3 {
+                color: var(--vibrant-yellow);
+                margin-bottom: 1rem;
+            }
+            
+            .halloween-activities ul {
+                list-style: none;
+                padding: 0;
+            }
+            
+            .halloween-activities li {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 0.8rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .halloween-activities li:last-child {
+                border-bottom: none;
+            }
+            
+            .halloween-activities i {
+                color: var(--vibrant-yellow);
+                font-size: 1.2rem;
+                width: 24px;
+                text-align: center;
+            }
+            
+            .halloween-cta {
+                text-align: center;
+                padding-top: 1rem;
+            }
+            
+            .halloween-btn {
+                background-color: var(--vibrant-yellow);
+                color: var(--primary-black);
+                font-weight: bold;
+                font-size: 1.1rem;
+                padding: 1rem 2rem;
+                margin-bottom: 1rem;
+                box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+            }
+            
+            .halloween-btn:hover {
+                background-color: var(--hover-yellow);
+                transform: translateY(-3px);
+                box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
+            }
+            
+            .halloween-note {
+                font-size: 0.9rem;
+                color: #aaa;
+                font-style: italic;
+                margin-bottom: 0.5rem;
+            }
+            
+            .halloween-rsvp-note {
+                font-size: 0.9rem;
+                color: #ddd;
+            }
+    
+            /* ===== HALLOWEEN COUNTER ===== */
+            .halloween-counter-simplified {
+                text-align: center;
+                margin-bottom: 3rem;
+                padding: 2.5rem;
+                background: linear-gradient(135deg, rgba(255, 204, 0, 0.15) 0%, rgba(255, 204, 0, 0.05) 100%);
+                border-radius: 20px;
+                border: 2px solid var(--vibrant-yellow);
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+                backdrop-filter: blur(10px);
+            }
+            
+            .counter-main {
+                margin-bottom: 2rem;
+            }
+            
+            .counter-total {
+                font-size: 3.5rem;
+                font-weight: bold;
+                color: var(--vibrant-yellow);
+                line-height: 1;
+                margin-bottom: 0.5rem;
+                text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
+            }
+            
+            .counter-label {
+                font-size: 1.2rem;
+                color: var(--white);
+                font-weight: 500;
+            }
+            
+            .counter-breakdown-simple {
+                display: flex;
+                justify-content: center;
+                gap: 3rem;
+                margin: 2rem 0;
+            }
+            
+            .breakdown-simple-item {
+                text-align: center;
+                flex: 0 0 auto;
+            }
+            
+            .breakdown-simple-number {
+                font-size: 2.2rem;
+                font-weight: bold;
+                color: var(--vibrant-yellow);
+                line-height: 1;
+                margin-bottom: 0.5rem;
+                text-shadow: 0 0 8px rgba(255, 204, 0, 0.2);
+            }
+            
+            .breakdown-simple-label {
+                font-size: 1rem;
+                color: var(--white);
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            
+            .counter-cta {
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+                border-top: 1px solid rgba(255, 204, 0, 0.3);
+            }
+            
+            .counter-cta p {
+                margin-bottom: 1rem;
+                color: var(--white);
+                font-weight: 600;
+                font-size: 1.1rem;
+            }
+    
+            /* ===== CURRENT SPONSORS SHOWCASE ===== */
+            .current-sponsors-showcase {
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                padding: 3rem 2rem;
+                border-radius: 15px;
+                margin: 3rem 0;
+                text-align: center;
+            }
+            
+            .current-sponsors-showcase h3 {
+                color: var(--primary-black);
+                margin-bottom: 1rem;
+            }
+            
+            .current-sponsors-showcase > p {
+                color: #666;
+                margin-bottom: 2rem;
+            }
+            
+            .sponsors-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 3rem;
+                max-width: 1000px;
+                margin: 0 auto;
+                justify-items: center;
+                align-items: start;
+            }
+            
+            .sponsor-logo {
+                text-align: center;
+                padding: 1rem;
+            }
+            
+            .logo-placeholder {
+                background: var(--white);
+                padding: 2rem 1rem;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                margin-bottom: 1rem;
+                transition: transform 0.3s ease;
+                border: 2px solid transparent;
+            }
+            
+            .sponsor-logo:hover .logo-placeholder {
+                transform: translateY(-5px);
+            }
+            
+            .available-spot {
+                border: 2px dashed var(--vibrant-yellow) !important;
+                background: rgba(255, 204, 0, 0.05);
+            }
+            
+            .logo-placeholder i {
+                font-size: 2.5rem;
+                color: var(--vibrant-yellow);
+                margin-bottom: 0.5rem;
+                display: block;
+            }
+            
+            .logo-placeholder span {
+                font-weight: 600;
+                color: var(--primary-black);
+            }
+            
+            .sponsor-logo p {
+                font-size: 0.9rem;
+                color: #666;
+                margin: 0;
+            }
+            
+            .available p {
+                color: var(--vibrant-yellow);
+                font-weight: 600;
+            }
+    
+            /* ===== SPONSOR TIER SECTIONS ===== */
+            .sponsor-tier-section {
+                margin-bottom: 3rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid rgba(255, 204, 0, 0.2);
+            }
+            
+            .sponsor-tier-section:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+            }
+            
+            .tier-title {
+                text-align: center;
+                margin: 0 auto 1.5rem auto;
+                font-size: 1.5rem;
+                padding: 0.8rem 1.5rem;
+                border-radius: 8px;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.8rem;
+                justify-content: center;
+            }
+            
+            .gold-tier {
+                background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 100%);
+                border: 2px solid var(--gold);
+                color: var(--gold);
+            }
+            
+            .silver-tier {
+                background: linear-gradient(135deg, rgba(136, 136, 136, 0.15) 0%, rgba(136, 136, 136, 0.05) 100%);
+                border: 2px solid #888888;
+                color: #666666;
+            }
+            
+            .bronze-tier {
+                background: linear-gradient(135deg, rgba(205, 127, 50, 0.15) 0%, rgba(205, 127, 50, 0.05) 100%);
+                border: 2px solid var(--bronze);
+                color: var(--bronze);
+            }
+            
+            .sponsor-name {
+                font-weight: 600;
+                color: var(--primary-black);
+                margin-bottom: 0.3rem !important;
+                font-size: 1rem;
+            }
+            
+            .tier-label {
+                font-size: 0.8rem;
+                color: #666;
+                margin: 0 !important;
+                font-weight: 500;
+            }
+            
+            .sponsor-logo-img {
+                max-width: 300px;
+                max-height: 160px;
+                width: auto;
+                height: auto;
+                display: block;
+                margin: 0 auto 1rem;
+                transition: transform 0.3s ease;
+            }
+            
+            .sponsor-logo:hover .sponsor-logo-img {
+                transform: scale(1.05);
+            }
+            /* ===== SPONSOR TIER COLOR CODING ===== */
+            .sponsor-logo[data-category="bronze"] .sponsor-name,
+            .sponsor-logo[data-category="bronze"] .tier-label {
+                color: var(--bronze);
+                font-weight: 600;
+            }
+            
+            .sponsor-logo[data-category="silver"] .sponsor-name,
+            .sponsor-logo[data-category="silver"] .tier-label {
+                color: #666666; /* Darker silver for better contrast */
+                font-weight: 600;
+            }
+            
+            .sponsor-logo[data-category="gold"] .sponsor-name,
+            .sponsor-logo[data-category="gold"] .tier-label {
+                color: var(--gold);
+                font-weight: 600;
+            }
+        
+            @media screen and (max-width: 768px) {
+                .sponsors-grid {
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                    gap: 1.5rem;
+                }
+            }
+    
+            /* ===== FOOTER ===== */
+            footer {
+                background-color: var(--primary-black);
+                color: var(--white);
+                padding: 3rem 0 1.5rem;
+            }
+    
+            .footer-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                text-align: center;
+            }
+    
+            .footer-logo {
+                display: flex;
+                align-items: center;
+                color: var(--white);
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1.5rem;
+                font-weight: 700;
+                text-decoration: none;
+            }
+    
+            .footer-logo-img {
+                height: 40px;
+                width: auto;
+                margin-right: 10px;
+            }
+    
+            .social-icons {
+                display: flex;
+                gap: 1.5rem;
+            }
+    
+            .social-icon {
+                color: var(--white);
+                font-size: 1.5rem;
+                transition: color 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                text-decoration: none;
+            }
+    
+            .social-icon:hover,
+            .social-icon:focus {
+                color: var(--vibrant-yellow);
+                outline: none;
+                text-decoration: none;
+            }
+    
+            .social-icon:focus {
+                outline: 2px solid var(--vibrant-yellow);
+                outline-offset: 2px;
+            }
+    
+            .footer-info {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .footer-attribution {
+                margin-top: 1.5rem;
+                padding-top: 1rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                text-align: center;
+                font-size: 0.85rem;
+                color: #aaa;
+            }
+            
+            .footer-attribution a {
+                color: var(--vibrant-yellow);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            
+            .footer-attribution a:hover {
+                color: var(--hover-yellow);
+                text-decoration: underline;
+            }
+    
+            .copyright {
+                margin-top: 2rem;
+                font-size: 0.9rem;
+                color: #aaa;
+            }
+    
+            /* ===== FOOTER SPONSORS ===== */
+            .footer-sponsors {
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+            
+            .footer-sponsors h4 {
+                color: var(--white);
+                margin-bottom: 1rem;
+                font-size: 1.1rem;
+            }
+            
+            .footer-sponsor-logos {
+                display: flex;
+                justify-content: center;
+                gap: 1.5rem;
+                flex-wrap: wrap;
+            }
+            
+            .footer-sponsor-placeholder {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 1rem;
+                border-radius: 8px;
+                text-align: center;
+                min-width: 120px;
+                transition: all 0.3s ease;
+            }
+            
+            .footer-sponsor-placeholder:hover {
+                background: rgba(255, 255, 255, 0.2);
+            }
+            
+            .footer-sponsor-placeholder.available {
+                border: 2px dashed var(--vibrant-yellow);
+                background: rgba(255, 204, 0, 0.1);
+            }
+            
+            .footer-sponsor-placeholder i {
+                font-size: 1.5rem;
+                color: var(--vibrant-yellow);
+                margin-bottom: 0.5rem;
+                display: block;
+            }
+            
+            .footer-sponsor-placeholder span {
+                font-size: 0.8rem;
+                color: var(--white);
+            }
+
+            /* Footer Tool Sponsors */
+            .footer-tool-sponsors {
+                margin: 2rem 0;
+                text-align: center;
+            }
+            
+            .footer-tool-sponsors h4 {
+                color: var(--white);
+                margin-bottom: 1.5rem;
+                font-size: 1.1rem;
+            }
+            
+            .footer-tool-logos {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            
+            .footer-tool-logo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: transform 0.3s ease;
+                padding: 0.8rem; /* Increased padding for better spacing */
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: 8px;
+                /* REMOVED fixed height constraint */
+                min-height: 60px; /* Changed to min-height */
+            }
+            
+            .footer-tool-logo:hover {
+                transform: translateY(-3px);
+                background: var(--white);
+                box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
+            }
+            
+            .footer-tool-logo img {
+                height: 40px; /* Fixed height */
+                width: auto; /* Automatic width to preserve aspect ratio */
+                object-fit: contain; /* Ensures entire image is visible */
+                opacity: 1;
+                transition: all 0.3s ease;
+            }
+            
+            .footer-tool-logo:hover img {
+                opacity: 1;
+                filter: brightness(1.1);
+            }
+            
+            /* Responsive adjustments */
+            @media screen and (max-width: 768px) {
+                .footer-tool-logos {
+                    gap: 1rem;
+                }
+                
+                .footer-tool-logo {
+                    min-height: 50px;
+                    padding: 0.6rem;
+                }
+                
+                .footer-tool-logo img {
+                    height: 35px;
+                }
+            }
+            
+            @media screen and (max-width: 480px) {
+                .footer-tool-logos {
+                    gap: 0.8rem;
+                }
+                
+                .footer-tool-logo {
+                    min-height: 45px;
+                    padding: 0.4rem;
+                }
+                
+                .footer-tool-logo img {
+                    height: 30px;
+                }
+            }
+    
+            /* ===== RESPONSIVE DESIGN ===== */
+            @media screen and (max-width: 968px) {
+                .contact-container {
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                }
+                
+                .contact-info {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                    gap: 1.5rem;
+                }
+                
+                .halloween-content {
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                }
+                
+                .halloween-image {
+                    order: 2;
+                }
+                
+                .halloween-details {
+                    order: 1;
+                }
+            }
+    
+            @media screen and (max-width: 768px) {
+                .hamburger {
+                    display: block;
+                }
+    
+                .nav-menu {
+                    position: fixed;
+                    left: -100%;
+                    top: 70px;
+                    flex-direction: column;
+                    background-color: var(--primary-black);
+                    width: 100%;
+                    text-align: center;
+                    transition: 0.3s;
+                    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                    padding: 2rem 0;
+                }
+    
+                .nav-menu.active {
+                    left: 0;
+                }
+    
+                .nav-item {
+                    margin: 1.5rem 0;
+                }
+    
+                .hero h1 {
+                    font-size: 2.5rem;
+                }
+    
+                .hero p {
+                    font-size: 1.2rem;
+                }
+    
+                .btn-group {
+                    flex-direction: column;
+                    align-items: center;
+                }
+    
+                .btn {
+                    width: 100%;
+                    max-width: 250px;
+                    font-size: 1.1rem;
+                    padding: 1rem 1.5rem;
+                }
+                
+                .team-cards {
+                    grid-template-columns: 1fr;
+                }
+    
+                .sponsorship-tiers {
+                    grid-template-columns: 1fr;
+                }
+    
+                .form-row {
+                    flex-direction: column;
+                }
+    
+                .tier-options {
+                    flex-direction: column;
+                }
+    
+                .donation-section {
+                    padding: 2rem 1rem;
+                }
+    
+                .contact-form-container {
+                    padding: 1.5rem;
+                }
+                
+                .contact-info {
+                    grid-template-columns: 1fr;
+                }
+                
+                .pricing-table th,
+                .pricing-table td {
+                    padding: 0.8rem 0.5rem;
+                    font-size: 0.9rem;
+                }
+                
+                .pricing-table td:last-child {
+                    font-size: 1.1rem;
+                }
+                
+                .impact-statement {
+                    padding: 2rem 1rem;
+                }
+                
+                .impact-grid {
+                    grid-template-columns: 1fr;
+                }
+                
+                .impact-stats {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1.5rem;
+                    padding: 1.5rem;
+                    justify-items: center;
+                    text-align: center;
+                }
+                
+                .stat-number {
+                    font-size: 2rem;
+                }
+                
+                .stat-label {
+                    font-size: 0.8rem;
+                    line-height: 1.2;
+                }
+                
+                .halloween-title {
+                    font-size: 2.5rem;
+                }
+                
+                .halloween-date {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 1rem;
+                }
+                
+                .date-icon {
+                    font-size: 1.8rem;
+                }
+                
+                .counter-total {
+                    font-size: 3rem;
+                }
+                
+                .banner-content {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 1rem;
+                }
+                
+                .countdown-timer {
+                    gap: 0.5rem;
+                }
+                
+                .time-unit {
+                    min-width: 60px;
+                    padding: 0.4rem;
+                }
+                
+                .time-unit span {
+                    font-size: 1.5rem;
+                }
+                
+                .banner-text h2 {
+                    font-size: 1.3rem;
+                }
+                
+                .banner-text p {
+                    font-size: 0.9rem;
+                }
+                
+                .sponsor-btn {
+                    width: 100%;
+                    max-width: 280px;
+                    font-size: 0.95rem;
+                    padding: 0.8rem 0.5rem;
+                }
+                
+                .sponsors-grid {
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                    gap: 1.5rem;
+                }
+                
+                .footer-sponsor-logos {
+                    gap: 1rem;
+                }
+                
+                .highlights-gallery {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 2rem;
+                }
+                
+                .highlight-card {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    width: 100%;
+                    max-width: 400px;
+                }
+                
+                .highlight-img {
+                    object-fit: contain;
+                    width: auto;
+                    max-height: 200px;
+                }
+            }
+            
+            @media screen and (max-width: 480px) {
+                .impact-stats {
+                    grid-template-columns: 1fr;
+                    gap: 1rem;
+                }
+                
+                .stat-item {
+                    padding: 0.5rem;
+                }
+                
+                .stat-label {
+                    font-size: 0.75rem;
+                }
+                
+                .pricing-table {
+                    font-size: 0.85rem;
+                }
+                
+                .pricing-table th {
+                    padding: 0.7rem 0.4rem;
+                }
+                
+                .pricing-table td {
+                    padding: 0.7rem 0.4rem;
+                }
+            }
+        </style>
+</head>
+<body>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Menu principal">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="photos/Coq_carlanais_logo.jpg" alt="Logo Coq Carlanais" class="logo-img">
+                Coq Carlanais
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#accueil" class="nav-link">Accueil</a></li>
+                <li class="nav-item"><a href="#club" class="nav-link">Le Club</a></li>
+                <!--
+                <li class="nav-item"><a href="#halloween" class="nav-link">Halloween</a></li>
+                -->
+                <li class="nav-item"><a href="#equipes" class="nav-link">Équipes</a></li>
+                <li class="nav-item"><a href="#horaires" class="nav-link">Horaires</a></li>
+                <li class="nav-item"><a href="#tarifs" class="nav-link">Tarifs</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#sponsors" class="nav-link">Sponsors</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Section Hero -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Bienvenue au Coq Carlanais</h1>
+            <p>Le club de basket du Carla Bayle</p>
+            <div class="btn-group">
+                <a href="#contact" class="btn">Rejoignez-nous</a>
+                <a href="#equipes" class="btn">Nos Équipes</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main content -->
+    <main id="main-content">
+        <!-- Section Le Club -->
+        <section id="club" class="about">
+            <div class="container">
+                <h2>Le Club</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Fondé en 1948, le Coq Carlanais est une véritable institution du Carla Bayle, un lieu de rassemblement où se mêlent passion du sport et esprit communautaire.</p>
+                        <p>Notre mission est de promouvoir les valeurs du basket-ball auprès de tous les âges, en favorisant le développement personnel, l'esprit d'équipe et le fair-play dans un environnement bienveillant et compétitif.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Halloween Party Section -->
+        <!--
+        <section id="halloween" class="halloween">
+            <div class="container">
+                <h2 class="halloween-title">SOIRÉE HALLOWEEN</h2>
+                <p class="halloween-subtitle">Organisée par le Club de Basket du Carla Bayle</p>
+                
+                <div class="halloween-counter-simplified">
+                    <div class="counter-main">
+                        <div class="counter-total" id="attendee-total">...</div>
+                        <div class="counter-label">personnes attendues à notre soirée</div>
+                    </div>
+                    
+                    <div class="counter-breakdown-simple">
+                        <div class="breakdown-simple-item">
+                            <div class="breakdown-simple-number" id="attendee-adults">...</div>
+                            <div class="breakdown-simple-label">adultes</div>
+                        </div>
+                        <div class="breakdown-simple-item">
+                            <div class="breakdown-simple-number" id="attendee-children">...</div>
+                            <div class="breakdown-simple-label">enfants</div>
+                        </div>
+                    </div>
+                    <div class="counter-cta">
+                        <p>Rejoignez la fête ! 🎃</p>
+                        <a href="https://forms.gle/RDVZMkXeBPzqy5CS6" 
+                               class="btn halloween-btn" 
+                               target="_blank" 
+                               rel="noopener">
+                                Je participe !
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="halloween-content">
+                    <div class="halloween-image">
+                        <img src="photos/halloween-carla.png" alt="Affiche Soirée Halloween Coq Carlanais" loading="lazy">
+                    </div>
+                    
+                    <div class="halloween-details">
+                        <div class="halloween-date">
+                            <div class="date-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="date-info">
+                                <h3>Vendredi 31 Octobre</h3>
+                                <p>RDV à 18h à la salle Marcel Guichou</p>
+                            </div>
+                        </div>
+                        
+                        <div class="halloween-activities">
+                            <h3>Au programme :</h3>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-candy-cane"></i>
+                                    <span>Collecte monstrueuse de bonbons dans le village</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-mask"></i>
+                                    <span>Concours de déguisements d'Halloween</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-gamepad"></i>
+                                    <span>Soirée et jeux de société</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-utensils"></i>
+                                    <span>Restauration sur place</span>
+                                </li>
+                                <li>
+                                    <i class="fas fa-users"></i>
+                                    <span>Amène tes copains !</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="halloween-cta">
+                            <a href="https://forms.gle/RDVZMkXeBPzqy5CS6" 
+                               class="btn halloween-btn" 
+                               target="_blank" 
+                               rel="noopener">
+                                Je participe !
+                            </a>
+                            <p class="halloween-note">Ouvert à tous - Déguisements fortement recommandés !</p>
+                            <p class="halloween-rsvp-note">Merci de nous indiquer votre présence pour nous aider à organiser au mieux la soirée</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+        <!-- Section Nos Équipes -->
+        <section id="equipes" class="teams">
+            <div class="container">
+                <h2>Nos Équipes</h2>
+                <div class="team-cards">
+                    <div class="team-card">
+                        <img src="photos/U7_9.jpg" alt="Équipe de basket U7/U9 du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>U7 / U9</h3>
+                            <p>Pour les plus jeunes (nés de 2017 à 2019), découverte du basket avec une approche ludique et éducative.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Vendredi 17h30-18h30
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="photos/U11.jpg" alt="Équipe de basket U11 du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>U11 Mixte</h3>
+                            <p>Initiation au basket pour les enfants nés en 2015/2016 avec développement des fondamentaux.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Mercredi 15h30-17h00<br>
+                                <strong>Match/Entraînement:</strong> Samedi 9h00-11h00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="photos/U13Filles.jpg" alt="Équipe de basket U13 Filles du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>U13 Filles</h3>
+                            <p>Perfectionnement des fondamentaux et premières compétitions pour les filles nées en 2013/2014.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Mardi 18h00-19h30
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="photos/U13Garcons.png" alt="Équipe de basket U13 Garçons du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>U13 Garçons</h3>
+                            <p>Développement des compétences techniques et tactiques pour les garçons nés en 2013/2014.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Mercredi 17h00-18h30<br>
+                                <strong>Entraînement:</strong> Vendredi 18h30-19h45<br>
+                                <strong>Match:</strong> Samedi
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="photos/U15Filles.jpg" alt="Équipe de basket U15 Filles du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>U15 Filles</h3>
+                            <p>Approfondissement technique et préparation aux compétitions pour les filles nées en 2011/2012.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Jeudi 18h00-19h30
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="photos/U15Garcons.jpg" alt="Équipe de basket U15 Garçons du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>U15 Garçons</h3>
+                            <p>Développement des compétences avancées pour les garçons nés en 2011/2012 en vue des compétitions.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Mercredi 18h30-20h00<br>
+                                <strong>Entraînement:</strong> Vendredi 19h15-20h30<br>
+                                <strong>Match:</strong> Samedi
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="photos/U18Garcons.jpg" alt="Équipe de basket U18 Garçons du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>U18 Garçons</h3>
+                            <p>Préparation au niveau senior pour les garçons nés de 2008 à 2010 avec un programme intensif.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Vendredi 18h30-20h00<br>
+                                <strong>Entraînement:</strong> Mercredi 20h00-22h00 (avec séniors)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="photos/SeniorGarcons.jpg" alt="Équipe de basket Séniors du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>Séniors Garçons & Filles (Hoops)</h3>
+                            <p>Notre équipe phare qui évolue en championnat avec passion et détermination.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Lundi 20h30-22h30
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="photos/SeniorFilles.jpg" alt="Équipe de basket Séniors Filles du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>Séniors Filles</h3>
+                            <p>Une équipe dynamique et compétitive qui représente fièrement notre club en championnat.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Vendredi 20h00-22h00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="photos/Basket_Loisir.jpg" alt="Équipe de basket Loisirs du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>Basket Loisirs</h3>
+                            <p>Pour ceux qui souhaitent pratiquer le basket pour le plaisir, sans la pression de la compétition.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Mardi 19h30-21h00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <img src="photos/Basket_sante.jpg" alt="Équipe de basket Santé du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>Basket Santé</h3>
+                            <p>Pratique adaptée du basket pour le bien-être et la santé, accessible à tous.</p>
+                            <div class="team-schedule">
+                                <strong>Entraînement:</strong> Jeudi 19h30-20h30
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Comité Animation Team Card -->
+                    <div class="team-card">
+                        <img src="photos/Comite_animation.jpg" alt="Équipe du Comité Animation du Coq Carlanais" class="team-img" loading="lazy">
+                        <div class="team-info">
+                            <h3>Comité Animation</h3>
+                            <p>L'équipe qui donne vie au club ! Le comité animation organise les événements, les sorties et les festivités pour renforcer la cohésion et l'esprit de famille au Coq Carlanais.</p>
+                            <div class="team-schedule">
+                                <strong>Réunions:</strong> Selon planning des événements
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Horaires -->
+        <section id="horaires" class="schedule">
+            <div class="container">
+                <h2>Horaires d'Entraînement 2025/2026</h2>
+                <div class="schedule-image-container">
+                    <img src="photos/planning_carla.jpg" alt="Planning Hebdomadaire des Entraînements 2025/2026" class="schedule-image" loading="lazy">
+                    <div class="image-zoom-hint">
+                        <i class="fas fa-search-plus"></i>
+                        <span>Appuyez sur l'image pour zoomer sur mobile</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Section Tarifs - SIMPLIFIED -->
+        <section id="tarifs" class="pricing">
+            <div class="container">
+                <h2>Tarifs des Licences 2025/2026</h2>
+                
+                <div class="pricing-intro">
+                    <p>Rejoignez le Coq Carlanais avec une licence adaptée à votre catégorie. Toutes nos licences incluent l'encadrement par des coachs diplômés, l'accès aux entraînements et l'assurance FFBB.</p>
+                </div>
+                
+                <div class="pricing-table-container">
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Catégorie</th>
+                                <th>Tarif</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LOISIR</td>
+                                <td>100€</td>
+                            </tr>
+                            <tr>
+                                <td>SANTÉ</td>
+                                <td>70€</td>
+                            </tr>
+                            <tr>
+                                <td>U7 / U9 / U11</td>
+                                <td>110€</td>
+                            </tr>
+                            <tr>
+                                <td>U13 / U15</td>
+                                <td>120€</td>
+                            </tr>
+                            <tr>
+                                <td>SG2 / SF</td>
+                                <td>140€</td>
+                            </tr>
+                            <tr>
+                                <td>SG1</td>
+                                <td>180€</td>
+                            </tr>
+                            <tr>
+                                <td>U18 / U21</td>
+                                <td>130€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="pricing-notes">
+                    <h3>Informations importantes</h3>
+                    <ul class="notes-list">
+                        <li>
+                            <i class="fas fa-info-circle"></i>
+                            <div>
+                                <strong>Paiement en plusieurs fois possible</strong> - Nous proposons des facilités de paiement sur demande. Contactez-nous pour plus d'informations.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-euro-sign"></i>
+                            <div>
+                                <strong>Aide financière 2025-2026</strong> - Le Pass'Sport est une aide de l'État de <strong>70 €</strong> pour l'inscription.
+                                <br><small>Les anciennes aides de 50 € et 15 € ne sont plus disponibles. Le Pass'Sport 2025 est destiné aux jeunes de 14 à 17 ans bénéficiaires de l'ARS, aux 6-19 ans avec AEEH, aux 16-30 ans avec AAH et aux étudiants boursiers de moins de 28 ans. Vérifiez votre éligibilité sur <a href="https://www.pass.sports.gouv.fr/" target="_blank" rel="noopener">pass.sports.gouv.fr</a>.</small>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-file-alt"></i>
+                            <div>
+                                <strong>Documents requis</strong> - Certificat médical, photo d'identité, et formulaire d'inscription complété.
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <strong>Licence valable</strong> du 1er septembre 2025 au 31 août 2026. Couvre tous les entraînements et compétitions officielles.
+                            </div>
+                        </li>
+                    </ul>
+        
+                    <div class="payment-options">
+                        <a href="#contact" class="btn">Demander plus d'informations</a>
+                        <a href="https://forms.gle/JgzSqZLfKiSfKDm96" class="btn" target="_blank" rel="noopener">Procéder à l'inscription</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Facebook -->
+        <section class="facebook">
+            <div class="container">
+                <div class="facebook-content">
+                    <div class="facebook-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <h2>Calendrier & Résultats</h2>
+                    <p>Retrouvez tous les matchs, résultats et actualités du club sur notre page Facebook.</p>
+                    <a href="https://www.facebook.com/coqcarlanaisbasket" class="btn" target="_blank" rel="noopener">Voir sur Facebook</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact - REDESIGNED -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact & Inscriptions</h2>
+                
+                <div class="contact-intro">
+                    <p>Nous accueillons les joueurs de tous niveaux et de tous âges, du débutant au confirmé. Pour toute question ou pour rejoindre notre club, n'hésitez pas à nous contacter.</p>
+                </div>
+                
+                <div class="contact-container">
+                    <!-- Contact Information Column -->
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-card-header">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h3>Nous rencontrer</h3>
+                            </div>
+                            <div class="contact-card-body">
+                                <p><strong>Salle Marcel Guichou</strong><br>09130 Carla Bayle, France</p>
+                                <a href="https://maps.app.goo.gl/26G7AS5bg4rqvmGN7" target="_blank" class="btn btn-outline" rel="noopener">Voir sur la carte</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-card-header">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <h3>Téléphone</h3>
+                            </div>
+                            <div class="contact-card-body">
+                                <p>05 61 68 51 32 (Mairie du Carla)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-card-header">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h3>Email</h3>
+                            </div>
+                            <div class="contact-card-body">
+                                <p><a href="mailto:contact@coqcarlanais.fr">contact@coqcarlanais.fr</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form Column -->
+                    <div class="contact-form-container">
+                        <div class="form-header">
+                            <h3>Formulaire de contact</h3>
+                        </div>
+                        
+                        <form id="contact-form" action="https://formspree.io/f/xwprowvr" method="POST">
+                            <div class="form-section">
+                                <h4>Informations personnelles</h4>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-first_name">Prénom *</label>
+                                        <input type="text" id="contact-first_name" name="first_name" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-last_name">Nom *</label>
+                                        <input type="text" id="contact-last_name" name="last_name" class="form-control" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-email">Email *</label>
+                                        <input type="email" id="contact-email" name="email" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-phone">Téléphone</label>
+                                        <input type="tel" id="contact-phone" name="phone" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-section">
+                                <h4>Votre demande</h4>
+                                <div class="form-group">
+                                    <label for="contact-subject">Sujet *</label>
+                                    <select id="contact-subject" name="subject" class="form-control" required>
+                                        <option value="">Sélectionnez un sujet</option>
+                                        <option value="Inscription - Jeune">Inscription pour un jeune</option>
+                                        <option value="Inscription - Adulte">Inscription pour un adulte</option>
+                                        <option value="Informations sur les entraînements">Informations sur les entraînements</option>
+                                        <option value="Informations sur les compétitions">Informations sur les compétitions</option>
+                                        <option value="Autre">Autre question</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="contact-message">Message *</label>
+                                    <textarea id="contact-message" name="message" class="form-control" rows="5" placeholder="Décrivez votre demande..." required></textarea>
+                                </div>
+                            </div>
+                            
+                            <!-- Hidden fields for Formspree -->
+                            <input type="hidden" name="_subject" value="Nouveau message de contact - Coq Carlanais">
+                            <input type="hidden" name="_language" value="fr">
+                            
+                            <div id="contact-form-message"></div>
+                            
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                <span class="btn-text">Envoyer le message</span>
+                                <span class="btn-loading" style="display: none;">
+                                    <i class="fas fa-spinner fa-spin"></i> Envoi en cours...
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Sponsors - UPDATED -->
+        <section id="sponsors" class="sponsors">
+            <div class="container">
+                <h2>Nos Sponsors</h2>
+                <div class="sponsorship-intro">
+                        <h3>Investissez dans le Sport Local avec un Impact Fiscal Avantageux</h3>
+                        <p>Votre partenariat avec le Coq Carlanais représente un <strong>investissement stratégique</strong> dans la jeunesse de notre territoire. En soutenant nos 120 licenciés, vous bénéficiez d'une <strong>visibilité locale ciblée</strong> tout en renforçant votre image d'entreprise citoyenne.</p>
+                <!-- Tableau de Comparaison des Sponsorships -->
+                <div class="sponsorship-comparison">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Avantages inclus</th>
+                                <th class="tier-bronze">
+                                    <div class="tier-header">
+                                        <div class="tier-name">Bronze</div>
+                                        <div class="tier-price">50-299 €</div>
+                                    </div>
+                                </th>
+                                <th class="tier-silver">
+                                    <div class="tier-header">
+                                        <div class="tier-name">Argent</div>
+                                        <div class="tier-price">300-799 €</div>
+                                    </div>
+                                </th>
+                                <th class="tier-gold">
+                                    <div class="tier-header">
+                                        <div class="tier-name">Or</div>
+                                        <div class="tier-price">800+ €</div>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Logo affiché sur notre tableau d'affichage</th>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Présence site web & réseaux sociaux</th>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Invitations aux événements</th>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Bannière publicitaire dans la salle</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Mise en avant tournoi annuel</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Article dédié sur nos réseaux</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Logo sur maillots de match</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Nom associé à une équipe</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Interview et article exclusif</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                            <tr>
+                                <th>Accès VIP aux événements</th>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="empty-cell"></span></td>
+                                <td><span class="checkmark"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Call-to-action sous le tableau -->
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p><strong>Avantage fiscal :</strong> 60% de réduction d'impôt sur votre investissement</p>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="#donation-form" class="btn" style="margin: 0.5rem;">Devenir Partenaire</a>
+                        <a href="#contact" class="btn btn-outline" style="margin: 0.5rem;">Nous Contacter</a>
+                    </div>
+                </div>
+                    
+                    <!-- Rappel Avantage Fiscal -->
+                    <div class="tax-benefit-box" style="margin-top: 2rem;">
+                        <h4>💫 Avantage Fiscal Inclus</h4>
+                        <p>Tous les niveaux de partenariat ouvrent droit à une <strong>réduction d'impôt de 60%</strong>. Un investissement de 1 000 € ne vous coûte que 400 € après déduction fiscale.</p>
+                    </div>
+
+                    <!-- Current Sponsors Showcase -->
+                    <!-- Current Sponsors Showcase -->
+                    <div class="current-sponsors-showcase">
+                        <h3>Nos Partenaires Actuels</h3>
+                        <p>Rejoignez ces entreprises qui soutiennent déjà notre club</p>
+                        
+                        <!-- Gold Sponsors -->
+                        <div class="sponsor-tier-section">
+                            <h4 class="tier-title gold-tier">
+                                <i class="fas fa-crown"></i>
+                                Partenaires Or
+                            </h4>
+                            <div class="sponsors-grid">
+                                <div class="sponsor-logo available">
+                                    <div class="logo-placeholder available-spot">
+                                        <i class="fas fa-plus-circle"></i>
+                                        <span>Votre entreprise ici</span>
+                                    </div>
+                                    <p class="tier-label">Poste disponible</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Silver Sponsors -->
+                        <div class="sponsor-tier-section">
+                            <h4 class="tier-title silver-tier">
+                                <i class="fas fa-medal"></i>
+                                Partenaires Argent
+                            </h4>
+                            <div class="sponsors-grid">
+                                <div class="sponsor-logo active" data-category="silver">
+                                    <a href="https://andremotoculture09.fr/" target="_blank" rel="noopener">
+                                        <img src="https://coqcarlanais.github.io/photos/sponsor/andremotoculture09-logo.png" alt="André Motoculture" class="sponsor-logo-img">
+                                    </a>
+                                    <p class="sponsor-name">André Motoculture</p>
+                                    <p class="tier-label">Partenaire Argent</p>
+                                </div>
+                                <div class="sponsor-logo active" data-category="silver">
+                                    <a href="https://maps.app.goo.gl/kiJHjcpYLizXYVgk9" target="_blank" rel="noopener">
+                                        <img src="/photos/sponsor/Batileze.png" alt="Batileze" class="sponsor-logo-img">
+                                    </a>
+                                    <p class="sponsor-name">Batilèze - Fossat</p>
+                                    <p class="tier-label">Partenaire Argent</p>
+                                </div>
+                                <div class="sponsor-logo active" data-category="silver">
+                                    <a href="https://maps.app.goo.gl/xdBmaSJCKtUkz4yr8?g_st=ipc" target="_blank" rel="noopener">
+                                        <img src="photos/sponsor/COUDERC.jpg" alt="COUDERC SARL" class="sponsor-logo-img">
+                                    </a>
+                                    <p class="sponsor-name">COUDERC SARL</p>
+                                    <p class="tier-label">Partenaire Argent</p>
+                                </div>
+                                <div class="sponsor-logo active" data-category="silver">
+                                    <a href="https://danicy.fr/" target="_blank" rel="noopener">
+                                        <img src="photos/sponsor/LOGODANICY.png" alt="Danicy" class="sponsor-logo-img">
+                                    </a>
+                                    <p class="sponsor-name">Danicy</p>
+                                    <p class="tier-label">Partenaire Argent</p>
+                                </div>
+                                <div class="sponsor-logo active" data-category="silver">
+                                    <img src="photos/sponsor/MaconnerieSANS.png" alt="Maçonnerie SANS" class="sponsor-logo-img">
+                                    <p class="sponsor-name">Maçonnerie SANS</p>
+                                    <p class="tier-label">Partenaire Argent</p>
+                                </div>
+                                <div class="sponsor-logo active" data-category="silver">
+                                    <a href="https://maps.app.goo.gl/TSsbf9Kgbzku3j7q8" target="_blank" rel="noopener">
+                                        <img src="/photos/sponsor/PonsSabarat.png" alt="PONS - Sabarat" class="sponsor-logo-img">
+                                    </a>
+                                    <p class="sponsor-name">PONS - Sabarat</p>
+                                    <p class="tier-label">Partenaire Argent</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bronze Sponsors -->
+                        <div class="sponsor-tier-section">
+                            <h4 class="tier-title bronze-tier">
+                                <i class="fas fa-award"></i>
+                                Partenaires Bronze
+                            </h4>
+                            <div class="sponsors-grid">
+                                <div class="sponsor-logo active" data-category="bronze">
+                                    <a href="https://www.midipyreneesproprietes.com/" target="_blank" rel="noopener">
+                                        <img src="/photos/sponsor/OccitanieProprietes.png" alt="Occitanie Properties" class="sponsor-logo-img">
+                                    </a>
+                                    <p class="sponsor-name">Occitanie Properties</p>
+                                    <p class="tier-label">Partenaire Bronze</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Impact Condensé - Boîte Unique -->
+                    <div class="impact-condensed">
+                        <h3>Votre Impact en Chiffres et en Actions</h3>
+                        
+                        <div class="impact-highlights">
+                            <div class="impact-highlight">
+                                <i class="fas fa-basketball-ball"></i>
+                                <div>
+                                    <span>Matériel adapté et installations sécurisées pour tous nos joueurs</span>
+                                </div>
+                            </div>
+                            <div class="impact-highlight">
+                                <i class="fas fa-bus"></i>
+                                <div>
+                                    <span>Déplacements subventionnés pour l'égalité des chances</span>
+                                </div>
+                            </div>
+                            <div class="impact-highlight">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <span>Formation des Éducateurs : encadrement de qualité avec coaches certifiés FFBB</span>
+                                </div>
+                            </div>
+                            <div class="impact-highlight">
+                                <i class="fas fa-euro-sign"></i>
+                                <div>
+                                    <span>Tarifs solidaires et fonds d'aide aux familles</span>
+                                </div>
+                            </div>
+                            <div class="impact-highlight">
+                                <i class="fas fa-trophy"></i>
+                                <div>
+                                    <span>Stages et détection vers les centres de formation</span>
+                                </div>
+                            </div>
+                            <div class="impact-highlight">
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <span>Programmes adaptés pour séniors et handicap</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="impact-stats-condensed">
+                            <div class="impact-stat">
+                                <div class="stat-number">120+</div>
+                                <div class="stat-label">Jeunes Formés</div>
+                            </div>
+                            <div class="impact-stat">
+                                <div class="stat-number">8</div>
+                                <div class="stat-label">Éducateurs</div>
+                            </div>
+                            <div class="impact-stat">
+                                <div class="stat-number">2 000+</div>
+                                <div class="stat-label">Heures d'Entraînement</div>
+                            </div>
+                            <div class="impact-stat">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Réinvesti Localement</div>
+                            </div>
+                        </div>
+                        
+                        <div class="impact-cta-condensed">
+                            <a href="#donation-form" class="btn">Investir dans Notre Impact</a>
+                        </div>
+                    </div>
+                    
+                    <section class="highlights-section">
+                        <div class="container">
+                            <h2>Nos Succès & Temps Forts 2024-2025</h2>
+                            <div class="highlights-gallery">
+                                <div class="highlight-card">
+                                    <img src="photos/millau_tournament.jpg" alt="L'équipe du Coq Carlanais lors du tournoi de Millau" class="highlight-img" loading="lazy">
+                                    <div class="highlight-content">
+                                        <h3>Tournoi de Millau</h3>
+                                        <p>Participation et belle performance de nos équipes jeunes lors du tournoi exigeant de Millau, une expérience riche en apprentissages.</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-card">
+                                    <img src="photos/regional_finalist.jpg" alt="Natsuki BÉRAT, champion départemental et vice-champion régional" class="highlight-img" loading="lazy">
+                                    <div class="highlight-content">
+                                        <h3>Excellence Compétitive</h3>
+                                        <p><strong>Félicitations à Natsuki BÉRAT !</strong> <strong>Champion départemental</strong> du Challenge Benjamin, qualifié pour les régionaux où il a décroché une <strong>2ème place</strong>.</p>
+                                    </div>
+                                </div>
+                                <div class="highlight-card">
+                                    <img src="photos/christmas_party.jpg" alt="La fête de Noël du club en décembre 2024" class="highlight-img" loading="lazy">
+                                    <div class="highlight-content">
+                                        <h3>Fête de Noël 2024</h3>
+                                        <p>Un moment de partage et de convivialité qui a rassemblé plus de 60 enfants et leurs familles, au cœur de la vie de notre club.</p>
+                                    </div>
+                                </div>
+                                <!-- Carte 1 : Participation aux Jeudis du Carla 2025 -->
+                                <div class="highlight-card">
+                                    <img src="photos/jeudis_carla_2025.jpg" alt="Le Coq Carlanais aux Jeudis du Carla 2025" class="highlight-img" loading="lazy">
+                                    <div class="highlight-content">
+                                        <h3>Acteur des Jeudis du Carla</h3>
+                                        <p>Le Coq Carlanais est un partenaire historique des <strong>Jeudis du Carla</strong>, l'événement estival incontournable qui attire plusieurs milliers de visiteurs chaque semaine.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Carte 2 : Tournoi 3x3 et rayonnement -->
+                                <div class="highlight-card">
+                                    <img src="photos/tournoi_3x3_2022.jpg" alt="Le tournoi 3x3 du Coq Carlanais en 2022" class="highlight-img" loading="lazy">
+                                    <div class="highlight-content">
+                                        <h3>Notre Tournoi 3x3 au Rayonnement Régional</h3>
+                                        <p>Notre <strong>tournoi 3x3</strong> a attiré des équipes de toute la région.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Donation Form -->
+                    <div class="donation-section">
+                        <h2>Devenir Partenaire</h2>
+                        <p>Choisissez votre niveau de partenariat ou saisissez un montant personnalisé.</p>
+                        
+                        <form id="donation-form" action="https://formspree.io/f/manpevvz" method="POST">
+                            <div class="form-group">
+                                <label for="sponsor-type">Type de partenariat</label>
+                                <div class="tier-options">
+                                    <div class="tier-option">
+                                        <input type="radio" id="bronze" name="sponsor_tier" value="Bronze (100€)">
+                                        <label for="bronze">Bronze (100€)</label>
+                                    </div>
+                                    <div class="tier-option">
+                                        <input type="radio" id="silver" name="sponsor_tier" value="Argent (500€)">
+                                        <label for="silver">Argent (500€)</label>
+                                    </div>
+                                    <div class="tier-option">
+                                        <input type="radio" id="gold" name="sponsor_tier" value="Or (1 000€)">
+                                        <label for="gold">Or (1000€)</label>
+                                    </div>
+                                    <div class="tier-option">
+                                        <input type="radio" id="custom" name="sponsor_tier" value="Personnalisé" checked>
+                                        <label for="custom">Personnalisé</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="custom_amount">Montant personnalisé (€)</label>
+                                <div class="custom-amount">
+                                    <input type="number" id="custom_amount" name="custom_amount" class="form-control" min="10" step="5" value="100">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first_name">Prénom</label>
+                                    <input type="text" id="first_name" name="first_name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last_name">Nom</label>
+                                    <input type="text" id="last_name" name="last_name" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Téléphone</label>
+                                    <input type="tel" id="phone" name="phone" class="form-control" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Entreprise (optionnel)</label>
+                                <input type="text" id="company" name="company" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message (optionnel)</label>
+                                <textarea id="message" name="message" class="form-control" rows="4"></textarea>
+                            </div>
+                            
+                            <div class="donation-summary">
+                                <h3>Récapitulatif de votre don</h3>
+                                <div class="summary-item">
+                                    <span>Type de partenariat:</span>
+                                    <span id="summary-tier">Personnalisé</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Montant:</span>
+                                    <span id="summary-amount">100 €</span>
+                                </div>
+                                <div class="summary-item total-amount">
+                                    <span>Total:</span>
+                                    <span id="summary-total">100 €</span>
+                                </div>
+                                
+                                <!-- Hidden fields for Formspree -->
+                                <input type="hidden" name="_subject" value="Nouvelle demande de partenariat - Coq Carlanais">
+                                <input type="hidden" name="_language" value="fr">
+                            </div>
+                            
+                            <div id="form-message"></div>
+                            
+                            <button type="submit" class="btn" style="width: 100%; margin-top: 1.5rem;">Devenir Partenaire</button>
+                        </form>
+                    </div>
+                    
+                    <div class="sponsor-cards">
+                        <div class="sponsor-card">
+                            <div class="sponsor-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>Devenir Sponsor</h3>
+                            <p>Plusieurs formules de partenariat disponibles selon votre entreprise et vos objectifs.</p>
+                        </div>
+                        <div class="sponsor-card">
+                            <div class="sponsor-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Visibilité</h3>
+                            <p>Bénéficiez d'une visibilité locale et régionale auprès d'une communauté engagée.</p>
+                        </div>
+                        <div class="sponsor-card">
+                            <div class="sponsor-icon">
+                                <i class="fas fa-basketball-ball"></i>
+                            </div>
+                            <h3>Soutien Local</h3>
+                            <p>Participez au développement du sport et de la jeunesse dans notre région.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="footer-logo">
+                    <img src="photos/Coq_carlanais_logo.jpg" alt="Logo Coq Carlanais" class="footer-logo-img">
+                    Coq Carlanais
+                </a>
+    
+                <!-- Business Sponsors -->
+                <div class="footer-sponsors">
+                    <h4>Ils nous soutiennent</h4>
+                    <div class="footer-sponsor-logos">
+                        <div class="footer-sponsor-placeholder">
+                            <i class="fas fa-building"></i>
+                            <span>Partenaire Local</span>
+                        </div>
+                        <div class="footer-sponsor-placeholder">
+                            <i class="fas fa-store-alt"></i>
+                            <span>Commerce Partenaire</span>
+                        </div>
+                        <div class="footer-sponsor-placeholder available">
+                            <i class="fas fa-plus"></i>
+                            <span>Votre Logo</span>
+                        </div>
+                    </div>
+                </div>
+                
+                 <!-- Tool Sponsors -->
+                <div class="footer-tool-sponsors">
+                    <h4>Nos partenaires technologiques</h4>
+                    <div class="footer-tool-logos">
+                        <a href="https://www.canva.com/fr_fr/" class="footer-tool-logo" target="_blank" rel="noopener">
+                            <img src="photos/sponsor/canva-logo.png" alt="Canva - Outil de création graphique" width="150" height="40">
+                        </a>
+                        <a href="https://info.helloasso.com/" class="footer-tool-logo" target="_blank" rel="noopener">
+                            <img src="photos/sponsor/helloasso-logo.png" alt="HelloAsso - Plateforme de paiement et collecte" width="150" height="40">
+                        </a>
+                        <a href="https://izutech.fr/" class="footer-tool-logo" target="_blank" rel="noopener">
+                            <img src="/photos/sponsor/IzuTech-logo.png" alt="IzuTech - Solutions technologiques" width="150" height="40">
+                        </a>
+                        <a href="https://www.sporteasy.net/fr/" class="footer-tool-logo" target="_blank" rel="noopener">
+                            <img src="photos/sponsor/sporteasy-logo.png" alt="SportEasy - Gestion d'équipes sportives" width="150" height="40">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/coqcarlanaisbasket" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/coq_carlanais/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://competitions.ffbb.com/ligues/occ/comites/0009/clubs/occ0009006" class="social-icon" target="_blank" rel="noopener" aria-label="FFBB"><i class="fas fa-basketball-ball"></i></a>
+                </div>
+                <div class="footer-info">
+                    <p>Salle Marcel Guichou, 09130 Carla Bayle, France</p>
+                    <p>05 61 68 51 32 (Mairie) | contact@coqcarlanais.fr</p>
+                </div>
+
+                <div class="footer-attribution">
+                    <p>Site web créé en Ariège par <a href="https://web.izutech.fr/" target="_blank" rel="noopener">IzuTech</a></p>
+                </div>
+
+                <div class="copyright">
+                    <p>&copy; 2025 Coq Carlanais Basketball. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu hamburger pour mobile
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // Fermer le menu au clic sur un lien
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }));
+
+        // Effet de défilement fluide pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Donation Form Functionality
+        const donationForm = document.getElementById('donation-form');
+        const tierRadios = document.querySelectorAll('input[name="sponsor_tier"]');
+        const customAmountInput = document.getElementById('custom_amount');
+        const summaryTier = document.getElementById('summary-tier');
+        const summaryAmount = document.getElementById('summary-amount');
+        const summaryTotal = document.getElementById('summary-total');
+        
+        // Update donation summary when tier selection changes
+        function updateDonationSummary() {
+            let selectedTier = document.querySelector('input[name="sponsor_tier"]:checked');
+            let amount = 0;
+            let tierName = '';
+            
+            if (selectedTier.id === 'custom') {
+                amount = parseInt(customAmountInput.value) || 0;
+                tierName = 'Personnalisé';
+            } else {
+                // Extract only the numeric value from the tier string (e.g., "Bronze (100€)" -> 100)
+                const tierValue = selectedTier.value;
+                // Extract the number from the string using regex
+                const amountMatch = tierValue.match(/(\d+)/);
+                amount = amountMatch ? parseInt(amountMatch[0]) : 0;
+                tierName = selectedTier.parentElement.querySelector('label').textContent;
+            }
+            
+            summaryTier.textContent = tierName;
+            summaryAmount.textContent = amount + ' €';
+            summaryTotal.textContent = amount + ' €';
+        }
+        
+        // Initialize donation summary
+        updateDonationSummary();
+        
+        // Add event listeners for tier selection
+        tierRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.id === 'custom') {
+                    customAmountInput.disabled = false;
+                    customAmountInput.focus();
+                } else {
+                    customAmountInput.disabled = true;
+                }
+                updateDonationSummary();
+            });
+        });
+        
+        // Update summary when custom amount changes
+        customAmountInput.addEventListener('input', function() {
+            const minAmount = 10; // Minimum custom amount
+            let value = parseInt(this.value) || 0;
+            
+            if (value < minAmount) {
+                this.value = minAmount;
+            }
+            
+            updateDonationSummary();
+        });
+        
+        // Enhanced form validation and submission
+        document.getElementById('donation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!validateForm()) {
+                return;
+            }
+            
+            const form = e.target;
+            const messageDiv = document.getElementById('form-message');
+            const submitButton = form.querySelector('button[type="submit"]');
+            
+            // Show sending state
+            const originalButtonText = submitButton.textContent;
+            submitButton.textContent = 'Envoi en cours...';
+            submitButton.disabled = true;
+            messageDiv.style.display = 'none';
+            
+            // Clear previous errors
+            clearErrors();
+            
+            // Send form data
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showSuccess(messageDiv, form);
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            })
+            .catch(error => {
+                showError(messageDiv);
+            })
+            .finally(() => {
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            });
+        });
+
+        // Form validation function
+        function validateForm() {
+            let isValid = true;
+            clearErrors();
+            
+            // Validate required fields
+            const requiredFields = document.querySelectorAll('[required]');
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    showFieldError(field, 'Ce champ est obligatoire');
+                    isValid = false;
+                }
+            });
+            
+            // Validate email format
+            const emailField = document.getElementById('email');
+            if (emailField.value && !isValidEmail(emailField.value)) {
+                showFieldError(emailField, 'Veuillez entrer une adresse email valide');
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Helper functions
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function showFieldError(field, message) {
+            field.classList.add('error');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            field.parentNode.appendChild(errorDiv);
+        }
+
+        function clearErrors() {
+            document.querySelectorAll('.error').forEach(field => {
+                field.classList.remove('error');
+            });
+            document.querySelectorAll('.error-message').forEach(error => {
+                error.remove();
+            });
+        }
+
+        function showSuccess(messageDiv, form) {
+            messageDiv.textContent = 'Merci ! Votre demande a été envoyée. Nous vous contacterons très prochainement.';
+            messageDiv.className = 'success';
+            messageDiv.style.display = 'block';
+            form.reset();
+            updateDonationSummary();
+        }
+
+        function showError(messageDiv) {
+            messageDiv.textContent = 'Désolé, une erreur est survenue. Veuillez réessayer ou nous contacter directement à coqcarlanais@gmail.com.';
+            messageDiv.className = 'error';
+            messageDiv.style.display = 'block';
+        }
+
+        // Enhanced form handling for the contact form
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            if (!contactForm) return;
+            
+            const contactMessageDiv = document.getElementById('contact-form-message');
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const btnText = submitButton.querySelector('.btn-text');
+            const btnLoading = submitButton.querySelector('.btn-loading');
+            
+            // Contact form validation and submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (!validateContactForm()) {
+                    return;
+                }
+                
+                // Show sending state
+                btnText.style.display = 'none';
+                btnLoading.style.display = 'inline-block';
+                submitButton.disabled = true;
+                contactMessageDiv.style.display = 'none';
+                
+                // Clear previous errors
+                clearContactErrors();
+                
+                // Send form data
+                fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        showContactSuccess();
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Network response was not ok.');
+                    }
+                })
+                .catch(error => {
+                    showContactError();
+                })
+                .finally(() => {
+                    btnText.style.display = 'inline-block';
+                    btnLoading.style.display = 'none';
+                    submitButton.disabled = false;
+                    contactMessageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                });
+            });
+
+            // Contact form validation function
+            function validateContactForm() {
+                let isValid = true;
+                clearContactErrors();
+                
+                // Validate required fields
+                const requiredFields = contactForm.querySelectorAll('[required]');
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        showContactFieldError(field, 'Ce champ est obligatoire');
+                        isValid = false;
+                    }
+                });
+                
+                // Validate email format
+                const emailField = document.getElementById('contact-email');
+                if (emailField.value && !isValidEmail(emailField.value)) {
+                    showContactFieldError(emailField, 'Veuillez entrer une adresse email valide');
+                    isValid = false;
+                }
+
+                return isValid;
+            }
+
+            // Helper functions for contact form
+            function showContactFieldError(field, message) {
+                field.classList.add('error');
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                errorDiv.textContent = message;
+                errorDiv.style.display = 'block';
+                field.parentNode.appendChild(errorDiv);
+            }
+
+            function clearContactErrors() {
+                contactForm.querySelectorAll('.error').forEach(field => {
+                    field.classList.remove('error');
+                });
+                contactForm.querySelectorAll('.error-message').forEach(error => {
+                    error.remove();
+                });
+            }
+
+            function showContactSuccess() {
+                contactMessageDiv.textContent = 'Merci ! Votre message a été envoyé. Nous vous répondrons dans les plus brefs délais.';
+                contactMessageDiv.className = 'success';
+                contactMessageDiv.style.display = 'block';
+            }
+
+            function showContactError() {
+                contactMessageDiv.textContent = 'Désolé, une erreur est survenue. Veuillez réessayer ou nous contacter directement à contact@coqcarlanais.fr.';
+                contactMessageDiv.className = 'error';
+                contactMessageDiv.style.display = 'block';
+            }
+        });
+        
+        // Halloween Counter using JSONP - UPDATED FOR SIMPLIFIED DISPLAY
+        class HalloweenCounter {
+            constructor() {
+                this.scriptUrl = 'https://script.google.com/macros/s/AKfycbz_q6qN5YHSECtGP5lUpZyo0ApbSmtsFWXw-FxdokvnuOmGo-RtInl844j7n4WWqQ7g/exec';
+                this.cacheDuration = 120000;
+                this.lastUpdate = 0;
+                this.cachedData = null;
+            }
+            
+            getAttendeeData() {
+                return new Promise((resolve, reject) => {
+                    // Return cached result if fresh
+                    const now = Date.now();
+                    if (this.cachedData !== null && (now - this.lastUpdate) < this.cacheDuration) {
+                        resolve(this.cachedData);
+                        return;
+                    }
+                    
+                    const callbackName = 'callback_' + Date.now();
+                    const url = `${this.scriptUrl}?callback=${callbackName}`;
+                    
+                    const script = document.createElement('script');
+                    script.src = url;
+                    
+                    const timeoutId = setTimeout(() => {
+                        cleanup();
+                        reject(new Error('Timeout'));
+                    }, 10000);
+                    
+                    const cleanup = () => {
+                        clearTimeout(timeoutId);
+                        if (script.parentNode) document.head.removeChild(script);
+                        delete window[callbackName];
+                    };
+                    
+                    script.onerror = () => {
+                        cleanup();
+                        reject(new Error('Script load failed'));
+                    };
+                    
+                    window[callbackName] = (data) => {
+                        cleanup();
+                        this.cachedData = data;
+                        this.lastUpdate = now;
+                        resolve(data);
+                    };
+                    
+                    document.head.appendChild(script);
+                });
+            }
+            
+            // SAFE ELEMENT UPDATE FUNCTION
+            updateElementIfExists(elementId, value) {
+                const element = document.getElementById(elementId);
+                if (element) {
+                    element.textContent = value;
+                }
+                // Silently skip if element doesn't exist (no error)
+            }
+            
+            async updateDisplay() {
+                try {
+                    const data = await this.getAttendeeData();
+                    
+                    // Safely update only existing elements
+                    this.updateElementIfExists('attendee-total', data.total);
+                    this.updateElementIfExists('attendee-adults', data.adults);
+                    this.updateElementIfExists('attendee-children', data.children);
+                    
+                    // These elements only exist in detailed dashboard - safely skip if missing
+                    this.updateElementIfExists('attendee-families', data.families);
+                    this.updateElementIfExists('attendee-children0_2', data.children0_2 || 0);
+                    this.updateElementIfExists('attendee-children3_5', data.children3_5 || 0);
+                    this.updateElementIfExists('attendee-children6_8', data.children6_8 || 0);
+                    this.updateElementIfExists('attendee-children9_12', data.children9_12 || 0);
+                    this.updateElementIfExists('attendee-children12plus', data.children12plus || 0);
+                    
+                } catch (error) {
+                    console.error('Counter error:', error);
+                    // Safely set placeholder values only for existing elements
+                    const elements = [
+                        'attendee-total', 'attendee-adults', 'attendee-children', 
+                        'attendee-families', 'attendee-children0_2', 'attendee-children3_5', 
+                        'attendee-children6_8', 'attendee-children9_12', 'attendee-children12plus'
+                    ];
+                    elements.forEach(id => this.updateElementIfExists(id, '...'));
+                }
+            }
+            
+            startAutoUpdate(interval = 120000) {
+                this.updateDisplay();
+                setInterval(() => this.updateDisplay(), interval);
+            }
+        }
+        
+        // Initialize counter
+        document.addEventListener('DOMContentLoaded', function() {
+            const counter = new HalloweenCounter();
+            counter.startAutoUpdate();
+        });
+
+
+        // Countdown Site launch Timer Functionality
+        function updateCountdown() {
+            const launchDate = new Date('October 15, 2025 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+        
+            if (distance < 0) {
+                // Countdown finished
+                document.getElementById('countdown-timer').innerHTML = 
+                    '<div class="countdown-finished">🚀 Site Lancé !</div>';
+                return;
+            }
+        
+            // Time calculations
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+            // Update display
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // Initialize countdown and update every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Mobile image zoom functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scheduleImage = document.querySelector('.schedule-image');
+            if (!scheduleImage) return;
+            
+            let isZoomed = false;
+            
+            scheduleImage.addEventListener('click', function() {
+                if (window.innerWidth <= 768) { // Only on mobile
+                    if (!isZoomed) {
+                        // Zoom in
+                        this.style.transform = 'scale(1.5)';
+                        this.style.transformOrigin = 'center center';
+                        this.style.transition = 'transform 0.3s ease';
+                        this.style.cursor = 'zoom-out';
+                        isZoomed = true;
+                    } else {
+                        // Zoom out
+                        this.style.transform = 'scale(1)';
+                        this.style.cursor = 'zoom-in';
+                        isZoomed = false;
+                    }
+                }
+            });
+        });
+    </script> 
+</body>
+</html>
