@@ -857,94 +857,25 @@
                     <!-- Donation Form -->
                     <div class="donation-section">
                         <h2>Devenir Partenaire</h2>
-                        <p>Choisissez votre niveau de partenariat ou saisissez un montant personnalisé.</p>
+                        <p>Choisissez votre niveau de partenariat en utilisant notre formulaire sécurisé HelloAsso.</p>
                         
-                        <form id="donation-form" action="https://formspree.io/f/manpevvz" method="POST">
-                            <div class="form-group">
-                                <label for="sponsor-type">Type de partenariat</label>
-                                <div class="tier-options">
-                                    <div class="tier-option">
-                                        <input type="radio" id="bronze" name="sponsor_tier" value="Bronze (100€)">
-                                        <label for="bronze">Bronze (100€)</label>
-                                    </div>
-                                    <div class="tier-option">
-                                        <input type="radio" id="silver" name="sponsor_tier" value="Argent (500€)">
-                                        <label for="silver">Argent (500€)</label>
-                                    </div>
-                                    <div class="tier-option">
-                                        <input type="radio" id="gold" name="sponsor_tier" value="Or (1 000€)">
-                                        <label for="gold">Or (1000€)</label>
-                                    </div>
-                                    <div class="tier-option">
-                                        <input type="radio" id="custom" name="sponsor_tier" value="Personnalisé" checked>
-                                        <label for="custom">Personnalisé</label>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="custom_amount">Montant personnalisé (€)</label>
-                                <div class="custom-amount">
-                                    <input type="number" id="custom_amount" name="custom_amount" class="form-control" min="10" step="5" value="100">
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="first_name">Prénom</label>
-                                    <input type="text" id="first_name" name="first_name" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="last_name">Nom</label>
-                                    <input type="text" id="last_name" name="last_name" class="form-control" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Téléphone</label>
-                                    <input type="tel" id="phone" name="phone" class="form-control" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="company">Entreprise (optionnel)</label>
-                                <input type="text" id="company" name="company" class="form-control">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Message (optionnel)</label>
-                                <textarea id="message" name="message" class="form-control" rows="4"></textarea>
-                            </div>
-                            
-                            <div class="donation-summary">
-                                <h3>Récapitulatif de votre don</h3>
-                                <div class="summary-item">
-                                    <span>Type de partenariat:</span>
-                                    <span id="summary-tier">Personnalisé</span>
-                                </div>
-                                <div class="summary-item">
-                                    <span>Montant:</span>
-                                    <span id="summary-amount">100 €</span>
-                                </div>
-                                <div class="summary-item total-amount">
-                                    <span>Total:</span>
-                                    <span id="summary-total">100 €</span>
-                                </div>
-                                
-                                <!-- Hidden fields for Formspree -->
-                                <input type="hidden" name="_subject" value="Nouvelle demande de partenariat - Coq Carlanais">
-                                <input type="hidden" name="_language" value="fr">
-                            </div>
-                            
-                            <div id="form-message"></div>
-                            
-                            <button type="submit" class="btn" style="width: 100%; margin-top: 1.5rem;">Devenir Partenaire</button>
-                        </form>
+                        <!-- HelloAsso Widget -->
+                        <div class="helloasso-container">
+                            <iframe 
+                                id="haWidgetLight" 
+                                allowtransparency="true" 
+                                allow="payment" 
+                                scrolling="auto" 
+                                src="https://www.helloasso.com/associations/association-coq-carlanais-basket-ball-ccbb/formulaires/1/widget?view=form" 
+                                style="width: clamp(300px, 100%, 26rem); margin: 0 auto; border: none; display: block;"
+                                onload="window.addEventListener('message', e => {const dataHeight = e.data.height; const haWidgetElement = document.getElementById('haWidgetLight'); haWidgetElement.height = dataHeight + 'px';})">
+                            </iframe>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <p><strong>Avantage fiscal :</strong> 60% de réduction d'impôt sur votre investissement</p>
+                            <p><small>Votre don est sécurisé via la plateforme HelloAsso, partenaire de confiance des associations.</small></p>
+                        </div>
                     </div>
                     
                     <div class="sponsor-cards">
