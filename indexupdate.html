@@ -1440,6 +1440,48 @@
                 }
             });
         });
+
+        // Improved HelloAsso iframe height management
+        function initHelloAssoIframe() {
+            const haWidgetElement = document.getElementById('haWidgetLight');
+            
+            // Set a reasonable minimum height for payment pages
+            haWidgetElement.style.minHeight = '600px';
+            
+            // Enhanced message listener for better height handling
+            window.addEventListener('message', function(e) {
+                // Additional safety check for HelloAsso messages
+                if (e.data && e.data.height && e.data.height > 100) {
+                    const newHeight = Math.max(e.data.height, 600); // Never go below 600px
+                    haWidgetElement.style.height = newHeight + 'px';
+                    haWidgetElement.style.minHeight = newHeight + 'px';
+                }
+            });
+            
+            // Fallback: Check iframe content periodically to ensure proper height
+            let heightCheckInterval = setInterval(() => {
+                try {
+                    const iframeDoc = haWidgetElement.contentDocument || haWidgetElement.contentWindow.document;
+                    if (iframeDoc && iframeDoc.body) {
+                        const contentHeight = iframeDoc.body.scrollHeight;
+                        if (contentHeight > 100) {
+                            const newHeight = Math.max(contentHeight, 600);
+                            haWidgetElement.style.height = newHeight + 'px';
+                            haWidgetElement.style.minHeight = newHeight + 'px';
+                        }
+                    }
+                } catch (e) {
+                    // Cross-origin restriction, which is normal - clear interval
+                    clearInterval(heightCheckInterval);
+                }
+            }, 1000);
+            
+            // Stop checking after 10 seconds
+            setTimeout(() => {
+                clearInterval(heightCheckInterval);
+            }, 10000);
+        }
     </script> 
+    
 </body>
 </html>
