@@ -1014,134 +1014,7 @@
                 }
             });
         });
-
-        // Donation Form Functionality
-        const donationForm = document.getElementById('donation-form');
-        const tierRadios = document.querySelectorAll('input[name="sponsor_tier"]');
-        const customAmountInput = document.getElementById('custom_amount');
-        const summaryTier = document.getElementById('summary-tier');
-        const summaryAmount = document.getElementById('summary-amount');
-        const summaryTotal = document.getElementById('summary-total');
         
-        // Update donation summary when tier selection changes
-        function updateDonationSummary() {
-            let selectedTier = document.querySelector('input[name="sponsor_tier"]:checked');
-            let amount = 0;
-            let tierName = '';
-            
-            if (selectedTier.id === 'custom') {
-                amount = parseInt(customAmountInput.value) || 0;
-                tierName = 'Personnalisé';
-            } else {
-                // Extract only the numeric value from the tier string (e.g., "Bronze (100€)" -> 100)
-                const tierValue = selectedTier.value;
-                // Extract the number from the string using regex
-                const amountMatch = tierValue.match(/(\d+)/);
-                amount = amountMatch ? parseInt(amountMatch[0]) : 0;
-                tierName = selectedTier.parentElement.querySelector('label').textContent;
-            }
-            
-            summaryTier.textContent = tierName;
-            summaryAmount.textContent = amount + ' €';
-            summaryTotal.textContent = amount + ' €';
-        }
-        
-        // Initialize donation summary
-        updateDonationSummary();
-        
-        // Add event listeners for tier selection
-        tierRadios.forEach(radio => {
-            radio.addEventListener('change', function() {
-                if (this.id === 'custom') {
-                    customAmountInput.disabled = false;
-                    customAmountInput.focus();
-                } else {
-                    customAmountInput.disabled = true;
-                }
-                updateDonationSummary();
-            });
-        });
-        
-        // Update summary when custom amount changes
-        customAmountInput.addEventListener('input', function() {
-            const minAmount = 10; // Minimum custom amount
-            let value = parseInt(this.value) || 0;
-            
-            if (value < minAmount) {
-                this.value = minAmount;
-            }
-            
-            updateDonationSummary();
-        });
-        
-        // Enhanced form validation and submission
-        document.getElementById('donation-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (!validateForm()) {
-                return;
-            }
-            
-            const form = e.target;
-            const messageDiv = document.getElementById('form-message');
-            const submitButton = form.querySelector('button[type="submit"]');
-            
-            // Show sending state
-            const originalButtonText = submitButton.textContent;
-            submitButton.textContent = 'Envoi en cours...';
-            submitButton.disabled = true;
-            messageDiv.style.display = 'none';
-            
-            // Clear previous errors
-            clearErrors();
-            
-            // Send form data
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            })
-            .then(response => {
-                if (response.ok) {
-                    showSuccess(messageDiv, form);
-                } else {
-                    throw new Error('Network response was not ok.');
-                }
-            })
-            .catch(error => {
-                showError(messageDiv);
-            })
-            .finally(() => {
-                submitButton.textContent = originalButtonText;
-                submitButton.disabled = false;
-                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            });
-        });
-
-        // Form validation function
-        function validateForm() {
-            let isValid = true;
-            clearErrors();
-            
-            // Validate required fields
-            const requiredFields = document.querySelectorAll('[required]');
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    showFieldError(field, 'Ce champ est obligatoire');
-                    isValid = false;
-                }
-            });
-            
-            // Validate email format
-            const emailField = document.getElementById('email');
-            if (emailField.value && !isValidEmail(emailField.value)) {
-                showFieldError(emailField, 'Veuillez entrer une adresse email valide');
-                isValid = false;
-            }
-
-            return isValid;
-        }
-
         // Helper functions
         function isValidEmail(email) {
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -1448,44 +1321,95 @@
         // Improved HelloAsso iframe height management
         function initHelloAssoIframe() {
             const haWidgetElement = document.getElementById('haWidgetLight');
+            const overlayMessage = document.querySelector('.iframe-overlay-message');
             
-            // Set a reasonable minimum height for payment pages
+            // Set initial reasonable height
             haWidgetElement.style.minHeight = '600px';
+            haWidgetElement.style.height = '600px';
             
-            // Enhanced message listener for better height handling
+            let isPaymentStep = false;
+            let lastKnownHeight = 600;
+            
+            // Enhanced message listener with payment step detection
             window.addEventListener('message', function(e) {
-                // Additional safety check for HelloAsso messages
-                if (e.data && e.data.height && e.data.height > 100) {
-                    const newHeight = Math.max(e.data.height, 600); // Never go below 600px
-                    haWidgetElement.style.height = newHeight + 'px';
-                    haWidgetElement.style.minHeight = newHeight + 'px';
+                if (e.data && e.data.height) {
+                    const newHeight = e.data.height;
+                    lastKnownHeight = newHeight;
+                    
+                    // Detect payment step by height pattern (payment steps are typically taller)
+                    if (newHeight > 800) {
+                        isPaymentStep = true;
+                        handlePaymentStep(haWidgetElement, newHeight, overlayMessage);
+                    } else {
+                        isPaymentStep = false;
+                        handleFormStep(haWidgetElement, newHeight, overlayMessage);
+                    }
                 }
             });
             
-            // Fallback: Check iframe content periodically to ensure proper height
-            let heightCheckInterval = setInterval(() => {
+            // Fallback: Monitor URL changes to detect payment step
+            let lastSrc = haWidgetElement.src;
+            let urlCheckInterval = setInterval(() => {
                 try {
-                    const iframeDoc = haWidgetElement.contentDocument || haWidgetElement.contentWindow.document;
-                    if (iframeDoc && iframeDoc.body) {
-                        const contentHeight = iframeDoc.body.scrollHeight;
-                        if (contentHeight > 100) {
-                            const newHeight = Math.max(contentHeight, 600);
-                            haWidgetElement.style.height = newHeight + 'px';
-                            haWidgetElement.style.minHeight = newHeight + 'px';
+                    if (haWidgetElement.src !== lastSrc) {
+                        lastSrc = haWidgetElement.src;
+                        // If URL changes to contain payment-related terms, treat as payment step
+                        if (lastSrc.includes('/payment/') || lastSrc.includes('checkout') || lastSrc.includes('paiement')) {
+                            isPaymentStep = true;
+                            handlePaymentStep(haWidgetElement, lastKnownHeight, overlayMessage);
                         }
                     }
                 } catch (e) {
-                    // Cross-origin restriction, which is normal - clear interval
-                    clearInterval(heightCheckInterval);
+                    // Cross-origin restriction
                 }
-            }, 1000);
+            }, 500);
             
-            // Stop checking after 10 seconds
-            setTimeout(() => {
-                clearInterval(heightCheckInterval);
-            }, 10000);
+            // Cleanup interval after 30 seconds
+            setTimeout(() => clearInterval(urlCheckInterval), 30000);
         }
+        
+        function handlePaymentStep(iframe, height, overlay) {
+            // For payment steps, use a fixed height that works well on mobile
+            const isMobile = window.innerWidth <= 768;
+            const optimalHeight = isMobile ? 700 : 800; // Increased height for payment steps
+            
+            iframe.style.height = optimalHeight + 'px';
+            iframe.style.minHeight = optimalHeight + 'px';
+            iframe.style.overflowY = 'auto'; // Allow scrolling within iframe
+            
+            // Show helpful message on mobile
+            if (isMobile && overlay) {
+                overlay.style.display = 'block';
+            }
+        }
+        
+        function handleFormStep(iframe, height, overlay) {
+            // For form steps, use dynamic height with reasonable limits
+            const isMobile = window.innerWidth <= 768;
+            const maxHeight = isMobile ? 600 : 700;
+            const actualHeight = Math.min(height, maxHeight);
+            
+            iframe.style.height = actualHeight + 'px';
+            iframe.style.minHeight = '400px';
+            iframe.style.overflowY = 'hidden';
+            
+            // Hide overlay message
+            if (overlay) {
+                overlay.style.display = 'none';
+            }
+        }
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            const iframe = document.getElementById('haWidgetLight');
+            if (iframe) {
+                // Re-apply height logic on resize
+                const currentHeight = parseInt(iframe.style.height) || 600;
+                if (currentHeight > 800) { // Likely payment step
+                    handlePaymentStep(iframe, currentHeight, document.querySelector('.iframe-overlay-message'));
+                }
+            }
+        });
     </script> 
-    
 </body>
 </html>
