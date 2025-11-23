@@ -865,17 +865,12 @@
                                 id="haWidgetLight" 
                                 allowtransparency="true" 
                                 allow="payment" 
-                                scrolling="no"
+                                scrolling="yes"
                                 src="https://www.helloasso.com/associations/association-coq-carlanais-basket-ball-ccbb/formulaires/1/widget?view=form" 
                                 style="width: 100%; max-width: 26rem; margin: 0 auto; border: none; display: block;"
                                 onload="initHelloAssoIframe()">
                             </iframe>
-                            <div class="iframe-overlay-message" style="display: none;">
-                                <p>💡 <strong>Conseil de navigation</strong></p>
-                                <p>Sur mobile, faites défiler vers le bas dans cette zone pour accéder à tous les champs de paiement.</p>
-                            </div>
                         </div>
-                        
                         <div style="text-align: center; margin-top: 2rem;">
                             <p><strong>Avantage fiscal :</strong> 60% de réduction d'impôt sur votre investissement</p>
                             <p><small>Votre don est sécurisé via HelloAsso, notre partenaire de traitement des dons. La plateforme propose un soutien financier facultatif, que vous pouvez librement ajuster lors de la confirmation.</small></p>
@@ -1318,95 +1313,55 @@
             });
         });
 
-        // Improved HelloAsso iframe height management
+        // Robust HelloAsso iframe management with fixed heights
         function initHelloAssoIframe() {
             const haWidgetElement = document.getElementById('haWidgetLight');
-            const overlayMessage = document.querySelector('.iframe-overlay-message');
+            const isMobile = window.innerWidth <= 768;
             
-            // Set initial reasonable height
-            haWidgetElement.style.minHeight = '600px';
-            haWidgetElement.style.height = '600px';
+            // Set generous fixed heights that work for all steps including payment
+            if (isMobile) {
+                // Mobile: Fixed height that's comfortable for payment forms
+                haWidgetElement.style.height = '800px';
+                haWidgetElement.style.minHeight = '800px';
+            } else {
+                // Desktop: Even more height for better experience
+                haWidgetElement.style.height = '900px';
+                haWidgetElement.style.minHeight = '900px';
+            }
             
-            let isPaymentStep = false;
-            let lastKnownHeight = 600;
+            // Ensure proper scrolling behavior
+            haWidgetElement.style.overflowY = 'auto';
+            haWidgetElement.style.overflowX = 'hidden';
             
-            // Enhanced message listener with payment step detection
+            // Basic height adjustment from HelloAsso (as fallback)
             window.addEventListener('message', function(e) {
                 if (e.data && e.data.height) {
-                    const newHeight = e.data.height;
-                    lastKnownHeight = newHeight;
-                    
-                    // Detect payment step by height pattern (payment steps are typically taller)
-                    if (newHeight > 800) {
-                        isPaymentStep = true;
-                        handlePaymentStep(haWidgetElement, newHeight, overlayMessage);
-                    } else {
-                        isPaymentStep = false;
-                        handleFormStep(haWidgetElement, newHeight, overlayMessage);
-                    }
+                    // Use HelloAsso's height but ensure minimum
+                    const minHeight = isMobile ? 800 : 900;
+                    const newHeight = Math.max(e.data.height, minHeight);
+                    haWidgetElement.style.height = newHeight + 'px';
                 }
             });
-            
-            // Fallback: Monitor URL changes to detect payment step
-            let lastSrc = haWidgetElement.src;
-            let urlCheckInterval = setInterval(() => {
-                try {
-                    if (haWidgetElement.src !== lastSrc) {
-                        lastSrc = haWidgetElement.src;
-                        // If URL changes to contain payment-related terms, treat as payment step
-                        if (lastSrc.includes('/payment/') || lastSrc.includes('checkout') || lastSrc.includes('paiement')) {
-                            isPaymentStep = true;
-                            handlePaymentStep(haWidgetElement, lastKnownHeight, overlayMessage);
-                        }
-                    }
-                } catch (e) {
-                    // Cross-origin restriction
-                }
-            }, 500);
-            
-            // Cleanup interval after 30 seconds
-            setTimeout(() => clearInterval(urlCheckInterval), 30000);
         }
         
-        function handlePaymentStep(iframe, height, overlay) {
-            // For payment steps, use a fixed height that works well on mobile
-            const isMobile = window.innerWidth <= 768;
-            const optimalHeight = isMobile ? 700 : 800; // Increased height for payment steps
-            
-            iframe.style.height = optimalHeight + 'px';
-            iframe.style.minHeight = optimalHeight + 'px';
-            iframe.style.overflowY = 'auto'; // Allow scrolling within iframe
-            
-            // Show helpful message on mobile
-            if (isMobile && overlay) {
-                overlay.style.display = 'block';
-            }
-        }
-        
-        function handleFormStep(iframe, height, overlay) {
-            // For form steps, use dynamic height with reasonable limits
-            const isMobile = window.innerWidth <= 768;
-            const maxHeight = isMobile ? 600 : 700;
-            const actualHeight = Math.min(height, maxHeight);
-            
-            iframe.style.height = actualHeight + 'px';
-            iframe.style.minHeight = '400px';
-            iframe.style.overflowY = 'hidden';
-            
-            // Hide overlay message
-            if (overlay) {
-                overlay.style.display = 'none';
-            }
-        }
-        
-        // Handle window resize
+        // Re-initialize on window resize
         window.addEventListener('resize', function() {
             const iframe = document.getElementById('haWidgetLight');
             if (iframe) {
-                // Re-apply height logic on resize
-                const currentHeight = parseInt(iframe.style.height) || 600;
-                if (currentHeight > 800) { // Likely payment step
-                    handlePaymentStep(iframe, currentHeight, document.querySelector('.iframe-overlay-message'));
+                // Small delay to ensure resize is complete
+                setTimeout(() => {
+                    initHelloAssoIframe();
+                }, 250);
+            }
+        });
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.getElementById('haWidgetLight');
+            if (iframe) {
+                // If iframe is already loaded, initialize
+                if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+                    initHelloAssoIframe();
                 }
             }
         });
