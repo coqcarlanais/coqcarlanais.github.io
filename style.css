@@ -2130,54 +2130,77 @@ footer {
         margin: 2rem auto;
         text-align: center;
         max-width: 26rem;
-        width: calc(100% - 2rem); /* Added this line */
-        margin-left: auto;
-        margin-right: auto;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
     }
     
     .helloasso-container iframe {
-        min-height: 500px;
         border-radius: 8px;
-        width: 100% !important; /* Force full width */
+        width: 100% !important;
+        transition: all 0.3s ease;
     }
     
-    /* Ensure proper iframe responsiveness */
-    #haWidgetLight {
-        transition: height 0.3s ease;
-        width: 100% !important; /* Force full width */
+    .iframe-overlay-message {
+        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        border: 1px solid #90caf9;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-top: 1rem;
+        text-align: left;
+        font-size: 0.9rem;
+        color: #1565c0;
     }
     
-    /* Mobile adjustments for HelloAsso */
+    .iframe-overlay-message p {
+        margin-bottom: 0.5rem;
+    }
+    
+    .iframe-overlay-message p:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* Mobile adjustments with payment step optimization */
     @media screen and (max-width: 768px) {
         .helloasso-container {
             padding: 1rem;
             margin: 1rem auto;
-            width: calc(100% - 1rem); /* Adjusted for mobile */
-            max-width: none; /* Remove max-width constraint on mobile */
+            max-width: 100%;
         }
         
         .helloasso-container iframe {
-            min-height: 400px;
-            width: 100% !important;
+            min-height: 700px !important;
+            height: 700px !important;
+            overflow-y: auto !important;
         }
         
-        /* Target the HelloAsso iframe specifically */
+        /* Ensure iframe content is properly scrollable */
         #haWidgetLight {
-            width: 100% !important;
-            max-width: 100% !important;
-            margin: 0 auto !important;
+            -webkit-overflow-scrolling: touch !important;
+            overflow-y: auto !important;
+        }
+        
+        .iframe-overlay-message {
+            margin: 1rem 0 0 0;
+            font-size: 0.85rem;
+            padding: 0.8rem;
         }
     }
     
     @media screen and (max-width: 480px) {
         .helloasso-container {
             padding: 0.5rem;
-            width: calc(100% - 1rem);
             margin: 0.5rem auto;
         }
         
         .helloasso-container iframe {
-            min-height: 350px;
+            min-height: 650px !important;
+            height: 650px !important;
         }
+    }
+    
+    /* Ensure iframe scrolling works properly */
+    #haWidgetLight {
+        transition: height 0.3s ease;
     }
 }
