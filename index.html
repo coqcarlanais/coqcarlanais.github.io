@@ -855,96 +855,26 @@
                     </section>
                     
                     <!-- Donation Form -->
-                    <div class="donation-section">
+                    <div class="donation-section" id="donation-form">
                         <h2>Devenir Partenaire</h2>
-                        <p>Choisissez votre niveau de partenariat ou saisissez un montant personnalisé.</p>
+                        <p>Choisissez votre niveau de partenariat en utilisant notre formulaire sécurisé HelloAsso.</p>
                         
-                        <form id="donation-form" action="https://formspree.io/f/manpevvz" method="POST">
-                            <div class="form-group">
-                                <label for="sponsor-type">Type de partenariat</label>
-                                <div class="tier-options">
-                                    <div class="tier-option">
-                                        <input type="radio" id="bronze" name="sponsor_tier" value="Bronze (100€)">
-                                        <label for="bronze">Bronze (100€)</label>
-                                    </div>
-                                    <div class="tier-option">
-                                        <input type="radio" id="silver" name="sponsor_tier" value="Argent (500€)">
-                                        <label for="silver">Argent (500€)</label>
-                                    </div>
-                                    <div class="tier-option">
-                                        <input type="radio" id="gold" name="sponsor_tier" value="Or (1 000€)">
-                                        <label for="gold">Or (1000€)</label>
-                                    </div>
-                                    <div class="tier-option">
-                                        <input type="radio" id="custom" name="sponsor_tier" value="Personnalisé" checked>
-                                        <label for="custom">Personnalisé</label>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="custom_amount">Montant personnalisé (€)</label>
-                                <div class="custom-amount">
-                                    <input type="number" id="custom_amount" name="custom_amount" class="form-control" min="10" step="5" value="100">
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="first_name">Prénom</label>
-                                    <input type="text" id="first_name" name="first_name" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="last_name">Nom</label>
-                                    <input type="text" id="last_name" name="last_name" class="form-control" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Téléphone</label>
-                                    <input type="tel" id="phone" name="phone" class="form-control" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="company">Entreprise (optionnel)</label>
-                                <input type="text" id="company" name="company" class="form-control">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Message (optionnel)</label>
-                                <textarea id="message" name="message" class="form-control" rows="4"></textarea>
-                            </div>
-                            
-                            <div class="donation-summary">
-                                <h3>Récapitulatif de votre don</h3>
-                                <div class="summary-item">
-                                    <span>Type de partenariat:</span>
-                                    <span id="summary-tier">Personnalisé</span>
-                                </div>
-                                <div class="summary-item">
-                                    <span>Montant:</span>
-                                    <span id="summary-amount">100 €</span>
-                                </div>
-                                <div class="summary-item total-amount">
-                                    <span>Total:</span>
-                                    <span id="summary-total">100 €</span>
-                                </div>
-                                
-                                <!-- Hidden fields for Formspree -->
-                                <input type="hidden" name="_subject" value="Nouvelle demande de partenariat - Coq Carlanais">
-                                <input type="hidden" name="_language" value="fr">
-                            </div>
-                            
-                            <div id="form-message"></div>
-                            
-                            <button type="submit" class="btn" style="width: 100%; margin-top: 1.5rem;">Devenir Partenaire</button>
-                        </form>
+                        <!-- Enhanced HelloAsso Widget -->
+                        <div class="helloasso-container">
+                            <iframe 
+                                id="haWidgetLight" 
+                                allowtransparency="true" 
+                                allow="payment" 
+                                scrolling="yes"
+                                src="https://www.helloasso.com/associations/association-coq-carlanais-basket-ball-ccbb/formulaires/1/widget?view=form" 
+                                style="width: 100%; max-width: 26rem; margin: 0 auto; border: none; display: block;"
+                                onload="initHelloAssoIframe()">
+                            </iframe>
+                        </div>
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <p><strong>Avantage fiscal :</strong> 60% de réduction d'impôt sur votre investissement</p>
+                            <p><small>Votre don est sécurisé via HelloAsso, notre partenaire de traitement des dons. La plateforme propose un soutien financier facultatif, que vous pouvez librement ajuster lors de la confirmation.</small></p>
+                        </div>
                     </div>
                     
                     <div class="sponsor-cards">
@@ -1079,134 +1009,7 @@
                 }
             });
         });
-
-        // Donation Form Functionality
-        const donationForm = document.getElementById('donation-form');
-        const tierRadios = document.querySelectorAll('input[name="sponsor_tier"]');
-        const customAmountInput = document.getElementById('custom_amount');
-        const summaryTier = document.getElementById('summary-tier');
-        const summaryAmount = document.getElementById('summary-amount');
-        const summaryTotal = document.getElementById('summary-total');
         
-        // Update donation summary when tier selection changes
-        function updateDonationSummary() {
-            let selectedTier = document.querySelector('input[name="sponsor_tier"]:checked');
-            let amount = 0;
-            let tierName = '';
-            
-            if (selectedTier.id === 'custom') {
-                amount = parseInt(customAmountInput.value) || 0;
-                tierName = 'Personnalisé';
-            } else {
-                // Extract only the numeric value from the tier string (e.g., "Bronze (100€)" -> 100)
-                const tierValue = selectedTier.value;
-                // Extract the number from the string using regex
-                const amountMatch = tierValue.match(/(\d+)/);
-                amount = amountMatch ? parseInt(amountMatch[0]) : 0;
-                tierName = selectedTier.parentElement.querySelector('label').textContent;
-            }
-            
-            summaryTier.textContent = tierName;
-            summaryAmount.textContent = amount + ' €';
-            summaryTotal.textContent = amount + ' €';
-        }
-        
-        // Initialize donation summary
-        updateDonationSummary();
-        
-        // Add event listeners for tier selection
-        tierRadios.forEach(radio => {
-            radio.addEventListener('change', function() {
-                if (this.id === 'custom') {
-                    customAmountInput.disabled = false;
-                    customAmountInput.focus();
-                } else {
-                    customAmountInput.disabled = true;
-                }
-                updateDonationSummary();
-            });
-        });
-        
-        // Update summary when custom amount changes
-        customAmountInput.addEventListener('input', function() {
-            const minAmount = 10; // Minimum custom amount
-            let value = parseInt(this.value) || 0;
-            
-            if (value < minAmount) {
-                this.value = minAmount;
-            }
-            
-            updateDonationSummary();
-        });
-        
-        // Enhanced form validation and submission
-        document.getElementById('donation-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (!validateForm()) {
-                return;
-            }
-            
-            const form = e.target;
-            const messageDiv = document.getElementById('form-message');
-            const submitButton = form.querySelector('button[type="submit"]');
-            
-            // Show sending state
-            const originalButtonText = submitButton.textContent;
-            submitButton.textContent = 'Envoi en cours...';
-            submitButton.disabled = true;
-            messageDiv.style.display = 'none';
-            
-            // Clear previous errors
-            clearErrors();
-            
-            // Send form data
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            })
-            .then(response => {
-                if (response.ok) {
-                    showSuccess(messageDiv, form);
-                } else {
-                    throw new Error('Network response was not ok.');
-                }
-            })
-            .catch(error => {
-                showError(messageDiv);
-            })
-            .finally(() => {
-                submitButton.textContent = originalButtonText;
-                submitButton.disabled = false;
-                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            });
-        });
-
-        // Form validation function
-        function validateForm() {
-            let isValid = true;
-            clearErrors();
-            
-            // Validate required fields
-            const requiredFields = document.querySelectorAll('[required]');
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    showFieldError(field, 'Ce champ est obligatoire');
-                    isValid = false;
-                }
-            });
-            
-            // Validate email format
-            const emailField = document.getElementById('email');
-            if (emailField.value && !isValidEmail(emailField.value)) {
-                showFieldError(emailField, 'Veuillez entrer une adresse email valide');
-                isValid = false;
-            }
-
-            return isValid;
-        }
-
         // Helper functions
         function isValidEmail(email) {
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -1508,6 +1311,59 @@
                     }
                 }
             });
+        });
+
+        // Robust HelloAsso iframe management with fixed heights
+        function initHelloAssoIframe() {
+            const haWidgetElement = document.getElementById('haWidgetLight');
+            const isMobile = window.innerWidth <= 768;
+            
+            // Set generous fixed heights that work for all steps including payment
+            if (isMobile) {
+                // Mobile: Fixed height that's comfortable for payment forms
+                haWidgetElement.style.height = '800px';
+                haWidgetElement.style.minHeight = '800px';
+            } else {
+                // Desktop: Even more height for better experience
+                haWidgetElement.style.height = '900px';
+                haWidgetElement.style.minHeight = '900px';
+            }
+            
+            // Ensure proper scrolling behavior
+            haWidgetElement.style.overflowY = 'auto';
+            haWidgetElement.style.overflowX = 'hidden';
+            
+            // Basic height adjustment from HelloAsso (as fallback)
+            window.addEventListener('message', function(e) {
+                if (e.data && e.data.height) {
+                    // Use HelloAsso's height but ensure minimum
+                    const minHeight = isMobile ? 800 : 900;
+                    const newHeight = Math.max(e.data.height, minHeight);
+                    haWidgetElement.style.height = newHeight + 'px';
+                }
+            });
+        }
+        
+        // Re-initialize on window resize
+        window.addEventListener('resize', function() {
+            const iframe = document.getElementById('haWidgetLight');
+            if (iframe) {
+                // Small delay to ensure resize is complete
+                setTimeout(() => {
+                    initHelloAssoIframe();
+                }, 250);
+            }
+        });
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.getElementById('haWidgetLight');
+            if (iframe) {
+                // If iframe is already loaded, initialize
+                if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+                    initHelloAssoIframe();
+                }
+            }
         });
     </script> 
 </body>
