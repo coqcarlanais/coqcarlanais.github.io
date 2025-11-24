@@ -250,6 +250,52 @@ p {
     margin-bottom: 2rem;
 }
 
+/* ===== WEEKEND PLANNING SECTION ===== */
+.weekend-planning {
+    background-color: var(--primary-black);
+    padding: 3rem 0;
+    color: var(--white);
+}
+
+.weekend-planning h2 {
+    color: var(--vibrant-yellow);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.planning-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.planning-note {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.planning-note i {
+    color: var(--vibrant-yellow);
+}
+
+/* Responsive adjustments for planning */
+@media screen and (max-width: 768px) {
+    .weekend-planning {
+        padding: 2rem 0;
+    }
+    
+    .weekend-planning .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
+
 /* ===== ABOUT SECTION ===== */
 .about {
     background-color: var(--white);
