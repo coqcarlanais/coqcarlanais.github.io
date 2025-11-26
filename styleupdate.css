@@ -2168,7 +2168,7 @@ footer {
     }
 }
 
-/* ===== OPTIMIZED HELLOASSO STYLES ===== */
+    /* Enhanced HelloAsso Styles */
     .helloasso-container-optimized {
         background: var(--white);
         border-radius: 15px;
@@ -2188,6 +2188,7 @@ footer {
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         margin: 1.5rem 0;
         position: relative;
+        width: 100%;
     }
     
     .helloasso-iframe {
@@ -2225,7 +2226,7 @@ footer {
         margin: 0 0.5rem;
     }
     
-    /* Enhanced Payment Form Responsiveness */
+    /* Enhanced Mobile Responsiveness */
     @media screen and (max-width: 768px) {
         .helloasso-container-optimized {
             padding: 1.5rem 1rem;
@@ -2238,6 +2239,7 @@ footer {
             border-radius: 0;
             box-shadow: none;
             border: 1px solid #e0e0e0;
+            width: calc(100% + 2rem);
         }
         
         .helloasso-iframe {
@@ -2259,56 +2261,15 @@ footer {
         }
     }
     
-    /* Chrome Autofill Fixes */
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    input:-webkit-autofill:focus,
-    input:-webkit-autofill:active {
-        -webkit-box-shadow: 0 0 0 30px white inset !important;
-        -webkit-text-fill-color: var(--primary-black) !important;
-        transition: background-color 5000s ease-in-out 0s;
-    }
-    
-    /* Payment Method Styling */
-    .payment-methods {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin: 1rem 0;
-        flex-wrap: wrap;
-    }
-    
-    .payment-method {
-        padding: 0.5rem 1rem;
-        background: var(--light-grey);
-        border-radius: 6px;
-        font-size: 0.9rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    /* Loading State for Payment */
-    .payment-loading {
-        display: none;
-        text-align: center;
-        padding: 2rem;
-    }
-    
-    .payment-loading.active {
-        display: block;
-    }
-    
-    .payment-spinner {
-        font-size: 2rem;
-        color: var(--vibrant-yellow);
-        margin-bottom: 1rem;
-    }
-    
-    /* Enhanced Mobile Payment Experience */
+    /* Extra small devices */
     @media screen and (max-width: 480px) {
         .helloasso-container-optimized {
             padding: 1rem 0.5rem;
+        }
+        
+        .helloasso-wrapper {
+            margin: 1rem -0.5rem;
+            width: calc(100% + 1rem);
         }
         
         .helloasso-iframe {
@@ -2322,7 +2283,7 @@ footer {
         }
     }
     
-    /* Apple Pay Button Styling Fix */
+    /* Apple Pay Button Support */
     .apple-pay-button {
         display: inline-block;
         -webkit-appearance: -apple-pay-button;
@@ -2340,8 +2301,12 @@ footer {
         zoom: 1.0;
     }
     
-    /* Remove any potential conflicts with payment iframes */
-    .helloasso-iframe * {
-        max-width: none !important;
-        box-sizing: border-box !important;
+    /* Chrome Autofill Fixes */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+        -webkit-text-fill-color: var(--primary-black) !important;
+        transition: background-color 5000s ease-in-out 0s;
     }
