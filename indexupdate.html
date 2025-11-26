@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -929,7 +928,7 @@
                             <p><small>Votre don est sécurisé via HelloAsso, notre partenaire de traitement des dons. La plateforme propose un soutien financier facultatif, que vous pouvez librement ajuster lors de la confirmation.</small></p>
                         </div>
                     </div>
-                    
+
                     <div class="sponsor-cards">
                         <div class="sponsor-card">
                             <div class="sponsor-icon">
@@ -1369,6 +1368,8 @@
         // Enhanced HelloAsso Payment Integration
         function initHelloAssoIframe() {
             const haWidgetElement = document.getElementById('haWidgetLight');
+            if (!haWidgetElement) return;
+            
             const isMobile = window.innerWidth <= 768;
             
             // Set optimized heights for payment forms
@@ -1384,13 +1385,21 @@
             haWidgetElement.style.overflowY = 'auto';
             haWidgetElement.style.overflowX = 'hidden';
             
-            // Payment message handling with better error recovery
+            // Enhanced message handling for dynamic height adjustment
             window.addEventListener('message', function(e) {
                 // Height adjustment from HelloAsso
                 if (e.data && e.data.height) {
                     const minHeight = isMobile ? 750 : 800;
                     const newHeight = Math.max(e.data.height, minHeight);
                     haWidgetElement.style.height = newHeight + 'px';
+                    
+                    // Additional safety: ensure minimum height is maintained
+                    setTimeout(() => {
+                        const currentHeight = parseInt(haWidgetElement.style.height);
+                        if (currentHeight < minHeight) {
+                            haWidgetElement.style.height = minHeight + 'px';
+                        }
+                    }, 100);
                 }
                 
                 // Payment completion messages
@@ -1403,26 +1412,16 @@
                     console.log('Payment failed:', e.data.error);
                     showPaymentError(e.data.error);
                 }
-                
-                // Apple Pay specific handling
-                if (e.data && e.data.type === 'apple_pay_available') {
-                    console.log('Apple Pay is available');
-                    enableApplePay();
-                }
-                
-                if (e.data && e.data.type === 'apple_pay_not_available') {
-                    console.log('Apple Pay not available');
-                    disableApplePay();
-                }
             });
             
             // Enhanced error handling for iframe loading
             haWidgetElement.addEventListener('load', function() {
                 console.log('HelloAsso iframe loaded successfully');
-                // Trigger resize check after load
+                // Force minimum height after load
                 setTimeout(() => {
-                    window.dispatchEvent(new Event('resize'));
-                }, 1000);
+                    const minHeight = isMobile ? 750 : 800;
+                    haWidgetElement.style.height = minHeight + 'px';
+                }, 500);
             });
             
             haWidgetElement.addEventListener('error', function() {
@@ -1433,7 +1432,6 @@
         
         // Payment status handlers
         function showPaymentSuccess() {
-            // You can add a success message or redirect
             const successMessage = document.createElement('div');
             successMessage.className = 'payment-success-message';
             successMessage.innerHTML = `
@@ -1471,34 +1469,16 @@
             container.appendChild(errorMessage);
         }
         
-        function enableApplePay() {
-            console.log('Enabling Apple Pay support');
-            // Additional Apple Pay setup if needed
-        }
-        
-        function disableApplePay() {
-            console.log('Apple Pay not supported in this environment');
-        }
-        
         // Enhanced payment initialization
         function initPaymentSupport() {
-            // Ensure proper viewport for mobile payments
-            const viewport = document.querySelector('meta[name="viewport"]');
-            if (!viewport) {
-                const meta = document.createElement('meta');
-                meta.name = 'viewport';
-                meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
-                document.head.appendChild(meta);
-            } else {
-                // Enhance existing viewport for better payment experience
-                viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes';
+            // Add payment-specific meta tags for Apple Pay
+            const existingMeta = document.querySelector('meta[name="apple-mobile-web-app-capable"]');
+            if (!existingMeta) {
+                const paymentMeta = document.createElement('meta');
+                paymentMeta.name = 'apple-mobile-web-app-capable';
+                paymentMeta.content = 'yes';
+                document.head.appendChild(paymentMeta);
             }
-            
-            // Add payment-specific meta tags
-            const paymentMeta = document.createElement('meta');
-            paymentMeta.name = 'apple-mobile-web-app-capable';
-            paymentMeta.content = 'yes';
-            document.head.appendChild(paymentMeta);
             
             // Initialize HelloAsso iframe
             const iframe = document.getElementById('haWidgetLight');
