@@ -13,9 +13,22 @@
         </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Payment Optimization Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no">
+    <meta name="supported-color-schemes" content="light dark">
+    <meta name="theme-color" content="#FFCC00">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <!-- Apple Pay Meta Tags -->
+    <meta name="apple-pay-capable" content="yes">
+    <meta name="apple-pay-supported-networks" content="amex, mastercard, visa, discover">
+    <meta name="apple-pay-merchant-identity" content="merchant.com.example">
+    
+    <!-- Chrome Autofill Support -->
+    <meta name="google-site-verification" content="your-verification-code">
     
     <title>Coq Carlanais - Club de Basket du Carla Bayle</title>
     <meta name="description" content="Club de basket-ball Coq Carlanais à Carla Bayle. Équipes pour tous les âges, entraînements, compétitions et inscriptions.">
@@ -883,25 +896,35 @@
                     </section>
                     
                     <!-- Donation Form -->
-                    <div class="donation-section" id="donation-form">
+                    <div class="helloasso-container-optimized" id="donation-form">
                         <h2>Devenir Partenaire</h2>
                         <p>Choisissez votre niveau de partenariat en utilisant notre formulaire sécurisé HelloAsso.</p>
                         
-                        <!-- Enhanced HelloAsso Widget -->
-                        <div class="helloasso-container">
+                        <!-- Optimized HelloAsso Widget -->
+                        <div class="helloasso-wrapper">
                             <iframe 
                                 id="haWidgetLight" 
                                 allowtransparency="true" 
-                                allow="payment *"
+                                allow="payment *; publickey-credentials-get *; web-share *"
                                 allowpaymentrequest="true"
                                 allowfullscreen=""
-                                scrolling="yes"
-                                src="https://www.helloasso.com/associations/association-coq-carlanais-basket-ball-ccbb/formulaires/1/widget?view=form" 
-                                style="width: 100%; max-width: 26rem; margin: 0 auto; border: none; display: block;"
-                                onload="initHelloAssoIframe()">
+                                scrolling="no"
+                                src="https://www.helloasso.com/associations/association-coq-carlanais-basket-ball-ccbb/formulaires/1/widget?view=form&widget-width=100%&widget-height=auto&payment-methods=card,apple-pay,google-pay" 
+                                style="width: 100%; height: 800px; border: none; display: block;"
+                                class="helloasso-iframe"
+                                title="Formulaire de don sécurisé HelloAsso">
                             </iframe>
                         </div>
-                        <div style="text-align: center; margin-top: 2rem;">
+                        
+                        <div class="payment-security-notice">
+                            <div class="security-badges">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Paiement 100% sécurisé</span>
+                                <i class="fab fa-cc-apple-pay"></i>
+                                <i class="fab fa-cc-google-pay"></i>
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                            </div>
                             <p><strong>Avantage fiscal :</strong> 60% de réduction d'impôt sur votre investissement</p>
                             <p><small>Votre don est sécurisé via HelloAsso, notre partenaire de traitement des dons. La plateforme propose un soutien financier facultatif, que vous pouvez librement ajuster lors de la confirmation.</small></p>
                         </div>
