@@ -2167,97 +2167,58 @@ footer {
         padding: 0.7rem 0.4rem;
     }
 
-    /* ===== HELLOASSO STYLES ===== */
-    .helloasso-container {
-        background: var(--white);
-        border-radius: 10px;
-        padding: 2rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        margin: 2rem auto;
-        text-align: center;
-        max-width: 26rem;
-        width: 100%;
-        box-sizing: border-box;
+    /* ===== HELLOASSO REDIRECT STYLES ===== */
+    .helloasso-redirect {
+        max-width: 800px;
+        margin: 0 auto;
     }
     
-    .helloasso-container iframe {
-        width: 100% !important;
-        border-radius: 8px;
-        border: 1px solid #e0e0e0;
-        background: white;
+    .helloasso-redirect .btn {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
     }
     
-    /* Ensure iframe has proper scrolling and fixed height */
-    #haWidgetLight {
-        transition: height 0.3s ease;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        -webkit-overflow-scrolling: touch !important; /* Smooth iOS scrolling */
+    .helloasso-redirect .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(255, 204, 0, 0.4);
     }
     
-    /* Desktop specific styles */
-    @media screen and (min-width: 769px) {
-        .helloasso-container iframe {
-            height: 900px !important;
-            min-height: 900px !important;
-            max-height: 900px !important;
-        }
-        
-        #haWidgetLight {
-            height: 900px !important;
-            min-height: 900px !important;
-        }
+    .helloasso-redirect .btn:active {
+        transform: translateY(-1px);
     }
     
-    /* Mobile specific styles */
+    /* Mobile adjustments */
     @media screen and (max-width: 768px) {
-        .helloasso-container {
-            padding: 1rem;
+        .helloasso-redirect {
             margin: 1rem auto;
-            max-width: 100%;
-            width: calc(100% - 2rem);
         }
         
-        .helloasso-container iframe {
-            height: 800px !important;
-            min-height: 800px !important;
-            max-height: 800px !important;
-            width: 100% !important;
+        .redirect-info {
+            padding: 1.5rem !important;
         }
         
-        #haWidgetLight {
-            height: 800px !important;
-            min-height: 800px !important;
-            width: 100% !important;
+        .helloasso-redirect .btn {
+            font-size: 1.1rem !important;
+            padding: 1rem 2rem !important;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .redirect-info .grid-layout {
+            grid-template-columns: 1fr !important;
+            gap: 1rem !important;
         }
     }
     
-    /* Small mobile devices */
     @media screen and (max-width: 480px) {
-        .helloasso-container {
-            padding: 0.5rem;
-            margin: 0.5rem auto;
-            width: calc(100% - 1rem);
+        .redirect-info {
+            padding: 1rem !important;
         }
         
-        .helloasso-container iframe {
-            height: 700px !important;
-            min-height: 700px !important;
-            max-height: 700px !important;
+        .helloasso-redirect .btn {
+            font-size: 1rem !important;
+            padding: 0.9rem 1.5rem !important;
         }
-        
-        #haWidgetLight {
-            height: 700px !important;
-            min-height: 700px !important;
-        }
-    }
-    
-    /* Ensure no external constraints */
-    .donation-section {
-        overflow: visible !important;
-    }
-    
-    .donation-section .container {
-        overflow: visible !important;
     }
 }
