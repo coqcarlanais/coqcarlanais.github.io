@@ -23,2119 +23,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
     <!-- Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-            /* ===== CSS VARIABLES ===== */
-            :root {
-                --primary-black: #1A1A1A;
-                --vibrant-yellow: #FFCC00;
-                --hover-yellow: #FFEB3B;
-                --secondary-yellow: #FFC107;
-                --white: #FFFFFF;
-                --light-grey: #F5F5F5;
-                --bronze: #CD7F32;
-                --silver: #C0C0C0;
-                --gold: #FFD700;
-            }
-    
-            /* ===== RESET & BASE STYLES ===== */
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-    
-            html {
-                scroll-behavior: smooth;
-            }
-    
-            body {
-                font-family: 'Open Sans', sans-serif;
-                font-weight: 400;
-                line-height: 1.6;
-                color: var(--primary-black);
-                background-color: var(--white);
-            }
-    
-            .container {
-                width: 90%;
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 15px;
-            }
-    
-            section {
-                padding: 5rem 0;
-            }
-    
-            /* ===== TYPOGRAPHY ===== */
-            h1, h2, h3, h4, h5, h6 {
-                font-family: 'Montserrat', sans-serif;
-                font-weight: 700;
-                margin-bottom: 1rem;
-            }
-    
-            h1 {
-                font-size: 2.5rem;
-            }
-    
-            h2 {
-                font-size: 2rem;
-                margin-bottom: 2rem;
-                text-align: center;
-            }
-    
-            p {
-                margin-bottom: 1rem;
-            }
-    
-            /* ===== ACCESSIBILITY ===== */
-            .skip-link {
-                position: absolute;
-                top: -40px;
-                left: 6px;
-                background: var(--vibrant-yellow);
-                color: var(--primary-black);
-                padding: 8px;
-                z-index: 1001;
-                text-decoration: none;
-                font-weight: 600;
-                border-radius: 4px;
-            }
-    
-            .skip-link:focus {
-                top: 6px;
-            }
-    
-            /* ===== NAVIGATION ===== */
-            .navbar {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary-black);
-                z-index: 1000;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            }
-    
-            .nav-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 1rem 0;
-            }
-    
-            .logo {
-                color: var(--white);
-                font-family: 'Montserrat', sans-serif;
-                font-size: 1.5rem;
-                font-weight: 700;
-                text-decoration: none;
-                display: flex;
-                align-items: center;
-            }
-    
-            .logo-img {
-                height: 50px;
-                width: auto;
-                margin-right: 10px;
-            }
-    
-            .nav-menu {
-                display: flex;
-                list-style: none;
-            }
-    
-            .nav-item {
-                margin-left: 2rem;
-            }
-    
-            .nav-link {
-                color: var(--white);
-                text-decoration: none;
-                font-weight: 600;
-                transition: color 0.3s ease;
-                padding: 0.5rem 0;
-                position: relative;
-            }
-    
-            .nav-link:hover,
-            .nav-link:focus {
-                color: var(--vibrant-yellow);
-                outline: none;
-            }
-    
-            .nav-link:focus {
-                outline: 2px solid var(--vibrant-yellow);
-                outline-offset: 4px;
-            }
-    
-            .hamburger {
-                display: none;
-                cursor: pointer;
-                background: transparent;
-                border: none;
-                padding: 0.5rem;
-            }
-    
-            .bar {
-                display: block;
-                width: 25px;
-                height: 3px;
-                margin: 5px auto;
-                background-color: var(--white);
-                transition: all 0.3s ease;
-            }
-    
-            /* ===== BUTTONS ===== */
-            .btn {
-                display: inline-block;
-                padding: 0.8rem 1.8rem;
-                background-color: var(--vibrant-yellow);
-                color: var(--primary-black);
-                text-decoration: none;
-                border-radius: 4px;
-                font-weight: 600;
-                transition: all 0.3s ease;
-                border: none;
-                cursor: pointer;
-                font-family: 'Montserrat', sans-serif;
-                min-height: 44px;
-                text-align: center;
-            }
-    
-            .btn:hover,
-            .btn:focus {
-                background-color: var(--hover-yellow);
-                transform: translateY(-3px);
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                outline: none;
-            }
-    
-            .btn:focus {
-                outline: 2px solid var(--primary-black);
-                outline-offset: 2px;
-            }
-    
-            .btn:disabled {
-                background-color: #cccccc;
-                cursor: not-allowed;
-                transform: none;
-                box-shadow: none;
-            }
-    
-            .btn-group {
-                display: flex;
-                gap: 1rem;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-    
-            .btn-outline {
-                background: transparent;
-                border: 2px solid var(--vibrant-yellow);
-                color: var(--primary-black);
-            }
-    
-            .btn-outline:hover,
-            .btn-outline:focus {
-                background: var(--vibrant-yellow);
-            }
-    
-            .btn-primary {
-                background: var(--vibrant-yellow);
-                color: var(--primary-black);
-                font-weight: 600;
-                padding: 1rem 2rem;
-                position: relative;
-            }
-    
-            /* ===== HERO SECTION ===== */
-            .hero {
-                height: 100vh;
-                background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), 
-                            url('https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1790&q=80') no-repeat center center/cover;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                color: var(--white);
-            }
-    
-            .hero-content {
-                max-width: 800px;
-                padding: 0 20px;
-            }
-    
-            .hero h1 {
-                font-size: 3.5rem;
-                margin-bottom: 1rem;
-            }
-    
-            .hero p {
-                font-size: 1.5rem;
-                margin-bottom: 2rem;
-            }
-    
-            /* ===== ABOUT SECTION ===== */
-            .about {
-                background-color: var(--white);
-            }
-    
-            .about-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                max-width: 800px;
-                margin: 0 auto;
-            }
-    
-            .about-text {
-                margin-bottom: 3rem;
-            }
-    
-            /* ===== TEAMS SECTION ===== */
-            .teams {
-                background-color: var(--light-grey);
-            }
-    
-            .team-cards {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 2rem;
-            }
-    
-            .team-card {
-                background-color: var(--white);
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease;
-            }
-    
-            .team-card:hover {
-                transform: translateY(-5px);
-            }
-    
-            .team-img {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-            }
-    
-            .team-info {
-                padding: 1.5rem;
-            }
-    
-            .team-info h3 {
-                margin-bottom: 0.5rem;
-            }
-    
-            .team-info p {
-                margin-bottom: 1rem;
-            }
-    
-            .team-schedule {
-                background-color: var(--light-grey);
-                padding: 0.8rem;
-                border-radius: 4px;
-                margin-top: 1rem;
-                font-size: 0.9rem;
-            }
-    
-            /* ===== SCHEDULE SECTION ===== */
-            .schedule {
-                background-color: var(--white);
-            }
-            
-            .schedule-image-container {
-                position: relative;
-                max-width: 100%;
-                margin: 0 auto;
-                text-align: center;
-            }
-            
-            .schedule-image {
-                width: 100%;
-                height: auto;
-                border-radius: 12px;
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                cursor: pointer;
-            }
-            
-            .schedule-image:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-            }
-            
-            .schedule-image:active {
-                transform: scale(0.98);
-            }
-            
-            .image-zoom-hint {
-                display: none;
-                margin-top: 1rem;
-                padding: 0.8rem;
-                background-color: var(--light-grey);
-                border-radius: 6px;
-                font-size: 0.9rem;
-                color: #666;
-            }
-            
-            .image-zoom-hint i {
-                margin-right: 0.5rem;
-                color: var(--vibrant-yellow);
-            }
-            
-            /* Mobile-specific styles for full-width image */
-            @media screen and (max-width: 768px) {
-                .schedule {
-                    padding-left: 0;
-                    padding-right: 0;
-                }
-                
-                .schedule .container {
-                    width: 100%;
-                    max-width: 100%;
-                    padding: 0;
-                }
-                
-                .schedule-image-container {
-                    margin: 0;
-                    max-width: 100%;
-                    width: 100%;
-                }
-                
-                .schedule-image {
-                    width: 100%;
-                    border-radius: 0;
-                    box-shadow: none;
-                }
-                
-                .image-zoom-hint {
-                    display: block;
-                    margin: 1rem 15px 0;
-                }
-                
-                h2 {
-                    padding: 0 15px;
-                }
-            }
-            
-            /* For very small screens, ensure maximum readability */
-            @media screen and (max-width: 480px) {
-                .schedule-image-container {
-                    margin: 0 -10px;
-                }
-                
-                .image-zoom-hint {
-                    font-size: 0.8rem;
-                    padding: 0.6rem;
-                }
-            }
-    
-    
-            /* ===== FACEBOOK SECTION ===== */
-            .facebook {
-                background-color: var(--light-grey);
-            }
-    
-            .facebook-content {
-                text-align: center;
-                max-width: 600px;
-                margin: 0 auto;
-            }
-    
-            .facebook-icon {
-                font-size: 3rem;
-                color: #1877F2;
-                margin-bottom: 1.5rem;
-            }
-    
-            /* ===== CONTACT SECTION ===== */
-            .contact {
-                background-color: var(--white);
-            }
-    
-            .contact-intro {
-                text-align: center;
-                max-width: 700px;
-                margin: 0 auto 3rem;
-                font-size: 1.1rem;
-                line-height: 1.6;
-            }
-    
-            .contact-container {
-                display: grid;
-                grid-template-columns: 1fr 1.5fr;
-                gap: 3rem;
-                align-items: start;
-            }
-    
-            .contact-info {
-                display: flex;
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-    
-            .contact-card {
-                background: var(--white);
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-                overflow: hidden;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-    
-            .contact-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-            }
-    
-            .contact-card-header {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                padding: 1.5rem 1.5rem 0;
-            }
-    
-            .contact-card-header .contact-icon {
-                color: var(--vibrant-yellow);
-                font-size: 1.5rem;
-                width: 40px;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: rgba(255, 204, 0, 0.1);
-                border-radius: 50%;
-            }
-    
-            .contact-card-header h3 {
-                margin: 0;
-                font-size: 1.2rem;
-            }
-    
-            .contact-card-body {
-                padding: 1rem 1.5rem 1.5rem;
-            }
-    
-            .contact-card-body p {
-                margin-bottom: 1rem;
-            }
-    
-            .highlight-text {
-                color: var(--vibrant-yellow);
-                font-weight: 600;
-                margin-top: 0.5rem;
-            }
-    
-            .contact-note {
-                font-size: 0.9rem;
-                color: #666;
-                margin-top: 0.5rem;
-            }
-    
-            .contact-form-container {
-                background: var(--white);
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-                padding: 2rem;
-            }
-    
-            .form-header {
-                margin-bottom: 2rem;
-                text-align: center;
-            }
-    
-            .form-header h3 {
-                color: var(--primary-black);
-                margin-bottom: 0.5rem;
-            }
-    
-            .form-section {
-                margin-bottom: 2rem;
-                padding-bottom: 1.5rem;
-                border-bottom: 1px solid #eee;
-            }
-    
-            .form-section:last-of-type {
-                border-bottom: none;
-                margin-bottom: 1rem;
-            }
-    
-            .form-section h4 {
-                color: var(--primary-black);
-                margin-bottom: 1.2rem;
-                font-size: 1.1rem;
-                display: flex;
-                align-items: center;
-            }
-    
-            .form-section h4:before {
-                content: "";
-                display: inline-block;
-                width: 4px;
-                height: 18px;
-                background: var(--vibrant-yellow);
-                margin-right: 10px;
-                border-radius: 2px;
-            }
-    
-            .form-group label {
-                display: block;
-                margin-bottom: 0.5rem;
-                font-weight: 600;
-                color: var(--primary-black);
-            }
-    
-            .form-control {
-                width: 100%;
-                padding: 0.8rem 1rem;
-                border: 1px solid #ddd;
-                border-radius: 6px;
-                font-family: 'Open Sans', sans-serif;
-                font-size: 1rem;
-                transition: all 0.3s ease;
-                min-height: 44px;
-            }
-    
-            .form-control:focus {
-                outline: none;
-                border-color: var(--vibrant-yellow);
-                box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.2);
-            }
-    
-            .form-control.error {
-                border-color: #dc3545;
-                box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
-            }
-    
-            .error-message {
-                color: #dc3545;
-                font-size: 0.875rem;
-                margin-top: 0.25rem;
-                display: none;
-            }
-    
-            .form-row {
-                display: flex;
-                gap: 1rem;
-            }
-    
-            .form-row .form-group {
-                flex: 1;
-            }
-    
-            #contact-form-message {
-                display: none;
-                margin-top: 1.5rem;
-                padding: 1rem;
-                border-radius: 4px;
-                text-align: center;
-                font-weight: 600;
-            }
-    
-            #contact-form-message.success {
-                background-color: #d4edda;
-                border: 1px solid #c3e6cb;
-                color: #155724;
-            }
-    
-            #contact-form-message.error {
-                background-color: #f8d7da;
-                border: 1px solid #f5c6cb;
-                color: #721c24;
-            }
-            /* ===== TABLEAU DE COMPARAISON SPONSORSHIP ===== */
-            .sponsorship-comparison {
-                margin: 3rem 0;
-                overflow-x: auto;
-            }
-            
-            .comparison-table {
-                width: 100%;
-                border-collapse: collapse;
-                background: var(--white);
-                border-radius: 12px;
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-                overflow: hidden;
-            }
-            
-            .comparison-table th,
-            .comparison-table td {
-                padding: 1.2rem 1rem;
-                text-align: center;
-                border-bottom: 1px solid #f0f0f0;
-            }
-            
-            .comparison-table thead th {
-                background: var(--primary-black);
-                color: var(--white);
-                font-weight: 700;
-                font-size: 1.1rem;
-                padding: 1.5rem 1rem;
-            }
-            
-            .comparison-table thead th:first-child {
-                background: transparent;
-                color: var(--primary-black);
-                text-align: left;
-                font-size: 1rem;
-                font-weight: 600;
-            }
-            
-            .comparison-table .tier-header {
-                padding: 0;
-            }
-            
-            .tier-name {
-                font-size: 1.2rem;
-                font-weight: 700;
-                margin-bottom: 0.3rem;
-            }
-            
-            .tier-price {
-                font-size: 1.1rem;
-                font-weight: 600;
-                opacity: 0.9;
-            }
-            
-            .tier-bronze .tier-name { color: var(--bronze); }
-            .tier-silver .tier-name { color: var(--silver); }
-            .tier-gold .tier-name { color: var(--gold); }
-            
-            /* Checkmark styling */
-            .checkmark {
-                color: #28a745;
-                font-size: 1.2rem;
-                font-weight: bold;
-            }
-            
-            .checkmark::before {
-                content: "✓";
-            }
-            
-            .empty-cell {
-                color: #ccc;
-                font-size: 1.2rem;
-            }
-            
-            .empty-cell::before {
-                content: "—";
-            }
-            
-            /* Feature rows styling */
-            .comparison-table tbody th {
-                text-align: left;
-                font-weight: 500;
-                color: var(--primary-black);
-                padding-left: 1.5rem;
-                font-size: 0.95rem;
-            }
-            
-            /* Hover effects */
-            .comparison-table tbody tr:hover {
-                background: rgba(255, 204, 0, 0.05);
-            }
-            
-            /* Responsive design */
-            @media screen and (max-width: 768px) {
-                .comparison-table {
-                    font-size: 0.9rem;
-                    min-width: 600px;
-                }
-                
-                .comparison-table th,
-                .comparison-table td {
-                    padding: 1rem 0.5rem;
-                }
-                
-                .comparison-table tbody th {
-                    padding-left: 1rem;
-                    font-size: 0.85rem;
-                }
-                
-                .tier-name {
-                    font-size: 1rem;
-                }
-                
-                .tier-price {
-                    font-size: 0.9rem;
-                }
-            }
-            
-            @media screen and (max-width: 480px) {
-                .sponsorship-comparison {
-                    margin-left: -15px;
-                    margin-right: -15px;
-                }
-            }
-            /* ===== SPONSORS SECTION ===== */
-            .sponsors {
-                background-color: var(--light-grey);
-            }
-    
-            .sponsors-content {
-                text-align: center;
-                max-width: 800px;
-                margin: 0 auto;
-            }
-    
-            .sponsor-text {
-                margin-bottom: 2rem;
-            }
-    
-            .sponsorship-intro {
-                text-align: center;
-                margin-bottom: 3rem;
-                max-width: 800px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-    
-            .sponsor-cards {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 2rem;
-                margin-top: 2rem;
-            }
-    
-            .sponsor-card {
-                background-color: var(--white);
-                border-radius: 8px;
-                padding: 2rem;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                text-align: center;
-                transition: transform 0.3s ease;
-                max-width: 300px;
-            }
-    
-            .sponsor-card:hover {
-                transform: translateY(-5px);
-            }
-    
-            .sponsor-icon {
-                font-size: 2.5rem;
-                color: var(--vibrant-yellow);
-                margin-bottom: 1rem;
-            }
-    
-            .sponsor-card h3 {
-                margin-bottom: 1rem;
-            }
-    
-            /* ===== DONATION SECTION ===== */
-            .donation-section {
-                background-color: var(--white);
-                border-radius: 10px;
-                padding: 3rem;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                margin-top: 3rem;
-            }
-    
-            .donation-form {
-                max-width: 600px;
-                margin: 0 auto;
-            }
-    
-            .tier-options {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                margin-bottom: 1.5rem;
-            }
-    
-            .tier-option {
-                flex: 1;
-                min-width: 120px;
-            }
-    
-            .tier-option input[type="radio"] {
-                display: none;
-            }
-    
-            .tier-option label {
-                display: block;
-                padding: 0.8rem 1rem;
-                background-color: var(--light-grey);
-                border: 2px solid transparent;
-                border-radius: 4px;
-                text-align: center;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                min-height: 44px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-    
-            .tier-option input[type="radio"]:checked + label {
-                background-color: var(--vibrant-yellow);
-                border-color: var(--secondary-yellow);
-                font-weight: bold;
-            }
-    
-            .tier-option label:focus {
-                outline: 2px solid var(--vibrant-yellow);
-                outline-offset: 2px;
-            }
-    
-            .custom-amount {
-                display: flex;
-                gap: 0.5rem;
-            }
-    
-            .custom-amount .form-control {
-                flex: 1;
-            }
-    
-            .donation-summary {
-                background-color: var(--light-grey);
-                padding: 1.5rem;
-                border-radius: 8px;
-                margin-top: 1.5rem;
-            }
-    
-            .donation-summary h3 {
-                margin-bottom: 1rem;
-                color: var(--vibrant-yellow);
-            }
-    
-            .summary-item {
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 0.5rem;
-            }
-    
-            .total-amount {
-                font-weight: bold;
-                font-size: 1.2rem;
-                border-top: 1px solid #ddd;
-                padding-top: 0.5rem;
-                margin-top: 0.5rem;
-            }
-    
-            #form-message {
-                display: none;
-                margin-top: 1.5rem;
-                padding: 1rem;
-                border-radius: 4px;
-                text-align: center;
-                font-weight: 600;
-            }
-    
-            #form-message.success {
-                background-color: #d4edda;
-                border: 1px solid #c3e6cb;
-                color: #155724;
-            }
-    
-            #form-message.error {
-                background-color: #f8d7da;
-                border: 1px solid #f5c6cb;
-                color: #721c24;
-            }
-    
-            /* ===== PRICING SECTION ===== */
-            .pricing {
-                background-color: var(--light-grey);
-            }
-    
-            .pricing-intro {
-                text-align: center;
-                max-width: 800px;
-                margin: 0 auto 3rem;
-                font-size: 1.1rem;
-                line-height: 1.6;
-            }
-    
-            .pricing-table-container {
-                margin: 2rem 0;
-                overflow-x: auto;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-                border-radius: 10px;
-                max-width: 600px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .pricing-table {
-                width: 100%;
-                border-collapse: collapse;
-                background-color: var(--white);
-                border-radius: 10px;
-                overflow: hidden;
-            }
-            
-            .pricing-table th {
-                background-color: var(--vibrant-yellow);
-                color: var(--primary-black);
-                padding: 1.2rem 1rem;
-                text-align: left;
-                font-weight: 700;
-                font-size: 1.1rem;
-            }
-            
-            .pricing-table th:last-child {
-                text-align: right;
-            }
-            
-            .pricing-table td {
-                padding: 1.2rem 1rem;
-                border-bottom: 1px solid #eee;
-            }
-            
-            .pricing-table tbody tr {
-                transition: background-color 0.3s ease;
-            }
-            
-            .pricing-table tbody tr:hover {
-                background-color: rgba(255, 204, 0, 0.05);
-            }
-            
-            .pricing-table tbody tr:last-child td {
-                border-bottom: none;
-            }
-            
-            .pricing-table td:first-child {
-                font-weight: 600;
-                color: var(--primary-black);
-            }
-            
-            .pricing-table td:last-child {
-                font-weight: 700;
-                color: var(--primary-black);
-                font-size: 1.2rem;
-                text-align: right;
-            }
-    
-            .pricing-notes {
-                background: var(--white);
-                border-radius: 10px;
-                padding: 2rem;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                margin-top: 2rem;
-            }
-    
-            .notes-list {
-                list-style: none;
-            }
-    
-            .notes-list li {
-                padding: 0.5rem 0;
-                display: flex;
-                align-items: flex-start;
-            }
-    
-            .notes-list i {
-                margin-right: 10px;
-                color: var(--vibrant-yellow);
-                margin-top: 0.3rem;
-            }
-    
-            .payment-options {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 1rem;
-                margin-top: 2rem;
-            }
-    
-            /* ===== TAX BENEFIT SECTION ===== */
-            .tax-benefit-box {
-                background: linear-gradient(135deg, #fff9e6 0%, #fffbef 100%);
-                border-left: 4px solid var(--vibrant-yellow);
-                padding: 1.5rem;
-                border-radius: 0 8px 8px 0;
-                margin: 2rem 0;
-            }
-            
-            .tax-benefit-box h4 {
-                color: var(--primary-black);
-                margin-bottom: 0.75rem;
-            }
-            
-            .tax-example {
-                background-color: rgba(255, 204, 0, 0.1);
-                padding: 1rem;
-                border-radius: 6px;
-                margin-top: 1rem;
-                text-align: center;
-            }
-    
-            /* ===== HIGHLIGHTS SECTION ===== */
-            .highlights-section {
-                background-color: var(--white);
-                padding: 4rem 0;
-            }
-            
-            .highlights-gallery {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 2rem;
-                margin-top: 2rem;
-            }
-            
-            .highlight-card {
-                background: var(--white);
-                border-radius: 10px;
-                overflow: hidden;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-                transition: transform 0.3s ease;
-            }
-            
-            .highlight-card:hover {
-                transform: translateY(-5px);
-            }
-            
-            .highlight-img {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-                display: block;
-            }
-            
-            .highlight-content {
-                padding: 1.5rem;
-            }
-            
-            .highlight-content h3 {
-                color: var(--vibrant-yellow);
-                margin-bottom: 0.5rem;
-            }
-    
-            /* ===== IMPACT STATEMENT ===== */
-            .impact-statement {
-                background: var(--white);
-                border-radius: 15px;
-                padding: 3rem;
-                margin: 3rem 0;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                border: 2px solid var(--vibrant-yellow);
-            }
-            
-            .impact-statement h3 {
-                text-align: center;
-                color: var(--primary-black);
-                margin-bottom: 2.5rem;
-                font-size: 2rem;
-            }
-            /* ===== IMPACT CONDENSÉ POUR SUBVENTIONS ===== */
-            .impact-condensed {
-                background: linear-gradient(135deg, #fff9e6 0%, #fffbef 100%);
-                border: 2px solid var(--vibrant-yellow);
-                border-radius: 15px;
-                padding: 2.5rem;
-                margin: 2rem 0;
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            }
-            
-            .impact-condensed h3 {
-                color: var(--primary-black);
-                text-align: center;
-                margin-bottom: 1.5rem;
-                font-size: 1.5rem;
-            }
-            
-            .impact-highlights {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 1rem;
-                margin-bottom: 1.5rem;
-            }
-            
-            .impact-highlight {
-                display: flex;
-                align-items: flex-start;
-                gap: 0.8rem;
-                padding: 0.8rem;
-            }
-            
-            .impact-highlight i {
-                color: var(--vibrant-yellow);
-                font-size: 1.2rem;
-                margin-top: 0.2rem;
-                flex-shrink: 0;
-            }
-            
-            .impact-highlight strong {
-                color: var(--primary-black);
-                display: block;
-                margin-bottom: 0.3rem;
-            }
-            
-            .impact-highlight span {
-                font-size: 0.9rem;
-                color: #666;
-                line-height: 1.4;
-            }
-            
-            .impact-stats-condensed {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                gap: 1rem;
-                background: var(--white);
-                padding: 1.5rem;
-                border-radius: 10px;
-                margin: 1.5rem 0;
-                border: 1px solid rgba(255, 204, 0, 0.3);
-            }
-            
-            .impact-stat {
-                text-align: center;
-            }
-            
-            .stat-number {
-                font-size: 1.8rem;
-                font-weight: 800;
-                color: var(--vibrant-yellow);
-                margin-bottom: 0.3rem;
-            }
-            
-            .stat-label {
-                font-size: 0.8rem;
-                font-weight: 600;
-                color: var(--primary-black);
-                text-transform: uppercase;
-            }
-            
-            .impact-cta-condensed {
-                text-align: center;
-                padding-top: 1.5rem;
-                border-top: 1px solid rgba(255, 204, 0, 0.3);
-            }
-            
-            .impact-cta-condensed p {
-                font-size: 1.1rem;
-                margin-bottom: 1.5rem;
-                color: var(--primary-black);
-            }
-            
-            @media screen and (max-width: 768px) {
-                .impact-condensed {
-                    padding: 2rem 1.5rem;
-                }
-                
-                .impact-highlights {
-                    grid-template-columns: 1fr;
-                }
-                
-                .impact-stats-condensed {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-            }
-            
-            .impact-stats {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 2rem;
-                margin: 3rem 0;
-                padding: 2rem;
-                background: linear-gradient(135deg, var(--vibrant-yellow) 0%, var(--secondary-yellow) 100%);
-                border-radius: 10px;
-                text-align: center;
-            }
-            
-           .stat-item {
-                color: var(--primary-black);
-                min-width: 0; /* This prevents text overflow */
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
-                font-weight: 800;
-                margin-bottom: 0.5rem;
-                word-break: keep-all;
-            }
-            
-            .stat-label {
-                font-size: 0.9rem;
-                font-weight: 600;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-                word-wrap: break-word; 
-                hyphens: auto; 
-            }
-            
-            .impact-cta {
-                text-align: center;
-                padding-top: 2rem;
-                border-top: 2px solid var(--light-grey);
-            }
-            
-            .impact-cta p {
-                font-size: 1.1rem;
-                margin-bottom: 2rem;
-                max-width: 800px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-    
-            /* ===== HALLOWEEN SECTION ===== */
-            .halloween {
-                background: linear-gradient(135deg, #1A1A1A 0%, #2D1B00 100%);
-                color: var(--white);
-                padding: 5rem 0;
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .halloween:before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-image: 
-                    radial-gradient(circle at 20% 30%, rgba(255, 204, 0, 0.1) 0%, transparent 20%),
-                    radial-gradient(circle at 80% 70%, rgba(255, 204, 0, 0.1) 0%, transparent 20%);
-                pointer-events: none;
-            }
-            
-            .halloween-title {
-                font-size: 3rem;
-                text-align: center;
-                margin-bottom: 0.5rem;
-                color: var(--vibrant-yellow);
-                text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
-                position: relative;
-                display: inline-block;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .halloween-title:after {
-                content: "";
-                display: block;
-                width: 100px;
-                height: 3px;
-                background: var(--vibrant-yellow);
-                margin: 1rem auto;
-            }
-            
-            .halloween-subtitle {
-                text-align: center;
-                font-size: 1.2rem;
-                margin-bottom: 2rem;
-                color: #ddd;
-            }
-            
-            .halloween-content {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
-                align-items: center;
-            }
-            
-            .halloween-image {
-                text-align: center;
-            }
-            
-            .halloween-image img {
-                max-width: 100%;
-                height: auto;
-                border-radius: 10px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-                transition: transform 0.3s ease;
-            }
-            
-            .halloween-image img:hover {
-                transform: translateY(-5px);
-            }
-            
-            .halloween-details {
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-            }
-            
-            .halloween-date {
-                display: flex;
-                align-items: center;
-                gap: 1.5rem;
-                padding: 1.5rem;
-                background: rgba(255, 204, 0, 0.1);
-                border-radius: 10px;
-                border-left: 4px solid var(--vibrant-yellow);
-            }
-            
-            .date-icon {
-                font-size: 2rem;
-                color: var(--vibrant-yellow);
-            }
-            
-            .date-info h3 {
-                margin-bottom: 0.5rem;
-                color: var(--vibrant-yellow);
-            }
-            
-            .date-info p {
-                margin: 0;
-                color: #ddd;
-            }
-            
-            .halloween-activities h3 {
-                color: var(--vibrant-yellow);
-                margin-bottom: 1rem;
-            }
-            
-            .halloween-activities ul {
-                list-style: none;
-                padding: 0;
-            }
-            
-            .halloween-activities li {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                padding: 0.8rem 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            
-            .halloween-activities li:last-child {
-                border-bottom: none;
-            }
-            
-            .halloween-activities i {
-                color: var(--vibrant-yellow);
-                font-size: 1.2rem;
-                width: 24px;
-                text-align: center;
-            }
-            
-            .halloween-cta {
-                text-align: center;
-                padding-top: 1rem;
-            }
-            
-            .halloween-btn {
-                background-color: var(--vibrant-yellow);
-                color: var(--primary-black);
-                font-weight: bold;
-                font-size: 1.1rem;
-                padding: 1rem 2rem;
-                margin-bottom: 1rem;
-                box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
-            }
-            
-            .halloween-btn:hover {
-                background-color: var(--hover-yellow);
-                transform: translateY(-3px);
-                box-shadow: 0 6px 20px rgba(255, 204, 0, 0.4);
-            }
-            
-            .halloween-note {
-                font-size: 0.9rem;
-                color: #aaa;
-                font-style: italic;
-                margin-bottom: 0.5rem;
-            }
-            
-            .halloween-rsvp-note {
-                font-size: 0.9rem;
-                color: #ddd;
-            }
-    
-            /* ===== HALLOWEEN COUNTER ===== */
-            .halloween-counter-simplified {
-                text-align: center;
-                margin-bottom: 3rem;
-                padding: 2.5rem;
-                background: linear-gradient(135deg, rgba(255, 204, 0, 0.15) 0%, rgba(255, 204, 0, 0.05) 100%);
-                border-radius: 20px;
-                border: 2px solid var(--vibrant-yellow);
-                max-width: 500px;
-                margin-left: auto;
-                margin-right: auto;
-                backdrop-filter: blur(10px);
-            }
-            
-            .counter-main {
-                margin-bottom: 2rem;
-            }
-            
-            .counter-total {
-                font-size: 3.5rem;
-                font-weight: bold;
-                color: var(--vibrant-yellow);
-                line-height: 1;
-                margin-bottom: 0.5rem;
-                text-shadow: 0 0 10px rgba(255, 204, 0, 0.3);
-            }
-            
-            .counter-label {
-                font-size: 1.2rem;
-                color: var(--white);
-                font-weight: 500;
-            }
-            
-            .counter-breakdown-simple {
-                display: flex;
-                justify-content: center;
-                gap: 3rem;
-                margin: 2rem 0;
-            }
-            
-            .breakdown-simple-item {
-                text-align: center;
-                flex: 0 0 auto;
-            }
-            
-            .breakdown-simple-number {
-                font-size: 2.2rem;
-                font-weight: bold;
-                color: var(--vibrant-yellow);
-                line-height: 1;
-                margin-bottom: 0.5rem;
-                text-shadow: 0 0 8px rgba(255, 204, 0, 0.2);
-            }
-            
-            .breakdown-simple-label {
-                font-size: 1rem;
-                color: var(--white);
-                font-weight: 500;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-            }
-            
-            .counter-cta {
-                margin-top: 1.5rem;
-                padding-top: 1.5rem;
-                border-top: 1px solid rgba(255, 204, 0, 0.3);
-            }
-            
-            .counter-cta p {
-                margin-bottom: 1rem;
-                color: var(--white);
-                font-weight: 600;
-                font-size: 1.1rem;
-            }
-    
-            /* ===== CURRENT SPONSORS SHOWCASE ===== */
-            .current-sponsors-showcase {
-                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-                padding: 3rem 2rem;
-                border-radius: 15px;
-                margin: 3rem 0;
-                text-align: center;
-            }
-            
-            .current-sponsors-showcase h3 {
-                color: var(--primary-black);
-                margin-bottom: 1rem;
-            }
-            
-            .current-sponsors-showcase > p {
-                color: #666;
-                margin-bottom: 2rem;
-            }
-            
-            .sponsors-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 3rem;
-                max-width: 1000px;
-                margin: 0 auto;
-                justify-items: center;
-                align-items: start;
-            }
-            
-            .sponsor-logo {
-                text-align: center;
-                padding: 1rem;
-            }
-            
-            .logo-placeholder {
-                background: var(--white);
-                padding: 2rem 1rem;
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                margin-bottom: 1rem;
-                transition: transform 0.3s ease;
-                border: 2px solid transparent;
-            }
-            
-            .sponsor-logo:hover .logo-placeholder {
-                transform: translateY(-5px);
-            }
-            
-            .available-spot {
-                border: 2px dashed var(--vibrant-yellow) !important;
-                background: rgba(255, 204, 0, 0.05);
-            }
-            
-            .logo-placeholder i {
-                font-size: 2.5rem;
-                color: var(--vibrant-yellow);
-                margin-bottom: 0.5rem;
-                display: block;
-            }
-            
-            .logo-placeholder span {
-                font-weight: 600;
-                color: var(--primary-black);
-            }
-            
-            .sponsor-logo p {
-                font-size: 0.9rem;
-                color: #666;
-                margin: 0;
-            }
-            
-            .available p {
-                color: var(--vibrant-yellow);
-                font-weight: 600;
-            }
-    
-            /* ===== SPONSOR TIER SECTIONS ===== */
-            .sponsor-tier-section {
-                margin-bottom: 3rem;
-                padding-bottom: 2rem;
-                border-bottom: 1px solid rgba(255, 204, 0, 0.2);
-            }
-            
-            .sponsor-tier-section:last-child {
-                border-bottom: none;
-                margin-bottom: 0;
-            }
-            
-            .tier-title {
-                text-align: center;
-                margin: 0 auto 1.5rem auto;
-                font-size: 1.5rem;
-                padding: 0.8rem 1.5rem;
-                border-radius: 8px;
-                display: inline-flex;
-                align-items: center;
-                gap: 0.8rem;
-                justify-content: center;
-            }
-            
-            .gold-tier {
-                background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 100%);
-                border: 2px solid var(--gold);
-                color: var(--gold);
-            }
-            
-            .silver-tier {
-                background: linear-gradient(135deg, rgba(136, 136, 136, 0.15) 0%, rgba(136, 136, 136, 0.05) 100%);
-                border: 2px solid #888888;
-                color: #666666;
-            }
-            
-            .bronze-tier {
-                background: linear-gradient(135deg, rgba(205, 127, 50, 0.15) 0%, rgba(205, 127, 50, 0.05) 100%);
-                border: 2px solid var(--bronze);
-                color: var(--bronze);
-            }
-            
-            .sponsor-name {
-                font-weight: 600;
-                color: var(--primary-black);
-                margin-bottom: 0.3rem !important;
-                font-size: 1rem;
-            }
-            
-            .tier-label {
-                font-size: 0.8rem;
-                color: #666;
-                margin: 0 !important;
-                font-weight: 500;
-            }
-            
-            .sponsor-logo-img {
-                max-width: 300px;
-                max-height: 160px;
-                width: auto;
-                height: auto;
-                display: block;
-                margin: 0 auto 1rem;
-                transition: transform 0.3s ease;
-            }
-            
-            .sponsor-logo:hover .sponsor-logo-img {
-                transform: scale(1.05);
-            }
-            /* ===== SPONSOR TIER COLOR CODING ===== */
-            .sponsor-logo[data-category="bronze"] .sponsor-name,
-            .sponsor-logo[data-category="bronze"] .tier-label {
-                color: var(--bronze);
-                font-weight: 600;
-            }
-            
-            .sponsor-logo[data-category="silver"] .sponsor-name,
-            .sponsor-logo[data-category="silver"] .tier-label {
-                color: #666666; /* Darker silver for better contrast */
-                font-weight: 600;
-            }
-            
-            .sponsor-logo[data-category="gold"] .sponsor-name,
-            .sponsor-logo[data-category="gold"] .tier-label {
-                color: var(--gold);
-                font-weight: 600;
-            }
-        
-            @media screen and (max-width: 768px) {
-                .sponsors-grid {
-                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                    gap: 1.5rem;
-                }
-            }
-    
-            /* ===== FOOTER ===== */
-            footer {
-                background-color: var(--primary-black);
-                color: var(--white);
-                padding: 3rem 0 1.5rem;
-            }
-    
-            .footer-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 2rem;
-                text-align: center;
-            }
-    
-            .footer-logo {
-                display: flex;
-                align-items: center;
-                color: var(--white);
-                font-family: 'Montserrat', sans-serif;
-                font-size: 1.5rem;
-                font-weight: 700;
-                text-decoration: none;
-            }
-    
-            .footer-logo-img {
-                height: 40px;
-                width: auto;
-                margin-right: 10px;
-            }
-    
-            .social-icons {
-                display: flex;
-                gap: 1.5rem;
-            }
-    
-            .social-icon {
-                color: var(--white);
-                font-size: 1.5rem;
-                transition: color 0.3s ease;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 44px;
-                height: 44px;
-                border-radius: 50%;
-                text-decoration: none;
-            }
-    
-            .social-icon:hover,
-            .social-icon:focus {
-                color: var(--vibrant-yellow);
-                outline: none;
-                text-decoration: none;
-            }
-    
-            .social-icon:focus {
-                outline: 2px solid var(--vibrant-yellow);
-                outline-offset: 2px;
-            }
-    
-            .footer-info {
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-    
-            .copyright {
-                margin-top: 2rem;
-                font-size: 0.9rem;
-                color: #aaa;
-            }
-    
-            /* ===== FOOTER SPONSORS ===== */
-            .footer-sponsors {
-                margin-bottom: 2rem;
-                text-align: center;
-            }
-            
-            .footer-sponsors h4 {
-                color: var(--white);
-                margin-bottom: 1rem;
-                font-size: 1.1rem;
-            }
-            
-            .footer-sponsor-logos {
-                display: flex;
-                justify-content: center;
-                gap: 1.5rem;
-                flex-wrap: wrap;
-            }
-            
-            .footer-sponsor-placeholder {
-                background: rgba(255, 255, 255, 0.1);
-                padding: 1rem;
-                border-radius: 8px;
-                text-align: center;
-                min-width: 120px;
-                transition: all 0.3s ease;
-            }
-            
-            .footer-sponsor-placeholder:hover {
-                background: rgba(255, 255, 255, 0.2);
-            }
-            
-            .footer-sponsor-placeholder.available {
-                border: 2px dashed var(--vibrant-yellow);
-                background: rgba(255, 204, 0, 0.1);
-            }
-            
-            .footer-sponsor-placeholder i {
-                font-size: 1.5rem;
-                color: var(--vibrant-yellow);
-                margin-bottom: 0.5rem;
-                display: block;
-            }
-            
-            .footer-sponsor-placeholder span {
-                font-size: 0.8rem;
-                color: var(--white);
-            }
-
-            /* Footer Tool Sponsors */
-            .footer-tool-sponsors {
-                margin: 2rem 0;
-                text-align: center;
-            }
-            
-            .footer-tool-sponsors h4 {
-                color: var(--white);
-                margin-bottom: 1.5rem;
-                font-size: 1.1rem;
-            }
-            
-            .footer-tool-logos {
-                display: flex;
-                justify-content: center;
-                gap: 2rem;
-                flex-wrap: wrap;
-                align-items: center;
-            }
-            
-            .footer-tool-logo {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: transform 0.3s ease;
-                padding: 0.8rem; /* Increased padding for better spacing */
-                background: rgba(255, 255, 255, 0.9);
-                border-radius: 8px;
-                /* REMOVED fixed height constraint */
-                min-height: 60px; /* Changed to min-height */
-            }
-            
-            .footer-tool-logo:hover {
-                transform: translateY(-3px);
-                background: var(--white);
-                box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
-            }
-            
-            .footer-tool-logo img {
-                height: 40px; /* Fixed height */
-                width: auto; /* Automatic width to preserve aspect ratio */
-                object-fit: contain; /* Ensures entire image is visible */
-                opacity: 1;
-                transition: all 0.3s ease;
-            }
-            
-            .footer-tool-logo:hover img {
-                opacity: 1;
-                filter: brightness(1.1);
-            }
-            
-            /* Responsive adjustments */
-            @media screen and (max-width: 768px) {
-                .footer-tool-logos {
-                    gap: 1rem;
-                }
-                
-                .footer-tool-logo {
-                    min-height: 50px;
-                    padding: 0.6rem;
-                }
-                
-                .footer-tool-logo img {
-                    height: 35px;
-                }
-            }
-            
-            @media screen and (max-width: 480px) {
-                .footer-tool-logos {
-                    gap: 0.8rem;
-                }
-                
-                .footer-tool-logo {
-                    min-height: 45px;
-                    padding: 0.4rem;
-                }
-                
-                .footer-tool-logo img {
-                    height: 30px;
-                }
-            }
-    
-            /* ===== RESPONSIVE DESIGN ===== */
-            @media screen and (max-width: 968px) {
-                .contact-container {
-                    grid-template-columns: 1fr;
-                    gap: 2rem;
-                }
-                
-                .contact-info {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                    gap: 1.5rem;
-                }
-                
-                .halloween-content {
-                    grid-template-columns: 1fr;
-                    gap: 2rem;
-                }
-                
-                .halloween-image {
-                    order: 2;
-                }
-                
-                .halloween-details {
-                    order: 1;
-                }
-            }
-    
-            @media screen and (max-width: 768px) {
-                .hamburger {
-                    display: block;
-                }
-    
-                .nav-menu {
-                    position: fixed;
-                    left: -100%;
-                    top: 70px;
-                    flex-direction: column;
-                    background-color: var(--primary-black);
-                    width: 100%;
-                    text-align: center;
-                    transition: 0.3s;
-                    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-                    padding: 2rem 0;
-                }
-    
-                .nav-menu.active {
-                    left: 0;
-                }
-    
-                .nav-item {
-                    margin: 1.5rem 0;
-                }
-    
-                .hero h1 {
-                    font-size: 2.5rem;
-                }
-    
-                .hero p {
-                    font-size: 1.2rem;
-                }
-    
-                .btn-group {
-                    flex-direction: column;
-                    align-items: center;
-                }
-    
-                .btn {
-                    width: 100%;
-                    max-width: 250px;
-                    font-size: 1.1rem;
-                    padding: 1rem 1.5rem;
-                }
-                
-                .team-cards {
-                    grid-template-columns: 1fr;
-                }
-    
-                .sponsorship-tiers {
-                    grid-template-columns: 1fr;
-                }
-    
-                .form-row {
-                    flex-direction: column;
-                }
-    
-                .tier-options {
-                    flex-direction: column;
-                }
-    
-                .donation-section {
-                    padding: 2rem 1rem;
-                }
-    
-                .contact-form-container {
-                    padding: 1.5rem;
-                }
-                
-                .contact-info {
-                    grid-template-columns: 1fr;
-                }
-                
-                .pricing-table th,
-                .pricing-table td {
-                    padding: 0.8rem 0.5rem;
-                    font-size: 0.9rem;
-                }
-                
-                .pricing-table td:last-child {
-                    font-size: 1.1rem;
-                }
-                
-                .impact-statement {
-                    padding: 2rem 1rem;
-                }
-                
-                .impact-grid {
-                    grid-template-columns: 1fr;
-                }
-                
-                .impact-stats {
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 1.5rem;
-                    padding: 1.5rem;
-                    justify-items: center;
-                    text-align: center;
-                }
-                
-                .stat-number {
-                    font-size: 2rem;
-                }
-                
-                .stat-label {
-                    font-size: 0.8rem;
-                    line-height: 1.2;
-                }
-                
-                .halloween-title {
-                    font-size: 2.5rem;
-                }
-                
-                .halloween-date {
-                    flex-direction: column;
-                    text-align: center;
-                    gap: 1rem;
-                }
-                
-                .date-icon {
-                    font-size: 1.8rem;
-                }
-                
-                .counter-total {
-                    font-size: 3rem;
-                }
-                
-                .banner-content {
-                    flex-direction: column;
-                    text-align: center;
-                    gap: 1rem;
-                }
-                
-                .countdown-timer {
-                    gap: 0.5rem;
-                }
-                
-                .time-unit {
-                    min-width: 60px;
-                    padding: 0.4rem;
-                }
-                
-                .time-unit span {
-                    font-size: 1.5rem;
-                }
-                
-                .banner-text h2 {
-                    font-size: 1.3rem;
-                }
-                
-                .banner-text p {
-                    font-size: 0.9rem;
-                }
-                
-                .sponsor-btn {
-                    width: 100%;
-                    max-width: 280px;
-                    font-size: 0.95rem;
-                    padding: 0.8rem 0.5rem;
-                }
-                
-                .sponsors-grid {
-                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                    gap: 1.5rem;
-                }
-                
-                .footer-sponsor-logos {
-                    gap: 1rem;
-                }
-                
-                .highlights-gallery {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 2rem;
-                }
-                
-                .highlight-card {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                    width: 100%;
-                    max-width: 400px;
-                }
-                
-                .highlight-img {
-                    object-fit: contain;
-                    width: auto;
-                    max-height: 200px;
-                }
-            }
-            
-            @media screen and (max-width: 480px) {
-                .impact-stats {
-                    grid-template-columns: 1fr;
-                    gap: 1rem;
-                }
-                
-                .stat-item {
-                    padding: 0.5rem;
-                }
-                
-                .stat-label {
-                    font-size: 0.75rem;
-                }
-                
-                .pricing-table {
-                    font-size: 0.85rem;
-                }
-                
-                .pricing-table th {
-                    padding: 0.7rem 0.4rem;
-                }
-                
-                .pricing-table td {
-                    padding: 0.7rem 0.4rem;
-                }
-            }
-        </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Skip to main content link -->
@@ -2151,7 +40,9 @@
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#accueil" class="nav-link">Accueil</a></li>
                 <li class="nav-item"><a href="#club" class="nav-link">Le Club</a></li>
+                <!--
                 <li class="nav-item"><a href="#halloween" class="nav-link">Halloween</a></li>
+                -->
                 <li class="nav-item"><a href="#equipes" class="nav-link">Équipes</a></li>
                 <li class="nav-item"><a href="#horaires" class="nav-link">Horaires</a></li>
                 <li class="nav-item"><a href="#tarifs" class="nav-link">Tarifs</a></li>
@@ -2177,6 +68,29 @@
             </div>
         </div>
     </section>
+
+    <!-- Weekend Planning Section -->
+    <section id="planning-weekend" class="weekend-planning">
+        <div class="container">
+            <h2>Planning du Week-end</h2>
+            <div class="planning-container">
+                <div style="position: relative; width: 100%; height: 0; padding-top: 100.0000%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+                    <iframe 
+                        loading="lazy" 
+                        style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                        src="https://www.canva.com/design/DAG1AhEVvbs/nu8aFoNxR2KJbhimblQWwQ/view?embed" 
+                        allowfullscreen="allowfullscreen" 
+                        allow="fullscreen"
+                        title="Planning des matchs du week-end - Coq Carlanais">
+                    </iframe>
+                </div>
+                <p class="planning-note">
+                    <i class="fas fa-sync-alt"></i>
+                    Ce planning est mis à jour automatiquement via Canva
+                </p>
+            </div>
+        </div>
+    </section>
     
     <!-- Main content -->
     <main id="main-content">
@@ -2192,15 +106,14 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Halloween Party Section -->
+        <!--
         <section id="halloween" class="halloween">
             <div class="container">
                 <h2 class="halloween-title">SOIRÉE HALLOWEEN</h2>
                 <p class="halloween-subtitle">Organisée par le Club de Basket du Carla Bayle</p>
                 
-                <!-- Simplified Halloween Counter for Public Page -->
-                <!--
                 <div class="halloween-counter-simplified">
                     <div class="counter-main">
                         <div class="counter-total" id="attendee-total">...</div>
@@ -2227,7 +140,6 @@
                         </a>
                     </div>
                 </div>
-                  -->
 
 
                 <div class="halloween-content">
@@ -2286,7 +198,7 @@
                 </div>
             </div>
         </section>
-        
+        -->
         <!-- Section Nos Équipes -->
         <section id="equipes" class="teams">
             <div class="container">
@@ -2329,7 +241,9 @@
                             <h3>U13 Garçons</h3>
                             <p>Développement des compétences techniques et tactiques pour les garçons nés en 2013/2014.</p>
                             <div class="team-schedule">
-                                <strong>Entraînement:</strong> Mercredi 17h00-18h30
+                                <strong>Entraînement:</strong> Mercredi 17h00-18h30<br>
+                                <strong>Entraînement:</strong> Vendredi 18h30-19h45<br>
+                                <strong>Match:</strong> Samedi
                             </div>
                         </div>
                     </div>
@@ -2349,7 +263,10 @@
                             <h3>U15 Garçons</h3>
                             <p>Développement des compétences avancées pour les garçons nés en 2011/2012 en vue des compétitions.</p>
                             <div class="team-schedule">
-                                <strong>Entraînement:</strong> Mercredi 18h30-20h00
+                                <strong>Entraînement:</strong> Mercredi 18h30-20h00<br>
+                                <strong>Entraînement:</strong> Vendredi 19h15-20h30<br>
+                                <strong>Match:</strong> Samedi
+
                             </div>
                         </div>
                     </div>
@@ -2770,87 +687,80 @@
                     </div>
 
                     <!-- Current Sponsors Showcase -->
-                    <!-- Current Sponsors Showcase -->
                     <div class="current-sponsors-showcase">
                         <h3>Nos Partenaires Actuels</h3>
                         <p>Rejoignez ces entreprises qui soutiennent déjà notre club</p>
                         
-                        <!-- Gold Sponsors -->
-                        <div class="sponsor-tier-section">
-                            <h4 class="tier-title gold-tier">
-                                <i class="fas fa-crown"></i>
-                                Partenaires Or
-                            </h4>
-                            <div class="sponsors-grid">
-                                <div class="sponsor-logo available">
-                                    <div class="logo-placeholder available-spot">
-                                        <i class="fas fa-plus-circle"></i>
-                                        <span>Votre entreprise ici</span>
-                                    </div>
-                                    <p class="tier-label">Poste disponible</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Silver Sponsors -->
-                        <div class="sponsor-tier-section">
-                            <h4 class="tier-title silver-tier">
-                                <i class="fas fa-medal"></i>
-                                Partenaires Argent
-                            </h4>
-                            <div class="sponsors-grid">
-                                <div class="sponsor-logo active" data-category="silver">
-                                    <a href="https://andremotoculture09.fr/" target="_blank" rel="noopener">
+                        <div class="sponsors-grid">
+                            <!-- Sponsors displayed alphabetically -->
+                            <div class="sponsor-logo active">
+                                <a href="https://andremotoculture09.fr/" target="_blank" rel="noopener">
+                                    <div class="logo-container">
                                         <img src="https://coqcarlanais.github.io/photos/sponsor/andremotoculture09-logo.png" alt="André Motoculture" class="sponsor-logo-img">
-                                    </a>
-                                    <p class="sponsor-name">André Motoculture</p>
-                                    <p class="tier-label">Partenaire Argent</p>
-                                </div>
-                                <div class="sponsor-logo active" data-category="silver">
-                                    <a href="https://maps.app.goo.gl/kiJHjcpYLizXYVgk9" target="_blank" rel="noopener">
-                                        <img src="/photos/sponsor/Batileze.png" alt="Batileze" class="sponsor-logo-img">
-                                    </a>
-                                    <p class="sponsor-name">Batilèze - Fossat</p>
-                                    <p class="tier-label">Partenaire Argent</p>
-                                </div>
-                                <div class="sponsor-logo active" data-category="silver">
-                                    <a href="https://maps.app.goo.gl/xdBmaSJCKtUkz4yr8?g_st=ipc" target="_blank" rel="noopener">
-                                        <img src="photos/sponsor/COUDERC.jpg" alt="COUDERC SARL" class="sponsor-logo-img">
-                                    </a>
-                                    <p class="sponsor-name">COUDERC SARL</p>
-                                    <p class="tier-label">Partenaire Argent</p>
-                                </div>
-                                <div class="sponsor-logo active" data-category="silver">
-                                    <a href="https://danicy.fr/" target="_blank" rel="noopener">
-                                        <img src="photos/sponsor/LOGODANICY.png" alt="Danicy" class="sponsor-logo-img">
-                                    </a>
-                                    <p class="sponsor-name">Danicy</p>
-                                    <p class="tier-label">Partenaire Argent</p>
-                                </div>
-                                <div class="sponsor-logo active" data-category="silver">
-                                    <a href="https://maps.app.goo.gl/TSsbf9Kgbzku3j7q8" target="_blank" rel="noopener">
-                                        <img src="/photos/sponsor/PonsSabarat.png" alt="PONS - Sabarat" class="sponsor-logo-img">
-                                    </a>
-                                    <p class="sponsor-name">PONS - Sabarat</p>
-                                    <p class="tier-label">Partenaire Argent</p>
-                                </div>
+                                    </div>
+                                </a>
+                                <p class="sponsor-name">André Motoculture</p>
                             </div>
-                        </div>
-                        
-                        <!-- Bronze Sponsors -->
-                        <div class="sponsor-tier-section">
-                            <h4 class="tier-title bronze-tier">
-                                <i class="fas fa-award"></i>
-                                Partenaires Bronze
-                            </h4>
-                            <div class="sponsors-grid">
-                                <div class="sponsor-logo active" data-category="bronze">
-                                    <a href="https://www.midipyreneesproprietes.com/" target="_blank" rel="noopener">
-                                        <img src="/photos/sponsor/OccitanieProprietes.png" alt="Occitanie Properties" class="sponsor-logo-img">
-                                    </a>
-                                    <p class="sponsor-name">Occitanie Properties</p>
-                                    <p class="tier-label">Partenaire Bronze</p>
+                            
+                            <div class="sponsor-logo active">
+                                <a href="https://maps.app.goo.gl/kiJHjcpYLizXYVgk9" target="_blank" rel="noopener">
+                                    <div class="logo-container">
+                                        <img src="/photos/sponsor/Batileze.png" alt="Batileze" class="sponsor-logo-img">
+                                    </div>
+                                </a>
+                                <p class="sponsor-name">Batilèze - Fossat</p>
+                            </div>
+                            
+                            <div class="sponsor-logo active">
+                                <a href="https://maps.app.goo.gl/xdBmaSJCKtUkz4yr8?g_st=ipc" target="_blank" rel="noopener">
+                                    <div class="logo-container">
+                                        <img src="photos/sponsor/COUDERC.jpg" alt="COUDERC SARL" class="sponsor-logo-img">
+                                    </div>
+                                </a>
+                                <p class="sponsor-name">COUDERC SARL</p>
+                            </div>
+                            
+                            <div class="sponsor-logo active">
+                                <a href="https://danicy.fr/" target="_blank" rel="noopener">
+                                    <div class="logo-container">
+                                        <img src="photos/sponsor/LOGODANICY.png" alt="Danicy" class="sponsor-logo-img">
+                                    </div>
+                                </a>
+                                <p class="sponsor-name">Danicy</p>
+                            </div>
+                            
+                            <div class="sponsor-logo active">
+                                <div class="logo-container">
+                                    <img src="photos/sponsor/MaconnerieSANS.png" alt="Maçonnerie SANS" class="sponsor-logo-img">
                                 </div>
+                                <p class="sponsor-name">Maçonnerie SANS</p>
+                            </div>
+                            
+                            <div class="sponsor-logo active">
+                                <a href="https://www.midipyreneesproprietes.com/" target="_blank" rel="noopener">
+                                    <div class="logo-container">
+                                        <img src="/photos/sponsor/OccitanieProprietes.png" alt="Occitanie Properties" class="sponsor-logo-img">
+                                    </div>
+                                </a>
+                                <p class="sponsor-name">Occitanie Properties</p>
+                            </div>
+                            
+                            <div class="sponsor-logo active">
+                                <a href="https://maps.app.goo.gl/TSsbf9Kgbzku3j7q8" target="_blank" rel="noopener">
+                                    <div class="logo-container">
+                                        <img src="/photos/sponsor/PonsSabarat.png" alt="PONS - Sabarat" class="sponsor-logo-img">
+                                    </div>
+                                </a>
+                                <p class="sponsor-name">PONS - Sabarat</p>
+                            </div>
+                            
+                            <!-- Available spot -->
+                            <div class="sponsor-logo available">
+                                <div class="logo-container available-spot">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>Votre entreprise ici</span>
+                                </div>
+                                <p class="sponsor-name">Poste disponible</p>
                             </div>
                         </div>
                     </div>
@@ -2968,96 +878,26 @@
                     </section>
                     
                     <!-- Donation Form -->
-                    <div class="donation-section">
+                    <div class="donation-section" id="donation-form">
                         <h2>Devenir Partenaire</h2>
-                        <p>Choisissez votre niveau de partenariat ou saisissez un montant personnalisé.</p>
+                        <p>Choisissez votre niveau de partenariat en utilisant notre formulaire sécurisé HelloAsso.</p>
                         
-                        <form id="donation-form" action="https://formspree.io/f/manpevvz" method="POST">
-                            <div class="form-group">
-                                <label for="sponsor-type">Type de partenariat</label>
-                                <div class="tier-options">
-                                    <div class="tier-option">
-                                        <input type="radio" id="bronze" name="sponsor_tier" value="Bronze (100€)">
-                                        <label for="bronze">Bronze (100€)</label>
-                                    </div>
-                                    <div class="tier-option">
-                                        <input type="radio" id="silver" name="sponsor_tier" value="Argent (500€)">
-                                        <label for="silver">Argent (500€)</label>
-                                    </div>
-                                    <div class="tier-option">
-                                        <input type="radio" id="gold" name="sponsor_tier" value="Or (1 000€)">
-                                        <label for="gold">Or (1000€)</label>
-                                    </div>
-                                    <div class="tier-option">
-                                        <input type="radio" id="custom" name="sponsor_tier" value="Personnalisé" checked>
-                                        <label for="custom">Personnalisé</label>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="custom_amount">Montant personnalisé (€)</label>
-                                <div class="custom-amount">
-                                    <input type="number" id="custom_amount" name="custom_amount" class="form-control" min="10" step="5" value="100">
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="first_name">Prénom</label>
-                                    <input type="text" id="first_name" name="first_name" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="last_name">Nom</label>
-                                    <input type="text" id="last_name" name="last_name" class="form-control" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Téléphone</label>
-                                    <input type="tel" id="phone" name="phone" class="form-control" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="company">Entreprise (optionnel)</label>
-                                <input type="text" id="company" name="company" class="form-control">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Message (optionnel)</label>
-                                <textarea id="message" name="message" class="form-control" rows="4"></textarea>
-                            </div>
-                            
-                            <div class="donation-summary">
-                                <h3>Récapitulatif de votre don</h3>
-                                <div class="summary-item">
-                                    <span>Type de partenariat:</span>
-                                    <span id="summary-tier">Personnalisé</span>
-                                </div>
-                                <div class="summary-item">
-                                    <span>Montant:</span>
-                                    <span id="summary-amount">100 €</span>
-                                </div>
-                                <div class="summary-item total-amount">
-                                    <span>Total:</span>
-                                    <span id="summary-total">100 €</span>
-                                </div>
-                                
-                                <!-- Hidden fields for Formspree -->
-                                <input type="hidden" name="_subject" value="Nouvelle demande de partenariat - Coq Carlanais">
-                                <input type="hidden" name="_language" value="fr">
-                            </div>
-                            
-                            <div id="form-message"></div>
-                            
-                            <button type="submit" class="btn" style="width: 100%; margin-top: 1.5rem;">Devenir Partenaire</button>
-                        </form>
+                        <!-- Enhanced HelloAsso Widget -->
+                        <div class="helloasso-container">
+                            <iframe 
+                                id="haWidgetLight" 
+                                allowtransparency="true" 
+                                allow="payment" 
+                                scrolling="yes"
+                                src="https://www.helloasso.com/associations/association-coq-carlanais-basket-ball-ccbb/formulaires/1/widget?view=form" 
+                                style="width: 100%; max-width: 26rem; margin: 0 auto; border: none; display: block;"
+                                onload="initHelloAssoIframe()">
+                            </iframe>
+                        </div>
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <p><strong>Avantage fiscal :</strong> 60% de réduction d'impôt sur votre investissement</p>
+                            <p><small>Votre don est sécurisé via HelloAsso, notre partenaire de traitement des dons. La plateforme propose un soutien financier facultatif, que vous pouvez librement ajuster lors de la confirmation.</small></p>
+                        </div>
                     </div>
                     
                     <div class="sponsor-cards">
@@ -3144,6 +984,11 @@
                     <p>Salle Marcel Guichou, 09130 Carla Bayle, France</p>
                     <p>05 61 68 51 32 (Mairie) | contact@coqcarlanais.fr</p>
                 </div>
+
+                <div class="footer-attribution">
+                    <p>Site web créé en Ariège par <a href="https://web.izutech.fr/" target="_blank" rel="noopener">IzuTech</a></p>
+                </div>
+
                 <div class="copyright">
                     <p>&copy; 2025 Coq Carlanais Basketball. Tous droits réservés.</p>
                 </div>
@@ -3187,134 +1032,7 @@
                 }
             });
         });
-
-        // Donation Form Functionality
-        const donationForm = document.getElementById('donation-form');
-        const tierRadios = document.querySelectorAll('input[name="sponsor_tier"]');
-        const customAmountInput = document.getElementById('custom_amount');
-        const summaryTier = document.getElementById('summary-tier');
-        const summaryAmount = document.getElementById('summary-amount');
-        const summaryTotal = document.getElementById('summary-total');
         
-        // Update donation summary when tier selection changes
-        function updateDonationSummary() {
-            let selectedTier = document.querySelector('input[name="sponsor_tier"]:checked');
-            let amount = 0;
-            let tierName = '';
-            
-            if (selectedTier.id === 'custom') {
-                amount = parseInt(customAmountInput.value) || 0;
-                tierName = 'Personnalisé';
-            } else {
-                // Extract only the numeric value from the tier string (e.g., "Bronze (100€)" -> 100)
-                const tierValue = selectedTier.value;
-                // Extract the number from the string using regex
-                const amountMatch = tierValue.match(/(\d+)/);
-                amount = amountMatch ? parseInt(amountMatch[0]) : 0;
-                tierName = selectedTier.parentElement.querySelector('label').textContent;
-            }
-            
-            summaryTier.textContent = tierName;
-            summaryAmount.textContent = amount + ' €';
-            summaryTotal.textContent = amount + ' €';
-        }
-        
-        // Initialize donation summary
-        updateDonationSummary();
-        
-        // Add event listeners for tier selection
-        tierRadios.forEach(radio => {
-            radio.addEventListener('change', function() {
-                if (this.id === 'custom') {
-                    customAmountInput.disabled = false;
-                    customAmountInput.focus();
-                } else {
-                    customAmountInput.disabled = true;
-                }
-                updateDonationSummary();
-            });
-        });
-        
-        // Update summary when custom amount changes
-        customAmountInput.addEventListener('input', function() {
-            const minAmount = 10; // Minimum custom amount
-            let value = parseInt(this.value) || 0;
-            
-            if (value < minAmount) {
-                this.value = minAmount;
-            }
-            
-            updateDonationSummary();
-        });
-        
-        // Enhanced form validation and submission
-        document.getElementById('donation-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (!validateForm()) {
-                return;
-            }
-            
-            const form = e.target;
-            const messageDiv = document.getElementById('form-message');
-            const submitButton = form.querySelector('button[type="submit"]');
-            
-            // Show sending state
-            const originalButtonText = submitButton.textContent;
-            submitButton.textContent = 'Envoi en cours...';
-            submitButton.disabled = true;
-            messageDiv.style.display = 'none';
-            
-            // Clear previous errors
-            clearErrors();
-            
-            // Send form data
-            fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            })
-            .then(response => {
-                if (response.ok) {
-                    showSuccess(messageDiv, form);
-                } else {
-                    throw new Error('Network response was not ok.');
-                }
-            })
-            .catch(error => {
-                showError(messageDiv);
-            })
-            .finally(() => {
-                submitButton.textContent = originalButtonText;
-                submitButton.disabled = false;
-                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            });
-        });
-
-        // Form validation function
-        function validateForm() {
-            let isValid = true;
-            clearErrors();
-            
-            // Validate required fields
-            const requiredFields = document.querySelectorAll('[required]');
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    showFieldError(field, 'Ce champ est obligatoire');
-                    isValid = false;
-                }
-            });
-            
-            // Validate email format
-            const emailField = document.getElementById('email');
-            if (emailField.value && !isValidEmail(emailField.value)) {
-                showFieldError(emailField, 'Veuillez entrer une adresse email valide');
-                isValid = false;
-            }
-
-            return isValid;
-        }
-
         // Helper functions
         function isValidEmail(email) {
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -3616,6 +1334,59 @@
                     }
                 }
             });
+        });
+
+        // Robust HelloAsso iframe management with fixed heights
+        function initHelloAssoIframe() {
+            const haWidgetElement = document.getElementById('haWidgetLight');
+            const isMobile = window.innerWidth <= 768;
+            
+            // Set generous fixed heights that work for all steps including payment
+            if (isMobile) {
+                // Mobile: Fixed height that's comfortable for payment forms
+                haWidgetElement.style.height = '800px';
+                haWidgetElement.style.minHeight = '800px';
+            } else {
+                // Desktop: Even more height for better experience
+                haWidgetElement.style.height = '900px';
+                haWidgetElement.style.minHeight = '900px';
+            }
+            
+            // Ensure proper scrolling behavior
+            haWidgetElement.style.overflowY = 'auto';
+            haWidgetElement.style.overflowX = 'hidden';
+            
+            // Basic height adjustment from HelloAsso (as fallback)
+            window.addEventListener('message', function(e) {
+                if (e.data && e.data.height) {
+                    // Use HelloAsso's height but ensure minimum
+                    const minHeight = isMobile ? 800 : 900;
+                    const newHeight = Math.max(e.data.height, minHeight);
+                    haWidgetElement.style.height = newHeight + 'px';
+                }
+            });
+        }
+        
+        // Re-initialize on window resize
+        window.addEventListener('resize', function() {
+            const iframe = document.getElementById('haWidgetLight');
+            if (iframe) {
+                // Small delay to ensure resize is complete
+                setTimeout(() => {
+                    initHelloAssoIframe();
+                }, 250);
+            }
+        });
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.getElementById('haWidgetLight');
+            if (iframe) {
+                // If iframe is already loaded, initialize
+                if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+                    initHelloAssoIframe();
+                }
+            }
         });
     </script> 
 </body>
