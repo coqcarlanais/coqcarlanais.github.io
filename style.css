@@ -2179,6 +2179,8 @@ footer {
         max-width: 26rem;
         width: 100%;
         box-sizing: border-box;
+        /* Better mobile payment experience */
+        -webkit-overflow-scrolling: touch;
     }
     
     .helloasso-container iframe {
@@ -2186,14 +2188,24 @@ footer {
         border-radius: 8px;
         border: 1px solid #e0e0e0;
         background: white;
+        /* Payment API support */
+        allowpaymentrequest: true;
     }
     
-    /* Ensure iframe has proper scrolling and fixed height */
+    /* Enhanced iframe styling for payment support */
     #haWidgetLight {
         transition: height 0.3s ease;
         overflow-y: auto !important;
         overflow-x: hidden !important;
         -webkit-overflow-scrolling: touch !important; /* Smooth iOS scrolling */
+        /* Critical for payment forms */
+        border: none !important;
+        background: transparent !important;
+    }
+    
+    /* Additional security and payment enhancements */
+    body {
+        -webkit-tap-highlight-color: transparent;
     }
     
     /* Desktop specific styles */
@@ -2217,6 +2229,8 @@ footer {
             margin: 1rem auto;
             max-width: 100%;
             width: calc(100% - 2rem);
+            /* Enhanced mobile payment experience */
+            -webkit-overflow-scrolling: touch;
         }
         
         .helloasso-container iframe {
