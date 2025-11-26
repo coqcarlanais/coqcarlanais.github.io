@@ -2169,198 +2169,86 @@ footer {
 }
 
     /* Enhanced HelloAsso Styles with Maximum Height Support */
-    .donation-intro {
-        text-align: center;
-        margin-bottom: 2rem;
-        font-size: 1.1rem;
-        color: #666;
-    }
-    
-    .payment-options-selector {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-    }
-    
-    .payment-option-card {
-        background: var(--white);
-        border: 2px solid #e0e0e0;
-        border-radius: 12px;
-        padding: 1.5rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-align: center;
-    }
-    
-    .payment-option-card:hover {
-        border-color: var(--vibrant-yellow);
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    .payment-option-card.active {
-        border-color: var(--vibrant-yellow);
-        background: linear-gradient(135deg, #fff9e6 0%, #fffbef 100%);
-        box-shadow: 0 8px 25px rgba(255, 204, 0, 0.15);
-    }
-    
-    .payment-option-header {
-        margin-bottom: 1rem;
-    }
-    
-    .payment-option-header i {
-        font-size: 2.5rem;
-        color: var(--vibrant-yellow);
-        margin-bottom: 0.5rem;
-        display: block;
-    }
-    
-    .payment-option-header h3 {
-        margin: 0;
-        font-size: 1.2rem;
-        color: var(--primary-black);
-    }
-    
-    .payment-option-body p {
-        margin-bottom: 1rem;
-        color: #666;
-        font-size: 0.95rem;
-    }
-    
-    .payment-features {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .payment-features li {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-bottom: 0.5rem;
-        font-size: 0.9rem;
-        color: #555;
-    }
-    
-    .payment-features i {
-        color: #28a745;
-        font-size: 0.8rem;
-    }
-    
-    /* Payment Method Content */
-    .payment-method-content {
-        display: none;
-    }
-    
-    .payment-method-content.active {
-        display: block;
-    }
-    
-    /* Direct Payment CTA */
-    .direct-payment-cta {
-        text-align: center;
-        padding: 2rem;
-    }
-    
-    .cta-card {
-        background: var(--white);
-        border-radius: 15px;
-        padding: 3rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        max-width: 500px;
-        margin: 0 auto;
-    }
-    
-    .cta-icon {
-        font-size: 4rem;
-        color: var(--vibrant-yellow);
-        margin-bottom: 1.5rem;
-    }
-    
-    .cta-card h3 {
-        color: var(--primary-black);
-        margin-bottom: 1rem;
-    }
-    
-    .cta-card p {
-        color: #666;
-        margin-bottom: 2rem;
-        line-height: 1.6;
-    }
-    
-    .cta-features {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin: 2rem 0;
-        flex-wrap: wrap;
-    }
-    
-    .feature {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-weight: 600;
-        color: var(--primary-black);
-    }
-    
-    .feature i {
-        color: var(--vibrant-yellow);
-    }
-    
-    .apple-pay-direct-btn {
-        background: #000;
-        color: #fff;
-        border: none;
-        padding: 1.2rem 2rem;
-        font-size: 1.1rem;
-        font-weight: 600;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.8rem;
-        margin: 1rem 0;
-    }
-    
-    .apple-pay-direct-btn:hover {
-        background: #333;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-    
-    .security-note {
-        font-size: 0.9rem;
-        color: #666;
-        margin-top: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-    
-    .security-note i {
-        color: #28a745;
-    }
-    
-    /* Enhanced HelloAsso Styles */
     .helloasso-container-optimized {
         background: var(--white);
-        border-radius: 15px;
+        border-radius: 16px;
         padding: 2.5rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         margin: 2rem auto;
         max-width: 100%;
         width: 100%;
+        border: 1px solid #f0f0f0;
     }
     
-    .helloasso-wrapper {
+    .donation-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .donation-header h2 {
+        color: var(--primary-black);
+        margin-bottom: 1rem;
+        font-size: 2.2rem;
+    }
+    
+    /* Trust Section */
+    .trust-section {
+        margin-bottom: 1.5rem;
+    }
+    
+    .trust-badges {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    
+    .trust-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.2rem;
+        background: #f8f9fa;
+        border-radius: 25px;
+        font-weight: 600;
+        color: var(--primary-black);
+    }
+    
+    .trust-badge i {
+        color: var(--vibrant-yellow);
+    }
+    
+    /* Form Wrapper */
+    .donation-form-wrapper {
+        margin: 1.5rem 0;
+    }
+    
+    .form-notice {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        color: #856404;
+        font-weight: 500;
+    }
+    
+    .form-notice i {
+        color: #f39c12;
+    }
+    
+    /* Iframe Container */
+    .helloasso-iframe-container {
         background: var(--white);
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        margin: 1.5rem 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e9ecef;
+        margin-bottom: 1.5rem;
     }
     
     .helloasso-iframe {
@@ -2369,35 +2257,63 @@ footer {
         background: transparent !important;
         min-height: 1100px !important;
         height: 1100px !important;
+        display: block !important;
     }
     
-    /* Mobile Responsiveness */
+    /* Your Preferred Payment Security Notice */
+    .payment-security-notice {
+        text-align: center;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-radius: 12px;
+        border-left: 4px solid var(--vibrant-yellow);
+    }
+    
+    .payment-security-notice p {
+        margin-bottom: 1rem;
+    }
+    
+    .payment-security-notice p:first-child {
+        font-size: 1.1rem;
+        color: var(--primary-black);
+        font-weight: 600;
+    }
+    
+    .payment-security-notice p:last-child {
+        margin-bottom: 0;
+        color: #666;
+        line-height: 1.5;
+    }
+    
+    /* Mobile Optimization */
     @media screen and (max-width: 768px) {
-        .payment-options-selector {
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-        
-        .payment-option-card {
-            padding: 1rem;
-        }
-        
-        .cta-card {
-            padding: 2rem 1.5rem;
-        }
-        
-        .cta-features {
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
         .helloasso-container-optimized {
             padding: 1.5rem 1rem;
+            margin: 1rem auto;
+            border-radius: 12px;
         }
-        
+    
+        .donation-header h2 {
+            font-size: 1.8rem;
+        }
+    
+        .trust-badges {
+            gap: 1rem;
+        }
+    
+        .trust-badge {
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+        }
+    
         .helloasso-iframe {
             height: 1200px !important;
             min-height: 1200px !important;
+        }
+    
+        .payment-security-notice {
+            padding: 1.2rem;
+            text-align: left;
         }
     }
     
@@ -2405,15 +2321,14 @@ footer {
         .helloasso-container-optimized {
             padding: 1rem 0.5rem;
         }
-        
+    
         .helloasso-iframe {
             height: 1300px !important;
             min-height: 1300px !important;
         }
-        
-        .apple-pay-direct-btn {
-            width: 100%;
-            justify-content: center;
-            padding: 1rem;
+    
+        .trust-badges {
+            flex-direction: column;
+            align-items: center;
         }
     }
