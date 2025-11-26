@@ -12,6 +12,10 @@
         </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    
     <title>Coq Carlanais - Club de Basket du Carla Bayle</title>
     <meta name="description" content="Club de basket-ball Coq Carlanais à Carla Bayle. Équipes pour tous les âges, entraînements, compétitions et inscriptions.">
     <link rel="icon" type="image/jpeg" href="photos/Coq_carlanais_logo.jpg">
@@ -887,7 +891,9 @@
                             <iframe 
                                 id="haWidgetLight" 
                                 allowtransparency="true" 
-                                allow="payment" 
+                                allow="payment *"
+                                allowpaymentrequest="true"
+                                allowfullscreen=""
                                 scrolling="yes"
                                 src="https://www.helloasso.com/associations/association-coq-carlanais-basket-ball-ccbb/formulaires/1/widget?view=form" 
                                 style="width: 100%; max-width: 26rem; margin: 0 auto; border: none; display: block;"
@@ -1336,57 +1342,77 @@
             });
         });
 
-        // Robust HelloAsso iframe management with fixed heights
+        // Enhanced HelloAsso iframe management with payment support
         function initHelloAssoIframe() {
             const haWidgetElement = document.getElementById('haWidgetLight');
             const isMobile = window.innerWidth <= 768;
             
-            // Set generous fixed heights that work for all steps including payment
+            // Set heights for payment forms
             if (isMobile) {
-                // Mobile: Fixed height that's comfortable for payment forms
                 haWidgetElement.style.height = '800px';
                 haWidgetElement.style.minHeight = '800px';
             } else {
-                // Desktop: Even more height for better experience
                 haWidgetElement.style.height = '900px';
                 haWidgetElement.style.minHeight = '900px';
             }
             
-            // Ensure proper scrolling behavior
+            // Enhanced scrolling for payment forms
             haWidgetElement.style.overflowY = 'auto';
             haWidgetElement.style.overflowX = 'hidden';
             
-            // Basic height adjustment from HelloAsso (as fallback)
+            // Payment message handling
             window.addEventListener('message', function(e) {
+                // Height adjustment
                 if (e.data && e.data.height) {
-                    // Use HelloAsso's height but ensure minimum
                     const minHeight = isMobile ? 800 : 900;
                     const newHeight = Math.max(e.data.height, minHeight);
                     haWidgetElement.style.height = newHeight + 'px';
                 }
+                
+                // Payment completion messages
+                if (e.data && e.data.type === 'payment_completed') {
+                    console.log('Payment completed successfully');
+                    // Handle successful payment
+                }
+                
+                if (e.data && e.data.type === 'payment_failed') {
+                    console.log('Payment failed:', e.data.error);
+                    // Handle failed payment
+                }
             });
         }
         
-        // Re-initialize on window resize
-        window.addEventListener('resize', function() {
+        // Payment-specific initialization
+        function initPaymentSupport() {
+            // Ensure proper viewport for mobile payments
+            const viewport = document.querySelector('meta[name="viewport"]');
+            if (!viewport) {
+                const meta = document.createElement('meta');
+                meta.name = 'viewport';
+                meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+                document.head.appendChild(meta);
+            }
+        }
+        
+        // Initialize everything - REPLACE YOUR EXISTING DOMContentLoaded LISTENER
+        document.addEventListener('DOMContentLoaded', function() {
+            initPaymentSupport();
+            
             const iframe = document.getElementById('haWidgetLight');
             if (iframe) {
-                // Small delay to ensure resize is complete
-                setTimeout(() => {
+                if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
                     initHelloAssoIframe();
-                }, 250);
+                } else {
+                    iframe.addEventListener('load', initHelloAssoIframe);
+                }
             }
         });
         
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const iframe = document.getElementById('haWidgetLight');
-            if (iframe) {
-                // If iframe is already loaded, initialize
-                if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
-                    initHelloAssoIframe();
-                }
-            }
+        // Re-initialize on window resize - KEEP THIS AS IS
+        window.addEventListener('resize', function() {
+            setTimeout(() => {
+                initHelloAssoIframe();
+            }, 250);
         });
     </script> 
 </body>
