@@ -2168,110 +2168,180 @@ footer {
     }
 }
 
-/* ===== HELLOASSO STYLES ===== */
-    .helloasso-container {
+/* ===== OPTIMIZED HELLOASSO STYLES ===== */
+    .helloasso-container-optimized {
         background: var(--white);
-        border-radius: 10px;
-        padding: 2rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         margin: 2rem auto;
         text-align: center;
-        max-width: 26rem;
+        max-width: 100%;
         width: 100%;
         box-sizing: border-box;
-        /* Better mobile payment experience */
-        -webkit-overflow-scrolling: touch;
     }
     
-    .helloasso-container iframe {
+    .helloasso-wrapper {
+        background: var(--white);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        margin: 1.5rem 0;
+        position: relative;
+    }
+    
+    .helloasso-iframe {
         width: 100% !important;
-        border-radius: 8px;
-        border: 1px solid #e0e0e0;
-        background: white;
-        /* Payment API support */
-        allowpaymentrequest: true;
-    }
-    
-    /* Enhanced iframe styling for payment support */
-    #haWidgetLight {
-        transition: height 0.3s ease;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        -webkit-overflow-scrolling: touch !important; /* Smooth iOS scrolling */
-        /* Critical for payment forms */
         border: none !important;
         background: transparent !important;
+        min-height: 700px;
+        transition: height 0.3s ease;
     }
     
-    /* Additional security and payment enhancements */
-    body {
-        -webkit-tap-highlight-color: transparent;
+    /* Payment Security Notice */
+    .payment-security-notice {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #eee;
     }
     
-    /* Desktop specific styles */
-    @media screen and (min-width: 769px) {
-        .helloasso-container iframe {
-            height: 900px !important;
-            min-height: 900px !important;
-            max-height: 900px !important;
+    .security-badges {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .security-badges i {
+        font-size: 1.5rem;
+        color: var(--vibrant-yellow);
+    }
+    
+    .security-badges span {
+        font-weight: 600;
+        color: var(--primary-black);
+        margin: 0 0.5rem;
+    }
+    
+    /* Enhanced Payment Form Responsiveness */
+    @media screen and (max-width: 768px) {
+        .helloasso-container-optimized {
+            padding: 1.5rem 1rem;
+            margin: 1rem auto;
+            border-radius: 12px;
         }
         
-        #haWidgetLight {
-            height: 900px !important;
-            min-height: 900px !important;
+        .helloasso-wrapper {
+            margin: 1rem -1rem;
+            border-radius: 0;
+            box-shadow: none;
+            border: 1px solid #e0e0e0;
         }
-    }
-    
-    /* Mobile specific styles */
-    @media screen and (max-width: 768px) {
-        .helloasso-container {
-            padding: 1rem;
-            margin: 1rem auto;
-            max-width: 100%;
-            width: calc(100% - 2rem);
-            /* Enhanced mobile payment experience */
+        
+        .helloasso-iframe {
+            height: 750px !important;
+            min-height: 750px !important;
             -webkit-overflow-scrolling: touch;
         }
         
-        .helloasso-container iframe {
-            height: 800px !important;
-            min-height: 800px !important;
-            max-height: 800px !important;
-            width: 100% !important;
+        .security-badges {
+            gap: 0.5rem;
         }
         
-        #haWidgetLight {
-            height: 800px !important;
-            min-height: 800px !important;
-            width: 100% !important;
+        .security-badges i {
+            font-size: 1.2rem;
+        }
+        
+        .security-badges span {
+            font-size: 0.9rem;
         }
     }
     
-    /* Small mobile devices */
+    /* Chrome Autofill Fixes */
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+        -webkit-text-fill-color: var(--primary-black) !important;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+    
+    /* Payment Method Styling */
+    .payment-methods {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 1rem 0;
+        flex-wrap: wrap;
+    }
+    
+    .payment-method {
+        padding: 0.5rem 1rem;
+        background: var(--light-grey);
+        border-radius: 6px;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    /* Loading State for Payment */
+    .payment-loading {
+        display: none;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    .payment-loading.active {
+        display: block;
+    }
+    
+    .payment-spinner {
+        font-size: 2rem;
+        color: var(--vibrant-yellow);
+        margin-bottom: 1rem;
+    }
+    
+    /* Enhanced Mobile Payment Experience */
     @media screen and (max-width: 480px) {
-        .helloasso-container {
-            padding: 0.5rem;
-            margin: 0.5rem auto;
-            width: calc(100% - 1rem);
+        .helloasso-container-optimized {
+            padding: 1rem 0.5rem;
         }
         
-        .helloasso-container iframe {
-            height: 700px !important;
-            min-height: 700px !important;
-            max-height: 700px !important;
-        }
-        
-        #haWidgetLight {
+        .helloasso-iframe {
             height: 700px !important;
             min-height: 700px !important;
         }
+        
+        .security-badges {
+            flex-direction: column;
+            gap: 0.8rem;
+        }
     }
     
-    /* Ensure no external constraints */
-    .donation-section {
-        overflow: visible !important;
+    /* Apple Pay Button Styling Fix */
+    .apple-pay-button {
+        display: inline-block;
+        -webkit-appearance: -apple-pay-button;
+        -apple-pay-button-type: donate;
+        -apple-pay-button-style: black;
+        width: 100%;
+        max-width: 300px;
+        height: 44px;
+        margin: 0.5rem 0;
     }
     
-    .donation-section .container {
-        overflow: visible !important;
+    /* Ensure proper viewport for mobile payments */
+    @viewport {
+        width: device-width;
+        zoom: 1.0;
+    }
+    
+    /* Remove any potential conflicts with payment iframes */
+    .helloasso-iframe * {
+        max-width: none !important;
+        box-sizing: border-box !important;
     }
