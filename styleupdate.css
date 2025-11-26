@@ -2168,7 +2168,7 @@ footer {
     }
 }
 
-    /* Enhanced HelloAsso Styles */
+    /* Enhanced HelloAsso Styles with Maximum Height Support */
     .helloasso-container-optimized {
         background: var(--white);
         border-radius: 15px;
@@ -2179,27 +2179,111 @@ footer {
         max-width: 100%;
         width: 100%;
         box-sizing: border-box;
+        overflow: visible;
     }
     
     .helloasso-wrapper {
         background: var(--white);
         border-radius: 12px;
-        overflow: hidden;
+        overflow: visible;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         margin: 1.5rem 0;
         position: relative;
         width: 100%;
+        min-height: 1100px;
     }
     
     .helloasso-iframe {
         width: 100% !important;
         border: none !important;
         background: transparent !important;
-        min-height: 700px;
+        min-height: 1100px !important;
+        height: 1100px !important;
         transition: height 0.3s ease;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
     }
     
-    /* Payment Security Notice */
+    /* Force full width on all devices */
+    @media screen and (max-width: 768px) {
+        .helloasso-container-optimized {
+            padding: 1rem;
+            margin: 1rem auto;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .helloasso-wrapper {
+            margin: 1rem 0;
+            border-radius: 8px;
+            width: 100%;
+            min-height: 1200px;
+        }
+        
+        .helloasso-iframe {
+            height: 1200px !important;
+            min-height: 1200px !important;
+            -webkit-overflow-scrolling: touch !important;
+            overflow-y: scroll !important;
+        }
+    }
+    
+    /* Extra small devices - ensure full width */
+    @media screen and (max-width: 480px) {
+        .helloasso-container-optimized {
+            padding: 0.5rem;
+            margin: 0.5rem auto;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            max-width: 100vw;
+            border-radius: 0;
+        }
+        
+        .helloasso-wrapper {
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none;
+            border: none;
+            width: 100%;
+            min-height: 1300px;
+        }
+        
+        .helloasso-iframe {
+            height: 1300px !important;
+            min-height: 1300px !important;
+            border-radius: 0 !important;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+        }
+    }
+    
+    /* Apple Pay button forcing */
+    .apple-pay-button,
+    [class*="apple-pay"],
+    [class*="applePay"],
+    .payment-method-apple-pay {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        min-height: 44px !important;
+    }
+    
+    /* Ensure form elements are fully visible */
+    .helloasso-iframe form,
+    .helloasso-iframe .form-page,
+    .helloasso-iframe .payment-form,
+    .helloasso-iframe .form-footer {
+        min-height: 1000px !important;
+        position: relative !important;
+    }
+    
+    /* Security badges */
     .payment-security-notice {
         margin-top: 2rem;
         padding-top: 1.5rem;
@@ -2226,87 +2310,11 @@ footer {
         margin: 0 0.5rem;
     }
     
-    /* Enhanced Mobile Responsiveness */
+    /* Remove any container constraints for mobile */
     @media screen and (max-width: 768px) {
-        .helloasso-container-optimized {
-            padding: 1.5rem 1rem;
-            margin: 1rem auto;
-            border-radius: 12px;
+        #sponsors .container {
+            width: 100%;
+            max-width: 100%;
+            padding: 0 10px;
         }
-        
-        .helloasso-wrapper {
-            margin: 1rem -1rem;
-            border-radius: 0;
-            box-shadow: none;
-            border: 1px solid #e0e0e0;
-            width: calc(100% + 2rem);
-        }
-        
-        .helloasso-iframe {
-            height: 750px !important;
-            min-height: 750px !important;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        .security-badges {
-            gap: 0.5rem;
-        }
-        
-        .security-badges i {
-            font-size: 1.2rem;
-        }
-        
-        .security-badges span {
-            font-size: 0.9rem;
-        }
-    }
-    
-    /* Extra small devices */
-    @media screen and (max-width: 480px) {
-        .helloasso-container-optimized {
-            padding: 1rem 0.5rem;
-        }
-        
-        .helloasso-wrapper {
-            margin: 1rem -0.5rem;
-            width: calc(100% + 1rem);
-        }
-        
-        .helloasso-iframe {
-            height: 700px !important;
-            min-height: 700px !important;
-        }
-        
-        .security-badges {
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-    }
-    
-    /* Apple Pay Button Support */
-    .apple-pay-button {
-        display: inline-block;
-        -webkit-appearance: -apple-pay-button;
-        -apple-pay-button-type: donate;
-        -apple-pay-button-style: black;
-        width: 100%;
-        max-width: 300px;
-        height: 44px;
-        margin: 0.5rem 0;
-    }
-    
-    /* Ensure proper viewport for mobile payments */
-    @viewport {
-        width: device-width;
-        zoom: 1.0;
-    }
-    
-    /* Chrome Autofill Fixes */
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    input:-webkit-autofill:focus,
-    input:-webkit-autofill:active {
-        -webkit-box-shadow: 0 0 0 30px white inset !important;
-        -webkit-text-fill-color: var(--primary-black) !important;
-        transition: background-color 5000s ease-in-out 0s;
     }
