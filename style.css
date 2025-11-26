@@ -2166,8 +2166,9 @@ footer {
     .pricing-table td {
         padding: 0.7rem 0.4rem;
     }
+}
 
-    /* ===== HELLOASSO REDIRECT STYLES ===== */
+ /* ===== HELLOASSO REDIRECT STYLES ===== */
     .helloasso-redirect {
         max-width: 800px;
         margin: 0 auto;
@@ -2221,4 +2222,3 @@ footer {
             padding: 0.9rem 1.5rem !important;
         }
     }
-}
