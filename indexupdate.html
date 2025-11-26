@@ -882,18 +882,71 @@
                         <h2>Devenir Partenaire</h2>
                         <p>Choisissez votre niveau de partenariat en utilisant notre formulaire sécurisé HelloAsso.</p>
                         
-                        <!-- Enhanced HelloAsso Widget -->
-                        <div class="helloasso-container">
-                            <iframe 
-                                id="haWidgetLight" 
-                                allowtransparency="true" 
-                                allow="payment" 
-                                scrolling="yes"
-                                src="https://www.helloasso.com/associations/association-coq-carlanais-basket-ball-ccbb/formulaires/1/widget?view=form" 
-                                style="width: 100%; max-width: 26rem; margin: 0 auto; border: none; display: block;"
-                                onload="initHelloAssoIframe()">
-                            </iframe>
+                        <div class="helloasso-redirect" style="text-align: center; margin: 3rem 0;">
+                            <div class="redirect-info" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 2.5rem; border-radius: 12px; margin-bottom: 2rem; border-left: 4px solid var(--vibrant-yellow);">
+                                <h3 style="color: var(--primary-black); margin-bottom: 1.5rem;">🎯 Processus de Don Sécurisé</h3>
+                                
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                                    <div style="text-align: center;">
+                                        <div style="background: var(--vibrant-yellow); color: var(--primary-black); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: bold; font-size: 1.2rem;">1</div>
+                                        <h4 style="margin-bottom: 0.5rem; color: var(--primary-black);">Cliquez</h4>
+                                        <p style="font-size: 0.9rem; color: #666;">Accédez au formulaire sécurisé</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div style="background: var(--vibrant-yellow); color: var(--primary-black); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: bold; font-size: 1.2rem;">2</div>
+                                        <h4 style="margin-bottom: 0.5rem; color: var(--primary-black);">Choisissez</h4>
+                                        <p style="font-size: 0.9rem; color: #666;">Sélectionnez votre montant</p>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <div style="background: var(--vibrant-yellow); color: var(--primary-black); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: bold; font-size: 1.2rem;">3</div>
+                                        <h4 style="margin-bottom: 0.5rem; color: var(--primary-black);">Payez</h4>
+                                        <p style="font-size: 0.9rem; color: #666;">Paiement 100% sécurisé</p>
+                                    </div>
+                                </div>
+                                
+                                <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid #e9ecef;">
+                                    <h4 style="color: var(--primary-black); margin-bottom: 1rem;">🛡️ Avantages de cette méthode :</h4>
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; text-align: left;">
+                                        <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                            <i class="fas fa-shield-alt" style="color: #28a745; margin-top: 0.2rem;"></i>
+                                            <div>
+                                                <strong>Paiements sécurisés</strong>
+                                                <p style="margin: 0.2rem 0 0 0; font-size: 0.85rem; color: #666;">Compatibilité Apple Pay & Google Pay</p>
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                            <i class="fas fa-mobile-alt" style="color: #007bff; margin-top: 0.2rem;"></i>
+                                            <div>
+                                                <strong>Optimisé mobile</strong>
+                                                <p style="margin: 0.2rem 0 0 0; font-size: 0.85rem; color: #666;">Expérience adaptée à tous les appareils</p>
+                                            </div>
+                                        </div>
+                                        <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                                            <i class="fas fa-lock" style="color: #dc3545; margin-top: 0.2rem;"></i>
+                                            <div>
+                                                <strong>Confiance maximale</strong>
+                                                <p style="margin: 0.2rem 0 0 0; font-size: 0.85rem; color: #666;">Aucun avertissement de sécurité</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <a href="https://www.helloasso.com/associations/association-coq-carlanais-basket-ball-ccbb/formulaires/1" 
+                               class="btn" 
+                               target="_blank" 
+                               rel="noopener"
+                               style="font-size: 1.3rem; padding: 1.2rem 2.5rem; background: linear-gradient(135deg, var(--vibrant-yellow) 0%, var(--secondary-yellow) 100%); border: none; box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3); margin-bottom: 1rem;">
+                                <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
+                                Accéder au formulaire sécurisé
+                            </a>
+                            
+                            <p style="color: #666; font-size: 0.9rem; max-width: 500px; margin: 0 auto;">
+                                <i class="fas fa-info-circle" style="margin-right: 0.5rem;"></i>
+                                Redirection vers HelloAsso - Plateforme certifiée PCI DSS. Retour automatique après votre don.
+                            </p>
                         </div>
+
                         <div style="text-align: center; margin-top: 2rem;">
                             <p><strong>Avantage fiscal :</strong> 60% de réduction d'impôt sur votre investissement</p>
                             <p><small>Votre don est sécurisé via HelloAsso, notre partenaire de traitement des dons. La plateforme propose un soutien financier facultatif, que vous pouvez librement ajuster lors de la confirmation.</small></p>
