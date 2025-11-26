@@ -1567,6 +1567,14 @@
             }
             container.appendChild(errorMessage);
         }
+        
+        // Enhanced error boundary for payment processing
+        window.addEventListener('error', function(e) {
+            if (e.target && e.target.tagName === 'IFRAME') {
+                console.error('Iframe error detected:', e);
+                showPaymentError('Erreur de chargement du formulaire de paiement');
+            }
+        });
     </script> 
 </body>
 </html>
