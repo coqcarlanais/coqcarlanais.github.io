@@ -1366,29 +1366,29 @@
             });
         });
 
-        // Enhanced HelloAsso iframe management with payment support
+        // Enhanced HelloAsso Payment Integration
         function initHelloAssoIframe() {
             const haWidgetElement = document.getElementById('haWidgetLight');
             const isMobile = window.innerWidth <= 768;
             
-            // Set heights for payment forms
+            // Set optimized heights for payment forms
             if (isMobile) {
+                haWidgetElement.style.height = '750px';
+                haWidgetElement.style.minHeight = '750px';
+            } else {
                 haWidgetElement.style.height = '800px';
                 haWidgetElement.style.minHeight = '800px';
-            } else {
-                haWidgetElement.style.height = '900px';
-                haWidgetElement.style.minHeight = '900px';
             }
             
             // Enhanced scrolling for payment forms
             haWidgetElement.style.overflowY = 'auto';
             haWidgetElement.style.overflowX = 'hidden';
             
-            // Payment message handling
+            // Payment message handling with better error recovery
             window.addEventListener('message', function(e) {
-                // Height adjustment
+                // Height adjustment from HelloAsso
                 if (e.data && e.data.height) {
-                    const minHeight = isMobile ? 800 : 900;
+                    const minHeight = isMobile ? 750 : 800;
                     const newHeight = Math.max(e.data.height, minHeight);
                     haWidgetElement.style.height = newHeight + 'px';
                 }
@@ -1396,17 +1396,91 @@
                 // Payment completion messages
                 if (e.data && e.data.type === 'payment_completed') {
                     console.log('Payment completed successfully');
-                    // Handle successful payment
+                    showPaymentSuccess();
                 }
                 
                 if (e.data && e.data.type === 'payment_failed') {
                     console.log('Payment failed:', e.data.error);
-                    // Handle failed payment
+                    showPaymentError(e.data.error);
                 }
+                
+                // Apple Pay specific handling
+                if (e.data && e.data.type === 'apple_pay_available') {
+                    console.log('Apple Pay is available');
+                    enableApplePay();
+                }
+                
+                if (e.data && e.data.type === 'apple_pay_not_available') {
+                    console.log('Apple Pay not available');
+                    disableApplePay();
+                }
+            });
+            
+            // Enhanced error handling for iframe loading
+            haWidgetElement.addEventListener('load', function() {
+                console.log('HelloAsso iframe loaded successfully');
+                // Trigger resize check after load
+                setTimeout(() => {
+                    window.dispatchEvent(new Event('resize'));
+                }, 1000);
+            });
+            
+            haWidgetElement.addEventListener('error', function() {
+                console.error('HelloAsso iframe failed to load');
+                showPaymentError('Le formulaire de paiement n\'a pas pu être chargé. Veuillez réessayer.');
             });
         }
         
-        // Payment-specific initialization
+        // Payment status handlers
+        function showPaymentSuccess() {
+            // You can add a success message or redirect
+            const successMessage = document.createElement('div');
+            successMessage.className = 'payment-success-message';
+            successMessage.innerHTML = `
+                <div style="text-align: center; padding: 2rem; background: #d4edda; border-radius: 8px; margin: 1rem 0;">
+                    <i class="fas fa-check-circle" style="color: #28a745; font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3 style="color: #155724;">Paiement Réussi !</h3>
+                    <p style="color: #155724;">Merci pour votre soutien. Vous recevrez un email de confirmation.</p>
+                </div>
+            `;
+            
+            const container = document.querySelector('.helloasso-container-optimized');
+            container.appendChild(successMessage);
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        
+        function showPaymentError(error) {
+            const errorMessage = document.createElement('div');
+            errorMessage.className = 'payment-error-message';
+            errorMessage.innerHTML = `
+                <div style="text-align: center; padding: 2rem; background: #f8d7da; border-radius: 8px; margin: 1rem 0;">
+                    <i class="fas fa-exclamation-triangle" style="color: #dc3545; font-size: 2rem; margin-bottom: 1rem;"></i>
+                    <h3 style="color: #721c24;">Erreur de Paiement</h3>
+                    <p style="color: #721c24;">Une erreur est survenue lors du traitement de votre paiement. Veuillez réessayer.</p>
+                    <small style="color: #721c24;">Erreur: ${error || 'Non spécifiée'}</small>
+                </div>
+            `;
+            
+            const container = document.querySelector('.helloasso-container-optimized');
+            const existingError = container.querySelector('.payment-error-message');
+            if (existingError) {
+                existingError.remove();
+            }
+            container.appendChild(errorMessage);
+        }
+        
+        function enableApplePay() {
+            console.log('Enabling Apple Pay support');
+            // Additional Apple Pay setup if needed
+        }
+        
+        function disableApplePay() {
+            console.log('Apple Pay not supported in this environment');
+        }
+        
+        // Enhanced payment initialization
         function initPaymentSupport() {
             // Ensure proper viewport for mobile payments
             const viewport = document.querySelector('meta[name="viewport"]');
@@ -1415,13 +1489,18 @@
                 meta.name = 'viewport';
                 meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
                 document.head.appendChild(meta);
+            } else {
+                // Enhance existing viewport for better payment experience
+                viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes';
             }
-        }
-        
-        // Initialize everything - REPLACE YOUR EXISTING DOMContentLoaded LISTENER
-        document.addEventListener('DOMContentLoaded', function() {
-            initPaymentSupport();
             
+            // Add payment-specific meta tags
+            const paymentMeta = document.createElement('meta');
+            paymentMeta.name = 'apple-mobile-web-app-capable';
+            paymentMeta.content = 'yes';
+            document.head.appendChild(paymentMeta);
+            
+            // Initialize HelloAsso iframe
             const iframe = document.getElementById('haWidgetLight');
             if (iframe) {
                 if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
@@ -1430,13 +1509,36 @@
                     iframe.addEventListener('load', initHelloAssoIframe);
                 }
             }
-        });
+        }
         
-        // Re-initialize on window resize - KEEP THIS AS IS
+        // Enhanced resize handling
+        let resizeTimeout;
         window.addEventListener('resize', function() {
-            setTimeout(() => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
                 initHelloAssoIframe();
             }, 250);
+        });
+        
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initPaymentSupport();
+            
+            // Additional payment optimization
+            setTimeout(() => {
+                const iframe = document.getElementById('haWidgetLight');
+                if (iframe) {
+                    initHelloAssoIframe();
+                }
+            }, 1000);
+        });
+        
+        // Enhanced error boundary for payment processing
+        window.addEventListener('error', function(e) {
+            if (e.target && e.target.tagName === 'IFRAME') {
+                console.error('Iframe error detected:', e);
+                showPaymentError('Erreur de chargement du formulaire de paiement');
+            }
         });
     </script> 
 </body>
