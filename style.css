@@ -2168,110 +2168,167 @@ footer {
     }
 }
 
-/* ===== HELLOASSO STYLES ===== */
-    .helloasso-container {
+    /* Enhanced HelloAsso Styles with Maximum Height Support */
+    .helloasso-container-optimized {
         background: var(--white);
-        border-radius: 10px;
-        padding: 2rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         margin: 2rem auto;
-        text-align: center;
-        max-width: 26rem;
+        max-width: 100%;
         width: 100%;
-        box-sizing: border-box;
-        /* Better mobile payment experience */
-        -webkit-overflow-scrolling: touch;
+        border: 1px solid #f0f0f0;
     }
     
-    .helloasso-container iframe {
-        width: 100% !important;
+    .donation-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .donation-header h2 {
+        color: var(--primary-black);
+        margin-bottom: 1rem;
+        font-size: 2.2rem;
+    }
+    
+    /* Trust Section */
+    .trust-section {
+        margin-bottom: 1.5rem;
+    }
+    
+    .trust-badges {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    
+    .trust-badge {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.2rem;
+        background: #f8f9fa;
+        border-radius: 25px;
+        font-weight: 600;
+        color: var(--primary-black);
+    }
+    
+    .trust-badge i {
+        color: var(--vibrant-yellow);
+    }
+    
+    /* Form Wrapper */
+    .donation-form-wrapper {
+        margin: 1.5rem 0;
+    }
+    
+    .form-notice {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
         border-radius: 8px;
-        border: 1px solid #e0e0e0;
-        background: white;
-        /* Payment API support */
-        allowpaymentrequest: true;
+        margin-bottom: 1.5rem;
+        color: #856404;
+        font-weight: 500;
     }
     
-    /* Enhanced iframe styling for payment support */
-    #haWidgetLight {
-        transition: height 0.3s ease;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        -webkit-overflow-scrolling: touch !important; /* Smooth iOS scrolling */
-        /* Critical for payment forms */
+    .form-notice i {
+        color: #f39c12;
+    }
+    
+    /* Iframe Container */
+    .helloasso-iframe-container {
+        background: var(--white);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e9ecef;
+        margin-bottom: 1.5rem;
+    }
+    
+    .helloasso-iframe {
+        width: 100% !important;
         border: none !important;
         background: transparent !important;
+        min-height: 1100px !important;
+        height: 1100px !important;
+        display: block !important;
     }
     
-    /* Additional security and payment enhancements */
-    body {
-        -webkit-tap-highlight-color: transparent;
+    /* Your Preferred Payment Security Notice */
+    .payment-security-notice {
+        text-align: center;
+        padding: 1.5rem;
+        background: #f8f9fa;
+        border-radius: 12px;
+        border-left: 4px solid var(--vibrant-yellow);
     }
     
-    /* Desktop specific styles */
-    @media screen and (min-width: 769px) {
-        .helloasso-container iframe {
-            height: 900px !important;
-            min-height: 900px !important;
-            max-height: 900px !important;
-        }
-        
-        #haWidgetLight {
-            height: 900px !important;
-            min-height: 900px !important;
-        }
+    .payment-security-notice p {
+        margin-bottom: 1rem;
     }
     
-    /* Mobile specific styles */
+    .payment-security-notice p:first-child {
+        font-size: 1.1rem;
+        color: var(--primary-black);
+        font-weight: 600;
+    }
+    
+    .payment-security-notice p:last-child {
+        margin-bottom: 0;
+        color: #666;
+        line-height: 1.5;
+    }
+    
+    /* Mobile Optimization */
     @media screen and (max-width: 768px) {
-        .helloasso-container {
-            padding: 1rem;
+        .helloasso-container-optimized {
+            padding: 1.5rem 1rem;
             margin: 1rem auto;
-            max-width: 100%;
-            width: calc(100% - 2rem);
-            /* Enhanced mobile payment experience */
-            -webkit-overflow-scrolling: touch;
+            border-radius: 12px;
         }
-        
-        .helloasso-container iframe {
-            height: 800px !important;
-            min-height: 800px !important;
-            max-height: 800px !important;
-            width: 100% !important;
+    
+        .donation-header h2 {
+            font-size: 1.8rem;
         }
-        
-        #haWidgetLight {
-            height: 800px !important;
-            min-height: 800px !important;
-            width: 100% !important;
+    
+        .trust-badges {
+            gap: 1rem;
+        }
+    
+        .trust-badge {
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+        }
+    
+        .helloasso-iframe {
+            height: 1200px !important;
+            min-height: 1200px !important;
+        }
+    
+        .payment-security-notice {
+            padding: 1.2rem;
+            text-align: left;
         }
     }
     
-    /* Small mobile devices */
     @media screen and (max-width: 480px) {
-        .helloasso-container {
-            padding: 0.5rem;
-            margin: 0.5rem auto;
-            width: calc(100% - 1rem);
+        .helloasso-container-optimized {
+            padding: 1rem 0.5rem;
         }
-        
-        .helloasso-container iframe {
-            height: 700px !important;
-            min-height: 700px !important;
-            max-height: 700px !important;
-        }
-        
-        #haWidgetLight {
-            height: 700px !important;
-            min-height: 700px !important;
-        }
-    }
     
-    /* Ensure no external constraints */
-    .donation-section {
-        overflow: visible !important;
-    }
+        .helloasso-iframe {
+            height: 1300px !important;
+            min-height: 1300px !important;
+        }
     
-    .donation-section .container {
-        overflow: visible !important;
+        .trust-badges {
+            flex-direction: column;
+            align-items: center;
+        }
     }
